@@ -1,11 +1,11 @@
 Magento 2 Extensions
 ==========================
 
-Hello Sir
+Hello Sir<br/> 
 I am a Webdeveloper from india, which work on freelance so if you allow then i would love to be a part of your Creative Team.
 
-Just Give me a chance and you will never regret 
-Thank you For your Time And Have a Nice Day
+Just Give me a chance and you will never regret<br/> 
+Thank you For your Time And Have a Nice Day<br/> 
 
 Extensions
 ========================
