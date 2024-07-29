@@ -30,4 +30,4 @@ Linkdin
 
 <b>My email address is : 5mehulhelp5@gmail.com <br/> Skype Id: mehul.chaudhari.</b>
 <br/>
-Thanks 
+Thank you and Have a nice day
