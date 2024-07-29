@@ -7,8 +7,9 @@ Customize text and design of Quick View button
 
 
 View product information in Quick View pop-up without page load
+<br/>
 ===> Seeing a small version of one product page with the entire product attributes: name, SKU, prices, product description, and additional information. Shoppers will get every necessary information in one place!
-
+<br/>
 ===> Stop customers from opening then backing a product page repeatedly. Now, one “Quick view” pop-up cost them only a few seconds to all the details briefed! Each pop-up is a “small size” product page
 
 Also, customers can navigate to the product page from the Magento Quick View pop-up by clicking Go To Product link.
@@ -21,6 +22,7 @@ The “Add to cart” button has reduced two “suffering” actions: opening th
 
 Customize text and design of Magento Quick View button
 You will have flexible settings in the backend with options to change text, text color, and the button color
+<br/>
 ===> Choose the right color to fit your website concept-or lead customers to click on the button right away with the “message” you deliver via the button’ text
 
 

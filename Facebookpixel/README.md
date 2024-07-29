@@ -1,4 +1,4 @@
-Are your Facebook Ads working well?; How many users initiated the checkout without completing?; Which parts should you improve to increase conversion rate and sales?; etc. These are hard to know without a right tracking tool. Here, we offer Magento 2 Facebook Pixel extension to:
+Are your Facebook Ads working well? How many users initiated the checkout without completing? Which parts should you improve to increase conversion rate and sales? etc. These are hard to know without a right tracking tool. Here, we offer Magento 2 Facebook Pixel extension to:
 
 Add Facebook Pixel code to all pages of Magento 2 website
 Keep track of 9 events on site (Search; Product view & Category view; Registration & Subscription; Add to cart & Add to Wishlist; Initiate Checkout & Purchase.)
@@ -22,7 +22,7 @@ Disable Facebook Pixel functions on specific pages
 Keep track of 9 events on site
 Our extension support 9 standard events by Facebook Pixel tool so that you can collect product information and event values with ease - quite enough to get an insight about customer behaviors.
 
- Page View
+Page View
 Add to Cart
 Add to Wishlist
 Category View
