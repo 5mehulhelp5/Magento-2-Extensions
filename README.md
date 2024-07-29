@@ -7,8 +7,8 @@ I am a Webdeveloper from india, which work on freelance so if you allow then i w
 Just Give me a chance and you will never regret 
 Thank you For your Time And Have a Nice Day
 
-
-<b>===========Extensions=============</b><br/>
+Extensions
+========================
 1>Admin Payment Method:- This extension allows admin to create payment method validated only in the backend. This solution also supports auto-creating invoice and shipment once orders are created.<br/>
 2>Admin shipping method:- This extension creates a new shipping method used by the admin only to generate free of shipping cost orders.<br/>
 3>Cookie Notice:- According to Data Law, customers should be aware of your website’s cookies usage. This is how Magento 2 Cookie Notice works: Get cookies consent by customers!<br/>
