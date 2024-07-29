@@ -1,0 +1,17 @@
+'Something went wrong while deleting.','Something went wrong while deleting.'
+'A total of %1 record(s) has been deleted.','A total of %1 record(s) has been deleted.'
+''%1 option(s) has been disable.','%1 option(s) has been disable.'
+'Module is disabled.','Module is disabled.'
+''%1 option(s) enabled.','%1 option(s) enabled.'
+'The option has been saved.','The option has been saved.'
+'Something went wrong while saving.','Something went wrong while saving.'
+''%1 request has been accepted','%1 request has been accepted'
+''%1 refund request has been rejected.','%1 refund request has been rejected.'
+"One or more admin email has an invalid email format!","One or more admin email has an invalid email format!"
+'Your refund request number #','Your refund request number #'
+'has been submited.', 'has been submited.'
+We are sorry to know that you want a refund. Please let us know what's wrong","We are sorry to know that you want a refund. Please let us know what's wrong"
+'Reason for refund','Reason for refund'
+'Product is opened','Product is opened'
+'Faulty or other detail','Faulty or other detail'
+'Refund Request','Refund Request'

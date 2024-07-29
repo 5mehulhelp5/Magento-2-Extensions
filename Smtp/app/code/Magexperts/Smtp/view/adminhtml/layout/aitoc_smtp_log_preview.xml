@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Magexperts Team
+ * @copyright Copyright (c) 2022 Magexperts (https://www.magexperts.com)
+ * @package Magexperts_Smtp
+ */
+-->
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="empty" />
+    <body>
+    <referenceContainer name="root">
+        <block name="preview.page.content" class="Magento\Framework\View\Element\Template" template="Magexperts_Smtp::template/preview.phtml">
+            <block class="Magexperts\Smtp\Block\Adminhtml\Log\Preview" name="content" as="content"/>
+        </block>
+    </referenceContainer>
+    </body>
+</page>

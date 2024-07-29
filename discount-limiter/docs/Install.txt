@@ -1,0 +1,13 @@
+========================================================
+INSTALLATION
+========================================================
+1. Download the extension .zip file and extract the files.
+2. Copy the extension files from src/ folder to the {your-magento2-root-dir}/app/code/Magexperts/DiscountLimit (create non-existing folders manually)
+3. Once you have copied all the extension files to the proper directory, run the following commands:
+   php bin/magento module:enable Magexperts_DiscountLimit --clear-static-content
+   php bin/magento setup:upgrade
+
+   # Deploy static content (in Production mode only)
+   rm -rf pub/static/* var/view_preprocessed/*
+   php bin/magento setup:static-content:deploy
+4. Go to Admin > MARKETING > Discount Limiter > Manage Settings

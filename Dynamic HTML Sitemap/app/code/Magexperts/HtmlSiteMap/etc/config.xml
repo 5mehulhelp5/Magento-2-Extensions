@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magexperts Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://magexperts.com/Magexperts-License.txt
+ *
+ * @category   Magexperts
+ * @package    MAGEXPERTS_HtmlSiteMap
+ * @author     Extension Team
+ * @copyright  Copyright (c) 2018-2019 Magexperts Co. ( http://magexperts.com )
+ * @license    http://magexperts.com/Magexperts-License.txt
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <bss_htmlsitemap>
+            <general>
+                <enable>1</enable>
+                <title>HTML Sitemap</title>
+                <router>html-sitemap</router>
+                <show_link>footer</show_link>
+                <order_templates>1,2,3,4</order_templates>
+            </general>
+            <for_search>
+                <meta_title>Sitemap</meta_title>
+            </for_search>
+            <product>
+                <title_product>Product List</title_product>
+                <enable_product>1</enable_product>
+                <sort_product>date</sort_product>
+                <order_product>desc</order_product>
+                <max_products>5000</max_products>
+            </product>
+            <category>
+                <title_category>Category List</title_category>
+                <enable_category>1</enable_category>
+            </category>
+            <cms>
+                <title_cms>CMS List</title_cms>
+                <enable_cms>1</enable_cms>
+            </cms>
+            <store>
+                <title_store>Store View List</title_store>
+                <enable_store>1</enable_store>
+            </store>
+            <addition>
+                <title_addition>Additional Link</title_addition>
+                <open_new_tab>0</open_new_tab>
+                <addition_link>[http://yourlink1.com][Anchor Text 1]</addition_link>
+            </addition>
+        </bss_htmlsitemap>
+    </default>
+</config>

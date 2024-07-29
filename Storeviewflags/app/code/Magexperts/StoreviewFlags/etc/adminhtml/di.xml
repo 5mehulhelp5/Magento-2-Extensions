@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magexperts Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://magexperts.com/Magexperts-License.txt
+ *
+ * @category   Magexperts
+ * @package    Magexperts_StoreviewFlags
+ * @author     Extension Team
+ * @copyright  Copyright (c) 2019-2020 Magexperts Co. ( http://magexperts.com )
+ * @license    http://magexperts.com/Magexperts-License.txt
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Backend\Block\System\Store\Grid\Render\Store">
+        <plugin name="show_grid" type="Magexperts\StoreviewFlags\Plugin\ShowFlagGrid" sortOrder="10"/>
+    </type>
+</config>

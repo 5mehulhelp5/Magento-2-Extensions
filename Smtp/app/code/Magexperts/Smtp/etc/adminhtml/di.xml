@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Magexperts Team
+ * @copyright Copyright (c) 2022 Magexperts (https://www.magexperts.com)
+ * @package Magexperts_Smtp
+ */
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magexperts\Smtp\Model\ResourceModel\Log\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">magexperts_smtp_log</argument>
+            <argument name="eventPrefix" xsi:type="string">aitsmtp_log_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">aitsmtp_log_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Magexperts\Smtp\Model\ResourceModel\Rule</argument>
+        </arguments>
+    </type>
+</config>

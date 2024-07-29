@@ -1,0 +1,23 @@
+<?php
+/**
+ * @author Magexperts Team
+ * @copyright Copyright (c) 2022 Magexperts (https://www.magexperts.com)
+ * @package Magexperts_TwoFactorAuthentication
+ */
+?>
+<div class="admin__field">
+    <label for="otp_password" class="admin__field-label">
+        <span><?= $block->escapeHtml(__('One-Time Password')) ?></span>
+    </label>
+    <div class="admin__field-control">
+        <input
+            id="otp_password"
+            class="admin__control-text"
+            type="password"
+            name="<?= $block->escapeHtml(\Magexperts\TwoFactorAuthentication\Helper\Data::LOGIN_FIELD_NAME) ?>" />
+
+        <div class="admin__field-note">
+            <span><?= $block->escapeHtml(__('Enter a code from your device or leave the field blank if not configured.')) ?></span>
+        </div>
+    </div>
+</div>

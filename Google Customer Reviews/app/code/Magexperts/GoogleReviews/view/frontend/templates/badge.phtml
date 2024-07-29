@@ -1,0 +1,32 @@
+<?php
+/**
+ * @author Magexperts Team
+ * @copyright Copyright (c) 2022 Magexperts (https://www.magexperts.com)
+ * @package Magexperts_GoogleReviews
+ */
+
+/**  @var $block Magexperts\GoogleReviews\Block\Badge */
+?>
+<script src="https://apis.google.com/js/platform.js?onload=renderBadge" async defer></script>
+
+<?php if ($block->getLanguage()): ?>
+    <script>
+        window.___gcfg = {
+            lang: "<?php /* @escapeVerified */ echo $block->getLanguage() ?>"
+        };
+    </script>
+<?php endif; ?>
+
+<script>
+    window.renderBadge = function() {
+        var ratingBadgeContainer = document.createElement("div");
+        document.body.appendChild(ratingBadgeContainer);
+        window.gapi.load('ratingbadge', function() {
+            window.gapi.ratingbadge.render(
+                ratingBadgeContainer, {
+                    "merchant_id": <?php /* @noEscape */ echo $block->getMerchantId() ?>,
+                    "position": "<?php /* @noEscape */ echo $block->getPosition() ?>"
+                });
+        });
+    }
+</script>

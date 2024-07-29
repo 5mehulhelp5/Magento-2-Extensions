@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magexperts Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://magexperts.com/Magexperts-License.txt
+ *
+ * @category   Magexperts
+ * @package    Magexperts_Core
+ * @author     Extension Team
+ * @copyright  Copyright (c) 2017-2018 Magexperts Co. ( http://magexperts.com )
+ * @license    http://magexperts.com/Magexperts-License.txt
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="bss" translate="label" sortOrder="300">
+            <label><![CDATA[Magexperts Commerce]]></label>
+        </tab>
+        <section id="bss_core" translate="label" type="text" sortOrder="0" showInDefault="1" showInWebsite="0"
+                 showInStore="0">
+            <label><![CDATA[Information]]></label>
+            <tab>bss</tab>
+            <resource>Magexperts_Core::config</resource>
+            <frontend_model>Magexperts\Core\Block\Adminhtml\Header</frontend_model>
+            <group id="header" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0"
+                   showInStore="0">
+                <label>Installed Modules</label>
+                <frontend_model>Magexperts\Core\Block\Adminhtml\Modules</frontend_model>
+            </group>
+            <group id="debug" translate="label" sortOrder="30" showInDefault="1">
+                <label>Root Folder</label>
+                <frontend_model>Magexperts\Core\Block\Adminhtml\RootFolder</frontend_model>
+            </group>
+            <group id="setting" translate="label" sortOrder="30" showInDefault="1">
+                <label>Configuration</label>
+                <field id="enable_popup" translate="label comment" type="select" sortOrder="25" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Enable Magexperts Popup</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>
+                        <![CDATA[Turn on Magexperts module's new version and promotion notifications]]>
+                    </comment>
+                </field>
+                <field id="additional_css" translate="label comment" type="textarea" sortOrder="25" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Additional CSS</label>
+                    <comment>
+                        <![CDATA[Add your custom style to frontend]]>
+                    </comment>
+                </field>
+                <field id="enable_preprocessed_css" translate="label comment" type="select" sortOrder="25" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Enable Preprocessed CSS</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>
+                        <![CDATA[Choose 'Yes' if CSS not apply at frontend. Used for Magexperts's Modules]]>
+                    </comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Magexperts Commerce Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://magexperts.com/Magexperts-License.txt
+ *
+ * @category   Magexperts
+ * @package    Magexperts_RefundRequest
+ * @author     Extension Team
+ * @copyright  Copyright (c) 2017-2018 Magexperts Commerce Co. ( http://magexperts.com )
+ * @license    http://magexperts.com/Magexperts-License.txt
+ */
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Magento_Backend::stores">
+                    <resource id="Magento_Backend::stores_settings">
+                        <resource id="Magento_Config::config">
+                            <resource id="Magexperts_Commerce::config" title="Magexperts Commerce">
+                                <resource id="Magexperts_RefundRequest::refundrequest_config" title="Refund Request admin config" />
+                                <resource id="Magexperts_RefundRequest::refundrequest_access_controller" title="Module controller access">
+                                    <resource id="Magexperts_RefundRequest::refundrequest_access_controller_label" title="Option controller access">
+                                        <resource id="Magexperts_RefundRequest::refundrequest_access_controller_label_edit" title="Edit" />
+                                        <resource id="Magexperts_RefundRequest::refundrequest_access_controller_label_index" title="Index Page" />
+                                        <resource id="Magexperts_RefundRequest::refundrequest_access_controller_label_massdelete" title="Mass Delete" />
+                                        <resource id="Magexperts_RefundRequest::refundrequest_access_controller_label_massdisable" title="Mass Disable" />
+                                        <resource id="Magexperts_RefundRequest::refundrequest_access_controller_label_massenable" title="Mass Enable"/>
+                                        <resource id="Magexperts_RefundRequest::refundrequest_access_controller_label_newaction" title="Creat New Option" />
+                                        <resource id="Magexperts_RefundRequest::refundrequest_access_controller_label_save" title="Save Option"/>
+                                    </resource>
+                                    <resource id="Magexperts_RefundRequest::refundrequest_access_controller_request" title="Request Grid controller access">
+                                        <resource id="Magexperts_RefundRequest::refundrequest_access_controller_request_index" title="Index Page"/>
+                                        <resource id="Magexperts_RefundRequest::refundrequest_access_controller_request_massaccept" title="Mass Accept"/>
+                                        <resource id="Magexperts_RefundRequest::refundrequest_access_controller_request_massdelete" title="Mass Delete"/>
+                                        <resource id="Magexperts_RefundRequest::refundrequest_access_controller_request_massreject" title="Mass Reject"/>
+                                    </resource>
+                                </resource>
+                            </resource>
+                        </resource>
+                    </resource>
+                </resource>
+                <resource id="Magento_Sales::sales" title="Sales" translate="title" sortOrder="20">
+                    <resource id="Magento_Sales::sales_operation" title="Operations" translate="title" sortOrder="10">
+                        <resource id="Magento_Sales::sales_bss_refund_request" title="Magexperts Refund Request List" translate="title" sortOrder="100" />
+                        <resource id="Magento_Sales::sales_bss_refund_request_label" title="Magexperts Refund Request Dropdown Options" translate="title" sortOrder="110" />
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

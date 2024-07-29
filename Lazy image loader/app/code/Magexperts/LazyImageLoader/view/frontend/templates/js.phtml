@@ -1,0 +1,52 @@
+<?php
+/**
+ * Magexperts Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://magexperts.com/Magexperts-License.txt
+ *
+ * @category   Magexperts
+ * @package    Magexperts_LazyImageLoader
+ * @author     Extension Team
+ * @copyright  Copyright (c) 2018-2019 Magexperts Co. ( http://magexperts.com )
+ * @license    http://magexperts.com/Magexperts-License.txt
+ */
+?>
+<?php // @codingStandardsIgnoreFile  ?>
+<?php
+/**
+ * LazyImageLoader block
+ *
+ * @var  $block  \Magexperts\LazyImageLoader\Block\LazyLoad
+ */
+?>
+<?php
+$helper = $block->getHelper();
+echo $helper->getFullActionName();
+$threshold = $helper->getThreshold();
+?>
+<?php if ($helper->isEnabled()) : ?>
+    <style>
+        img.lazy {
+            background: url(<?php echo $helper->getLazyImage(); ?>) no-repeat;
+            background-size: <?php echo $helper->getLoadingWidth(); ?>px;
+            background-position: center;
+            width: 100%
+        }
+    </style>
+
+    <script type="text/x-magento-init">
+        {
+            "*": {
+                "Magexperts_LazyImageLoader/js/lazy_load": {
+                    "threshold": "<?php echo $threshold; ?>"
+                }
+            }
+        }
+    </script>
+
+<?php endif; ?>

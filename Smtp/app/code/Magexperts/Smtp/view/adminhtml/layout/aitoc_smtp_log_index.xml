@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Magexperts Team
+ * @copyright Copyright (c) 2022 Magexperts (https://www.magexperts.com)
+ * @package Magexperts_Smtp
+ */
+-->
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="styles"/>
+    <head>
+        <title>Emails Log</title>
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <uiComponent name="magexperts_smtp_log_listing"/>
+        </referenceContainer>
+    </body>
+</page>

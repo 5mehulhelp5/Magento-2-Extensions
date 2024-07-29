@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magexperts Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://magexperts.com/Magexperts-License.txt
+ *
+ * @category  Magexperts
+ * @package   Magexperts_AdminPaymentMethod
+ * @author    Extension Team
+ * @copyright Copyright (c) 2018-2019 Magexperts Co. ( http://magexperts.com )
+ * @license   http://magexperts.com/Magexperts-License.txt
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+	<default>
+		<payment>
+			<adminpaymentmethod>
+				<active>1</active>
+				<title>Admin Payment Method</title>
+				<order_status>pending</order_status>
+				<allowspecific>0</allowspecific>
+				<preselect>1</preselect>
+				<model>Magexperts\AdminPaymentMethod\Model\AdminPaymentMethod</model>
+				<group>offline</group>
+			</adminpaymentmethod>
+		</payment>
+	</default>
+</config>

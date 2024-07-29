@@ -1,0 +1,116 @@
+/**
+ * Magexperts Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://magexperts.com/Magexperts-License.txt
+ *
+ * @category   Magexperts
+ * @package    Magexperts_Core
+ * @author     Extension Team
+ * @copyright  Copyright (c) 2017-2018 Magexperts Co. ( http://magexperts.com )
+ * @license    http://magexperts.com/Magexperts-License.txt
+ */
+
+.admin__menu .level-0.item-bss-core-menu > a {
+  &:before {
+    content: url('Magexperts_Core::images/logo-bss.svg');
+    width: 40%;
+    margin-left: auto;
+    margin-bottom: 10px;
+    margin-right: auto;
+  }
+  
+  &:hover::before {
+    content: url('Magexperts_Core::images/logo-bss-light.svg');
+  }
+}
+
+.admin__field-label {
+  cursor: default;
+}
+
+#bss-core-header {
+  .logo {
+    float: left;
+    margin: 0 15px 0 0;
+    padding-top: 6px;
+  }
+  a:visited, .alink:visited {
+    color: #006bb4;
+    text-decoration: none;
+  }
+  .menu-top {
+    display: block;
+    position: relative;
+    right: inherit;
+    top: inherit;
+    visibility: visible;
+    float: left;
+
+    ul {
+      padding: 0;
+      margin: 0;
+      border-left: 1px solid #f2f2f2;
+
+      li {
+        display: inline-block;
+        padding: 0 10px;
+
+        a {
+          height: 54px;
+          line-height: 54px;
+          color: #303030;
+          font-weight: 700;
+          font-size: 16px;
+
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.bss-popup {
+  .modal-inner-wrap {
+    width: 50%;
+  }
+  .modal-title {
+    margin-left: 20%;
+  }
+  #bss-popup-new-version {
+    width: 100%;
+    .logo {
+      width: 20%;
+      float: left;
+      text-align: center;
+      div {
+        margin-bottom: 25px;
+      }
+    }
+    .messages {
+      width: 80%;
+      float: right;
+      padding-left: 20px;
+      li {
+        margin-bottom: 10px;
+        a {
+          color: #eb5202;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  .modal-footer button {
+    text-transform: uppercase;
+    background-color: #eb5202;
+    border-color: #eb5202;
+    color: #ffffff;
+    text-decoration: none;
+  }
+}

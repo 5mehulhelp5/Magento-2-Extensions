@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category   Magexperts
+ * @package    Magexperts_ProductAttachment
+ * @author     Raj KB <Magexperts@gmail.com>
+ * @website    https://www.Magexperts.com
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="product.info.details">
+            <block class="Magexperts\ProductAttachment\Block\Product\View\Attachment" name="product.attachment"
+                   template="Magexperts_ProductAttachment::product/view/attachment.phtml" group="detailed_info">
+                <arguments>
+                    <argument name="title" xsi:type="helper" helper="Magexperts\ProductAttachment\Helper\Data::getAttachmentTabLabel" />
+                    <argument name="sort_order" xsi:type="string">10</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+    </body>
+</page>

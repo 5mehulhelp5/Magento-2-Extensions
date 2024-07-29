@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Magexperts Team
+ * @copyright Copyright (c) 2022 Magexperts (https://www.magexperts.com)
+ * @package Magexperts_Core
+ */
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Magento_Backend::stores">
+                    <resource id="Magento_Backend::stores_settings">
+                        <resource id="Magento_Config::config">
+                            <resource id="Magexperts_Core::config"
+                                      title="Magexperts - General Information"
+                                      sortOrder="100" />
+                        </resource>
+                    </resource>
+                </resource>
+                <resource id="Magexperts_Core::menu" title="Magexperts Extensions" translate="title" sortOrder="101">
+                    <resource id="Magexperts_Core::marketplace" title="Magexperts Marketplace" translate="title" sortOrder="1"/>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!--
+**
+ * Magexperts Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://magexperts.com/Magexperts-License.txt
+ *
+ * @category   Magexperts
+ * @package    Magexperts_CookieNotice
+ * @author     Extension Team
+ * @copyright  Copyright (c) 2017-2018 Magexperts Co. ( http://magexperts.com )
+ * @license    http://magexperts.com/Magexperts-License.txt
+ *
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <cookienotice>
+            <general>
+                <enable>1</enable>
+                <hide_msg>5</hide_msg>
+                <position>0</position>
+            </general>
+            <notice_message>
+                <msg_title>Approve The Cookies</msg_title>
+                <color_title>#ffffff</color_title>
+                <msg_content>This website uses cookies to improve your user experience</msg_content>
+                <color_content>#ffffff</color_content>
+                <color_bg>#222222</color_bg>
+            </notice_message>
+            <btn_accept>
+                <text_btn_accept>I accept</text_btn_accept>
+                <color_btn_accept>#ffffff</color_btn_accept>
+                <color_bg_btn_accept>#9fba27</color_bg_btn_accept>
+            </btn_accept>
+            <btn_more_infor>
+                <text_btn_more_infor>Read more</text_btn_more_infor>
+                <color_btn_more_infor>#0a88cc</color_btn_more_infor>
+                <color_bg_btn_more_infor>#222222</color_bg_btn_more_infor>
+            </btn_more_infor>
+        </cookienotice>
+    </default>
+</config>

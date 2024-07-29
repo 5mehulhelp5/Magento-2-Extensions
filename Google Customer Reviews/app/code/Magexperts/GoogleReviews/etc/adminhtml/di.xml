@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Magexperts Team
+ * @copyright Copyright (c) 2022 Magexperts (https://www.magexperts.com)
+ * @package Magexperts_GoogleReviews
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <type name="Magexperts\GoogleReviews\Model\Config\CustomDeliveryTime">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="helper" xsi:type="object">Magexperts\GoogleReviews\Helper\CustomDeliveryTime</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

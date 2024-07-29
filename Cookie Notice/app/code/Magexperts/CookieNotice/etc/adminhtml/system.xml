@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<!--
+**
+ * Magexperts Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://magexperts.com/Magexperts-License.txt
+ *
+ * @category   Magexperts
+ * @package    Magexperts_CookieNotice
+ * @author     Extension Team
+ * @copyright  Copyright (c) 2017-2018 Magexperts Co. ( http://magexperts.com )
+ * @license    http://magexperts.com/Magexperts-License.txt
+ *
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="bss" translate="label" sortOrder="300">
+            <label><![CDATA[Magexperts Commerce]]></label>
+        </tab>
+        <section id="cookienotice" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Cookie Notice</label>
+            <tab>bss</tab>
+            <resource>Magexperts_CookieNotice::cookienotice</resource>
+            <group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Configuration</label>
+                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable</label>
+                    <comment><![CDATA[Version 1.0.5]]></comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="hide_msg" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Auto Hide Message (seconds)</label>
+                    <comment><![CDATA[Value must be greater than 0, leave blank will turn off auto hide.]]></comment>
+                    <validate>validate-greater-than-zero</validate>
+                </field>
+                <field id="position" translate="label" type="select" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Position</label>
+                    <source_model>Magexperts\CookieNotice\Model\Config\Source\Position</source_model>
+                </field>
+            </group>
+            <group id="notice_message" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Notice Message</label>
+                <field id="msg_title" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Message Title</label>
+                </field>
+                <field id="color_title" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title Text Color</label>
+                    <frontend_model>Magexperts\CookieNotice\Block\Color</frontend_model>
+                </field>
+                <field id="msg_content" translate="label comment" type="textarea" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Message</label>
+                    <comment><![CDATA[This config allows editing a message to offer visitors your website cookie information.]]></comment>
+                </field>
+                <field id="color_content" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Message Text Color</label>
+                    <frontend_model>Magexperts\CookieNotice\Block\Color</frontend_model>
+                </field>
+                <field id="color_bg" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Background Color</label>
+                    <frontend_model>Magexperts\CookieNotice\Block\Color</frontend_model>
+                </field>
+            </group>
+            <group id="btn_accept" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Acceptance Button</label>
+                <field id="text_btn_accept" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Text</label>
+                </field>
+                <field id="color_btn_accept" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Text Color</label>
+                    <frontend_model>Magexperts\CookieNotice\Block\Color</frontend_model>
+                </field>
+                <field id="color_bg_btn_accept" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Background Color</label>
+                    <frontend_model>Magexperts\CookieNotice\Block\Color</frontend_model>
+                </field>
+            </group>
+            <group id="btn_more_infor" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>More Information Button</label>
+                <field id="text_btn_more_infor" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Text</label>
+                </field>
+                <field id="color_btn_more_infor" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Text Color</label>
+                    <frontend_model>Magexperts\CookieNotice\Block\Color</frontend_model>
+                </field>
+                <field id="color_bg_btn_more_infor" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Background Color</label>
+                    <frontend_model>Magexperts\CookieNotice\Block\Color</frontend_model>
+                </field>
+                <field id="cms_page" translate="label comment" type="select" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Page</label>
+                    <comment><![CDATA[The selected page will be interlinked with the more information button.]]></comment>
+                    <source_model>Magexperts\CookieNotice\Model\Config\Source\Page</source_model>
+                </field>
+            </group>
+            <group id="custom_style" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Custom Style</label>
+                <field id="custom_css" translate="label" type="textarea" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Custom Css</label>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

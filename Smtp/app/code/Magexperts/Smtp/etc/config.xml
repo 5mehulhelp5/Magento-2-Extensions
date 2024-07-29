@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Magexperts Team
+ * @copyright Copyright (c) 2022 Magexperts (https://www.magexperts.com)
+ * @package Magexperts_Smtp
+ */
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Store/etc/config.xsd">
+    <default>
+        <aitsmtp>
+            <general>
+                <enabled>1</enabled>
+            </general>
+            <smtp>
+                <name>localhost</name>
+                <use_default>0</use_default>
+                <provider>none</provider>
+                <auth_type>1</auth_type>
+            </smtp>
+            <emails>
+                <plain>0</plain>
+                <cc></cc>
+                <bcc></bcc>
+                <sender_enable>0</sender_enable>
+            </emails>
+            <log>
+                <log>1</log>
+                <log_clean>30</log_clean>
+            </log>
+            <debug>
+                <delivery>0</delivery>
+                <exeptional_email_addresses>example@example.com,unknown@unknown.com</exeptional_email_addresses>
+                <exeptional_domains>http://example.com, https://hello.com</exeptional_domains>
+            </debug>
+        </aitsmtp>
+    </default>
+</config>

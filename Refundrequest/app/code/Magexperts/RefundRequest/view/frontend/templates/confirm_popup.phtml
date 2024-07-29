@@ -1,0 +1,105 @@
+<?php
+/**
+ * Magexperts Commerce Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://magexperts.com/Magexperts-License.txt
+ *
+ * @category   Magexperts
+ * @package    Magexperts_RefundRequest
+ * @author     Extension Team
+ * @copyright  Copyright (c) 2017-2018 Magexperts Commerce Co. ( http://magexperts.com )
+ * @license    http://magexperts.com/Magexperts-License.txt
+ */
+
+/**
+ * @var $block \Magexperts\RefundRequest\Block\Label
+ */
+?>
+<?php // @codingStandardsIgnoreFile ?>
+<?php
+
+    $refundStatus = json_encode($block->getRefundStatus()->getData());
+    $orderRefund = json_encode($block->getOrderRefund());
+    $orders = json_encode($block->getOrderCollectionByCustomerId());
+?>
+
+<?php if ($block->getConfigEnableModule()) { ?>
+    <div id="bss-refund-modal" style="display: none;">
+        <form action="http://localhost/m222/refundrequest/order/index" class="form refund" id="bss-refund-form" method="post"
+              data-hasrequired="<?= $block->escapeHtml(__('* Required Fields')) ?>"
+              data-mage-init='{"validation":{}}'>
+            <fieldset class="fieldset">
+                <div class="control">
+                    <?php $title = $block->getPopupDescription(); ?>
+                    <p><?php echo $title ? __($title) : __("We are sorry to know that you want a refund. Please let us know what's wrong"); ?></p>
+                </div>
+                <div class="control">
+                    <input type="hidden" name="bss-refund-order-id" value="" class="bss-refund-oder-id">
+                    <?php $formKey = $block->getFormKey()?>
+                    <input type="hidden" name="form_key" value="<?= $block->escapeHtml($formKey) ?>" class="form_key">
+                </div>
+                <?php if ($block->getConfigEnableDropdown()) : ?>
+                    <div class="field required">
+                        <?php $dropdownTitle = $block->getDropdownTitle(); ?>
+                        <label class="label" for="label"><span><?php echo $dropdownTitle ? __($dropdownTitle) : __('Reason for refund'); ?></span></label>
+                        <div class="control">
+                            <label>
+                                <select name="bss-option">
+                                    <?php $a = $block->getLabel(); ?>
+                                        <?php foreach ($a as $value) { ?>
+                                            <option><?php echo $value->getData('request_label'); ?></option>
+                                    <?php } ?>
+                                </select>
+                            </label>
+                        </div>
+                    </div>
+                <?php endif; ?>
+                <?php if ($block->getConfigEnableOption()) : ?>
+                    <div class="field required">
+                        <?php $optionTitle = $block->getOptionTitle(); ?>
+                        <label class="label" for="label"><span><?php echo $optionTitle ? __($optionTitle) : __('Product is opened'); ?></span></label>
+                        <div class="control">
+                            <label>
+                                <input type="radio" name="bss-radio" value="1" required="required">
+                            </label><span><?= $block->escapeHtml(__('Yes')) ?></span>
+                            <label>
+                                <input type="radio" name="bss-radio" value="0">
+                            </label><span><?= $block->escapeHtml(__('No')) ?></span>
+                        </div>
+                    </div>
+                <?php endif; ?>
+                <div class="field required">
+                    <?php $detailTitle = $block->getDetailTitle(); ?>
+                    <label class="label" for="label"><span><?php echo $detailTitle ? __($detailTitle) : __('Faulty or other detail'); ?></span></label>
+                    <div class="control">
+                        <label>
+                            <textarea class="bss-refund-reason input-text" name="bss-refund-reason" data-validate="{required:true}"></textarea>
+                        </label>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <div id="message"></div>
+    <?php $poptupTitle = $block->getPopupModuleTitle();?>
+    <script type="text/x-magento-init">
+        {
+            "*":
+                {
+                    "Magexperts_RefundRequest/js/get-oder": {
+                        "orderRefund" : <?php echo $orderRefund; ?>,
+                        "bssUrl" : "<?php echo $block->getBaseUrl(); ?>",
+                        "bssPopupTitle" : "<?php echo $poptupTitle ? __($poptupTitle) : __('Refund Request');?>",
+                        "dataOrder" : <?php echo $refundStatus; ?>,
+                        "orders": <?php echo $orders ?>
+                    }
+                }
+
+        }
+    </script>
+<?php   } ?>

@@ -1,0 +1,18 @@
+{
+    "name": "bss/admin-payment-method",
+    "description": "Magexperts Admin Payment Method Module",
+    "type": "magento2-module",
+    "version": "1.0.4",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Magexperts\\AdminPaymentMethod\\": ""
+        }
+    }
+}

@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!--
+**
+ * Magexperts Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://magexperts.com/Magexperts-License.txt
+ *
+ * =================================================================
+ *
+ * MAGENTO EDITION USAGE NOTICE
+ * =================================================================
+ * This package designed for Magento COMMUNITY edition
+ * Magexperts does not guarantee correct work of this extension
+ * on any other Magento edition except Magento COMMUNITY edition.
+ * Magexperts does not provide extension support in case of
+ * incorrect edition usage.
+ * =================================================================
+ *
+ * @category   Magexperts
+ * @package    Magexperts_OrderDetails
+ * @author     Extension Team
+ * @copyright  Copyright (c) 2015-2016 Magexperts Co. ( http://magexperts.com )
+ * @license    http://magexperts.com/Magexperts-License.txt
+ *
+ -->
+ <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Magexperts_OrderDetails::css/orderdetails.css"/>
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <container name="order.success.additional.info" label="Order Success Additional Info"/>
+            <block class="Magexperts\OrderDetails\Block\Details" name="bss.get.order.details" template="Magexperts_OrderDetails::order/success.phtml" after="-">
+                <block class="Magexperts\OrderDetails\Block\Details" name="order.totals" template="Magexperts_OrderDetails::order/success/totals.phtml">
+                    <arguments>
+                        <argument name="label_properties" xsi:type="string">class="table-method"</argument>
+                        <argument name="value_properties" xsi:type="string">class="number"</argument>
+                    </arguments>
+                    <block class="Magexperts\OrderDetails\Block\Tax" name="tax" template="Magexperts_OrderDetails::order/success/tax.phtml"/>
+                </block>
+            </block>
+        </referenceContainer>
+        <referenceBlock name="checkout.success" remove="true"/>
+    </body>
+</page>

@@ -1,0 +1,78 @@
+<?php
+/**
+ * Magexperts Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://magexperts.com/Magexperts-License.txt
+ *
+ * =================================================================
+ *
+ * MAGENTO EDITION USAGE NOTICE
+ * =================================================================
+ * This package designed for Magento COMMUNITY edition
+ * Magexperts does not guarantee correct work of this extension
+ * on any other Magento edition except Magento COMMUNITY edition.
+ * Magexperts does not provide extension support in case of
+ * incorrect edition usage.
+ * =================================================================
+ *
+ * @category   Magexperts
+ * @package    Magexperts_OrderDetails
+ * @author     Extension Team
+ * @copyright  Copyright (c) 2015-2016 Magexperts Co. ( http://magexperts.com )
+ * @license    http://magexperts.com/Magexperts-License.txt
+*/
+?>
+<?php
+    $order  = $block->getOrder();
+    $source = $block->getSource();
+    $fullInfo = $block->getHelper()->getCalculatedTaxes($source);
+?>
+
+<?php if ($fullInfo && $block->displayFullSummary()): ?>
+        <?php foreach ($fullInfo as $info): ?>
+            <?php
+                $percent    = $info['percent'];
+                $amount     = $info['tax_amount'];
+                $baseAmount = $info['base_tax_amount'];
+                $title      = $info['title'];
+            ?>
+            <tr class="totals tax details?>
+            <?php echo($block->getIsPlaneMode()) ? ' plane' : '';?>">
+                <th colspan="5" <?php /* @escapeNotVerified */ echo $block->getLabelProperties()?>>
+                    <?php echo $block->escapeHtml($title); ?>
+                    <?php if (!is_null($percent)): ?>
+                        (<?php echo (float)$percent; ?>%)
+                    <?php endif; ?>
+                    <br />
+                </th>
+                <td <?php /* @escapeNotVerified */ echo $block->getValueProperties()?> rowspan="1">
+                    <?php /* @escapeNotVerified */ echo $order->formatPrice($amount); ?>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+<?php endif;?>
+
+<?php if ($block->displayFullSummary() && $fullInfo && !$block->getIsPlaneMode()): ?>
+<tr class="totals-tax-summary">
+<?php elseif ($block->displayFullSummary() && $fullInfo && $block->getIsPlaneMode()): ?>
+<tr class="totals-tax-summary plane">
+<?php else: ?>
+<tr class="totals-tax">
+<?php endif; ?>
+    <th colspan="5"<?php /* @escapeNotVerified */ echo $block->getLabelProperties()?> scope="row">
+        <?php if ($block->displayFullSummary()): ?>
+            <div class="detailed"><?php /* @escapeNotVerified */ echo __('Tax'); ?></div>
+        <?php else: ?>
+            <?php /* @escapeNotVerified */ echo __('Tax'); ?>
+        <?php endif;?>
+    </th>
+    <td <?php /* @escapeNotVerified */ echo $block->getValueProperties()?>
+            data-th="<?php echo $block->escapeHtml(__('Tax')); ?>">
+        <?php /* @escapeNotVerified */ echo $order->formatPrice($source->getTaxAmount()) ?>
+    </td>
+</tr>

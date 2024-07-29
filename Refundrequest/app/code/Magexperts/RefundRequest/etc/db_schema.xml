@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magexperts Commerce Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://magexperts.com/Magexperts-License.txt
+ *
+ * @category   Magexperts
+ * @package    Magexperts_RefundRequest
+ * @author     Extension Team
+ * @copyright  Copyright (c) 2017-2018 Magexperts Commerce Co. ( http://magexperts.com )
+ * @license    http://magexperts.com/Magexperts-License.txt
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+  <table name="sales_order_grid" resource="default">
+    <column xsi:type="int" name="refund_status" padding="11" unsigned="false" nullable="true" identity="false" comment="Refund Status"/>
+  </table>
+  <table name="bss_refundrequest" resource="default" engine="innodb" comment="Refund Request">
+    <column xsi:type="int" name="id" padding="10" unsigned="true" nullable="false" identity="true" comment="Id"/>
+    <column xsi:type="int" name="refund_status" padding="11" unsigned="false" nullable="false" identity="false" default="0" comment="Refund Status"/>
+    <column xsi:type="varchar" name="increment_id" nullable="true" length="32" comment="Increment Id"/>
+    <column xsi:type="mediumtext" name="customer_name" nullable="true" comment="Customer Name"/>
+    <column xsi:type="mediumtext" name="customer_email" nullable="true" comment="Customer Email"/>
+    <column xsi:type="mediumtext" name="reason_comment" nullable="true" comment="Reason"/>
+    <column xsi:type="mediumtext" name="reason_option" nullable="true" comment="Reason for refund"/>
+    <column xsi:type="int" name="radio_option" padding="11" unsigned="false" nullable="true" identity="false" comment="Product Status"/>
+    <column xsi:type="timestamp" name="created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP" comment="Post Created At"/>
+    <column xsi:type="timestamp" name="updated_at" on_update="true" nullable="false" default="CURRENT_TIMESTAMP" comment="Post Updated At"/>
+    <constraint xsi:type="primary" referenceId="PRIMARY">
+      <column name="id"/>
+    </constraint>
+    <index referenceId="MAGEXPERTS_REFUNDREQUEST_ID" indexType="btree">
+      <column name="id"/>
+    </index>
+  </table>
+  <table name="bss_requestlabel" resource="default" engine="innodb" comment="Refund Request Dropdown Options">
+    <column xsi:type="int" name="id" padding="10" unsigned="true" nullable="false" identity="true" comment="Id"/>
+    <column xsi:type="mediumtext" name="request_label" nullable="true" comment="Request Label"/>
+    <column xsi:type="int" name="status" padding="11" unsigned="false" nullable="false" identity="false" default="0" comment="Status"/>
+    <constraint xsi:type="primary" referenceId="PRIMARY">
+      <column name="id"/>
+    </constraint>
+    <index referenceId="MAGEXPERTS_REQUESTLABEL_ID" indexType="btree">
+      <column name="id"/>
+    </index>
+  </table>
+</schema>

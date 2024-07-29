@@ -1,0 +1,152 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Magexperts Team
+ * @copyright Copyright (c) 2022 Magexperts (https://www.magexperts.com)
+ * @package Magexperts_Smtp
+ */
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="aitsmtp" translate="label" type="text" sortOrder="061532" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>SMTP</label>
+            <tab>magexperts_extensions</tab>
+            <resource>Magexperts_Smtp::config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Settings</label>
+                <field id="enabled" translate="label comment" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable SMTP</label>
+                    <comment>When the option is disabled, the module will not impact on email sendings</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="smtp" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>SMTP Settings</label>
+                <field id="use_default" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Use Pre-Defined SMTP Providers</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="provider" translate="label comment" type="select" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Provider</label>
+                    <frontend_model>Magexperts\Smtp\Block\Adminhtml\Provider</frontend_model>
+                    <source_model>Magexperts\Smtp\Model\Config\Options\Provider</source_model>
+                    <depends>
+                        <field id="use_default">1</field>
+                    </depends>
+                </field>
+                <field id="name" translate="label comment" type="text" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Local Client Hostname</label>
+                    <comment><![CDATA[Local client hostname or IP. Default: <strong>localhost</strong>]]></comment>
+                </field>
+                <field id="host" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Host</label>
+                    <comment>Host name or IP address of SMTP Server</comment>
+                </field>
+                <field id="port" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Port</label>
+                    <comment><![CDATA[Default ports: 25, 465, or 587. (<strong>SSL</strong> - 465, <strong>TLS</strong> - 587)]]></comment>
+                    <validate>integer</validate>
+                </field>
+                <field id="protocol" translate="label comment" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Connection Security</label>
+                    <source_model>Magexperts\Smtp\Model\Config\Options\Protocol</source_model>
+                </field>
+                <field id="auth_type" translate="label comment" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Authentication Method</label>
+                    <source_model>Magexperts\Smtp\Model\Config\Options\Auth</source_model>
+                </field>
+                <field id="login" translate="label comment" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Username</label>
+                </field>
+                <field id="password" translate="label comment" type="obscure" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Password</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                </field>
+                <field id="test_email_to" translate="label comment" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Send Test To E-mail</label>
+                </field>
+                <field id="test_email_button" translate="label" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label></label>
+                    <frontend_model>Magexperts\Smtp\Block\Adminhtml\TestButton</frontend_model>
+                </field>
+            </group>
+            <group id="emails" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Emails Settings</label>
+                <field id="plain" translate="label comment" type="select" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Add Plain Text Part in Email</label>
+                    <comment><![CDATA[Add Plain part in email recommended for <strong>increase Spam Score of email</strong>]]></comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="sender_enable" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Use Another Email Sender</label>
+                    <comment><![CDATA[<strong>Please notice,</strong> the <strong>Sender domain</strong> must be the same as the domain where you send email. Other combinations can lead to a ban because of spam]]></comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="sender_email" translate="label comment" type="text" sortOrder="14" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Sender Email</label>
+                    <depends>
+                        <field id="sender_enable">1</field>
+                    </depends>
+                </field>
+                <field id="sender_name" translate="label comment" type="text" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Sender Name</label>
+                    <depends>
+                        <field id="sender_enable">1</field>
+                    </depends>
+                </field>
+                <field id="cc" translate="label" type="textarea" sortOrder="20" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>CC Emails</label>
+                    <comment><![CDATA[Comma-separated. Leave empty for disable <strong>CC emails.</strong>]]></comment>
+                </field>
+                <field id="bcc" translate="label" type="textarea" sortOrder="30" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>BCC Emails</label>
+                    <comment><![CDATA[Comma-separated. Leave empty for disable <strong>BCC emails.</strong>]]></comment>
+                </field>
+            </group>
+            <group id="log" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Log Settings</label>
+                <field id="log" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Log Outgoing Emails</label>
+                    <comment><![CDATA[See the all emails and their contents ever <strong>sent throughout Magexperts SMTP.</strong>]]></comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="log_clean" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Log Clean Every (days)</label>
+                    <comment><![CDATA[<strong>Day(s).</strong> When empty or zero, the Email log will not be cleaned.]]></comment>
+                    <validate>integer</validate>
+                    <depends>
+                        <field id="log">1</field>
+                    </depends>
+                </field>
+            </group>
+            <group id="debug" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Debug</label>
+                <field id="delivery" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Disable Actual Email Delivery (Debug Mode)</label>
+                    <comment><![CDATA[<strong>Set the option to ‘Yes’ in order not to send emails actually.</strong> That can be used for debug or development purposes]]></comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="exeptional_email_addresses" translate="label" type="textarea" sortOrder="20" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Exceptional Email Addresses</label>
+                    <comment>Comma-separated. Leave empty for disable</comment>
+                    <depends>
+                        <field id="delivery">1</field>
+                    </depends>
+                </field>
+                <field id="exeptional_domains" translate="label" type="textarea" sortOrder="30" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Exceptional Email Domains</label>
+                    <comment><![CDATA[Comma-separated. Leave empty for disable. <strong>Example:</strong> http://example.com,qwewqe.com ]]></comment>
+                    <depends>
+                        <field id="delivery">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

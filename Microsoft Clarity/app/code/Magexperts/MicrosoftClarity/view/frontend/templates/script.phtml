@@ -1,0 +1,31 @@
+<?php
+/**
+ * @author Magexperts Team
+ * @copyright Copyright (c) 2022 Magexperts (https://www.magexperts.com)
+ * @package Magexperts_MicrosoftClarity
+ */
+?>
+<?php
+/**
+ * Copyright © Magexperts. All rights reserved.
+ */
+?>
+<?php
+/** @var $block \Magexperts\MicrosoftClarity\Block\Script */
+/** @var $escaper \Magento\Framework\Escaper */
+if ($block->isEnabled()):
+    $clarityCode = $block->getClarityTrackingCode();
+    ?>
+    <!-- BEGIN MICROSOFT CLARITY TRACKING CODE -->
+    <script>
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=magexperts";
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            <?php if ($block->isCustomerGroupTagEnabled()): ?>
+            c.clarity("set", "customer_group", "<?= $escaper->escapeJs($block->getCustomerGroup()) ?>");
+            <?php endif; ?>
+        })(window, document, "clarity", "script", "<?= $escaper->escapeHtml($clarityCode) ?>");
+    </script>
+    <!-- END MICROSOFT CLARITY TRACKING CODE -->
+<?php endif; ?>

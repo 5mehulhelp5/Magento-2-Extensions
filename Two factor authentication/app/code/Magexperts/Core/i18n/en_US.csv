@@ -1,0 +1,55 @@
+Enabled,Enabled
+Disabled,Disabled
+"(New version %1 is available in your account: ","(New version %1 is available in your account: "
+"Get Update","Get Update"
+"1 Day","1 Day"
+"5 Days","5 Days"
+"10 Days","10 Days"
+"Common News","Common News"
+Promotions/Discounts,Promotions/Discounts
+"My Extensions Updates","My Extensions Updates"
+"All Extensions Updates","All Extensions Updates"
+"New Extensions","New Extensions"
+"Magento Tricks & Tips","Magento Tricks & Tips"
+"Disable Notifications","Disable Notifications"
+"<style>
+                        .config-nav-block.magexperts-tab .title {
+                            padding-top: 15px;
+                            padding-bottom: 15px;
+                        }
+                        .config-nav-block.magexperts-tab strong:before {
+                            background: no-repeat url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDIzLjAuNCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+Cgkuc3Qwe2ZpbGw6IzBCQzdGRjt9Cgkuc3Qxe2ZpbGw6I0ZGRkZGRjt9Cjwvc3R5bGU+CjxnPgoJPGc+CgkJPHBhdGggZD0iTTI3MC4zLDMyNy44SDIxOWwyNS42LTYyLjRsLTQxLjEtMTAwbC0xMDcsMjYwLjJjLTIuNyw2LjYsMi4xLDEzLjgsOS4yLDEzLjhoNTMuOWM4LjEsMCwxNS40LTQuOSwxOC41LTEyLjRsMi44LTYuNwoJCQljNi4yLTE1LDIwLjgtMjQuOCwzNy0yNC44aDc2YzEuNCwwLDIuOCwwLjEsNC4yLDAuMkwyNzAuMywzMjcuOHoiLz4KCTwvZz4KPC9nPgo8cGF0aCBkPSJNMjI5LjgsMTM3LjdoNTMuOWM4LjEsMCwxNS40LDQuOSwxOC41LDEyLjRsMTEzLjIsMjc1LjRjMi43LDYuNi0yLjEsMTMuOC05LjIsMTMuOGgtNTMuOWMtOC4xLDAtMTUuNC00LjktMTguNS0xMi40CglMMjIwLjYsMTUxLjVDMjE3LjksMTQ1LDIyMi43LDEzNy43LDIyOS44LDEzNy43eiIvPgo8Y2lyY2xlIGN4PSIyNTYiIGN5PSI3Ny4zIiByPSIzMy4xIi8+Cjwvc3ZnPgo=');
+                            background-size: 28px 28px;
+                            width: 26px;
+                            height: 30px;
+                            content: '';
+                            display: inline-block;
+                            vertical-align: middle;
+                        }
+                    </style>
+                    Magexperts Extensions","<style>
+                        .config-nav-block.magexperts-tab .title {
+                            padding-top: 15px;
+                            padding-bottom: 15px;
+                        }
+                        .config-nav-block.magexperts-tab strong:before {
+                            background: no-repeat url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDIzLjAuNCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+Cgkuc3Qwe2ZpbGw6IzBCQzdGRjt9Cgkuc3Qxe2ZpbGw6I0ZGRkZGRjt9Cjwvc3R5bGU+CjxnPgoJPGc+CgkJPHBhdGggZD0iTTI3MC4zLDMyNy44SDIxOWwyNS42LTYyLjRsLTQxLjEtMTAwbC0xMDcsMjYwLjJjLTIuNyw2LjYsMi4xLDEzLjgsOS4yLDEzLjhoNTMuOWM4LjEsMCwxNS40LTQuOSwxOC41LTEyLjRsMi44LTYuNwoJCQljNi4yLTE1LDIwLjgtMjQuOCwzNy0yNC44aDc2YzEuNCwwLDIuOCwwLjEsNC4yLDAuMkwyNzAuMywzMjcuOHoiLz4KCTwvZz4KPC9nPgo8cGF0aCBkPSJNMjI5LjgsMTM3LjdoNTMuOWM4LjEsMCwxNS40LDQuOSwxOC41LDEyLjRsMTEzLjIsMjc1LjRjMi43LDYuNi0yLjEsMTMuOC05LjIsMTMuOGgtNTMuOWMtOC4xLDAtMTUuNC00LjktMTguNS0xMi40CglMMjIwLjYsMTUxLjVDMjE3LjksMTQ1LDIyMi43LDEzNy43LDIyOS44LDEzNy43eiIvPgo8Y2lyY2xlIGN4PSIyNTYiIGN5PSI3Ny4zIiByPSIzMy4xIi8+Cjwvc3ZnPgo=');
+                            background-size: 28px 28px;
+                            width: 26px;
+                            height: 30px;
+                            content: '';
+                            display: inline-block;
+                            vertical-align: middle;
+                        }
+                    </style>
+                    Magexperts Extensions"
+"Information &amp; Marketplace","Information &amp; Marketplace"
+Notifications,Notifications
+"Enable Notifications","Enable Notifications"
+"Select Yes if you want get latest information about new or updated Magexperts extensions, discounts, atricles and etc.","Select Yes if you want get latest information about new or updated Magexperts extensions, discounts, atricles and etc."
+"I'd like to be informed by Magexperts about:","I'd like to be informed by Magexperts about:"
+"Select notice types that you want to receive notifications","Select notice types that you want to receive notifications"
+"Update Frequency","Update Frequency"
+"Last Update","Last Update"
+"Installed Extensions","Installed Extensions"
+"Magexperts Marketplace","Magexperts Marketplace"

@@ -1,0 +1,36 @@
+<?php
+/**
+ * Magexperts Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://magexperts.com/Magexperts-License.txt
+ *
+ * @category  Magexperts
+ * @package   Magexperts_Limitcartqty
+ * @author    Extension Team
+ * @copyright Copyright (c) 2018-2019 Magexperts Co. ( http://magexperts.com )
+ * @license   http://magexperts.com/Magexperts-License.txt
+ */
+// @codingStandardsIgnoreFile
+?>
+<?php
+/** @var $block \Magento\Checkout\Block\Cart */
+?>
+<?php $_helper = $this->helper('Magexperts\Limitcartqty\Helper\CheckoutFlag'); ?>
+<?php if (!$block->hasError()): ?>
+<?php $methods = $block->getMethods('methods') ?: $block->getMethods('top_methods') ?>
+<ul class="checkout methods items checkout-methods-items">
+<?php foreach ($methods as $method): ?>
+    <?php if ($methodHtml = $block->getMethodHtml($method)): ?>
+    	<?php if ($_helper->isEnableToCheckout()): ?>
+   	 		<li class="item"><?= /* @escapeNotVerified */ $methodHtml ?></li>
+   	 	<?php endif; ?>
+    <?php endif; ?>
+<?php endforeach; ?>
+</ul>
+<?php endif; ?>
+

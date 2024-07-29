@@ -1,0 +1,10 @@
+<div class="data-grid-cell-content"
+     data-bind="style: {
+        background: $row().status_color,
+        color: getStatusTextColor($row().status_color),
+        padding: '5px 20px',
+        borderRadius: '5px',
+        fontWeight: '600',
+        textAlign: 'center'
+     }"
+     text="$col.getLabel($row())"></div>

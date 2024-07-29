@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Magexperts Team
+ * @copyright Copyright (c) 2022 Magexperts (https://www.magexperts.com)
+ * @package Magexperts_TwoFactorAuthentication
+ */
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="admin_user_authenticate_before">
+        <observer name="tfa_before_login" instance="Magexperts\TwoFactorAuthentication\Observer\PrepareLoginBackendObserver" />
+    </event>
+    <event name="admin_user_authenticate_after">
+        <observer name="tfa_login" instance="Magexperts\TwoFactorAuthentication\Observer\LoginBackendObserver" />
+    </event>
+</config>

@@ -1,0 +1,13 @@
+"-- Please select --","-- Please select --"
+None,None
+"Admin Payment Method","Admin Payment Method"
+"Title","Title"
+"New Order Status","New Order Status"
+Enable,Enable
+"Payment from Applicable Countries","Payment from Applicable Countries"
+"Payment from Specific Countries","Payment from Specific Countries"
+"Sort Order","Sort Order"
+"Auto Create Invoice","Auto Create Invoice"
+"Will auto create invoice when choose Yes with Admin Payment Method","Will auto create invoice when choose Yes with Admin Payment Method"
+"Auto Create Shipment","Auto Create Shipment"
+"Will auto create shipment when choose Yes with Admin Payment Method","Will auto create shipment when choose Yes with Admin Payment Method"

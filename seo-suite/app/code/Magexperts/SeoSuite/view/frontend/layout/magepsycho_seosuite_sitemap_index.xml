@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category   Magexperts
+ * @package    Magexperts_SeoSuite
+ * @author     Raj KB <rajkb@Magexperts.com>
+ * @website    https://www.Magexperts.com
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Magexperts_SeoSuite::css/sitemap.css"/>
+    </head>
+    <referenceBlock name="content">
+        <block class="Magexperts\SeoSuite\Block\Sitemap" name="Magexperts.seosuite.sitemap.index" template="Magexperts_SeoSuite::sitemap/index.phtml"/>
+    </referenceBlock>
+</page>

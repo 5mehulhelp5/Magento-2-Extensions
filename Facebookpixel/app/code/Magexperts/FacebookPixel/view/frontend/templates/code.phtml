@@ -1,0 +1,60 @@
+<?php
+/**
+ * Magexperts Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://magexperts.com/Magexperts-License.txt
+ *
+ * @category  Magexperts
+ * @package   Magexperts_FacebookPixel
+ * @author    Extension Team
+ * @copyright Copyright (c) 2018-2019 Magexperts Co. ( http://magexperts.com )
+ * @license   http://magexperts.com/Magexperts-License.txt
+ */
+// @codingStandardsIgnoreFile
+/**
+ * @var $block \Magexperts\FacebookPixel\Block\Code
+ */
+$pageView = $block->checkDisable();
+$data   = $block->getFacebookPixelData();
+$id     = $data['id'];
+$action = $data['full_action_name'];
+$productData = $block->getProduct();
+$categoryData = $block->getCategory();
+$registration = $block->getRegistration();
+$AddToWishlist = $block->getAddToWishList();
+$InitiateCheckout = $block->getInitiateCheckout();
+$search = $block->getSearch();
+$orderData = $block->getOrder();
+
+?>
+<div id="email"></div>
+<script type="text/x-magento-init">
+    {
+    "*":
+    {
+            "Magexperts_FacebookPixel/js/code": {
+                "id" : <?php echo $block->escapeHtml($id); ?>,
+                "action" : "<?php echo $data['full_action_name']; ?>",
+                "productData" : <?php echo $productData; ?>,
+                "categoryData" : <?php echo $categoryData; ?>,
+                "registration" : <?php echo $registration; ?>,
+                "addToWishList" : <?php echo $AddToWishlist; ?>,
+                "initiateCheckout" : <?php echo  $InitiateCheckout; ?>,
+                "search" : <?php echo $search; ?>,
+                "orderData" : <?php echo $orderData ?>,
+                "pageView" : "<?php echo $pageView; ?>"
+            }
+        }
+    }
+</script>
+<!-- Facebook Pixel Code -->
+<noscript><img height="1" width="1" style="display:none" alt="Facebook Pixel"
+               src="https://www.facebook.com/tr?id=<?php
+                echo $block->escapeHtml($id) ?>&ev=PageView&noscript=1"
+    /></noscript>
+<!-- End Facebook Pixel Code -->

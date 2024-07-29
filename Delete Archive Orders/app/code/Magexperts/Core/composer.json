@@ -1,0 +1,17 @@
+{
+  "name": "magexperts/core",
+  "description": "Core extension by Magexperts",
+  "type": "magento2-module",
+  "version": "1.0.16",
+  "license": [
+    "Commercial"
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Magexperts\\Core\\": ""
+    }
+  }
+}

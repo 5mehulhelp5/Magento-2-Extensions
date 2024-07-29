@@ -1,0 +1,14 @@
+==============================================================================
+| Disable the extension
+==============================================================================
+1. php bin/magento module:disable Magexperts_DiscountLabel
+
+==============================================================================
+| Uninstall / Remove the extension
+==============================================================================
+1. Remove the following files:
+    - app/code/Magexperts/DiscountLabel/*
+2. Remove module setup
+    - SQL: DELETE FROM setup_module WHERE module = 'Magexperts_DiscountLabel';
+3. Remove system configuration data
+    - SQL: DELETE FROM core_config_data WHERE path LIKE 'Magexperts_discountlabel/%';

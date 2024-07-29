@@ -1,0 +1,32 @@
+<!--@subject {{trans "Refund Request Has Been Accepted"}}  @-->
+{{template config_path="design/email/header_template"}}
+<table width="100%">
+    <tr class="email-intro" style="font-family: Roboto; font-size: 21.5px;">
+        <td>
+            <p class="greeting" style="margin-bottom: 0px">
+                <b>{{trans "Dear %customerName," customerName=$customerName}}</b>
+            </p>
+            <p>
+                <b>{{trans "Your refund request has been accepted."}}</b>
+            </p>
+        </td>
+    </tr>
+    <tr class="email-summary" style="font-family: Roboto; font-size: 17px;">
+        <td style="padding-bottom: 20px;">
+            <b>{{trans "Order ID "}}</b>{{trans "#%incrementId" incrementId=$incrementId}}<br>
+            <b>{{trans "Refund Request ID "}}</b>{{trans "#%id" id=$id}}<br>
+            <hr style="margin-bottom: 5px; margin-top: 5px;">
+            <p>{{trans 'Accepted at %timeApproved ' timeApproved=$timeApproved}}</p>
+        </td>
+    </tr>
+    <tr class="email-information" style="font-family: Roboto; font-size: 17px;">
+        <td>
+            <p>Please accept our sincere apology for the inconvenience. We will process your refund request as soon as possible.<br>
+            Have a good day!
+            </p>
+            <center><img src="{{view url='Magexperts_RefundRequest/images/thanks.png'}}" alt="{{trans 'Thanks'}}" /></center>
+            <center><p>Thank you!</p></center>
+        </td>
+    </tr>
+</table>
+{{template config_path="design/email/footer_template"}}

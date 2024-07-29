@@ -1,0 +1,106 @@
+<?php
+/**
+ * @author Magexperts Team
+ * @copyright Copyright (c) 2022 Magexperts (https://www.magexperts.com)
+ * @package Magexperts_Smtp
+ */
+?>
+<?php
+/** @var \Magexperts\Smtp\Block\Adminhtml\TestButton $block */
+?>
+
+<?= /* @escapeNotVerified */ $block->getData('send_button') ?>
+
+<script type="text/javascript">
+    require(['jquery', 'underscore', 'Magento_Ui/js/modal/alert', 'mage/translate'], function($, _, modalAlert, $t) {
+        var self = this,
+            buttonId = '<?= /* @escapeNotVerified */ $block->getData('button_id'); ?>',
+            params = ['name', 'host', 'port', 'protocol', 'auth_type', 'login', 'password', 'test_email_to'];
+
+        $('#' + buttonId).click(function (e) {
+            e.preventDefault();
+            showOrHideAjaxLoader('show');
+            call();
+        });
+
+        function call() {
+            var params = prepareSendParams(),
+                isValid = true,
+                validationFields = '';
+
+            _.each(params, function(data, key) {
+                if  (data == '' || data === undefined) {
+                    isValid = false;
+                    validationFields = validationFields + '<strong>' + fieldModify(key) + '</strong>; ';
+                }
+            });
+
+            if (isValid) {
+                $.ajax({
+                    url: '<?= /* @escapeNotVerified */ $block->getData('ajax_url'); ?>',
+                    data: params,
+                    dataType: 'json',
+                    success: function (result) {
+                        showOrHideAjaxLoader('hide');
+                        modalAlert({
+                            title: result.status ? $t('Success') : $t('Fail'),
+                            content: result.content
+                        });
+                    }
+                });
+            } else {
+                showOrHideAjaxLoader('hide');
+                modalAlert({
+                    title: $t('Validation Error'),
+                    content: $t('Please check if the following fields are filled in: ') + validationFields
+                });
+            }
+        }
+
+        function fieldModify(field) {
+            if (field == 'test_email_to') {
+                field = $t('Send Test To E-mail');
+
+                return  field;
+            }
+
+            if (field == 'protocol') {
+                field = $t('Connection Security');
+
+                return  field;
+            }
+
+            if (field == 'auth_type') {
+                field = $t("Authentication Method");
+
+                return  field;
+            }
+
+            if(field.length) {
+                field = field.charAt(0).toUpperCase() + field.slice(1);
+            }
+
+            return field;
+        }
+
+        function showOrHideAjaxLoader(action) {
+            $('body').loader(action);
+
+            return true;
+        }
+
+        /**
+         *
+         */
+        function prepareSendParams() {
+            var selector = 'aitsmtp_smtp_',
+                result = {};
+
+            _.each(params, function(data){
+                result[data] = $('#' + selector + data).val();
+            });
+
+            return result;
+        }
+    })
+</script>

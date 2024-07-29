@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Magexperts Team
+ * @copyright Copyright (c) 2022 Magexperts (https://www.magexperts.com)
+ * @package Magexperts_TwoFactorAuthentication
+ */
+-->
+<!--
+/**
+ * Copyright © Magexperts. All rights reserved.
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+  <table name="magexperts_twofactorauthentication_user" resource="default" engine="innodb" comment="Two-Factor Authentication User">
+    <column xsi:type="bigint" name="user_id" padding="20" unsigned="true" nullable="false" identity="true" comment="User id"/>
+    <column xsi:type="bigint" name="original_user_id" padding="20" unsigned="true" nullable="false" identity="false" comment="Original User Id"/>
+    <column xsi:type="varchar" name="user_secret" nullable="true" length="50" comment="User Secret"/>
+    <column xsi:type="int" name="time_shift" padding="11" unsigned="false" nullable="true" identity="false" comment="Time Shift"/>
+    <column xsi:type="smallint" name="is_active" padding="6" unsigned="false" nullable="false" identity="false" default="0" comment="TFA Is Active"/>
+    <column xsi:type="smallint" name="ip_enabled" padding="6" unsigned="false" nullable="false" identity="false" default="0" comment="IP Enabled"/>
+    <column xsi:type="varchar" name="ip_list" nullable="true" length="255" comment="IP List"/>
+    <column xsi:type="smallint" name="email_code_enabled" padding="6" unsigned="false" nullable="false" identity="false" default="0" comment="Email Enabled"/>
+    <constraint xsi:type="primary" referenceId="PRIMARY">
+      <column name="user_id"/>
+    </constraint>
+  </table>
+</schema>

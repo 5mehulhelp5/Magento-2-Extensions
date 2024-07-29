@@ -1,0 +1,7 @@
+{
+    "adminnotification_inbox": {
+        "column": {
+            "magexperts_notification": true
+        }
+    }
+}

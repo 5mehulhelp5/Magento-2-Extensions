@@ -1,0 +1,17 @@
+<?php
+/** @var \Magexperts\ProductAttachment\Block\Product\View\Attachment $block */
+$attachments = $block->getAttachments();
+if (empty($attachments)) {
+    return;
+}
+?>
+<ul class="Magexperts-product-attachments">
+<?php foreach ($attachments as $attachment): ?>
+    <li>
+        <a href="<?= $block->escapeHtml($attachment['link']) ?>" target="_blank" title="<?= $block->escapeHtml($attachment['label']) ?>">
+            <?php /*<img src="<?= $block->getViewFileUrl('images/pdf-download-icon.png') ?>" alt="<?= $block->escapeHtml($attachment['label']) ?>"> */ ?>
+            <?= $block->escapeHtml(__($attachment['label'])) ?>
+        </a>
+    </li>
+<?php endforeach; ?>
+</ul>

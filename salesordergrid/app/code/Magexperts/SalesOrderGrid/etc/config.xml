@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * This file is part of the Magexperts_SalesOrderGrid package.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this package
+ * to newer versions in the future.
+ *
+ * @author   Raj KB <rajkb@Magexperts.com>
+ * @license  Open Software License (OSL 3.0)
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <Magexperts_salesordergrid>
+            <general>
+                <enabled>1</enabled>
+                <debug>0</debug>
+            </general>
+            <grid>
+                <amount_display_text>| Total amount {{amount}}</amount_display_text>
+                <amount_display_rounding>1</amount_display_rounding>
+                <status_color>
+                    <item1>
+                        <order_status>pending</order_status>
+                        <color>#FFA500</color>
+                    </item1>
+                    <item2>
+                        <order_status>processing</order_status>
+                        <color>#008000</color>
+                    </item2>
+                    <item3>
+                        <order_status>complete</order_status>
+                        <color>#0000FF</color>
+                    </item3>
+                    <item4>
+                        <order_status>canceled</order_status>
+                        <color>#FF0000</color>
+                    </item4>
+                    <item5>
+                        <order_status>closed</order_status>
+                        <color>#808080</color>
+                    </item5>
+                    <item6>
+                        <order_status>fraud</order_status>
+                        <color>#FFA500</color>
+                    </item6>
+                    <item7>
+                        <order_status>holded</order_status>
+                        <color>#FFFF00</color>
+                    </item7>
+                    <item8>
+                        <order_status>pending_payment</order_status>
+                        <color>#FFA500</color>
+                    </item8>
+                    <item9>
+                        <order_status>payment_review</order_status>
+                        <color>#FFC0CB</color>
+                    </item9>
+                    <item10>
+                        <order_status>paypal_canceled_reversal</order_status>
+                        <color>#FF0000</color>
+                    </item10>
+                    <item11>
+                        <order_status>paypal_reversed</order_status>
+                        <color>#FF0000</color>
+                    </item11>
+                    <item12>
+                        <order_status>pending_paypal</order_status>
+                        <color>#FFA500</color>
+                    </item12>
+                </status_color>
+            </grid>
+        </Magexperts_salesordergrid>
+    </default>
+</config>

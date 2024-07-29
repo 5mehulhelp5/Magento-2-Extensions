@@ -1,0 +1,57 @@
+<?php
+/**
+ * Magexperts Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://magexperts.com/Magexperts-License.txt
+ *
+ * @category   Magexperts
+ * @package    MAGEXPERTS_HtmlSiteMap
+ * @author     Extension Team
+ * @copyright  Copyright (c) 2018-2019 Magexperts Co. ( http://magexperts.com )
+ * @license    http://magexperts.com/Magexperts-License.txt
+ */
+?>
+<?php
+/**
+ * SEO Toolbar template
+ *
+ * @var $block Magexperts\HtmlSiteMap\Block\ItemsCollection
+ */
+?>
+<?php
+    $helper = $block->getHelper();
+    //Additional Link
+    $additionUrl = $helper->getAdditionUrl();
+    $titleAddition = $helper->titleAddition();
+    $openNewTab = $helper->openNewTab();
+    $additionUrlCount = $additionUrl;
+
+    $additionLink = $block->getAdditionLink();
+    if ($additionUrlCount != null) : ?>
+        <h2 class="bss_h2"><?php echo $titleAddition; ?></h2>
+        <div class="bss_site_map_grid">
+        <?php
+        foreach ($additionLink as $value => $link) : ?>
+            <?php
+            if ($value % 2 == 1) : ?>
+                    <div class="col-bss-3"><h3 class="bss_product_list">
+                    <a href="<?php echo $link; ?>"
+                <?php
+            else :
+                ?> title="<?php echo $link; ?>"
+                <?php
+                if ($openNewTab == 1) {
+                    echo 'target="_blank"';
+                } ?>><?php echo $link; ?></a>
+                    </h3></div>
+                <?php
+            endif; ?>
+            <?php
+        endforeach; ?>
+        </div>
+<?php endif;

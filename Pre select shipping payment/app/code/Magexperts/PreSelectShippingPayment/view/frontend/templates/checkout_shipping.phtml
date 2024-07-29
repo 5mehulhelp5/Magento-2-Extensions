@@ -1,0 +1,41 @@
+<?php
+/**
+ * Magexperts Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://magexperts.com/Magexperts-License.txt
+ *
+ * @category   Magexperts
+ * @package    Magexperts_PreSelectShippingPayment
+ * @author     Extension Team
+ * @copyright  Copyright (c) 2017-2018 Magexperts Co. ( http://magexperts.com )
+ * @license    http://magexperts.com/Magexperts-License.txt
+ */
+?>
+<?php
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+/**
+ * Multi Shipping Checkout Template
+ *
+ * @var  $block  Magexperts\PreSelectShippingPayment\Block\ConfigMenthod
+ *
+ */  ?>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magexperts_PreSelectShippingPayment/js/checkout_process": {
+                "defaultShipping": "<?php echo $block->escapeHtml($block->getShippingDefault()); ?>",
+                "defaultPayment" : "<?php echo $block->escapeHtml($block->getPaymentDefault());?>",
+                "positionShipping" : "<?php echo $block->escapeHtml($block->getShippingPosition()); ?>",
+                "positionPayment" : "<?php echo $block->escapeHtml($block->getPaymentPosition()); ?>"
+            }
+        }
+    }
+</script>

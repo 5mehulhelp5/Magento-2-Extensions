@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magexperts. All rights reserved.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <title>
+            Automatic Rule Information
+        </title>
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <uiComponent name="magexperts_deleteorders_rules_edit"/>
+        </referenceContainer>
+    </body>
+</page>

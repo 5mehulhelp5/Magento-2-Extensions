@@ -1,0 +1,24 @@
+{
+    "name": "magexperts/html-sitemap",
+    "description": "Magexperts Html Sitemap",
+    "type": "magento2-module",
+    "version": "1.1.3",
+    "extra": {
+        "suite": "seo-suite"
+    },
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Magexperts\\HtmlSiteMap\\": ""
+        }
+    },
+    "require": {
+        "magexperts/seo-core": "*"
+    }
+}

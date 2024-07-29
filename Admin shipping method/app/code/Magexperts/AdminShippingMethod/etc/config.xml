@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magexperts Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://magexperts.com/Magexperts-License.txt
+ *
+ * @category  Magexperts
+ * @package   Magexperts_AdminShippingMethod
+ * @author    Extension Team
+ * @copyright Copyright (c) 2017-2018 Magexperts Co. ( http://magexperts.com )
+ * @license   http://magexperts.com/Magexperts-License.txt
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <carriers>
+            <adminshippingmethod>
+                <active>1</active>
+                <sallowspecific>0</sallowspecific>
+                <model>Magexperts\AdminShippingMethod\Model\ShippingMethod</model>
+                <name>Free</name>
+                <title>Admin Shipping Method</title>
+                <pre_select>0</pre_select>
+                <createinvoice>0</createinvoice>
+                <createshipment>0</createshipment>
+                <specificerrmsg>This shipping method is not available. To use this shipping method, please contact us.</specificerrmsg>
+            </adminshippingmethod>
+        </carriers>
+    </default>
+</config>

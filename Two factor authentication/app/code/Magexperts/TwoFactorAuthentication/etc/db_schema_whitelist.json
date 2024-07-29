@@ -1,0 +1,17 @@
+{
+    "magexperts_twofactorauthentication_user": {
+        "column": {
+            "user_id": true,
+            "original_user_id": true,
+            "user_secret": true,
+            "time_shift": true,
+            "is_active": true,
+            "ip_enabled": true,
+            "ip_list": true,
+            "email_code_enabled": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

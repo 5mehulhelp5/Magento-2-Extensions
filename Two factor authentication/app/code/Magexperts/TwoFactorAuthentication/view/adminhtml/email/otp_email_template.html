@@ -1,0 +1,14 @@
+<!--@subject {{trans "One Time Password for %name" name=$user.name}} @-->
+<!--@vars {
+"var user.name":"Account Holder Name"
+} @-->
+
+{{trans "%name," name=$user.name}}<br>
+<br>
+{{trans "There was recently a request to generate one-time password for your account."}}<br>
+<br>
+{{trans "Password will be valid for a short time."}}<br>
+<br>
+{{trans "Your password:"}} {{var password}}<br>
+<br>
+{{trans "Thank you"}}

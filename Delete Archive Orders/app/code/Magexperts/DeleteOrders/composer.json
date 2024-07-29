@@ -1,0 +1,20 @@
+{
+  "name": "magexperts/delete-orders",
+  "description": "Delete Orders",
+  "require": {
+    "magexperts/core": ">=1.0.8"
+  },
+  "type": "magento2-module",
+  "version": "1.0.5",
+  "license": [
+    "Commercial"
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Magexperts\\DeleteOrders\\": ""
+    }
+  }
+}

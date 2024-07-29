@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magexperts Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://magexperts.com/Magexperts-License.txt
+ *
+ * @category   Magexperts
+ * @package    MAGEXPERTS_HtmlSiteMap
+ * @author     Extension Team
+ * @copyright  Copyright (c) 2018-2019 Magexperts Co. ( http://magexperts.com )
+ * @license    http://magexperts.com/Magexperts-License.txt
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<update handle="sitemap_index_index" />
+    <body>
+        <referenceContainer name="content">
+            <block class="Magexperts\HtmlSiteMap\Block\ProductCollection" name="product_list_template" template="product_list.phtml" />
+        </referenceContainer>
+    </body>
+</page>

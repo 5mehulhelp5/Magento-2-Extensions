@@ -1,0 +1,91 @@
+<?php
+/**
+ * Magexperts Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://magexperts.com/Magexperts-License.txt
+ *
+ * @category   Magexperts
+ * @package    MAGEXPERTS_HtmlSiteMap
+ * @author     Extension Team
+ * @copyright  Copyright (c) 2018-2019 Magexperts Co. ( http://magexperts.com )
+ * @license    http://magexperts.com/Magexperts-License.txt
+ */
+?>
+<?php
+/**
+ * SEO Toolbar template
+ *
+ * @var $block Magexperts\HtmlSiteMap\Block\CategoryCollection
+ */
+?>
+<?php
+$helper = $block->getHelper();
+
+//CMS and Category Link
+$categories = $block->getCategoryCollection($isActive = true, $level = false, $sortBy = false, $pageSize = false);
+$categoryHelper = $block->getCategoryHelper();
+$categoryDisable = $helper->getCategoryDisable();
+$titleCategory = $helper->titleCategory();
+$titleCms = $helper->titleCms();
+$enableCms = $helper->isEnableCms();
+$enableCategory = $helper->isEnableCategory();
+$cmsLink = $helper->getCmsLink();
+$cmsLink = ",," . $cmsLink . ",";
+$categoryDisable = ",," . $categoryDisable . ",";
+
+?>
+<div class="col-bss-1">
+    <?php
+    if ($enableCategory) : ?>
+        <div class="col-bss-2">
+            <h2 class="bss_h2"><?php echo $titleCategory; ?></h2>
+            <?php foreach ($categories as $category) :
+                if (!$category->getIsActive() || (int)$category->getData('excluded_html_sitemap') === 1) {
+                    continue;
+                } ?>
+                <?php
+                $categoryString = (string)$category->getId();
+                $categoryString = "," . $categoryString . ",";
+                $categoryStringValidate = strpos($categoryDisable, $categoryString);
+                if ($categoryStringValidate == false) : ?>
+                <div class="bss_h3">
+                    <?php echo $category->getName()?>
+                </div>
+                    <?php
+                        $setAllCategories = $block->getAllCategories($category, $categoryDisable);
+                        echo $setAllCategories; ?>
+                <?php endif; ?>
+            <?php endforeach;
+            ?>
+        </div>
+        <?php
+    endif; ?>
+    <?php
+    if ($enableCms) : ?>
+        <div class="col-bss-2">
+            <h2 class="bss_h2"><?php echo $titleCms; ?></h2>
+        <?php
+        $getCMS = $block->getCmsPages();
+        foreach ($getCMS as $item => $value) {
+            if (!$value->getIsActive()) {
+                continue;
+            }
+            $stringItem = (string)$item;
+            $stringItem = "," . $stringItem . ",";
+            $stringItemValidate = strpos($cmsLink, $stringItem);
+            if ($stringItemValidate == false) {
+                echo '
+                    <h3 class="bss_product_list">
+                        <a href="' . $block->getBaseUrl() . $value->getIdentifier() . '/" title = "' . $value->getTitle() . '"">' . $value->getTitle() . '</a>
+                    </h3>';
+            }
+        } ?>
+        </div>
+        <?php
+    endif; ?>
+</div>

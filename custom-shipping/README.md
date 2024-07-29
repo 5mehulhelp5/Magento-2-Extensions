@@ -1,0 +1,1 @@
+Custom Shipping for Magento 2 is a generic module which you can use to set up any custom shipping methods like Store Pickup, Express Delivery, Standard Delivery, etc.

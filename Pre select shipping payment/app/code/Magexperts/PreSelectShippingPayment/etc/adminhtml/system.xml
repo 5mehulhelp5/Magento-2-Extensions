@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magexperts Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://magexperts.com/Magexperts-License.txt
+ *
+ * @category  Magexperts
+ * @package   Magexperts_PreSelectShippingPayment
+ * @author    Extension Team
+ * @copyright Copyright (c) 2017-2018 Magexperts Co. ( http://magexperts.com )
+ * @license   http://magexperts.com/Magexperts-License.txt
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="bss" translate="label" sortOrder="300">
+            <label><![CDATA[Magexperts Commerce]]></label>
+        </tab>
+        <section id="preselectshippingpayment" translate="label" type="text" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Pre-Select Shipping/Payment</label>
+            <tab>bss</tab>
+            <resource>Magexperts_PreSelectShippingPayment::config_preselectshippingpayment</resource>
+            <group id="shipping" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Auto Shipping Config</label>
+                <field id="enable" translate="label" type="select" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment><![CDATA[Version 1.0.3]]></comment>
+                </field>
+                <field id="default" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Auto Select Shipping Method</label>
+                    <source_model>Magexperts\PreSelectShippingPayment\Model\Config\Source\ShippingMethods</source_model>
+                    <comment><![CDATA[Shipping method is automatically selected if existed.]]>
+                    </comment>
+                </field>
+                <field id="position" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Shipping Method Position</label>
+                    <source_model>Magexperts\PreSelectShippingPayment\Model\Config\Source\Position</source_model>
+                    <comment><![CDATA[If not existed, apply one of the available shipping methods based on its position.]]>
+                    </comment>
+                </field>
+            </group>
+            <group id="payment" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Auto Payment Config</label>
+                <field id="enable" translate="label" type="select" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="default" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Auto Select Payment Method</label>
+                    <source_model>Magexperts\PreSelectShippingPayment\Model\Config\Source\PaymentMethods</source_model>
+                    <comment><![CDATA[Payment  method is automatically selected if existed.]]>
+                    </comment>
+                </field>
+                <field id="position" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Payment Method Position</label>
+                    <source_model>Magexperts\PreSelectShippingPayment\Model\Config\Source\Position</source_model>
+                    <comment><![CDATA[If not existed, apply one of the available payment methods based on its position.]]>
+                    </comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

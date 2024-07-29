@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+            <resource id="Magento_Sales::sales" title="Sales" translate="title" sortOrder="20">
+                <resource id="Magento_Sales::sales_operation" title="Operations" translate="title" sortOrder="10">
+                    <resource id="Magento_Sales::sales_order"  title="Orders" translate="title" sortOrder="10">
+                        <resource id="Magento_Sales::actions" title="Actions" translate="title" sortOrder="10">
+                            <resource id="Magexperts_DeleteOrders::delete_action" title="Delete" translate="title" sortOrder="10" />
+                            <resource id="Magexperts_DeleteOrders::archive_action" title="Archive" translate="title" sortOrder="20" />
+                            <resource id="Magexperts_DeleteOrders::restore_action" title="Restore" translate="title" sortOrder="30" />
+                        </resource>
+                    </resource>
+                    <resource id="Magexperts_DeleteOrders::archive" title="Archived Orders" translate="title" sortOrder="20"/>
+                </resource>
+            </resource>
+                <resource id="Magento_Backend::system">
+                    <resource id="Magexperts_DeleteOrders::rules_index" title="Delete Orders by Magexperts" translate="title" sortOrder="90">
+                        <resource id="Magexperts_DeleteOrders::rules" title="Automatic Rules" translate="title" sortOrder="10" />
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

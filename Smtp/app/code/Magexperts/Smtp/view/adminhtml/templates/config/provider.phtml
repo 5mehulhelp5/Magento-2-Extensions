@@ -1,0 +1,65 @@
+<?php
+/**
+ * @author Magexperts Team
+ * @copyright Copyright (c) 2022 Magexperts (https://www.magexperts.com)
+ * @package Magexperts_Smtp
+ */
+?>
+<?php
+/** @var \Magexperts\Smtp\Block\Adminhtml\Provider $block */
+?>
+<script type="text/javascript">
+    require(['jquery', 'underscore'], function($, _) {
+        var self = this,
+            providers = $.parseJSON('<?= /* @escapeNotVerified */ $block->getData('providers'); ?>'),
+            params = ['host', 'port', 'protocol', 'auth_type'],
+            selectId = '#aitsmtp_smtp_provider';
+
+        $(selectId).change(function (e) {
+            var val = $(this).val();
+            var selector = 'aitsmtp_smtp_',
+                result = {};
+
+            _.each(params, function(data){
+                result[data] = $('#' + selector + data).val();
+            });
+
+            _.each(providers, function(data, key) {
+                if (key == val) {
+                    _.each(params, function(param) {
+                        var item = data.info[param];
+
+                        if (param == 'protocol') {
+                            item = data.info['encryption'];
+
+                            switch (item) {
+                                case 'ssl':
+                                    item = 1;
+                                    break;
+                                case 'tls':
+                                    item = 2;
+                                    break;
+                                default:
+                                    item = 0;
+                                    break;
+                            }
+                        }
+
+                        if (param == 'auth_type') {
+                            switch (item){
+                                case 'login':
+                                    item = 1;
+                                    break;
+                                default:
+                                    item = 0;
+                                    break;
+                            }
+                        }
+
+                        $('#' + selector + param).val(item);
+                    });
+                }
+            });
+        });
+    })
+</script>

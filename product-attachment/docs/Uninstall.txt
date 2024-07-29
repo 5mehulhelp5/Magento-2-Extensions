@@ -1,0 +1,16 @@
+==============================================================================
+| Disable the extension
+==============================================================================
+1. php bin/magento module:disable Magexperts_ProductAttachment
+
+==============================================================================
+| Uninstall / Remove the extension
+==============================================================================
+1. Remove the following files:
+    - app/code/Magexperts/ProductAttachment/*
+2. Remove module setup
+    - SQL: DELETE FROM setup_module WHERE module = 'Magexperts_ProductAttachment';
+    - SQL: DELETE FROM eav_attribute WHERE attribute_code = 'mp_attachment_file' AND entity_type_id = 4;
+    - SQL: DELETE FROM eav_attribute WHERE attribute_code = 'mp_attachment_label' AND entity_type_id = 4;
+3. Remove system configuration data
+    - SQL: DELETE FROM core_config_data WHERE path LIKE 'Magexperts_productattachment/%';

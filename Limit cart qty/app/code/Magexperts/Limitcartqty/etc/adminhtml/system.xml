@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magexperts Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://magexperts.com/Magexperts-License.txt
+ *
+ * @category  Magexperts
+ * @package   Magexperts_Limitcartqty
+ * @author    Extension Team
+ * @copyright Copyright (c) 2018-2019 Magexperts Co. ( http://magexperts.com )
+ * @license   http://magexperts.com/Magexperts-License.txt
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Config/etc/system_file.xsd">
+    <system>
+        <tab id="bss" translate="label" sortOrder="300">
+            <label><![CDATA[Magexperts Commerce]]></label>
+        </tab>
+        <section id="Magexperts_Commerce" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>LimitCartQty</label>
+            <tab>bss</tab>
+            <resource>Magexperts_Limitcartqty::config</resource>
+            <group id="item_options" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Product Stock Options</label>
+                <field id="Magexperts_min_total_qty" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Minimum Quantity Allowed for Entire Cart</label>
+                    <frontend_model>Magexperts\Limitcartqty\Block\Adminhtml\Form\Field\Mintotalqty</frontend_model>
+                    <backend_model>Magexperts\Limitcartqty\Model\System\Config\Backend\ConfigModel</backend_model>
+                </field>
+                <field id="Magexperts_min_total_qty_message" translate="label" type="text" sortOrder="25" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Message Alert For Minimum Value</label>
+                    <validate>validate-length maximum-length-100</validate>
+                    <comment>Insert "-conf-" for config value and "-cart-" for cart value. Ex: "The fewest you can purchase is -conf-, you already have -cart-!". Limit 100 characters.</comment>
+                </field>
+                <field id="Magexperts_max_total_qty" translate="label" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Maximum Quantity Allowed for Entire Cart</label>
+                    <frontend_model>Magexperts\Limitcartqty\Block\Adminhtml\Form\Field\Maxtotalqty</frontend_model>
+                    <backend_model>Magexperts\Limitcartqty\Model\System\Config\Backend\ConfigModel</backend_model>
+                </field>
+                <field id="Magexperts_max_total_qty_message" translate="label" type="text" sortOrder="35" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Message Alert For Maximum Value</label>
+                    <validate>validate-length maximum-length-100</validate>
+                    <comment>Insert "-conf-" for config value and "-cart-" for cart value. Ex: "The most you can purchase is -conf-, you already have -cart-!". Limit 100 characters.</comment>
+                </field>
+            </group>
+            <group id="Limitcartqty" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <field id="Enable" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Magexperts_Limitcartqty</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment><![CDATA[Version 1.0.3]]></comment>
+                </field>
+            </group> 
+        </section>            
+    </system>
+</config>

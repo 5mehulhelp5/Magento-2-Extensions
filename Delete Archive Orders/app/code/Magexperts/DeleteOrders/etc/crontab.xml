@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magexperts. All rights reserved.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
+    <group id="default">
+        <job name="magexperts_delete_orders_action" instance="Magexperts\DeleteOrders\Cron\OrderProcess" method="execute">
+            <schedule>0 12 * * *</schedule>
+        </job>
+    </group>
+</config>

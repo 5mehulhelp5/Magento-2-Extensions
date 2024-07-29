@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magexperts Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://magexperts.com/Magexperts-License.txt
+ *
+ * @category   Magexperts
+ * @package    Magexperts_DeleteOrder
+ * @author     Extension Team
+ * @copyright  Copyright (c) 2019-2019 Magexperts Co. ( http://magexperts.com )
+ * @license    http://magexperts.com/Magexperts-License.txt
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="\Magento\Sales\Block\Adminhtml\Order\Invoice\View">
+        <plugin name="Magexperts_DeleteOrder::pluginAfterInvoice" type="Magexperts\DeleteOrder\Plugin\Invoice\PluginAfter" />
+    </type>
+
+    <type name="\Magento\Sales\Block\Adminhtml\Order\Creditmemo\View">
+        <plugin name="Magexperts_DeleteOrder::pluginAfterCreditmemo" type="Magexperts\DeleteOrder\Plugin\Creditmemo\PluginAfter" />
+    </type>
+
+    <type name="\Magento\Shipping\Block\Adminhtml\View">
+        <plugin name="Magexperts_DeleteOrder::pluginAfterShipment" type="Magexperts\DeleteOrder\Plugin\Shipment\PluginAfter" />
+    </type>
+
+    <type name="\Magento\Sales\Block\Adminhtml\Order\View">
+        <plugin name="Magexperts_DeleteOrder::pluginAfterOrder" type="Magexperts\DeleteOrder\Plugin\Order\PluginAfter" />
+    </type>
+</config>

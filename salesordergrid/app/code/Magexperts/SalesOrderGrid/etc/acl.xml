@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * This file is part of the Magexperts_SalesOrderGrid package.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this package
+ * to newer versions in the future.
+ *
+ * @author   Raj KB <rajkb@Magexperts.com>
+ * @license  Open Software License (OSL 3.0)
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <!-- Menu -->
+                <resource id="Magexperts_SalesOrderGrid::core" title="Magexperts" sortOrder="55">
+                    <resource id="Magexperts_SalesOrderGrid::menu_section" title="Enhanced Order Grid Section" sortOrder="20">
+                        <resource id="Magexperts_SalesOrderGrid::menu_config" title="Manage Settings" sortOrder="20" />
+                    </resource>
+                </resource>
+                <!-- Settings -->
+                <resource id="Magento_Backend::stores">
+                    <resource id="Magento_Backend::stores_settings">
+                        <resource id="Magento_Config::config">
+                            <resource id="Magexperts_SalesOrderGrid::config" title="Enhanced Order Grid Section" sortOrder="50" />
+                        </resource>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

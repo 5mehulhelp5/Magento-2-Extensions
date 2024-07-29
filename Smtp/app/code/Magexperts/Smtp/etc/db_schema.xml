@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Magexperts Team
+ * @copyright Copyright (c) 2022 Magexperts (https://www.magexperts.com)
+ * @package Magexperts_Smtp
+ */
+-->
+<!--
+/**
+ * Copyright © Magexperts. All rights reserved.
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="magexperts_smtp_log" resource="default" engine="innodb" comment="Magexperts SMTP Log">
+        <column xsi:type="int" name="log_id" unsigned="true" nullable="false" identity="true" comment="Log Id"/>
+        <column xsi:type="datetime" name="created_at" nullable="true"  comment="Created At"/>
+        <column xsi:type="text" name="subject"  nullable="false" />
+        <column xsi:type="text" name="email_body"  nullable="false" />
+        <column xsi:type="text" name="sender_email"  nullable="false" />
+        <column xsi:type="text" name="recipient_email"  nullable="false" />
+        <column xsi:type="text" name="cc"  nullable="true" />
+        <column xsi:type="text" name="bcc"  nullable="true" />
+        <column xsi:type="smallint" name="status" nullable="false" />
+        <column xsi:type="text" name="status_message"  nullable="true" />
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="log_id"/>
+        </constraint>
+    </table>
+</schema>

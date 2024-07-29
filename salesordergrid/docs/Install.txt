@@ -1,0 +1,21 @@
+========================================================
+INSTALLATION
+========================================================
+1. Download the extension .zip file and extract the files.
+
+2. Copy the extension files from "src/" folder to the {magento2-root-dir}/app/code/Magexperts/SalesOrderGrid/
+
+3. Run the following series of command from SSH console of your server:
+php bin/magento module:enable Magexperts_SalesOrderGrid --clear-static-content
+php bin/magento setup:upgrade
+
+4. Flush the store cache
+php bin/magento cache:flush
+
+5. Deploy static content (in Production mode only)
+rm -rf pub/static/* var/view_preprocessed/*
+php bin/magento setup:static-content:deploy
+
+6. Go to SALES > Enhanced Order Grid > Manage Settings
+
+For any issues/queries, please do contact us at support@Magexperts.com

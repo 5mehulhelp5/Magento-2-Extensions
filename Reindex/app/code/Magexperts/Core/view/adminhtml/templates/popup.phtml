@@ -1,0 +1,62 @@
+<?php
+/**
+ * Magexperts Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://magexperts.com/Magexperts-License.txt
+ *
+ * @category   Magexperts
+ * @package    Magexperts_Core
+ * @author     Extension Team
+ * @copyright  Copyright (c) 2017-2018 Magexperts Co. ( http://magexperts.com )
+ * @license    http://magexperts.com/Magexperts-License.txt
+ */
+
+// @codingStandardsIgnoreFile
+?>
+<?php
+/**
+ * @var $block \Magexperts\Core\Block\Adminhtml\Popup
+ */
+$newVersions = $block->getModuleHasNewVersion();
+$popupConfigs = $block->getPopupConfig();
+$popupExpireTime = isset($popupConfigs['popup_expire_time']) ? (int)$popupConfigs['popup_expire_time'] : 1;
+$popupDelayOpenTime = isset($popupConfigs['popup_delay_open_time']) ? (int)$popupConfigs['popup_delay_open_time'] : 500;
+$popupBlockHtml = isset($popupConfigs['theme_popup_block']) ? $popupConfigs['theme_popup_block'] : '';
+?>
+
+<?php if ($newVersions): ?>
+    <div id="bss-popup-new-version" class="popup-content" style="display: none">
+        <?= $popupBlockHtml ?>
+
+        <div class="messages">
+            <ul>
+                <?php foreach ($newVersions as $newVersion): ?>
+                    <li>
+                        <p><?= __('%1 delivers the latest version update %2. Please update as soon as possible to enhance performance and functionality.',
+                                $newVersion['name'], $newVersion['latest_version']) ?>
+                        </p>
+                        <a target="_blank"
+                           href="<?= $block->escapeHtmlAttr($newVersion['release_note']) ?>"><?= __('More details') ?></a>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    </div>
+    <script type="text/x-magento-init">
+    {
+        "#bss-popup-new-version": {
+            "Magexperts_Core/js/popup": {
+                "expire": <?= $popupExpireTime ?>,
+                "delay": <?= $popupDelayOpenTime ?>,
+                "title": "<?= __('Incoming Message') ?>"
+            }
+        }
+    }
+
+    </script>
+<?php endif; ?>

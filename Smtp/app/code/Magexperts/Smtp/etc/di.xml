@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Magexperts Team
+ * @copyright Copyright (c) 2022 Magexperts (https://www.magexperts.com)
+ * @package Magexperts_Smtp
+ */
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="magexperts_smtp_log_listing_data_source" xsi:type="string">Magexperts\Smtp\Model\ResourceModel\Log\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\Mail\TransportInterfaceFactory">
+        <plugin name="Magexperts_Smtp::transportBuider" type="Magexperts\Smtp\Plugin\Framework\Mail\TransportInterfaceFactory" />
+    </type>
+    <type name="Magento\Framework\Mail\Template\TransportBuilderByStore">
+        <plugin name="Magexperts_Smtp::transportBuilderByStore"
+                type="Magexperts\Smtp\Plugin\Framework\Mail\Template\TransportBuilderByStore"/>
+    </type>
+    <type name="Magento\Framework\Mail\Template\TransportBuilder">
+        <plugin name="Magexperts_Smtp::TransportBuilder" type="Magexperts\Smtp\Plugin\Framework\Mail\Template\TransportBuilder"/>
+    </type>
+    <type name="Magento\Framework\Mail\Message">
+        <plugin name="Magexperts_Smtp::PlainPart" type="Magexperts\Smtp\Plugin\Framework\Mail\Message"/>
+    </type>
+    <type name="Magento\Framework\Mail\EmailMessage">
+        <arguments>
+            <argument name="encoding" xsi:type="string">utf-8</argument>
+        </arguments>
+    </type>
+</config>

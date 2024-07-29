@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <magexperts_core>
+            <notifications>
+                <notice_type>PROMO,EXTENSION_UPDATE_CUSTOMER,EXTENSION_UPDATE,NEW_EXTENSION,NEWS,TIPS_TRICKS</notice_type>
+                <notice_enable>1</notice_enable>
+                <frequency>1</frequency>
+            </notifications>
+            <menu>
+                <menu_enable>1</menu_enable>
+            </menu>
+        </magexperts_core>
+    </default>
+</config>

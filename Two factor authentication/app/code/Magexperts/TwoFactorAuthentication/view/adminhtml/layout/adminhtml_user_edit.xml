@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Magexperts Team
+ * @copyright Copyright (c) 2022 Magexperts (https://www.magexperts.com)
+ * @package Magexperts_TwoFactorAuthentication
+ */
+-->
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <link src="Magexperts_TwoFactorAuthentication::js/aittfa-validation.js"/>
+    </head>
+    <body>
+        <referenceBlock name="adminhtml.user.edit.tabs">
+            <block class="Magexperts\TwoFactorAuthentication\Block\User\Tab\TfaSettings" name="magexperts.twofactorauthentication.user.tab.tfasettings" />
+            <action method="addTabAfter">
+                <argument name="name" xsi:type="string">magexperts_twofactorauthentication_tfa_settings</argument>
+                <argument name="block" xsi:type="string">magexperts.twofactorauthentication.user.tab.tfasettings</argument>
+                <argument name="after" xsi:type="string">roles_section</argument>
+            </action>
+            <block class="Magexperts\TwoFactorAuthentication\Block\User\Tab\IpSettings" name="magexperts.twofactorauthentication.user.tab.ipsettings" />
+            <action method="addTabAfter">
+                <argument name="name" xsi:type="string">magexperts_twofactorauthentication_ip_settings</argument>
+                <argument name="block" xsi:type="string">magexperts.twofactorauthentication.user.tab.ipsettings</argument>
+                <argument name="after" xsi:type="string">magexperts_twofactorauthentication_tfa_settings</argument>
+            </action>
+        </referenceBlock>
+    </body>
+</page>

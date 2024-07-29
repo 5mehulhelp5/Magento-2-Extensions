@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magexperts. All rights reserved.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Magexperts_DeleteOrders::archived_orders"
+             title="Archived Orders"
+             translate="title"
+             module="Magexperts_DeleteOrders"
+             parent="Magento_Sales::sales_operation"
+             sortOrder="11"
+             action="deleteorders/archiveorder/index"
+             resource="Magexperts_DeleteOrders::archive"/>
+        <add id="Magexperts_DeleteOrders::rules_index"
+             title="Delete Orders by Magexperts"
+             translate="title"
+             module="Magexperts_DeleteOrders"
+             parent="Magento_Backend::system"
+             dependsOnModule="Magento_Backend"
+             sortOrder="90"
+             resource="Magexperts_DeleteOrders::rules_index"/>
+        <add id="Magexperts_DeleteOrders::rules"
+             toolTip="Magexperts Extension"
+             title="Automatic rules"
+             module="Magexperts_DeleteOrders"
+             parent="Magexperts_DeleteOrders::rules_index"
+             action="deleteorders/rules/index"
+             resource="Magexperts_DeleteOrders::rules"/>
+    </menu>
+</config>

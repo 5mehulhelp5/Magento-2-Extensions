@@ -1,0 +1,26 @@
+<?php
+/**
+ * @author Magexperts Team
+ * @copyright Copyright (c) 2022 Magexperts (https://www.magexperts.com)
+ * @package Magexperts_TwoFactorAuthentication
+ */
+?>
+<form method="post" action="" id="send-form" data-mage-init='{"form": {}, "validation": {}}'>
+    <fieldset class="admin__fieldset">
+        <legend class="admin__legend"><span><?= /* @escapeNotVerified */ __('Verification') ?></span></legend><br/>
+        <input name="form_key" type="hidden" value="<?= /* @escapeNotVerified */ $block->getFormKey() ?>" />
+        <p class="admin__field-info"><?= /* @escapeNotVerified */ __('Enter the code to complete sign in.') ?></p>
+        <div class="admin__field _required">
+            <label for="password" class="admin__field-label"><span><?= /* @escapeNotVerified */ __('Code:') ?></span></label>
+            <div class="admin__field-control">
+                <input type="password" id="password" name="password" value="" data-validate="{required:true}" class="admin__control-text" />
+            </div>
+        </div>
+
+        <div class="form-actions">
+            <div class="actions">
+                <button class="action-retrieve action-primary" type="submit"><span><?= /* @escapeNotVerified */ __('Login') ?></span></button>
+            </div>
+        </div>
+    </fieldset>
+</form>

@@ -1,0 +1,39 @@
+<?php
+/**
+ * Magexperts Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://magexperts.com/Magexperts-License.txt
+ *
+ * @category   Magexperts
+ * @package    MAGEXPERTS_HtmlSiteMap
+ * @author     Extension Team
+ * @copyright  Copyright (c) 2018-2019 Magexperts Co. ( http://magexperts.com )
+ * @license    http://magexperts.com/Magexperts-License.txt
+ */
+?>
+<?php
+/**
+ * SEO Toolbar template
+ *
+ * @var $block Magexperts\HtmlSiteMap\Block\ItemsCollection
+ */
+?>
+<?php
+$helper = $block->getHelper();
+$baseUrl = $helper->getBaseUrl();
+$getEnable = $helper->isEnable();
+$urlKey = $helper->getModuleRoute();
+$titleSiteMap = $helper->getTitleSiteMap();
+$showLinkAt = $helper->getShowLinkAt();
+?>
+<?php if ($getEnable && $showLinkAt !== 'top') : ?>
+    <li class="nav item">
+        <a href="<?php echo $baseUrl . $urlKey; ?>"><?php echo $block->escapeHtml($titleSiteMap); ?></a>
+    </li>
+    <?php
+endif;

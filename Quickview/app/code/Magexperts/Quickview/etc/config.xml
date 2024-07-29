@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magexperts Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://magexperts.com/Magexperts-License.txt
+ *
+ * @category   Magexperts
+ * @package    Magexperts_Quickview
+ * @author     Extension Team
+ * @copyright  Copyright (c) 2019-2020 Magexperts Co. ( http://magexperts.com )
+ * @license    http://magexperts.com/Magexperts-License.txt
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <bss_quickview>
+            <general>
+                <close_quickview></close_quickview>
+                <custom_css></custom_css>
+                <button_style></button_style>
+                <enable_goto_product_button>1</enable_goto_product_button>
+                <enable_product_listing>1</enable_product_listing>
+                <remove_product_tab>1</remove_product_tab>
+                <remove_addto_compare>0</remove_addto_compare>
+                <remove_addto_wishlist>0</remove_addto_wishlist>
+                <remove_reviews>1</remove_reviews>
+                <remove_product_related>1</remove_product_related>
+                <remove_product_upsell>1</remove_product_upsell>
+                <remove_product_info_mailto>0</remove_product_info_mailto>
+            </general>
+            <success_popup_design>
+                <button_text_color>FFFFFF</button_text_color>
+                <button_text>Quick View</button_text>
+                <background_color>001E82</background_color>
+            </success_popup_design>
+            <seting_theme>
+                <product_item_info>product-item-info</product_item_info>
+                <product_image_wrapper>product-image-wrapper</product_image_wrapper>
+            </seting_theme>                  
+        </bss_quickview>      
+    </default>
+</config>

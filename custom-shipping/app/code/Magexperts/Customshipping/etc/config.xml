@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category   Magexperts
+ * @package    Magexperts_Customshipping
+ * @author     Magexperts@gmail.com
+ * @website    http://www.Magexperts.com
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <Magexperts_customshipping>
+            <general>
+                <debug>0</debug>
+            </general>
+        </Magexperts_customshipping>
+
+        <carriers>
+            <mpcustomshipping>
+                <active>0</active>
+                <sallowspecific>0</sallowspecific>
+                <price>0</price>
+                <model>Magexperts\Customshipping\Model\Carrier\Customshipping</model>
+                <name>Fixed</name>
+                <title>Custom Shipping</title>
+                <specificerrmsg>This shipping method is not available. To use this shipping method, please contact us.</specificerrmsg>
+            </mpcustomshipping>
+        </carriers>
+
+    </default>
+</config>

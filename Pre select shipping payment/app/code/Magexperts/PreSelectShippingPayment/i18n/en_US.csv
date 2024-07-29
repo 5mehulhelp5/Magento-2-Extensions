@@ -1,0 +1,17 @@
+"-- Please select --","-- Please select --"
+None,None
+"Last Method","Last Method"
+"First Method","First Method"
+"Magexperts Commerce","Magexperts Commerce"
+"Pre-Select Shipping/Payment","Pre-Select Shipping/Payment"
+"Auto Shipping Config","Auto Shipping Config"
+Enable,Enable
+"Auto Select Shipping Method","Auto Select Shipping Method"
+"Shipping method is automatically selected if existed.","Shipping method is automatically selected if existed."
+"Shipping Method Position","Shipping Method Position"
+"If not existed, apply one of the available shipping methods based on its position.","If not existed, apply one of the available shipping methods based on its position."
+"Auto Payment Config","Auto Payment Config"
+"Auto Select Payment Method","Auto Select Payment Method"
+"Payment  method is automatically selected if existed.","Payment  method is automatically selected if existed."
+"Payment Method Position","Payment Method Position"
+"If not existed, apply one of the available payment methods based on its position.","If not existed, apply one of the available payment methods based on its position."

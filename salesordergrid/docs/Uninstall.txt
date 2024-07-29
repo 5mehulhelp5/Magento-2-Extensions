@@ -1,0 +1,14 @@
+==============================================================================
+| Disable the extension
+==============================================================================
+1. php bin/magento module:disable Magexperts_SalesOrderGrid
+
+==============================================================================
+| Uninstall / Remove the extension
+==============================================================================
+1. Remove the following files:
+    app/code/Magexperts/SalesOrderGrid/*
+2. Remove module setup
+    DELETE FROM setup_module WHERE module = 'Magexperts_SalesOrderGrid';
+3. Remove system configuration data
+    DELETE FROM core_config_data WHERE path LIKE 'Magexperts_salesordergrid/%';

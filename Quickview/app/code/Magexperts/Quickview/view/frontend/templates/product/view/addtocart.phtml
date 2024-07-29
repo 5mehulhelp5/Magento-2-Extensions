@@ -1,0 +1,78 @@
+<?php
+/**
+ * Magexperts Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://magexperts.com/Magexperts-License.txt
+ *
+ * @category   Magexperts
+ * @package    Magexperts_Quickview
+ * @author     Extension Team
+ * @copyright  Copyright (c) 2019-2020 Magexperts Co. ( http://magexperts.com )
+ * @license    http://magexperts.com/Magexperts-License.txt
+ */
+// @codingStandardsIgnoreFile
+?>
+<?php
+/**
+ * @var \Magexperts\Quickview\Block\Product\View $block
+ */
+?>
+<?php $_product = $block->getProduct(); ?>
+<?php $buttonTitle = __('Add to Cart'); ?>
+<?php if ($_product->isSaleable()) : ?>
+    <div class="box-tocart">
+        <div class="fieldset">
+            <?php if ($block->shouldRenderQuantity()) : ?>
+                <div class="field qty">
+                    <label class="label" for="qty"><span><?php /* @escapeNotVerified */ echo __('Qty') ?></span></label>
+                    <div class="control">
+                        <input
+                            type="number"
+                            name="qty"
+                            id="qty"
+                            maxlength="12"
+                            value="<?php /* @escapeNotVerified */ echo $block->getProductDefaultQty() * 1 ?>"
+                            title="<?php /* @escapeNotVerified */ echo __('Qty') ?>" class="input-text qty"
+                            data-validate="<?php echo $block->escapeHtml($block->jsonEncoderQuantityValidators()) ?>"
+                        />
+                    </div>
+                </div>
+            <?php endif; ?>
+            <div class="actions">
+                <button
+                    type="submit"
+                    title="<?php /* @escapeNotVerified */ echo $buttonTitle ?>"
+                    class="action primary tocart"
+                    id="product-addtocart-button">
+                    <span><?php /* @escapeNotVerified */ echo $buttonTitle ?></span>
+                </button>
+                <?php echo $block->getChildHtml('', true) ?>
+            </div>
+        </div>
+    </div>
+<?php endif; ?>
+<?php if ($block->isRedirectToCartEnabled()) : ?>
+    <script type="text/x-magento-init">
+        {
+            "#product_addtocart_form": {
+                "bss_quickview/catalog_product": {
+                    "radioCheckboxClosest": ".nested"
+                }
+            }
+        }
+    </script>
+<?php else : ?>
+    <script type="text/x-magento-init">
+    {
+        ".actions": {
+            "Magexperts_Quickview/js/bss_tocart": {
+            }
+        }
+    }
+    </script>
+<?php endif; ?>

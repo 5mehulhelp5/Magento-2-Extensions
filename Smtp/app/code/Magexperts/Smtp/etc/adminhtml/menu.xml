@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * @author Magexperts Team
+ * @copyright Copyright (c) 2022 Magexperts (https://www.magexperts.com)
+ * @package Magexperts_Smtp
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Magexperts_Smtp::main" title="SMTP" translate="title" module="Magexperts_Smtp" sortOrder="31" parent="Magento_Reports::report" resource="Magexperts_Smtp::main"/>
+        <add id="Magexperts_Smtp::log" action="magexperts_smtp/log/index" title="Emails Log" translate="title" module="Magexperts_Smtp" sortOrder="10" parent="Magexperts_Smtp::main" resource="Magexperts_Smtp::log"/>
+    </menu>
+</config>

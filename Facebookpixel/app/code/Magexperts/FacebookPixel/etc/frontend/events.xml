@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magexperts Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://magexperts.com/Magexperts-License.txt
+ *
+ * @category  Magexperts
+ * @package   Magexperts_FacebookPixel
+ * @author    Extension Team
+ * @copyright Copyright (c) 2018-2019 Magexperts Co. ( http://magexperts.com )
+ * @license   http://magexperts.com/Magexperts-License.txt
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="wishlist_add_product">
+        <observer name="bss_fbpixel_add_to_wishlist" instance="Magexperts\FacebookPixel\Observer\WishlistAddProduct" />
+    </event>
+    <event name="sales_quote_product_add_after">
+        <observer name="bss_add_to_cart" instance="Magexperts\FacebookPixel\Observer\AddToCart"/>
+    </event>
+    <event name="newsletter_subscriber_save_after">
+        <observer name="bss_fbpixel_subcribe" instance="Magexperts\FacebookPixel\Observer\Subcribe" />
+    </event>
+    <event name="controller_action_predispatch_multishipping_checkout_index">
+        <observer name="bss_fbpixel_initiate_checkout_multi" instance="Magexperts\FacebookPixel\Observer\InitiateCheckout" />
+    </event>
+    <event name="controller_action_predispatch_checkout_onepage_index">
+        <observer name="bss_fbpixel_initiate_checkout_onepage" instance="Magexperts\FacebookPixel\Observer\InitiateCheckout" />
+    </event>
+    <event name="controller_action_predispatch_checkout_index_index">
+        <observer name="bss_fbpixel_initiate_checkout_index_index" instance="Magexperts\FacebookPixel\Observer\InitiateCheckout" />
+    </event>
+    <event name="controller_action_predispatch_catalogsearch_result_index">
+        <observer name="bss_fbpixel_search_result_index" instance="Magexperts\FacebookPixel\Observer\Search" />
+    </event>
+    <event name="controller_action_predispatch_catalogsearch_advanced_result">
+        <observer name="bss_fbpixel_search_advanced_result" instance="Magexperts\FacebookPixel\Observer\Search" />
+    </event>
+    <event name="customer_register_success">
+        <observer name="bss_fbpixel_customer_register_success" instance="Magexperts\FacebookPixel\Observer\Register" />
+    </event>
+</config>

@@ -1,0 +1,117 @@
+"Send Test Email","Send Test Email"
+Reports,Reports
+"Log doesn't exist.","Log doesn't exist."
+"A total of %1 email(s) have been deleted.","A total of %1 email(s) have been deleted."
+"Email Log has been successfully deleted","Email Log has been successfully deleted"
+"Unable to find the rule","Unable to find the rule"
+"Emails Log","Emails Log"
+"A total of %1 email(s) have been sent.","A total of %1 email(s) have been sent."
+"Email Preview","Email Preview"
+"An error occurred. The email template can not be opened for preview.","An error occurred. The email template can not be opened for preview."
+"Email successfully was send.","Email successfully was send."
+"Something went wrong.","Something went wrong."
+"Message is successfully send!","Message is successfully send!"
+"Error. Something went wrong. Please, try again.","Error. Something went wrong. Please, try again."
+"Not Required","Not Required"
+Login/Password,Login/Password
+CRAM-MD5,CRAM-MD5
+None,None
+SSL,SSL
+TLS,TLS
+Success,Success
+Failed,Failed
+Blocked,Blocked
+"Gmail, GSuite","Gmail, GSuite"
+Yandex,Yandex
+"Amazon SES: US East (N. Virginia)","Amazon SES: US East (N. Virginia)"
+"Amazon SES: US West (Oregon)","Amazon SES: US West (Oregon)"
+"Amazon SES: EU (Ireland)","Amazon SES: EU (Ireland)"
+Mailgun,Mailgun
+Mandrill,Mandrill
+Sendinblue,Sendinblue
+Sendgrid,Sendgrid
+"Elastic Email","Elastic Email"
+SparkPost,SparkPost
+Mailjet,Mailjet
+Postmark,Postmark
+"AOL Mail","AOL Mail"
+Comcast,Comcast
+GMX,GMX
+Hotmail,Hotmail
+Mail.com,Mail.com
+"O2 Mail","O2 Mail"
+Office365,Office365
+Orange,Orange
+Outlook,Outlook
+"Yahoo Mail","Yahoo Mail"
+"Yahoo Mail Plus","Yahoo Mail Plus"
+"Yahoo AU/NZ","Yahoo AU/NZ"
+AT&T,AT&T
+"NTL @ntlworld.com","NTL @ntlworld.com"
+"BT Connect","BT Connect"
+"Zoho Mail","Zoho Mail"
+Verizon,Verizon
+"BT Openworld","BT Openworld"
+"O2 Online Deutschland","O2 Online Deutschland"
+"1&1 Webmail","1&1 Webmail"
+OVH,OVH
+SMTP2GO,SMTP2GO
+"Preview Email","Preview Email"
+"Delete Email Log","Delete Email Log"
+Delete,Delete
+"Are you sure you want to delete?","Are you sure you want to delete?"
+"Resend Email","Resend Email"
+"Are you sure you want to resend the selected email?","Are you sure you want to resend the selected email?"
+Fail,Fail
+"Validation Error","Validation Error"
+"Please check if the following fields are filled in: ","Please check if the following fields are filled in: "
+"Send Test To E-mail","Send Test To E-mail"
+"Connection Security","Connection Security"
+"Authentication Method","Authentication Method"
+"SMTP Log","SMTP Log"
+SMTP,SMTP
+"General Settings","General Settings"
+"Enable SMTP","Enable SMTP"
+"When the option is disabled, the module will not impact on email sendings","When the option is disabled, the module will not impact on email sendings"
+"SMTP Settings","SMTP Settings"
+"Use Pre-Defined SMTP Providers","Use Pre-Defined SMTP Providers"
+Provider,Provider
+"Local Client Hostname","Local Client Hostname"
+"Local client hostname or IP. Default: <strong>localhost</strong>","Local client hostname or IP. Default: <strong>localhost</strong>"
+Host,Host
+"Host name or IP address of SMTP Server","Host name or IP address of SMTP Server"
+Port,Port
+"Default ports: 25, 465, or 587. (<strong>SSL</strong> - 465, <strong>TLS</strong> - 587)","Default ports: 25, 465, or 587. (<strong>SSL</strong> - 465, <strong>TLS</strong> - 587)"
+Username,Username
+Password,Password
+"Emails Settings","Emails Settings"
+"Add Plain Text Part in Email","Add Plain Text Part in Email"
+"Add Plain part in email recommended for <strong>increase Spam Score of email</strong>","Add Plain part in email recommended for <strong>increase Spam Score of email</strong>"
+"Use Another Email Sender","Use Another Email Sender"
+"<strong>Please notice,</strong> the <strong>Sender domain</strong> must be the same as the domain where you send email. Other combinations can lead to a ban because of spam","<strong>Please notice,</strong> the <strong>Sender domain</strong> must be the same as the domain where you send email. Other combinations can lead to a ban because of spam"
+"Sender Email","Sender Email"
+"Sender Name","Sender Name"
+"CC Emails","CC Emails"
+"BCC Emails","BCC Emails"
+"Log Settings","Log Settings"
+"Enable Log Outgoing Emails","Enable Log Outgoing Emails"
+"See the all emails and their contents ever <strong>sent throughout Magexperts SMTP.</strong>","See the all emails and their contents ever <strong>sent throughout Magexperts SMTP.</strong>"
+"Log Clean Every (days)","Log Clean Every (days)"
+"<strong>Day(s).</strong> When empty or zero, the Email log will not be cleaned.","<strong>Day(s).</strong> When empty or zero, the Email log will not be cleaned."
+Debug,Debug
+"Disable Actual Email Delivery (Debug Mode)","Disable Actual Email Delivery (Debug Mode)"
+"<strong>Set the option to ‘Yes’ in order not to send emails actually.</strong> That can be used for debug or development purposes","<strong>Set the option to ‘Yes’ in order not to send emails actually.</strong> That can be used for debug or development purposes"
+"Exceptional Email Addresses","Exceptional Email Addresses"
+"Exceptional Email Domains","Exceptional Email Domains"
+"Clear Emails Log","Clear Emails Log"
+"Delete logs","Delete logs"
+"Delete selected logs?","Delete selected logs?"
+Resend,Resend
+"Resend selected logs?","Resend selected logs?"
+ID,ID
+"Sender Data","Sender Data"
+"Recipient Data","Recipient Data"
+"Email Subject","Email Subject"
+"Email Status","Email Status"
+"Fail Message","Fail Message"
+"Send Date","Send Date"

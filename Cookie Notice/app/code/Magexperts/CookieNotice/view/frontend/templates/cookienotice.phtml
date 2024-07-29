@@ -1,0 +1,59 @@
+<?php
+/**
+ * Magexperts Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://magexperts.com/Magexperts-License.txt
+ *
+ * @category   Magexperts
+ * @package    Magexperts_CookieNotice
+ * @author     Extension Team
+ * @copyright  Copyright (c) 2015-2016 Magexperts Co. ( http://magexperts.com )
+ * @license    http://magexperts.com/Magexperts-License.txt
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php 
+/**
+ * @var $block \Magexperts\CookieNotice\Block\CookieNotice
+ */
+?>
+<?php if ($block->isEnable()) {?>
+    <div id="bss-cookie-notice">
+        <h4 class='cookie-title'><?php echo $block->getMsgTitle(); ?></h4>
+        <p class ='cookie-content'><?php echo $block->getMsgContent(); ?></p>
+        <button class='btn-cookie btn-cookie-accept'><?php echo $block->getTextBtnAccept(); ?></button>
+        <a class='btn-cookie btn-cookie-more-infor' href="<?php echo $block->getCMSPage(); ?>" target="_blank">
+                <?php echo $block->getTextBtnMoreInfor(); ?></a>
+    </div>
+    <?php if($block->getCustomStyle()) : ?>
+        <style type="text/css">
+            <?php echo $block->getCustomStyle(); ?>
+        </style>
+    <?php endif; ?>
+    <script type="text/x-magento-init">
+    {
+        "*": 
+        {
+            "Magexperts_CookieNotice/js/cookienotice": {
+                "position" : <?php echo $block->getPosition(); ?>,
+                "bgColor" : "<?php echo $block->getColorBg(); ?>;",
+                "colorTitle" : "<?php echo $block->getColorTitle(); ?>",
+                "colorContent" : "<?php echo $block->getColorContent(); ?>",
+                "colorAccept" : "<?php echo $block->getColorBtnAccept(); ?>",
+                "bgColorAccept" : "<?php echo $block->getColorBgBtnAccept(); ?>",
+                "bgColorMoreInfo" : "<?php echo $block->getColorBgBtnMoreInfor(); ?>",
+                "colorMoreInfo" : "<?php echo $block->getColorBtnMoreInfor(); ?>",
+                "autoHideMsg" : "<?php echo $block->getHideMsg(); ?>"
+            }
+        }
+    }
+    </script>
+    <?php
+}

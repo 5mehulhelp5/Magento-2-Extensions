@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Magexperts Team
+ * @copyright Copyright (c) 2022 Magexperts (https://www.magexperts.com)
+ * @package Magexperts_Core
+ */
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Magexperts_Core::menu" title="Magexperts" module="Magexperts_Core" translate="title" sortOrder="81" resource="Magexperts_Core::menu"/>
+        <add id="Magexperts_Core::common" title="Configuration &amp; Promo" translate="title" module="Magexperts_Core" sortOrder="1498" parent="Magexperts_Core::menu" resource="Magexperts_Core::menu"/>
+    </menu>
+</config>

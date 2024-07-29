@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * @author Magexperts Team
+ * @copyright Copyright (c) 2022 Magexperts (https://www.magexperts.com)
+ * @package Magexperts_MicrosoftClarity
+ */
+-->
+<!--
+/**
+ * Copyright © Magexperts. All rights reserved.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+	<default>
+		<microsoft_clarity>
+			<general>
+				<enable>0</enable>
+				<customer_group_tag_enable>1</customer_group_tag_enable>
+			</general>
+			<options>
+				<tracking_code/>
+			</options>
+		</microsoft_clarity>
+	</default>
+</config>

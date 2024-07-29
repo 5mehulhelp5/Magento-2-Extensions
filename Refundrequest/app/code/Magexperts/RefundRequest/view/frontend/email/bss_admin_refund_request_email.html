@@ -1,0 +1,19 @@
+<!--@subject New Refund Request {{trans "#%incrementId" incrementId=$incrementId}}  @-->
+{{template config_path="design/email/header_template"}}
+<table width="100%">
+    <tr class="email-intro">
+        <td>
+            <p class="greeting">{{trans "Hello %adminEmail," adminEmail=$adminEmail}}</p>
+            <p>
+                {{trans "You have new refund request from %store_name." store_name=$store.getFrontendName()}}
+            </p>
+        </td>
+    </tr>
+    <tr class="email-summary">
+        <td>
+            <h1>{{trans "Order  ID "}} <span style="font-style: bold">{{trans "#%incrementId" incrementId=$incrementId}}</span></h1>
+            <p>{{trans 'Refund create at %createdAt GMT' createdAt=$createdAt}}</p>
+        </td>
+    </tr>
+</table>
+{{template config_path="design/email/footer_template"}}

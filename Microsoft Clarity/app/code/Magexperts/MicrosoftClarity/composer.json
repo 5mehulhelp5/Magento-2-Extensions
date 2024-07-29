@@ -1,0 +1,20 @@
+{
+    "name": "magexperts/module-microsoft-clarity",
+    "description": "Module that enables your site to integrate with Microsoft's Clarity, a web analytics/behaviour monitoring platform",
+    "require": {
+        "magexperts/core": ">=1.0.16"
+    },
+    "type": "magento2-module",
+    "version": "1.0.4",
+    "license": [
+        "MIT"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Magexperts\\MicrosoftClarity\\": ""
+        }
+    }
+}

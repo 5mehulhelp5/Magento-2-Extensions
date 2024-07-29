@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Magexperts Team
+ * @copyright Copyright (c) 2022 Magexperts (https://www.magexperts.com)
+ * @package Magexperts_Core
+ */
+-->
+<!--
+  ~ Copyright © Magexperts. All rights reserved.
+  -->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="adminnotification_inbox" resource="default" engine="innodb">
+      <column xsi:type="smallint" name="magexperts_notification" unsigned="true" nullable="false" default="0" comment="Magexperts Notification"/>
+    </table>
+</schema>

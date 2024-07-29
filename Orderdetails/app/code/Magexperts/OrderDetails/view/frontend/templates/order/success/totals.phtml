@@ -1,0 +1,51 @@
+<?php
+/**
+ * Magexperts Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://magexperts.com/Magexperts-License.txt
+ *
+ * =================================================================
+ *
+ * MAGENTO EDITION USAGE NOTICE
+ * =================================================================
+ * This package designed for Magento COMMUNITY edition
+ * Magexperts does not guarantee correct work of this extension
+ * on any other Magento edition except Magento COMMUNITY edition.
+ * Magexperts does not provide extension support in case of
+ * incorrect edition usage.
+ * =================================================================
+ *
+ * @category   Magexperts
+ * @package    Magexperts_OrderDetails
+ * @author     Extension Team
+ * @copyright  Copyright (c) 2015-2016 Magexperts Co. ( http://magexperts.com )
+ * @license    http://magexperts.com/Magexperts-License.txt
+*/
+?>
+<?php foreach ($block->getTotals() as $code => $total): ?>
+    <?php if ($total->getBlockName()): ?>
+        <?php echo $block->getChildHtml($total->getBlockName(), false); ?>
+    <?php else:?>
+    <tr class="<?php /* @escapeNotVerified */ echo $code?>">
+        <th colspan="5" <?php /* @escapeNotVerified */ echo $block->getLabelProperties()?> scope="row">
+            <?php if ($total->getStrong()):?>
+            <strong><?php echo $block->escapeHtml($total->getLabel());?></strong>
+            <?php else:?>
+            <?php echo $block->escapeHtml($total->getLabel());?>
+            <?php endif?>
+        </th>
+        <td <?php /* @escapeNotVerified */ echo $block->getValueProperties()?> data-th="<?php echo $block->escapeHtml($total->getLabel());?>">
+            <?php if ($total->getStrong()):?>
+            <strong><?php /* @escapeNotVerified */ echo $block->formatValue($total) ?></strong>
+            <?php else:?>
+            <?php /* @escapeNotVerified */ echo $block->formatValue($total) ?>
+            <?php endif?>
+        </td>
+    </tr>
+    <?php endif?>
+<?php endforeach?>

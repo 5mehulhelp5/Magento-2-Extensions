@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magexperts Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://magexperts.com/Magexperts-License.txt
+ *
+ * @category   Magexperts
+ * @package    Magexperts_Quickview
+ * @author     Extension Team
+ * @copyright  Copyright (c) 2019-2020 Magexperts Co. ( http://magexperts.com )
+ * @license    http://magexperts.com/Magexperts-License.txt
+ */
+-->
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd" ifconfig="bss_quickview/general/enable_product_listing">
+    <update handle="catalog_product_view" />
+    <update handle="catalog_delivery_info"/>
+    <body>
+        <referenceBlock name="header.container" remove="true" />
+        <referenceBlock name="page.top" remove="true" />
+        <referenceBlock name="footer-container" remove="true" />
+        <referenceContainer name="head" remove="true"/>
+        <referenceContainer name="header" remove="true"/>
+        <referenceContainer name="menu" remove="true"/>
+		<referenceContainer name="bss.demo.notices" remove="true"/>
+        <referenceContainer name="footer" remove="true"/>
+        <referenceBlock name="copyright" remove="true" />
+        <referenceBlock name="authentication-popup" remove="true" />
+        <referenceContainer name="content">
+            <block class="Magento\Catalog\Block\Product\View\Type\Simple" ifconfig="bss_quickview/general/enable_goto_product_button" name="goto.product" template="Magexperts_Quickview::gotoproduct.phtml" before="-" />
+        </referenceContainer>
+        <referenceContainer name="before.body.end">
+            <block class="Magexperts\Quickview\Block\Initialize" name="bss.quickview.beforebodyend" template="Magexperts_Quickview::beforebodyend.phtml" />
+        </referenceContainer>
+        <referenceBlock name="product.info.addtocart" class="Magexperts\Quickview\Block\Product\View" template="Magexperts_Quickview::product/view/addtocart.phtml">
+        </referenceBlock>
+        <referenceBlock name="product.info.addtocart.additional" class="Magexperts\Quickview\Block\Product\View" template="Magexperts_Quickview::product/view/addtocart.phtml">
+        </referenceBlock>
+    </body>
+</page>

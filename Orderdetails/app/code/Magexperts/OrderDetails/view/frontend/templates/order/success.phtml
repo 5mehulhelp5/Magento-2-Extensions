@@ -1,0 +1,259 @@
+<?php
+/**
+ * Magexperts Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://magexperts.com/Magexperts-License.txt
+ *
+ * =================================================================
+ *
+ * MAGENTO EDITION USAGE NOTICE
+ * =================================================================
+ * This package designed for Magento COMMUNITY edition
+ * Magexperts does not guarantee correct work of this extension
+ * on any other Magento edition except Magento COMMUNITY edition.
+ * Magexperts does not provide extension support in case of
+ * incorrect edition usage.
+ * =================================================================
+ *
+ * @category   Magexperts
+ * @package    Magexperts_OrderDetails
+ * @author     Extension Team
+ * @copyright  Copyright (c) 2015-2016 Magexperts Co. ( http://magexperts.com )
+ * @license    http://magexperts.com/Magexperts-License.txt
+*/
+?>
+<?php /** @var $block \Magexperts\OrderDetails\Block\Details */ ?>
+<?php
+$order = $block->getOrder();
+$payment = $order->getPayment();
+$method = $payment ? $payment->getMethodInstance() : null;
+$reorderurl = $block->getReorder();
+$printurl = $block->getPrint();
+$date = $order->getCreatedAt();
+$formatdate = $block->formatDate($date);
+$thanksz = $block->getThankMessegerSizeDetails();
+$textbeforesz = $block->getBeforeTextSizeDetails();
+$textaftersz = $block->getAfterTextSizeDetails();
+$thankcl = '#'.$block->getThankMessegerColorDetails();
+$textbeforecl = '#'.$block->getBeforeTextColorDetails();
+$textaftercl = '#'.$block->getAfterTextColorDetails();
+?>
+<div class="checkout-success">
+<?php if($order->getIncrementId()):?>
+    <?php if ($block->getCustomerId()) :?>
+        <p><?php echo __('Your order number is: %1.',
+                sprintf('<a href="%s" class="order-number"><strong>%s</strong></a>',
+                $block->getReorder(), $order->getIncrementId())) ?>
+        </p>
+        <?php  else :?>
+            <p><?php echo __('Your order # is: <span>%1</span>.',$order->getIncrementId()) ?></p>
+        <?php endif;?>
+            <p><?php echo __('We\'ll email you an order confirmation with details and tracking info.') ?></p>
+    <?php endif;?>
+    <?php echo $block->getAdditionalInfoHtml() ?>
+</div>
+
+<?php if($block->isEnableDetails()):?>
+    <div class="order-details">
+    <?php $thankMss = $block->getThankMessegerDetails() ?>
+    <p class="tmess">
+        <?php echo $thankMss; ?>
+    </p>
+        <?php if($block->isEnableOrderStatusDetails()):?>
+        <div class="order-date">
+        <span class="label"> <?php echo __('Order Date: ')?>
+            <date><?php echo $formatdate ?></date>
+        </span>
+    </div>
+    <div class="status">
+        <p><?php echo __('Order Status: ')?><span><?php echo $order->getStatusLabel() ; ?></span></p>
+    </div>
+    <?php endif; ?>
+
+    <?php $textbefore = $block->getBeforeTextDetails() ?>
+    <div><p class="bmess"><?php echo $textbefore; ?></p></div>
+
+    <div class="info">
+        <?php if($block->isEnableShippingAddressDetails()):?>
+            <?php $formatship = $block->formatShipping(); ?>
+            <div class="shipping-address">
+                <strong class="box-title">
+                <span class="box-des"><?php echo __('Shipping Address') ?></span></strong>
+                <div class="box-content">
+        <?php if ($formatship) : ?>
+            <address><?php echo $formatship;?></address>
+            <?php else: ?>
+                <?php echo __('No shipping Address available'); ?>
+                <?php endif; ?>
+                </div>
+            </div>
+        <?php endif; ?>
+        <?php if($block->isEnableShippingMethodDetails()):?>
+            <?php $shippingMethod = $order ->getShippingDescription(); ?>
+            <div class="shipping-method">
+                <strong class="box-title">
+                  <span class="box-des"><?php echo __('Shipping Method') ?></span>
+                </strong>
+                <div class="box-content">
+                <?php if ($order->getShippingDescription()): ?>
+                <?php echo $shippingMethod; ?>
+                <?php else: ?>
+                <?php echo __('No shipping information available'); ?>
+                <?php endif; ?>
+                </div>
+            </div>
+        <?php endif; ?>
+        <?php if($block->isEnableBillingAddressDetails()):?>
+            <?php $formatbilling = $block->formatBilling(); ?>
+            <div class="billing-address">
+               <strong class="box-title">
+                <span class="box-des"><?php echo __('Billing Address') ?></span>
+                </strong>
+                <div class="box-content">
+                    <address><?php echo $formatbilling;  ?></address>
+                </div>
+            </div>
+        <?php endif; ?>
+        <?php if($block->isEnablePaymentMethodDetails()):?>
+            <?php $methodTitle = $method ? $method->getTitle() : ''; ?>
+            <div class="billing-method">
+                <strong class="box-title">
+                    <span class="box-des"><?php echo __('Payment Method') ?></span>
+                </strong>
+                <div class="box-content">
+                      <?php echo $methodTitle ?>
+                </div>
+            </div>
+        <?php endif; ?>
+    </div>
+
+    <?php if($block->isEnableOrderProductDetails()):?>
+    <div class="show-order">
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2"><?php echo __('Product Name') ?></th>
+                    <th><?php echo __('SKU') ?></th>
+                    <th class="table-number"><?php echo __('Price') ?></th>
+                    <th class="table-number"><?php echo __('Qty') ?></th>
+                    <th class="table-number"><?php echo __('Subtotal') ?></th>
+                </tr>
+            </thead>
+                <?php
+                $items = $order->getItemsCollection();
+                foreach ($items as $item) : ?>
+                <?php  if($item->getParentItem()) continue; ?>
+                <tr class="data-item">
+                    <td colspan="2"><?php echo $item->getName();?>
+                    <?php
+                    $options = $block->getItemOptions($item);
+                    if($options):
+                    foreach($options as  $option):
+                    ?>
+                        <dl>
+                            <dt><?php echo $option['label'] ?></dt>
+                            <dd><?php echo $option['value'] ?></dd>
+                        </dl>
+                    <?php endforeach ?>
+                    <?php endif ?>
+                    </td>
+                    <td><?php echo $item->getSku();?></td>
+                    <td class="table-number"><?php echo $block->formatPrice($item->getPrice(), true, false);?></td>
+                    <td class="table-number"><?php echo $item->getQtyOrdered();?></td>
+                    <td class="table-number"><?php echo $block->formatPrice($item->getRowTotal(),true,false);?></td>
+                </tr>
+                 <?php
+                    $bundleChildrens = $item->getChildrenItems();
+                    $atts = $block->getBundleItemOptions($item);
+                    $attArray = [];
+                    foreach ($atts as $key => $att) {
+                        $attArray[$att['option_id']] = $att;
+                    }
+                    ksort($attArray);
+                    if($attArray):
+                    $sku = [];
+                    $countSku= 0;
+                    foreach ($bundleChildrens as $key => $bundleChildren) {
+                        if ($bundleChildren['sku'])
+                        $countSku ++;
+                        $sku[$countSku] = $bundleChildren['sku'];
+                    }
+                    $count = 0;
+                    foreach($attArray as  $att):
+                    ?>
+                        <tr>
+                            <td colspan="6"><?php echo $att['label'] ?></td>
+                        </tr>
+                        <?php foreach($att['value'] as $at ): $count++ ?>
+                            <tr class="bundle-option">
+                            <td colspan="2"><?php echo $at['qty'].' x '.$at['title'].' x '.$block->formatPrice($at['price']) ?></td>
+                            <td><?php echo $sku[$count]; ?></td>
+                            <td colspan="3"><?php echo __('Ordered: ').$at['qty'] * $item->getQtyOrdered(); ?></td>
+                            </tr>
+                        <?php endforeach ?>
+                    <?php endforeach ?>
+                    <?php endif ?>
+            <?php endforeach ?>
+            <tfoot>
+                <?php echo $block->getChildHtml('order.totals') ?>
+            </tfoot>
+        </table>
+    </div>
+    <?php endif ?>
+
+    <div class="text-under">
+        <?php $textafter = $block->getAfterTextDetails() ?>
+        <p class="fmess"><?php echo $textafter ?></p>
+        <div class="actions-order">
+            <?php if($block->canViewReorder()):?>
+            <div class="reorderurl">
+                <a class="action-reorder" href="<?php echo $reorderurl?>">
+                    <span><?php echo __('Re-Order') ?></span>
+                </a>
+                </div>
+            <?php endif ?>
+            <?php if($block->canViewPrint()):?>
+            <div class="printurl">
+                <a class="action-print" href="<?php echo $printurl ?>" onclick="this.target='_blank';">
+                    <span><?php echo __('Print Order') ?></span>
+                </a>
+            </div>
+            <?php endif ?>
+        </div>
+    </div>
+</div>
+<?php endif; ?>
+<div class="actions-toolbar">
+    <a class="action primary continue" href="<?php echo $block->getUrl() ?>">
+        <span><?php echo __('Continue Shopping') ?></span>
+    </a>
+</div>
+
+<?php if($block->isEnableDetails()): ?>
+<script type="text/x-magento-init">
+        {
+        "*": {
+            "Magexperts_OrderDetails/js/continue": {}
+            }
+        }
+</script>
+<?php endif; ?>
+<style type="text/css">
+    .tmess{
+        font-size: <?php echo $thanksz.'px' ?>;
+        color: <?php echo $thankcl ?>;
+    }
+    .bmess{
+        font-size: <?php echo $textbeforesz.'px' ?>;
+        color: <?php echo $textbeforecl ?>;
+    }
+    .fmess{
+        font-size: <?php echo $textaftersz.'px' ?>;
+        color: <?php echo $textaftercl ?>;
+    }
+</style>

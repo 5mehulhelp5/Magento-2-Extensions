@@ -1,0 +1,29 @@
+<?php
+/**
+ * @author Magexperts Team
+ * @copyright Copyright (c) 2022 Magexperts (https://www.magexperts.com)
+ * @package Magexperts_Smtp
+ */
+?>
+<?php
+
+/* @var $block \Magexperts\Smtp\Block\Adminhtml\Log\Preview */
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title><?= $block->escapeHtml(__('Email Preview')) ?></title>
+</head>
+<body>
+<?= $block->getChildHtml('content') ?>
+</body>
+</html>
+
+
+<script type="text/javascript">
+        function resizeIframe(obj){
+            obj.style.height = 0;
+            obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+        }
+</script>

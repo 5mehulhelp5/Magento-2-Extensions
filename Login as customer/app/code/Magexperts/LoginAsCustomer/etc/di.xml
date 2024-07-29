@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magexperts Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://magexperts.com/Magexperts-License.txt
+ *
+ * @category   Magexperts
+ * @package    Magexperts_LoginAsCustomer
+ * @author     Extension Team
+ * @copyright  Copyright (c) 2019-2020 Magexperts Co. ( http://magexperts.com )
+ * @license    http://magexperts.com/Magexperts-License.txt
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+	<!-- login customer grid button -->
+	<type name="Magento\Customer\Ui\Component\Listing\Column\Actions">
+		<plugin name="Magexperts_Login_As_Customer_Button_Grid" type="Magexperts\LoginAsCustomer\Plugin\Adminhtml\Grid\CustomerActions" sortOrder="10" />
+	</type>
+
+	<!--get frontend url-->
+	<type name="Magexperts\LoginAsCustomer\Plugin\FrontendUrl">
+		<arguments>
+			<argument name="frontendUrl" xsi:type="object" shared="false">Magento\Framework\Url</argument>
+		</arguments>
+	</type>
+
+</config>

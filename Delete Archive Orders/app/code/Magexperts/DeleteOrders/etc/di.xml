@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magexperts. All rights reserved.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Backend\Block\Widget\Context">
+        <plugin name="add_buttons_to_order_details" type="Magexperts\DeleteOrders\Plugin\OrderButtons" sortOrder="1"/>
+    </type>
+    <type name="Magento\Sales\Block\Adminhtml\Order\View">
+        <plugin name="change_url_for_back_button" type="Magexperts\DeleteOrders\Plugin\BackButton" sortOrder="1"/>
+    </type>
+    <type name="Magento\Sales\Controller\Adminhtml\Order\View">
+        <plugin name="add_label_to_archved_order" type="Magexperts\DeleteOrders\Plugin\AddLabel" sortOrder="1"/>
+    </type>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\Reporting">
+        <plugin name="filter_sales_order_collection" type="Magexperts\DeleteOrders\Plugin\FilterCollection" sortOrder="1"/>
+    </type>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="magexperts_deleteorders_archive_listing_data_source" xsi:type="string">Magexperts\DeleteOrders\Model\ResourceModel\Archive\Grid\Collection</item>
+                <item name="magexperts_deleteorders_rules_listing_data_source" xsi:type="string">Magexperts\DeleteOrders\Model\ResourceModel\Rules\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magexperts\DeleteOrders\Model\ResourceModel\Archive\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">magexperts_deleteorders_order_archive</argument>
+            <argument name="eventPrefix" xsi:type="string">deleteorders_archive_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">archive_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Magexperts\DeleteOrders\Model\ResourceModel\Archive</argument>
+        </arguments>
+    </type>
+    <type name="Magexperts\DeleteOrders\Model\ResourceModel\Rules\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">magexperts_deleteorders_rules</argument>
+            <argument name="eventPrefix" xsi:type="string">deleteorders_rules_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">rules_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Magexperts\DeleteOrders\Model\ResourceModel\Rules</argument>
+        </arguments>
+    </type>
+    <preference for="Magexperts\DeleteOrders\Api\Data\ArchiveInterface" type="Magexperts\DeleteOrders\Model\Archive" />
+    <preference for="Magexperts\DeleteOrders\Api\ArchiveRepositoryInterface" type="Magexperts\DeleteOrders\Model\ArchiveRepository" />
+    <preference for="Magexperts\DeleteOrders\Api\Data\RulesInterface" type="Magexperts\DeleteOrders\Model\Rules" />
+    <preference for="Magexperts\DeleteOrders\Api\RulesRepositoryInterface" type="Magexperts\DeleteOrders\Model\RulesRepository" />
+</config>

@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category   Magexperts
+ * @package    Magexperts_DisableRegistration
+ * @author     Raj KB <Magexperts@gmail.com>
+ * @website    https://www.Magexperts.com
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="Magexperts" translate="label" sortOrder="200">
+            <label>Magexperts</label>
+        </tab>
+        <section id="Magexperts_disableregistration" sortOrder="100" translate="label" showInDefault="1" showInWebsite="1" showInStore="1">
+            <tab>Magexperts</tab>
+            <label>Disable Registration</label>
+            <resource>Magexperts_DisableRegistration::config</resource>
+            <group id="support" translate="label" type="text" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                <frontend_model>Magexperts\DisableRegistration\Block\Adminhtml\System\Config\Form\Fieldset\Support</frontend_model>
+            </group>
+            <group id="general" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Settings</label>
+                <field id="version" translate="label" type="label" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Version</label>
+                    <frontend_model>Magexperts\DisableRegistration\Block\Adminhtml\System\Config\Form\Field\Version</frontend_model>
+                </field>
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="debug" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Debug Mode</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+            </group>
+            <group id="registration" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Registration Settings</label>
+                <field id="registration_option" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Registration Option</label>
+                    <source_model>Magexperts\DisableRegistration\Model\System\Config\Source\RegistrationOption</source_model>
+                    <tooltip><![CDATA[<strong>Enabled:</strong> Customer can register.<br /><strong>Disabled:</strong> Customer won't be able to register.]]></tooltip>
+                </field>
+                <field id="enable_disabled_message" translate="label" type="select" sortOrder="25" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Disabled Message</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="registration_option">0</field>
+                    </depends>
+                </field>
+                <field id="disabled_message" translate="label" type="textarea" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Disabled Message</label>
+                    <tooltip><![CDATA[The specified message will be shown if registration option is disabled.]]></tooltip>
+                    <depends>
+                        <field id="enable_disabled_message">1</field>
+                        <field id="registration_option">0</field>
+                    </depends>
+                </field>
+            </group>
+            <group id="restriction" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Advanced Restrictions</label>
+                <field id="restriction_settings_info" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label><![CDATA[&nbsp;]]></label>
+                    <frontend_model>Magexperts\DisableRegistration\Block\Adminhtml\System\Config\Form\Field\RestrictionSetting</frontend_model>
+                </field>
+            </group>
+        </section>
+
+    </system>
+</config>

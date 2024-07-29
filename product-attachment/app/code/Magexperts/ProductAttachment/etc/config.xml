@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category   Magexperts
+ * @package    Magexperts_ProductAttachment
+ * @author     Raj KB <Magexperts@gmail.com>
+ * @website    https://www.Magexperts.com
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <Magexperts_productattachment>
+            <general>
+                <enabled>0</enabled>
+                <debug>0</debug>
+            </general>
+            <attachment>
+                <tab_label>Attachments</tab_label>
+                <download_label>Download</download_label>
+                <allowed_extensions>pdf</allowed_extensions>
+            </attachment>
+        </Magexperts_productattachment>
+    </default>
+</config>

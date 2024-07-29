@@ -1,0 +1,19 @@
+{
+    "magexperts_smtp_log": {
+        "column": {
+            "log_id": true,
+            "created_at": true,
+            "subject": true,
+            "email_body": true,
+            "sender_email": true,
+            "recipient_email": true,
+            "cc": true,
+            "bcc": true,
+            "status": true,
+            "status_message": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

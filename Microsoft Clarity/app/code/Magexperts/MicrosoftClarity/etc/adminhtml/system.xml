@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * @author Magexperts Team
+ * @copyright Copyright (c) 2022 Magexperts (https://www.magexperts.com)
+ * @package Magexperts_MicrosoftClarity
+ */
+-->
+<!--
+/**
+ * Copyright © Magexperts. All rights reserved.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+	<system>
+		<section id="microsoft_clarity" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+			<label>Microsoft Clarity</label>
+            <tab>magexperts_extensions</tab>
+			<resource>Magexperts_MicrosoftClarity::config_magexperts_microsoft_clarity</resource>
+			<group id="general" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+				<label>General</label>
+				<field id="enable" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="select">
+					<label>Enable</label>
+					<comment>Toggle feature status</comment>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+                <field id="customer_group_tag_enable" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="20" translate="label" type="select">
+                    <label>Enable Customer Group Tag</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+			</group>
+			<group id="options" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+				<label>Options</label>
+				<field id="tracking_code" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="text">
+					<label>Tracking Code</label>
+					<comment>Paste the tracking code from your Microsoft Clarity account</comment>
+				</field>
+                <depends>
+                    <field id="microsoft_clarity/general/enable">1</field>
+                </depends>
+			</group>
+		</section>
+	</system>
+</config>
