@@ -2,11 +2,11 @@ Magento 2 Automatic Related Products is the best product recommendation tool tha
 
 Automate your related products, cross-sells and up-sells to display better recommendations with less effort. Rely on the smart algorithm of the Magento Auto Related Products to handle everything for you!
 
-1>Display related products, up-sells and cross-sells based on product, cart and page attributes
-2>Show products on product, category, CMS and shopping cart pages + custom positions
-3>Display “Who Viewed This Also Viewed” and “Who Bought This Also Bought” blocks
-4>Generate related product block based on price, novelty, reviews, rating, or best sellers
-5>Use default, bundle, and compare templates for related products
+1>Display related products, up-sells and cross-sells based on product, cart and page attributes<br/>
+2>Show products on product, category, CMS and shopping cart pages + custom positions<br/>
+3>Display “Who Viewed This Also Viewed” and “Who Bought This Also Bought” blocks<br/>
+4>Generate related product block based on price, novelty, reviews, rating, or best sellers<br/>
+5>Use default, bundle, and compare templates for related products<br/>
 6>Add multiple product blocks to one page
 
 Automate Magento 2 Related Products in a Few Clicks
@@ -36,11 +36,11 @@ Apply one or multiplerelated product rules to the same page and display entirely
 
 Satisfy every customer’s needs with the Magento 2 Automatic Related Products and display:
 
-- Cross-sells
-- Up-sells
-- Best sellers
-- New arrivals
-- Related/featured/random products
+- Cross-sells<br/>
+- Up-sells<br/>
+- Best sellers<br/>
+- New arrivals<br/>
+- Related/featured/random products<br/>
 
 
 Use Smart Product Recommendation Algorithm
@@ -107,10 +107,10 @@ Once you define what products to display, you’re at the final stage. The last 
 
 Magento 2 Automatic Related Products extension allows you to sort products by:
 
-- Name
-- Date (new)
-- Price (higher/lower)
-- Best sellers (per week, month, three weeks, year)
+- Name<br/>
+- Date (new)<br/>
+- Price (higher/lower)<br/>
+- Best sellers (per week, month, three weeks, year)<br/>
 
 Offer Personalized Related Products
 Since every customer has unique needs, you should target them with unique offers. 

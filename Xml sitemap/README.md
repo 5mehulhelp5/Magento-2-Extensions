@@ -4,10 +4,10 @@ Be sure all of your website pages will be properly indexed and ranked.
 
 Meet all search engine requirements and make new pages appear in Google faster with an accurate Magento XML sitemap.
 
-1>Better SEO ranking and more targeted traffic
-2>Faster website indexation
-3>Dynamic XML sitemap generation
-4>Compliance with all search engine requirements
+1>Better SEO ranking and more targeted traffic<br/>
+2>Faster website indexation<br/>
+3>Dynamic XML sitemap generation<br/>
+4>Compliance with all search engine requirements<br/>
 
 
 Make Your Website Easy to Crawl and Index

@@ -4,12 +4,12 @@ The ”set and forget” approach ensures hassle-free management and dynamic pro
 
 Drive customer's attention to certain products and foster their desire to purchase more.
 
-1>Create multiple text and image product labels
-2>Use more than one product label on one product
-3>Display different labels to different customer groups
-4>Use extensive conditions to show various product badges dynamically
-5>Set different labels for category/list and product pages
-6>Choose from 100+ ready-made image product labels
+1>Create multiple text and image product labels<br/>
+2>Use more than one product label on one product<br/>
+3>Display different labels to different customer groups<br/>
+4>Use extensive conditions to show various product badges dynamically<br/>
+5>Set different labels for category/list and product pages<br/>
+6>Choose from 100+ ready-made image product labels<br/>
 
 
 Draw Customer's Attention and Boost Sales
@@ -19,11 +19,11 @@ It helps you display multiple product badges on Magento pages where and when you
 
 Boost your sales by highlighting every product with a unique offer. Show product labels on:
 
-- New arrivals
-- Bestsellers
-- Discounted items
-- Items eligible for free shipping
-- Products that sell quickly etc.
+- New arrivals<br/>
+- Bestsellers<br/>
+- Discounted items<br/>
+- Items eligible for free shipping<br/>
+- Products that sell quickly etc.<br/>
 
 
 Create Eye-Catching Product Labels

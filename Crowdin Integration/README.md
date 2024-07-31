@@ -2,9 +2,9 @@ Magento 2 Crowdin Integration is the extension that enables you to connect your 
 
 Manage your multilingual content better in one place with an easy Magento + Crowdin Integration!
 
-1>Agile localization management
-2>Faster and easier Magento translations
-3>Real-time Magento-Crowdin data synchronization
+1>Agile localization management<br/>
+2>Faster and easier Magento translations<br/>
+3>Real-time Magento-Crowdin data synchronization<br/>
 
 
 Streamline Translation Process

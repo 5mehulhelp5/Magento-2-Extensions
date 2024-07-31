@@ -2,10 +2,10 @@ Magento 2 Command Line Interface (CLI) in the extension that allows you to run C
 
 Have full control over who runs what commands in your admin (password protected). Restrict access to the CLI interface via the Magento 2 ACL.
 
-1>Run the most common CLI command from the admin panel
-2>Choose the most used command to be displayed in the CLI dashboard
-3>Restrict users’ rights to run CLI commands from the admin
-4>Limit users' rights to only specific commands
+1>Run the most common CLI command from the admin panel<br/>
+2>Choose the most used command to be displayed in the CLI dashboard<br/>
+3>Restrict users’ rights to run CLI commands from the admin<br/>
+4>Limit users' rights to only specific commands<br/>
 
 
 Run CLI Commands from the Admin Panel

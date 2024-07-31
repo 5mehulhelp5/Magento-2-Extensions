@@ -4,13 +4,13 @@ Best SEO practices, an extensive set of features, 22+ templates and plenty of ot
 
 You don’t need to rely on WordPress or any other third-party platform when you have a Magefan Blog that attracts, engages and converts!
 
-1>Choose from 22+ blog templates for post lists and homepage
-2>Create an unlimited number of blog posts, categories, tags and authors
-3>Schedule and preview posts before publication
-4>Improve blog navigation with 8 different sidebar widgets
-5>Optimize your blog for better position in search with multiple SEO features
-6>Cross-promote your products in the blog and posts in the catalogue
-7>Insert featured and recent posts anywhere in your store using widgets
+1>Choose from 22+ blog templates for post lists and homepage<br/>
+2>Create an unlimited number of blog posts, categories, tags and authors<br/>
+3>Schedule and preview posts before publication<br/>
+4>Improve blog navigation with 8 different sidebar widgets<br/>
+5>Optimize your blog for better position in search with multiple SEO features<br/>
+6>Cross-promote your products in the blog and posts in the catalogue<br/>
+7>Insert featured and recent posts anywhere in your store using widgets<br/>
 
 
 Make the Most of the Blog SEO
@@ -18,14 +18,14 @@ WA blog that drives results should be more than attractive. Our Magento 2 Blog E
 
 For that it follows the best SEO practices and offers you:
 
-- Blog XML sitemap
-- Metadata settings 
-- SEO-Friendly URLs
-- Canonical URLs
-- Breadcrumb
-- Rich Snippets (Structured Data)
-- Robots Meta Tags
-- Open Graph Tags for Post
+- Blog XML sitemap<br/>
+- Metadata settings <br/>
+- SEO-Friendly URLs<br/>
+- Canonical URLs<br/>
+- Breadcrumb<br/>
+- Rich Snippets (Structured Data)<br/>
+- Robots Meta Tags<br/>
+- Open Graph Tags for Post<br/>
 
 
 Take Full Control of the Blog Design
@@ -84,14 +84,14 @@ Magento 2 Blog Extension also covert the spammy comments with the ReCaptacha. Ke
 Ensure Straightforward Navigation
 Enable blog sidebar widgets to optimize navigation with our Magento 2 Blog:
 
-- Search 一 help users find posts they are interested in faster (blog or catalogue search)
-- Categories tree 一 allow readers to choose some specific posts from the diversity of topics
-- Post contents 一 enable post contents in the sidebar for each post
-- Recent/featured and popular posts 一 highlight some interesting articles
-- Tag cloud 一 combine similar posts with tags
-- Related products 一 display unique related products for each post
-- Archive 一 show the history of your blog
-- Custom HTML blocks 一 insert custom block/images into the blog sidebar
+- Search 一 help users find posts they are interested in faster (blog or catalogue search)<br/>
+- Categories tree 一 allow readers to choose some specific posts from the diversity of topics<br/>
+- Post contents 一 enable post contents in the sidebar for each post<br/>
+- Recent/featured and popular posts 一 highlight some interesting articles<br/>
+- Tag cloud 一 combine similar posts with tags<br/>
+- Related products 一 display unique related products for each post<br/>
+- Archive 一 show the history of your blog<br/>
+- Custom HTML blocks 一 insert custom block/images into the blog sidebar<br/>
 
 Preview, Schedule and Disable Blog Posts
 Creating content takes a lot of time. But editing and publishing probably cause more fuss. Our Magento 2 Blog fixes that.

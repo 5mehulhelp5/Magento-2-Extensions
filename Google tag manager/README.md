@@ -2,13 +2,13 @@ Magento 2 Google Tag Manager Extension is an advanced eCommerce solution that al
 
 Make data-driven decisions and adjust your marketing strategy with insightful data reports with the better Google Tag Manager for Magento 2.
 
-1>13+ eCommerce events
-2>Web container and server container
-3>Client-side tracking and server-side tracking
-4>Ready-made JSON files
-5>Google Ads Remarketing / Conversion Tracking / Enhanced E-commerce
-6>Speed optimization for the GTM script
-7>No code editing or technical knowledge needed
+1>13+ eCommerce events<br/>
+2>Web container and server container<br/>
+3>Client-side tracking and server-side tracking<br/>
+4>Ready-made JSON files<br/>
+5>Google Ads Remarketing / Conversion Tracking / Enhanced E-commerce<br/>
+6>Speed optimization for the GTM script<br/>
+7>No code editing or technical knowledge needed<br/>
 
 Forget About Code Editing
 To implement GTM code snippets you usually need to edit and modify the source code of your store. Not anymore.
@@ -30,13 +30,13 @@ Getting insights about your store's performance is as simple as that.
 Measure How Your Products Perform
 Google Analytics E-commerce support enables you to get a concise picture of the performance of your products. Use Magento 2 Google Tag Manager Extension to track and analyse:
 
-- product impressions and clicks by position (in search results and category pages)
-- product impressions and clicks in custom product blocks (related, cross-sell, up-sell)
-- user engagement (vising, adding and removing products from a cart)
-- conversions (purchased products)
-- revenue (per each product)
-- quantity (products purchased per a specific time)
-- CTR and more.
+- product impressions and clicks by position (in search results and category pages)<br/>
+- product impressions and clicks in custom product blocks (related, cross-sell, up-sell)<br/>
+- user engagement (vising, adding and removing products from a cart)<br/>
+- conversions (purchased products)<br/>
+- revenue (per each product)<br/>
+- quantity (products purchased per a specific time)<br/>
+- CTR and more.<br/>
 
 Increase the average order value and incorporate a new marketing strategy with proper data at hand.
 
@@ -71,11 +71,11 @@ The customer shopping experience is key to better conversions. To create that ex
 
 Track every step in the customers’ journey and discover the bottlenecks that need to be eliminated.
 
-- products viewed, added or removed from their shopping cart
-- checkout steps completed successfully
-- abandoned shopping carts and checkout process
-- registered and signed-in customers (pages)
-- customers that use search (pages and medium)
+- products viewed, added or removed from their shopping cart<br/>
+- checkout steps completed successfully<br/>
+- abandoned shopping carts and checkout process<br/>
+- registered and signed-in customers (pages)<br/>
+- customers that use search (pages and medium)<br/>
 
 Enable Server-side Tracking
 Although Magento Google Tag Manager is the ultimate tool for data tracking, some data might still be missing.
@@ -93,13 +93,13 @@ Use Magefan GTM Extension to track what products get purchased the most and how 
 
 The order details you get in the GA4 reports with this extension include:
 
-- Order ID
-- Currency
-- Revenue
-- Coupon code
-- Items purchased
-- Tax amount
-- Shipping amount
+- Order ID<br/>
+- Currency<br/>
+- Revenue<br/>
+- Coupon code<br/>
+- Items purchased<br/>
+- Tax amount<br/>
+- Shipping amount<br/>
 
 Never Miss a Conversion
 If customers use AdBlockers or don’t accept cookies their purchases are simply missed. This results in inaccurate data reports and ineffective campaigns. Is there a solution?
