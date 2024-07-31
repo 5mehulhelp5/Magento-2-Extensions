@@ -1,0 +1,38 @@
+<?php
+/**
+ * Copyright © Magexperts (support@magexperts.com). All rights reserved.
+ * Please visit Magexperts.com for license details (https://magexperts.com/end-user-license-agreement).
+ */
+/** @var \Magexperts\GoogleTagManager\Block\Adminhtml\System\Config\Form\Button $block */
+/** @var \Magento\Framework\Escaper $escaper */
+/** @var \Magexperts\Community\Api\SecureHtmlRendererInterface $mfSecureRenderer */
+// phpcs:ignoreFile
+?>
+<?php
+if (!isset($escaper)) {
+    /* Compatability fix for old Magento versions */
+    $escaper = $block;
+}
+?>
+<div class="pp-buttons-container">
+    <button type="button" id="mf_download_<?= $block->escapeHtml($block->getConteinderType()) ?>">
+        <?= $escaper->escapeHtml(__('Generate JSON Container & Download File')); ?>
+    </button>
+    <p>
+        <br/>
+        <?= __('Once the JSON file is downloaded, upload it to %1 > Choose %2 Container > Admin > Import Container.', '<a href="https://tagmanager.google.com/" title="Google Tag Manager" target="_blank">Google Tag Manager</a>', ucfirst($block->getConteinderType())) ?>
+    </p>
+    <?php $script = "
+        require([
+            'jquery',
+            'domReady!'
+        ], function ($) {
+            $('#mf_download_{$block->escapeHtml($block->getConteinderType())}').on('click', function(event) {
+                event.preventDefault;
+                window.location='{$escaper->escapeUrl($block->getContainerGenerateUrl())}';
+            });
+        });
+    "; ?>
+    <?= /* @noEscape */ $mfSecureRenderer->renderTag('script', [], $script, false) ?>
+</div>
+

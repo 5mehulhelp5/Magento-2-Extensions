@@ -1,0 +1,28 @@
+<!--
+/**
+ * Copyright © Magexperts (support@magexperts.com). All rights reserved.
+ * Please visit Magexperts.com for license details (https://magexperts.com/end-user-license-agreement).
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="mfproductlabel_listing_data_source" xsi:type="string">Magexperts\ProductLabel\Ui\DataProvider\Rule\Rule</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Magexperts\ProductLabel\Model\Store\Ui\Component\Listing\Column\Store" type="Magento\Store\Ui\Component\Listing\Column\Store">
+        <arguments>
+            <argument name="storeKey" xsi:type="string">store_id</argument>
+        </arguments>
+    </virtualType>
+
+
+    <preference for="Magexperts\ProductLabel\Api\RuleRepositoryInterface" type="Magexperts\ProductLabel\Model\RuleRepository"/>
+    <preference for="Magexperts\ProductLabel\Api\RuleCollectionInterface" type="Magexperts\ProductLabel\Model\ResourceModel\Rule\Collection"/>
+    <preference for="Magexperts\ProductLabel\Api\Data\RuleInterface" type="Magexperts\ProductLabel\Model\Rule"/>
+    <preference for="Magexperts\ProductLabel\Api\RuleResourceModelInterface" type="Magexperts\ProductLabel\Model\ResourceModel\Rule"/>
+    <preference for="Magexperts\ProductLabel\Api\Data\RuleSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+    <preference for="Magexperts\ProductLabel\Api\PositionsInterface" type="Magexperts\ProductLabel\Model\Config\Source\Positions"/>
+</config>

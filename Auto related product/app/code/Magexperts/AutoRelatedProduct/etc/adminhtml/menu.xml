@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magexperts (support@magexperts.com). All rights reserved.
+ * Please visit Magexperts.com for license details (https://magexperts.com/end-user-license-agreement).
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Magexperts_AutoRelatedProduct::elements" title="Automatic Related Products" module="Magexperts_AutoRelatedProduct" parent="Magento_Backend::marketing" sortOrder="10"  resource="Magexperts_AutoRelatedProduct::elements"/>
+        <add id="Magexperts_AutoRelatedProduct::rule" title="Rules" module="Magexperts_AutoRelatedProduct" parent="Magexperts_AutoRelatedProduct::elements" sortOrder="10" action="autorp/rule/" resource="Magexperts_AutoRelatedProduct::rule"/>
+        <add id="Magexperts_AutoRelatedProduct::config" title="Configuration" module="Magexperts_AutoRelatedProduct" parent="Magexperts_AutoRelatedProduct::elements" sortOrder="20" action="adminhtml/system_config/edit/section/autorp" resource="Magexperts_AutoRelatedProduct::config"/>
+    </menu>
+</config>

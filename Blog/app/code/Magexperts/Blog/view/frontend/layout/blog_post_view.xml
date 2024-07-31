@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magexperts (support@magexperts.com). All rights reserved.
+ * Please visit Magexperts.com for license details (https://magexperts.com/end-user-license-agreement).
+ *
+ * Glory to Ukraine! Glory to the heroes!
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="blog_default"/>
+    <update handle="blog_post_opengraph" />
+    <update handle="blog_post_richsnippets" />
+    <body>
+        <referenceBlock name="head.additional">
+            <block class="Magexperts\Blog\Block\Post\View\Comments\HeadFbApi" name="mfblog.head.fb_api" />
+        </referenceBlock>
+        <referenceBlock name="blog.sidebar">
+            <block class="Magexperts\Blog\Block\Sidebar\PostRelatedProducts" name="blog.sidebar.postrelatedproducts" template="Magexperts_Blog::sidebar/post-related-products.phtml" />
+        </referenceBlock>
+        <referenceContainer name="content">
+            <block class="Magexperts\Blog\Block\Post\View\ViewsCount" name="blog.posts.views.count" template="post/view/views_count.phtml"></block>
+            <block class="Magexperts\Blog\Block\Post\View" name="blog.post" template="post/view.phtml">
+                <block class="Magexperts\Blog\Block\Post\Info" name="blog.post.info" template="post/info.phtml" />
+                <action method="setPostInfoBlockName">
+                    <argument name="name" xsi:type="string">blog.post.info</argument>
+                </action>
+                <container name="blog.post.bottom" label="Blog Post Bottom Container" >
+                    <block class="Magexperts\Blog\Block\Post\View\Gallery" name="blog.post.gallery" as="gallery"  template="Magexperts_Blog::post/view/gallery.phtml" />
+                    <block class="Magexperts\Blog\Block\Post\View\NextPrev" name="blog.post.nextprev" as="nextprev"  template="Magexperts_Blog::post/view/nextprev.phtml" />
+                    <block class="Magexperts\Blog\Block\Post\View\RelatedPosts" name="blog.post.relatedposts" as="relatedposts"  template="Magexperts_Blog::post/view/relatedposts.phtml" />
+                    <block class="Magexperts\Blog\Block\Post\View\RelatedProducts" name="blog.post.relatedproducts" as="relatedproducts"  template="Magexperts_Blog::post/view/relatedproducts.phtml" />
+                    <!--
+                    <block class="Magexperts\Blog\Block\Post\View\RelatedProducts" name="blog.post.relatedproducts" as="relatedproducts"  template="Magento_Catalog::product/list/items.phtml" >
+                        <arguments>
+                            <argument name="is_shuffled" xsi:type="boolean">false</argument>
+                            <argument name="can_items_add_to_cart" xsi:type="boolean">false</argument>
+                            <argument name="related_products_type" xsi:type="string">related</argument>
+                        </arguments>
+                    </block>
+                    -->
+                    <container name="blog.post.comments" label="Comments Container" htmlTag="div" htmlClass="block comments" >
+                        <block class="Magexperts\Blog\Block\Post\View\Comments\Magexperts" name="blog.post.comments.magexperts" template="post/view/comments/magexperts.phtml">
+                            <block class="Magento\Framework\View\Element\Template" name="display_privacy_policy_checkbox" template="Magexperts_Blog::post/view/comments/privacy_policy_checkbox.phtml"/>
+                            <arguments>
+                                <argument name="jsLayout" xsi:type="array">
+                                    <item name="components" xsi:type="array">
+                                        <item name="magexperts-comments.js" xsi:type="array">
+                                            <item name="component" xsi:type="string">Magexperts_Blog/js/magexperts-comments</item>
+                                        </item>
+                                    </item>
+                                </argument>
+                            </arguments>
+                            <container name="blog.post.comments.magexperts.additional" label="Comments Recaptcha" />
+                            <container name="blog.post.comments.magexperts.reply.additional" label="Comments Reply Recaptcha" />
+                        </block>
+                        <block class="Magexperts\Blog\Block\Post\View\Comments\Facebook" name="blog.post.comments.facebook" template="post/view/comments/facebook.phtml" />
+                        <block class="Magexperts\Blog\Block\Post\View\Comments\Disqus" name="blog.post.comments.disqus" template="post/view/comments/disqus.phtml" />
+                        <block class="Magexperts\Blog\Block\Post\View\Comments\Google" name="blog.post.comments.google" template="post/view/comments/google.phtml" />
+                    </container>
+                    <block class="Magexperts\Blog\Block\Social\AddThis" name="addthis.js.init" as="addthisJs" template="Magexperts_Blog::addthis-js.phtml"/>
+                </container>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

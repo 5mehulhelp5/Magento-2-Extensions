@@ -1,0 +1,29 @@
+<?php
+/**
+ * Copyright © Magexperts (support@magexperts.com). All rights reserved.
+ * Please visit Magexperts.com for license details (https://magexperts.com/end-user-license-agreement).
+ */
+?>
+<?php
+/**
+ * @var $block Magexperts\ProductLabel\Block\Adminhtml\System\Config\Form\CheckEnableInfo
+ */
+?>
+<?php if (!$block->isEnabled()) { ?>
+<div class="messages">
+    <div class="message message-error">
+        <div data-ui-id="messages-message-error">
+            <?= /*@noEscape*/
+            __(
+                'Magexperts Product Label is disabled, to enable the extension please navigate to
+                        <a href="%1" target="_blank">Stores > Configuration > Magexperts Extensions > Product Label</a>.',
+                $block->getUrl(
+                    'adminhtml/system_config/edit',
+                    ['section' => 'mfproductlabel']
+                )
+            );
+            ?>
+        </div>
+    </div>
+</div>
+<?php } ?>

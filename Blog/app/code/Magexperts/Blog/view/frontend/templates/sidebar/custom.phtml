@@ -1,0 +1,21 @@
+<?php
+/**
+ * Copyright © Magexperts (support@magexperts.com). All rights reserved.
+ * Please visit Magexperts.com for license details (https://magexperts.com/end-user-license-agreement).
+ *
+ * Glory to Ukraine! Glory to the heroes!
+ */
+?>
+<?php
+/**
+ * Blog sidebar custom HTML template
+ *
+ * @var $block \Magexperts\Blog\Block\Sidebar\Search
+ */
+?>
+<?php $content = $block->getContent() ?>
+<?php if ($content) { ?>
+    <div class="widget block blog-custom" >
+        <?= /*@noEscape*/ $content ?>
+    </div>
+<?php } ?>

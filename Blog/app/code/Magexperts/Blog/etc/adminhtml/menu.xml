@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magexperts (support@magexperts.com). All rights reserved.
+ * Please visit Magexperts.com for license details (https://magexperts.com/end-user-license-agreement).
+ *
+ * Glory to Ukraine! Glory to the heroes!
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Magexperts_Blog::elements" title="Blog" module="Magexperts_Blog" parent="Magento_Backend::content" sortOrder="10"  resource="Magexperts_Blog::elements"/>
+        <add id="Magexperts_Blog::post" title="Posts" module="Magexperts_Blog" parent="Magexperts_Blog::elements" sortOrder="10" action="blog/post" resource="Magexperts_Blog::post"/>
+        <add id="Magexperts_Blog::category" title="Categories" module="Magexperts_Blog" parent="Magexperts_Blog::elements" sortOrder="20" action="blog/category" resource="Magexperts_Blog::category"/>
+        <add id="Magexperts_Blog::tag" title="Tags" module="Magexperts_Blog" parent="Magexperts_Blog::elements" sortOrder="25" action="blog/tag" resource="Magexperts_Blog::tag"/>
+        <add id="Magexperts_Blog::comment" title="Comments" module="Magexperts_Blog" parent="Magexperts_Blog::elements" sortOrder="30" action="blog/comment" resource="Magexperts_Blog::comment"/>
+        <add id="Magexperts_Blog::import" title="Import" module="Magexperts_Blog" parent="Magexperts_Blog::elements" sortOrder="40" action="blog/import" resource="Magexperts_Blog::import"/>
+        <add id="Magexperts_Blog::widget" title="Add Blog Blocks via Widgets" module="Magexperts_Blog" parent="Magexperts_Blog::elements" sortOrder="45" action="adminhtml/widget_instance" resource="Magento_Widget::widget_instance"/>
+        <add id="Magexperts_Blog::config_blog" title="Configuration" module="Magexperts_Blog" parent="Magexperts_Blog::elements" sortOrder="50" action="adminhtml/system_config/edit/section/mfblog" resource="Magexperts_Blog::config_blog"/>
+    </menu>
+</config>

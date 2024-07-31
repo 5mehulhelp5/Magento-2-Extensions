@@ -1,0 +1,31 @@
+<?php
+/**
+ * Copyright © Magexperts (support@magexperts.com). All rights reserved.
+ * Please visit Magexperts.com for license details (https://magexperts.com/end-user-license-agreement).
+ */
+?>
+<?php
+/**
+ * @var $block \Magexperts\Community\Block\JsScript
+ * @var $mfSecureRenderer \Magexperts\Community\Api\SecureHtmlRendererInterface
+ */
+?>
+<?php $script = "
+    window.MagexpertsJs = window.MagexpertsJs || {};
+    window.MagexpertsJs.getCookie = function(cookieName) {
+        let name = cookieName + '=';
+        let decodedCookie = decodeURIComponent(document.cookie);
+        let ca = decodedCookie.split(';');
+        for(let i = 0; i <ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) === ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) === 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return '';
+    };
+"; ?>
+<?= /* @noEscape */ $mfSecureRenderer->renderTag('script', [], $script, false) ?>

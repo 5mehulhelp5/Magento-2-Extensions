@@ -1,0 +1,14 @@
+{
+    "name": "magexperts/module-crowdin-integration",
+    "description": "Crowdin Integration",
+    "type": "magento2-module",
+    "version": "2.0.5",
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Magexperts\\Crowdin\\": ""
+        }
+    }
+}

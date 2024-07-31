@@ -1,0 +1,53 @@
+<?php
+/**
+ * Copyright © Magexperts (support@magexperts.com). All rights reserved.
+ * Please visit Magexperts.com for license details (https://magexperts.com/end-user-license-agreement).
+ *
+ * Glory to Ukraine! Glory to the heroes!
+ */
+?>
+<?php
+/**
+ * Blog tag claud sidebar template
+ *
+ * @var $block \Magexperts\Blog\Block\Sidebar\TagClaud
+ * @var $mfSecureRenderer \Magexperts\Community\Api\SecureHtmlRendererInterface
+ */
+?>
+<?php $tags = $block->getTags(); ?>
+
+<?php if (count($tags)) { ?>
+<div class="widget block block-tagclaud" data-bind="scope: 'tagclaud'">
+    <div class="block-title">
+        <strong><?= $block->escapeHtml(__('Tags')) ?></strong>
+    </div>
+
+    <div id="blogSidebarCloudCanvasContainer">
+        <canvas style="width:100%" height="<?= $block->escapeHtml($block->getConfigValue($block::CLOUD_HEIGHT)) ?>" id="blogSidebarCloudCanvas">
+            <div class="tagclaud-hld">
+                <?php foreach ($tags as $tag) { ?>
+                    <?php $title = $tag->getTitle() ?>
+                    <span class="<?= $block->escapeHtml($block->getTagClass($tag)) ?>">
+                        <a href="<?= $block->escapeUrl($tag->getTagUrl()) ?>" title="<?= $block->escapeHtml($title) ?>">
+                            <?= $block->escapeHtml($title) ?>
+                         </a>
+                    </span>
+                <?php } ?>
+            </div>
+        </canvas>
+    </div>
+</div>
+
+<script type="text/javascript" src="<?= $this->getViewFileUrl('Magexperts_Blog::js/tagcanvas.min.js') ?>" ></script>
+<?php $script = "
+    document.addEventListener('DOMContentLoaded', function() {
+        try {
+            TagCanvas.Start('blogSidebarCloudCanvas', null, " . /*@noEscape*/ $block->getAnimationConfig() . ");
+        } catch (e) {
+            /* something went wrong, hide the canvas container */
+            document.getElementById('blogSidebarCloudCanvasContainer').style.display = 'none';
+        }
+    });
+"; ?>
+<?= /* @noEscape */ $mfSecureRenderer->renderTag('script', [], $script, false) ?>
+<?php } ?>

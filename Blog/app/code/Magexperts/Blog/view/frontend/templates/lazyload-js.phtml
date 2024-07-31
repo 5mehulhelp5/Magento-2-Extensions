@@ -1,0 +1,56 @@
+<?php
+/**
+ * Copyright © Magexperts (support@magexperts.com). All rights reserved.
+ * Please visit Magexperts.com for license details (https://magexperts.com/end-user-license-agreement).
+ *
+ * Glory to Ukraine! Glory to the heroes!
+ */
+?>
+<?php
+/**
+ * @var $block \Magento\Framework\View\Element\Template
+ * @var $mfSecureRenderer \Magexperts\Community\Api\SecureHtmlRendererInterface
+ * @var $mfHyvaThemeDetection \Magexperts\Community\Api\HyvaThemeDetectionInterface
+ */
+?>
+<?php
+$helper = $this->helper(\Magexperts\Blog\Helper\Data::class);
+?>
+
+<?php if (!$helper->isOriginMfLazyLoadEnable()) { ?>
+    <?php if (!$mfHyvaThemeDetection->execute()) { ?>
+        <?php $script = "
+            require(['jquery', 'domReady!'], function($){
+                if ($('.mfblogunveil').length) {
+                    require(['Magexperts_Blog/js/lib/mfblogunveil'], function(){
+                        $('.mfblogunveil').mfblogunveil();
+                    });
+                }
+            });
+        "; ?>
+    <?php } else { ?>
+        <?php $script = "
+            /* e.g. hyva theme */
+            document.addEventListener('DOMContentLoaded', function(){
+                var items =  document.getElementsByClassName('mfblogunveil');
+                var el, url;
+                if (items.length) {
+                    for (var i=0; i<items.length;i++) {
+                        el = items[i];
+                        url = el.getAttribute('data-original');
+                        if (!url) {
+                            continue;
+                        }
+                        if ('IMG' == el.tagName) {
+                            el.src = url;
+                        } else {
+                            el.style.backgroundImage = \"url('\" + url  + \"')\";
+                        }
+                    }
+                }
+            });
+        }
+        "; ?>
+    <?php } ?>
+    <?= /* @noEscape */ $mfSecureRenderer->renderTag('script', [], $script, false) ?>
+<?php } ?>

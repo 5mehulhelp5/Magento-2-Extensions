@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magexperts (support@magexperts.com). All rights reserved.
+ * Please visit Magexperts.com for license details (https://magexperts.com/end-user-license-agreement).
+ */
+-->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route url="/V1/crowdin/entities/list/:storeId" method="GET">
+        <service class="Magexperts\Crowdin\Api\TranslationRepositoryInterface" method="getEntitiesList"/>
+        <resources>
+            <resource ref="Magexperts_Crowdin::config_integration"/>
+        </resources>
+    </route>
+
+    <route url="/V1/crowdin/stores/list" method="GET">
+        <service class="Magexperts\Crowdin\Api\TranslationRepositoryInterface" method="getStoresList"/>
+        <resources>
+            <resource ref="Magexperts_Crowdin::config_integration"/>
+        </resources>
+    </route>
+    
+    <route url="/V1/crowdin/entity/get/:id" method="GET">
+        <service class="Magexperts\Crowdin\Api\TranslationRepositoryInterface" method="getEntity"/>
+        <resources>
+            <resource ref="Magexperts_Crowdin::config_integration"/>
+        </resources>
+    </route>
+
+    <route url="/V1/crowdin/entity/update" method="POST">
+        <service class="Magexperts\Crowdin\Api\TranslationRepositoryInterface" method="updateEntity"/>
+        <resources>
+            <resource ref="Magexperts_Crowdin::config_integration"/>
+        </resources>
+    </route>
+</routes>

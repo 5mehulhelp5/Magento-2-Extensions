@@ -1,0 +1,17 @@
+{
+    "name": "magexperts/module-auto-related-product",
+    "description": "Extend native Magento Up-Sells, Cross-Sells, and Related products",
+    "type": "magento2-module",
+    "version": "2.4.0",
+    "require": {
+        "magexperts/module-community" : ">=2.1.29"
+    },
+    "autoload": {
+        "psr-4": {
+            "Magexperts\\AutoRelatedProduct\\": ""
+        },
+        "files": [
+            "registration.php"
+        ]
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "name": "magexperts/module-google-tag-manager",
+    "description": "Magento 2 Google Tag Manager and Google Analytics 4",
+    "type": "magento2-module",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Magexperts",
+            "email": "support@magexperts.com"
+        }
+    ],
+    "version": "2.6.3",
+    "require": {
+        "magexperts/module-community" : ">=2.1.28"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Magexperts\\GoogleTagManager\\": ""
+        }
+    }
+}

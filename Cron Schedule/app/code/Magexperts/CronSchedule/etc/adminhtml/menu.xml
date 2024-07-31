@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magexperts (support@magexperts.com). All rights reserved.
+ * Please visit Magexperts.com for license details (https://magexperts.com/end-user-license-agreement).
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Magexperts_CronSchedule::cron" title="Cron" translate="title" module="Magexperts_CronSchedule" parent="Magento_Backend::system" sortOrder="60" resource="Magexperts_CronSchedule::cron" />
+        <add id="Magexperts_CronSchedule::schedule_log" title="Schedule Log" module="Magexperts_CronSchedule" parent="Magexperts_CronSchedule::cron" sortOrder="10" action="cron_schedule/schedule_log/" resource="Magexperts_CronSchedule::schedule_log"/>
+        <add id="Magento_Config::advanced" title="Cron Groups" module="Magexperts_CronSchedule" parent="Magexperts_CronSchedule::cron" sortOrder="80" action="admin/system_config/edit/section/system" resource="Magento_Config::config_system"/>
+        <add id="Magexperts_CronSchedule::cronschedule_configuration" title="Configuration" module="Magexperts_CronSchedule" parent="Magexperts_CronSchedule::cron" sortOrder="90" action="admin/system_config/edit/section/mfcronschedule" resource="Magexperts_CronSchedule::cronschedule_configuration"/>
+    </menu>
+</config>

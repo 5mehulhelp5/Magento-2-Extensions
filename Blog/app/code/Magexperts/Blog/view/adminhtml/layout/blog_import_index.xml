@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magexperts (support@magexperts.com). All rights reserved.
+ * Please visit Magexperts.com for license details (https://magexperts.com/end-user-license-agreement).
+ *
+ * Glory to Ukraine! Glory to the heroes!
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="jquery/fileUploader/css/jquery.fileupload-ui.css"/>
+        <css src="Magexperts_Blog::css/import.css"/>
+    </head>
+    <update handle="editor"/>
+    <update handle="blog_update_info"/>
+    <body>
+        <referenceContainer name="content">
+            <container name="mfblog.import.items" htmlTag="div" htmlClass="mfblog-imports" >
+                <block name="mfblog.import.wordpress" template="Magexperts_Blog::import/item.phtml">
+                    <arguments>
+                        <argument name="import_type" xsi:type="string">wordpress</argument>
+                        <argument name="label" xsi:type="string">Import from WordPress</argument>
+                        <argument name="image" xsi:type="string">Magexperts_Blog::images/wordpress.png</argument>
+                    </arguments>
+                </block>
+                <block name="mfblog.import.aw" template="Magexperts_Blog::import/item.phtml">
+                    <arguments>
+                        <argument name="import_type" xsi:type="string">aw</argument>
+                        <argument name="label" xsi:type="string">Import from AheadWorks</argument>
+                        <argument name="image" xsi:type="string">Magexperts_Blog::images/aw_blog.png</argument>
+                    </arguments>
+                </block>
+                <block name="mfblog.import.aw2" template="Magexperts_Blog::import/item.phtml">
+                    <arguments>
+                        <argument name="import_type" xsi:type="string">aw2</argument>
+                        <argument name="label" xsi:type="string">Import from AheadWorks</argument>
+                        <argument name="image" xsi:type="string">Magexperts_Blog::images/aw2_blog.png</argument>
+                    </arguments>
+                </block>
+                <block name="mfblog.import.mageplaza1" template="Magexperts_Blog::import/item.phtml">
+                    <arguments>
+                        <argument name="import_type" xsi:type="string">mageplaza1</argument>
+                        <argument name="label" xsi:type="string">Import from Mageplaza</argument>
+                        <argument name="image" xsi:type="string">Magexperts_Blog::images/mageplaza_m1.png</argument>
+                    </arguments>
+                </block>
+                <block name="mfblog.import.mageplaza" template="Magexperts_Blog::import/item.phtml">
+                    <arguments>
+                        <argument name="import_type" xsi:type="string">mageplaza</argument>
+                        <argument name="label" xsi:type="string">Import from Mageplaza</argument>
+                        <argument name="image" xsi:type="string">Magexperts_Blog::images/mageplaza_m2.png</argument>
+                    </arguments>
+                </block>
+                <block name="mfblog.import.mirasvit" template="Magexperts_Blog::import/item.phtml">
+                    <arguments>
+                        <argument name="import_type" xsi:type="string">mirasvit</argument>
+                        <argument name="label" xsi:type="string">Import from Mirasvit</argument>
+                        <argument name="image" xsi:type="string">Magexperts_Blog::images/mirasvit.png</argument>
+                    </arguments>
+                </block>
+                <block name="mfblog.import.amasty1" template="Magexperts_Blog::import/item.phtml" >
+                    <arguments>
+                        <argument name="import_url" xsi:type="string">https://magexperts.com/magento2-blog-extension/pricing</argument>
+                        <argument name="label" xsi:type="string">Import from Amasty</argument>
+                        <argument name="image" xsi:type="string">Magexperts_Blog::images/amasty1_blog.png</argument>
+                    </arguments>
+                </block>
+                <block name="mfblog.import.amasty2" template="Magexperts_Blog::import/item.phtml" >
+                    <arguments>
+                        <argument name="import_url" xsi:type="string">https://magexperts.com/magento2-blog-extension/pricing</argument>
+                        <argument name="label" xsi:type="string">Import from Amasty</argument>
+                        <argument name="image" xsi:type="string">Magexperts_Blog::images/amasty2_blog.png</argument>
+                    </arguments>
+                </block>
+                <block name="mfblog.import.csvxml" template="Magexperts_Blog::import/item.phtml">
+                    <arguments>
+                        <argument name="import_url" xsi:type="string">https://magexperts.com/magento2-blog-extension/pricing</argument>
+                        <argument name="label" xsi:type="string">Import from CSV/XML File</argument>
+                        <argument name="image" xsi:type="string">Magexperts_Blog::images/csv.jpg</argument>
+                    </arguments>
+                </block>
+                <block name="mfblog.import.joomla" template="Magexperts_Blog::import/item.phtml">
+                    <arguments>
+                        <argument name="import_url" xsi:type="string">https://magexperts.com/magento2-blog-extension/pricing</argument>
+                        <argument name="label" xsi:type="string">Import from Joomla</argument>
+                        <argument name="image" xsi:type="string">Magexperts_Blog::images/joomla.jpg</argument>
+                    </arguments>
+                </block>
+                <block name="mfblog.import.em" template="Magexperts_Blog::import/item.phtml">
+                    <arguments>
+                        <argument name="import_url" xsi:type="string">https://magexperts.com/magento2-blog-extension/pricing</argument>
+                        <argument name="label" xsi:type="string">Import from EM Themes</argument>
+                        <argument name="image" xsi:type="string">Magexperts_Blog::images/em_m1.jpg</argument>
+                    </arguments>
+                </block>
+                <block name="mfblog.import.hubspot" template="Magexperts_Blog::import/item.phtml" >
+                    <arguments>
+                        <argument name="import_url" xsi:type="string">https://magexperts.com/magento2-blog-extension/pricing</argument>
+                        <argument name="label" xsi:type="string">Import from HubSpot</argument>
+                        <argument name="image" xsi:type="string">Magexperts_Blog::images/hubspot.jpg</argument>
+                    </arguments>
+                </block>
+                <block name="mfblog.import.drupal" template="Magexperts_Blog::import/item.phtml" >
+                    <arguments>
+                        <argument name="import_url" xsi:type="string">https://magexperts.com/magento2-blog-extension/pricing</argument>
+                        <argument name="label" xsi:type="string">Import from Drupal</argument>
+                        <argument name="image" xsi:type="string">Magexperts_Blog::images/drupal.jpg</argument>
+                    </arguments>
+                </block>
+                <block name="mfblog.import.custom" template="Magexperts_Blog::import/item.phtml">
+                    <arguments>
+                        <argument name="import_url" xsi:type="string">https://magexperts.com/contact</argument>
+                        <argument name="label" xsi:type="string">Contact Magexperts Team</argument>
+                        <argument name="image" xsi:type="string">Magexperts_Blog::images/custom.png</argument>
+                    </arguments>
+                </block>
+
+            </container>
+        </referenceContainer>
+    </body>
+</page>

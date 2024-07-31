@@ -1,0 +1,20 @@
+{
+    "name": "magexperts/module-blog",
+    "description": "Implements Blog functionality on Magento 2 store",
+    "require": {
+        "magexperts/module-community" : ">=2.1.29",
+        "magexperts/module-blog-graph-ql" : ">=2.1.9",
+        "magexperts/module-wysiwyg-advanced" : ">=2.0.15"
+    },
+   "suggest": {
+        "magexperts/module-amp-blog": "Install this module to activate Blog integration with the Plumrocket AMP extension."
+    },
+    "type": "magento2-module",
+    "version": "2.11.5",
+    "autoload": {
+        "files": [ "registration.php" ],
+        "psr-4": {
+            "Magexperts\\Blog\\": ""
+        }
+    }
+}

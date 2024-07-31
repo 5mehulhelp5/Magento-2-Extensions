@@ -1,0 +1,19 @@
+<?php
+/**
+ * Copyright © Magexperts (support@magexperts.com). All rights reserved.
+ * Please visit Magexperts.com for license details (https://magexperts.com/end-user-license-agreement).
+ *
+ * Glory to Ukraine! Glory to the heroes!
+ */
+?>
+<?php
+/**
+ * Blog category info template
+ *
+ * @var $block \Magexperts\Blog\Block\Category\Info
+ */
+?>
+
+<?php if ($content = $block->getContent()): ?>
+    <div class="category-content"><?= /*@noEscape*/ $content ?></div>
+<?php endif ?>

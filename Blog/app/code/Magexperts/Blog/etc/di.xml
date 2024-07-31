@@ -1,0 +1,195 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magexperts (support@magexperts.com). All rights reserved.
+ * Please visit Magexperts.com for license details (https://magexperts.com/end-user-license-agreement).
+ *
+ * Glory to Ukraine! Glory to the heroes!
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <preference for="Magexperts\Blog\Api\AuthorInterface" type="Magexperts\Blog\Model\Author" />
+    <preference for="Magexperts\Blog\Api\AuthorResourceModelInterface" type="Magexperts\Blog\Model\ResourceModel\Author" />
+    <preference for="Magexperts\Blog\Api\AuthorCollectionInterface" type="Magexperts\Blog\Model\ResourceModel\Author\Collection" />
+    <preference for="Magexperts\Blog\Api\SitemapConfigInterface" type="Magexperts\Blog\Model\Sitemap\SitemapConfig" />
+    <preference for="Magexperts\Blog\Api\PostManagementInterface" type="Magexperts\Blog\Model\PostManagement" />
+    <preference for="Magexperts\Blog\Api\CategoryManagementInterface" type="Magexperts\Blog\Model\CategoryManagement" />
+    <preference for="Magexperts\Blog\Api\PostRepositoryInterface" type="Magexperts\Blog\Model\PostRepository" />
+    <preference for="Magexperts\Blog\Api\CategoryRepositoryInterface" type="Magexperts\Blog\Model\CategoryRepository" />
+    <preference for="Magexperts\Blog\Api\TagRepositoryInterface" type="Magexperts\Blog\Model\TagRepository" />
+    <preference for="Magexperts\Blog\Api\AuthorRepositoryInterface" type="Magexperts\Blog\Model\AuthorRepository" />
+    <preference for="Magexperts\Blog\Api\CommentRepositoryInterface" type="Magexperts\Blog\Model\CommentRepository" />
+    <preference for="Magexperts\Blog\Api\ShortContentExtractorInterface" type="Magexperts\Blog\Model\ShortContentExtractor" />
+    <preference for="Magexperts\Blog\Api\UrlResolverInterface" type="Magexperts\Blog\Model\UrlResolver" />
+    <virtualType name="Magexperts\Blog\ImageUpload" type="Magexperts\Blog\Model\ImageUploader">
+        <arguments>
+            <argument name="baseTmpPath" xsi:type="string">magexperts_blog/tmp</argument>
+            <argument name="basePath" xsi:type="string">magexperts_blog</argument>
+            <argument name="allowedExtensions" xsi:type="array">
+                <item name="jpg" xsi:type="string">jpg</item>
+                <item name="jpeg" xsi:type="string">jpeg</item>
+                <item name="gif" xsi:type="string">gif</item>
+                <item name="png" xsi:type="string">png</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Magexperts\Blog\Controller\Adminhtml\Post\Upload\FeaturedImg">
+        <arguments>
+            <argument name="imageUploader" xsi:type="object">Magexperts\Blog\ImageUpload</argument>
+        </arguments>
+    </type>
+    <type name="Magexperts\Blog\Controller\Adminhtml\Post\Upload\OgImg">
+        <arguments>
+            <argument name="imageUploader" xsi:type="object">Magexperts\Blog\ImageUpload</argument>
+        </arguments>
+    </type>
+    <type name="Magexperts\Blog\Controller\Adminhtml\Post\Upload\Gallery">
+        <arguments>
+            <argument name="imageUploader" xsi:type="object">Magexperts\Blog\ImageUpload</argument>
+        </arguments>
+    </type>
+    <type name="Magento\AdminGws\Model\Models">
+        <plugin name="magexperts_blog_plugin_admingws_model_models_plugin" type="\Magexperts\Blog\Plugin\Magento\AdminGws\Model\ModelsPlugin" sortOrder="10"/>
+    </type>
+
+    <virtualType name="Magexperts\Blog\Block\Widget\PostLink" type="Magexperts\Blog\Block\Widget\Link">
+        <arguments>
+            <argument name="modelRepository" xsi:type="object">Magexperts\Blog\Api\PostRepositoryInterface</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="Magexperts\Blog\Block\Widget\CategoryLink" type="Magexperts\Blog\Block\Widget\Link">
+        <arguments>
+            <argument name="modelRepository" xsi:type="object">Magexperts\Blog\Api\CategoryRepositoryInterface</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="Magexperts\Blog\Block\Widget\TagLink" type="Magexperts\Blog\Block\Widget\Link">
+        <arguments>
+            <argument name="modelRepository" xsi:type="object">Magexperts\Blog\Api\TagRepositoryInterface</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="Magexperts\Blog\Block\Widget\AuthorLink" type="Magexperts\Blog\Block\Widget\Link">
+        <arguments>
+            <argument name="modelRepository" xsi:type="object">Magexperts\Blog\Api\AuthorRepositoryInterface</argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Magexperts\Blog\Model\TemplatePool">
+        <arguments>
+            <argument name="templates" xsi:type="array">
+                <item name="blog_post_list" xsi:type="array">
+                    <item name="default" xsi:type="array">
+                        <item name="label" xsi:type="string">Use System Settings</item>
+                        <item name="value" xsi:type="string"></item>
+                        <item name="template" xsi:type="string"></item>
+                    </item>
+                    <item name="list" xsi:type="array">
+                        <item name="label" xsi:type="string">Modern (List)</item>
+                        <item name="value" xsi:type="string">list-modern</item>
+                        <item name="template" xsi:type="string">Magexperts_Blog::post/list-modern.phtml</item>
+                    </item>
+                </item>
+                <item name="blog_post_view" xsi:type="array">
+                    <item name="default" xsi:type="array">
+                        <item name="label" xsi:type="string">Use System Settings</item>
+                        <item name="value" xsi:type="string"></item>
+                        <item name="template" xsi:type="string"></item>
+                    </item>
+                    <item name="modern" xsi:type="array">
+                        <item name="label" xsi:type="string">Modern</item>
+                        <item name="value" xsi:type="string">modern</item>
+                        <item name="template" xsi:type="string">Magexperts_Blog::post/view-modern.phtml</item>
+                    </item>
+                </item>
+                <item name="blog_post_view_next_prev" xsi:type="array">
+                    <item name="default" xsi:type="array">
+                        <item name="label" xsi:type="string">Default (Next / Previous Labels)</item>
+                        <item name="value" xsi:type="string"></item>
+                        <item name="template" xsi:type="string">Magexperts_Blog::post/view/nextprev.phtml</item>
+                    </item>
+                    <item name="modern" xsi:type="array">
+                        <item name="label" xsi:type="string">Modern (Next / Previous Post Titles)</item>
+                        <item name="value" xsi:type="string">modern</item>
+                        <item name="template" xsi:type="string">Magexperts_Blog::post/view/nextprev-modern.phtml</item>
+                    </item>
+                </item>
+                <item name="blog_post_view_related_post" xsi:type="array">
+                    <item name="default" xsi:type="array">
+                        <item name="label" xsi:type="string">Use System Settings</item>
+                        <item name="value" xsi:type="string"></item>
+                        <item name="template" xsi:type="string"></item>
+                    </item>
+                </item>
+                <item name="blog_post_sidebar_posts" xsi:type="array">
+                    <item name="default" xsi:type="array">
+                        <item name="label" xsi:type="string">Use System Settings</item>
+                        <item name="value" xsi:type="string"></item>
+                        <item name="template" xsi:type="string"></item>
+                    </item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Magexperts\Blog\Model\Config\Source\PostListTemplate" type="Magexperts\Blog\Model\Config\Source\Template">
+        <arguments>
+            <argument name="templateType" xsi:type="string">blog_post_list</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="Magexperts\Blog\Model\Config\Source\PostViewTemplate" type="Magexperts\Blog\Model\Config\Source\Template">
+        <arguments>
+            <argument name="templateType" xsi:type="string">blog_post_view</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="Magexperts\Blog\Model\Config\Source\NextPrevPostTemplate" type="Magexperts\Blog\Model\Config\Source\Template">
+        <arguments>
+            <argument name="templateType" xsi:type="string">blog_post_view_next_prev</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="Magexperts\Blog\Model\Config\Source\RelatedPostTemplate" type="Magexperts\Blog\Model\Config\Source\Template">
+        <arguments>
+            <argument name="templateType" xsi:type="string">blog_post_view_related_post</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="Magexperts\Blog\Model\Config\Source\SidebarPostsTemplate" type="Magexperts\Blog\Model\Config\Source\Template">
+        <arguments>
+            <argument name="templateType" xsi:type="string">blog_post_sidebar_posts</argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Magento\PageBuilder\Model\UpgradableEntitiesPool">
+        <arguments>
+            <argument name="entities" xsi:type="array">
+                <item name="magexperts_blog_post" xsi:type="array">
+                    <item name="identifier" xsi:type="string">post_id</item>
+                    <item name="fields" xsi:type="array">
+                        <item name="content" xsi:type="boolean">true</item>
+                        <item name="short_content" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+                <item name="magexperts_blog_category" xsi:type="array">
+                    <item name="identifier" xsi:type="string">category_id</item>
+                    <item name="fields" xsi:type="array">
+                        <item name="content" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+                <item name="magexperts_blog_tag" xsi:type="array">
+                    <item name="identifier" xsi:type="string">tag_id</item>
+                    <item name="fields" xsi:type="array">
+                        <item name="content" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Sitemap\Model\ItemProvider\Composite">
+        <arguments>
+            <argument name="itemProviders" xsi:type="array">
+                <item name="mfblogIndexUrlProvider" xsi:type="object">Magexperts\Blog\Model\Sitemap\ItemProvider\Index</item>
+                <item name="mfblogPostProvider" xsi:type="object">Magexperts\Blog\Model\Sitemap\ItemProvider\Post</item>
+                <item name="mfblogCategoryProvider" xsi:type="object">Magexperts\Blog\Model\Sitemap\ItemProvider\Category</item>
+            </argument>
+        </arguments>
+    </type>
+
+</config>

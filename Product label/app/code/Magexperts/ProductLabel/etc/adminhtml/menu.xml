@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magexperts (support@magexperts.com). All rights reserved.
+ * Please visit Magexperts.com for license details (https://magexperts.com/end-user-license-agreement).
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+    	<add id="Magexperts_ProductLabel::elements" title="Product Label" module="Magexperts_ProductLabel" parent="Magento_Backend::marketing" sortOrder="30"  resource="Magexperts_ProductLabel::elements"/>
+        <add id="Magexperts_ProductLabel::rule" title=" Rules" module="Magexperts_ProductLabel" parent="Magexperts_ProductLabel::elements" sortOrder="10" action="mfproductlabel/rule/" resource="Magexperts_ProductLabel::rule"/>
+        <add id="Magexperts_ProductLabel::configuration" title="Configuration" module="Magexperts_ProductLabel" parent="Magexperts_ProductLabel::elements" sortOrder="20" action="adminhtml/system_config/edit/section/mfproductlabel" resource="Magexperts_ProductLabel::mfproductlabel"/>
+    </menu>
+</config>

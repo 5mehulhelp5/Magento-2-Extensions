@@ -1,0 +1,334 @@
+<?php
+/**
+ * Copyright © Magexperts (support@magexperts.com). All rights reserved.
+ * Please visit Magexperts.com for license details (https://magexperts.com/end-user-license-agreement).
+ *
+ * Glory to Ukraine! Glory to the heroes!
+ */
+
+namespace Magexperts\Blog\Model;
+
+use Magento\Framework\Model\AbstractModel;
+
+/**
+ * Comment model
+ *
+ * @method \Magexperts\Blog\Model\ResourceModel\Comment _getResource()
+ * @method \Magexperts\Blog\Model\ResourceModel\Comment getResource()
+ * @method int getPostId()
+ * @method $this setPostId(int $value)
+ * @method int getCustomerId()
+ * @method $this setCustomerId(int $value)
+ * @method int getAdminId()
+ * @method $this setAdminId(int $value)
+ * @method int getParentId()
+ * @method $this setParentId(int $value)
+ * @method int getStatus()
+ * @method $this setStatus(int $value)
+ * @method int getAuthorType()
+ * @method $this setAuthorType(int $value)
+ * @method string getAuthorNickname()
+ * @method $this setAuthorNickname(string $value)
+ * @method string getAuthorEmail()
+ * @method $this setAuthorEmail(string $value)
+ * @method string getText()
+ * @method $this setText(string $value)
+ * @method string getCreationTime()
+ * @method $this setCreationTime(string $value)
+ * @method string getUpdateTime()
+ * @method $this setUpdateTime(string $value)
+ */
+class Comment extends AbstractModel implements \Magento\Framework\DataObject\IdentityInterface
+{
+    /**
+     * @var PostFactory
+     */
+    protected $postFactory;
+
+    /**
+     * @var \Magento\Customer\Model\CustomerFactory
+     */
+    protected $customerFactory;
+
+    /**
+     * @var \Magexperts\Blog\Api\AuthorInterfaceFactory
+     */
+    protected $userFactory;
+
+    /**
+     * @var \Magexperts\Blog\Model\ResourceModel\Comment\CollectionFactory
+     */
+    protected $commentCollectionFactory;
+
+    /**
+     * @var \Magento\Framework\DataObject
+     */
+    protected $author;
+
+    /**
+     * @var \Magexperts\Blog\Model\ResourceModel\Comment\Collection
+     */
+    protected $comments;
+
+    /**
+     * blog cache comment
+     */
+    const CACHE_TAG = 'mfb_co';
+
+    /**
+     * Initialize dependencies.
+     * @param \Magento\Framework\Model\Context                             $context
+     * @param \Magento\Framework\Registry                                  $registry
+     * @param \Magexperts\Blog\Model\PostFactory                              $postFactory
+     * @param \Magento\Customer\Model\CustomerFactory                      $customerFactory,
+     * @param \Magexperts\Blog\Api\AuthorInterfaceFactory                     $userFactory,
+     * @param \Magexperts\Blog\Model\ResourceModel\Comment\CollectionFactory  $commentCollectionFactory
+     * @param \Magento\Framework\Model\ResourceModel\AbstractResource|null $resource
+     * @param \Magento\Framework\Data\Collection\AbstractDb|null           $resourceCollection
+     * @param array                                                        $data
+     */
+    public function __construct(
+        \Magento\Framework\Model\Context $context,
+        \Magento\Framework\Registry $registry,
+        \Magexperts\Blog\Model\PostFactory $postFactory,
+        \Magento\Customer\Model\CustomerFactory $customerFactory,
+        \Magexperts\Blog\Api\AuthorInterfaceFactory $userFactory,
+        \Magexperts\Blog\Model\ResourceModel\Comment\CollectionFactory $commentCollectionFactory,
+        \Magento\Framework\Model\ResourceModel\AbstractResource $resource = null,
+        \Magento\Framework\Data\Collection\AbstractDb $resourceCollection = null,
+        array $data = []
+    ) {
+        parent::__construct($context, $registry, $resource, $resourceCollection, $data);
+
+        $this->postFactory = $postFactory;
+        $this->customerFactory = $customerFactory;
+        $this->userFactory = $userFactory;
+        $this->commentCollectionFactory = $commentCollectionFactory;
+    }
+
+    /**
+     * Retrieve identities
+     *
+     * @return array
+     */
+    public function getIdentities()
+    {
+        return [
+            self::CACHE_TAG . '_' . $this->getId(),
+            \Magexperts\Blog\Model\Post::CACHE_TAG . '_' . $this->getPostId()
+        ];
+    }
+
+    /**
+     * Initialize resource model
+     *
+     * @return void
+     */
+    protected function _construct()
+    {
+        $this->_init(\Magexperts\Blog\Model\ResourceModel\Comment::class);
+    }
+
+    /**
+     * Retrieve model title
+     * @param  boolean $plural
+     * @return string
+     */
+    public function getOwnTitle($plural = false)
+    {
+        return $plural ? 'Comments' : 'Comment';
+    }
+
+    /**
+     * Retrieve true if post is active
+     * @return boolean [description]
+     */
+    public function isActive()
+    {
+        return ($this->getStatus() == \Magexperts\Blog\Model\Config\Source\CommentStatus::APPROVED);
+    }
+
+    /**
+     * Retrieve post
+     * @return \Magexperts\Blog\Model\Post | false
+     */
+    public function getPost()
+    {
+        if (!$this->hasData('post')) {
+            $this->setData('post', false);
+            if ($postId = $this->getData('post_id')) {
+                $post = $this->postFactory->create()->load($postId);
+                if ($post->getId()) {
+                    $this->setData('post', $post);
+                }
+            }
+        }
+
+        return $this->getData('post');
+    }
+
+    /**
+     * Retrieve author
+     * @return \\Magento\Framework\DataObject
+     */
+    public function getAuthor()
+    {
+        if (null === $this->author) {
+            $this->author = new \Magento\Framework\DataObject;
+            $this->author->setType(
+                $this->getAuthorType()
+            );
+
+            $guestData = [
+                'nickname' => $this->getAuthorNickname(),
+                'email' => $this->getAuthorEmail(),
+            ];
+
+            switch ($this->getAuthorType()) {
+                case \Magexperts\Blog\Model\Config\Source\AuthorType::GUEST:
+                    $this->author->setData($guestData);
+                    break;
+                case \Magexperts\Blog\Model\Config\Source\AuthorType::CUSTOMER:
+                    $customer = $this->customerFactory->create();
+                    $customer->load($this->getCustomerId());
+                    if ($customer->getId()) {
+                        $this->author->setData([
+                            'nickname' => $customer->getName(),
+                            'email' => $this->getEmail(),
+                            'customer' => $customer,
+                        ]);
+                    } else {
+                        $this->author->setData($guestData);
+                    }
+                    break;
+                case \Magexperts\Blog\Model\Config\Source\AuthorType::ADMIN:
+                    $admin = $this->userFactory->create();
+                    $admin->load($this->getAdminId());
+                    if ($admin->getId()) {
+                        $this->author->setData([
+                            'nickname' => $admin->getName(),
+                            'email' => $this->getEmail(),
+                            'admin' => $admin,
+                        ]);
+                    } else {
+                        $this->author->setData($guestData);
+                    }
+                    break;
+            }
+        }
+
+        return $this->author;
+    }
+
+    /**
+     * Retrieve parent comment
+     * @return self || false
+     */
+    public function getParentComment()
+    {
+        $k = 'parent_comment';
+        if (null === $this->getData($k)) {
+            $this->setData($k, false);
+            if ($pId = $this->getParentId()) {
+                $comment = clone $this;
+                $comment->load($pId);
+                if ($comment->getId()) {
+                    $this->setData($k, $comment);
+                }
+            }
+        }
+
+        return $this->getData($k);
+    }
+
+    /**
+     * Retrieve child comments
+     * @return \Magexperts\Blog\Model\ResourceModel\Comment\Collection
+     */
+    public function getChildComments()
+    {
+        if (null === $this->comments) {
+            $this->comments = $this->commentCollectionFactory->create()
+                ->addFieldToFilter('parent_id', $this->getId());
+        }
+
+        return $this->comments;
+    }
+
+    /**
+     * Retrieve true if comment is reply to other comment
+     * @return boolean
+     */
+    public function isReply()
+    {
+        return (bool)$this->getParentId();
+    }
+
+    /**
+     * Validate comment
+     * @return void
+     */
+    public function validate()
+    {
+        if (mb_strlen($this->getText()) < 3) {
+            throw new \Exception(__('Comment text is too short.'), 1);
+        }
+    }
+
+    /**
+     * Retrieve post publish date using format
+     * @param  string $format
+     * @return string
+     */
+    public function getPublishDate($format = 'Y-m-d H:i:s')
+    {
+        return \Magexperts\Blog\Helper\Data::getTranslatedDate(
+            $format,
+            $this->getData('creation_time')
+        );
+    }
+
+    /**
+     * @return array|ResourceModel\Comment\Collection
+     */
+    public function getRepliesCollection()
+    {
+        $repliesCollection = [];
+        if (!$this->isReply()) {
+            $cId = $this->getId();
+            if (!isset($repliesCollection[$cId])) {
+                $repliesCollection[$cId] = $this->getChildComments()
+                    ->addActiveFilter()
+                    /*->setPageSize($this->getNumberOfReplies())*/
+                    //->setOrder('creation_time', 'DESC'); old sorting
+                    ->setOrder('creation_time', 'ASC');
+            }
+
+            return $repliesCollection[$cId];
+        } else {
+            return [];
+        }
+    }
+
+    /**
+     * @deprecated use getDynamicData method in graphQL data provider
+     * @param null $fields
+     * @return array
+     */
+    public function getDynamicData($fields = null)
+    {
+        $data = $this->getData();
+
+        if (is_array($fields) && array_key_exists('replies', $fields)) {
+            $replies = [];
+            foreach ($this->getRepliesCollection() as $reply) {
+                $replies[] = $reply->getDynamicData(
+                    isset($fields['replies']) ? $fields['replies'] : null
+                );
+            }
+            $data['replies'] = $replies;
+        }
+
+        return $data;
+    }
+}

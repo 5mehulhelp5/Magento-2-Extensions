@@ -1,0 +1,85 @@
+<?php
+/**
+ * Copyright © Magexperts (support@magexperts.com). All rights reserved.
+ * Please visit Magexperts.com for license details (https://magexperts.com/end-user-license-agreement).
+ */
+/** @var \Magexperts\GoogleTagManager\Block\Adminhtml\System\Config\Form\EventList $block */
+/** @var \Magento\Framework\Escaper $escaper */
+?>
+<?php
+if (!isset($escaper)) {
+    /* Compatability fix for old Magento versions */
+    $escaper = $block;
+}
+?>
+<?php
+$events = [
+    'View Product (view_item)',
+    'View Shopping Cart (view_cart)',
+    'View Checkout (begin_checkout)',
+    'Checkout Success Page (purchase)'
+];
+$eventsPlus = [
+    'Add To Cart (add_to_cart)',
+    'Remove From Cart (remove_from_cart)',
+    'Add To Wishlist (add_to_wishlist)',
+    'View Product List on category page, related/up-sell/cross-sell products (view_item_list)',
+    'Shipping Step on Checkout Page (add_shipping_info)',
+    'Payments Step on Checkout Page (add_payment_info)',
+    'Google Ads - Conversion Tracking',
+    'Google Ads - Dynamic Remarketing'
+];
+$eventsExtra = [
+    'Sign In (login)',
+    'Create an Account (sign_up)',
+    'Search (search)',
+    'Create New Order In Admin Panel (purchase)'
+    /*
+    'Earn Virtual Currency (earn_virtual_currency)',
+    'Spend Virtual Currency (spend_virtual_currency)'
+    */
+];
+?>
+<br/>
+<div>
+    <ul>
+        <li>
+            <?= implode('</li><li>', $events) ?>
+        </li>
+    </ul>
+    <p <?php if (!$block->isPlusEnabled()) { ?>style="color: #ef672f"<?php } ?>>
+        <strong>
+            <?= $escaper->escapeHtml(__(!$block->isPlusEnabled() ? 'Available in Plus or Extra plans only' : 'GTM Plus')) ?>
+            <?php if (!$block->isPlusEnabled()) { ?>
+                (<a style="color: #ef672f; text-decoration: underline;" href="https://magexperts.com/magento-2-google-tag-manager/pricing" target="_blank">read more</a>):
+            <?php } ?>
+        </strong>
+    </p>
+    <div <?php if (!$block->isPlusEnabled()) { ?>style="opacity: 0.7; color: #ef672f"<?php } ?>>
+        <ul>
+            <li>
+                <?= implode('</li><li>', $eventsPlus) ?>
+            </li>
+        </ul>
+    </div>
+    <p <?php if (!$block->isExtraEnabled()) { ?>style="color: #ef672f"<?php } ?>>
+        <strong>
+            <?= $escaper->escapeHtml(__(!$block->isExtraEnabled() ? 'Available in Extra plan only' : 'GTM Extra')) ?>
+            <?php if (!$block->isExtraEnabled()) { ?>
+                (<a style="color: #ef672f; text-decoration: underline;"  href="https://magexperts.com/magento-2-google-tag-manager/pricing" target="_blank">read more</a>):
+            <?php } ?>
+        </strong>
+    </p>
+    <div <?php if (!$block->isExtraEnabled()) { ?>style="opacity: 0.7; color: #ef672f"<?php } ?>>
+        <ul>
+            <li>
+                <?= implode('</li><li>', $eventsExtra) ?>
+            </li>
+        </ul>
+    </div>
+    <?php if (!$block->isPlusEnabled() || !$block->isExtraEnabled()) { ?>
+    <button title="Upgrade" type="button" class="primary" onclick="window.open('https://magexperts.com/magento-2-google-tag-manager/pricing')">
+        <span>Upgrade to <?php if (!$block->isPlusEnabled()) { echo 'Plus or'; } ?> Extra plan</span>
+    </button>
+    <?php } ?>
+</div>

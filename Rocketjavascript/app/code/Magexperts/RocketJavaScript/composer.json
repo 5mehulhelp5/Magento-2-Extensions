@@ -1,0 +1,27 @@
+{
+    "name": "magexperts/module-rocketjavascript",
+    "description": "Move all javascript to the footer on Magento 2 store.",
+    "require": {
+        "magexperts/module-community" : ">=2.1.17"
+    },
+    "suggest": {
+        "magexperts/module-webp": "Install WebP Optimized Images to serve images in the next-gen format. Use coupon code COMPOSER-FAN to get 10% discount on magexperts.com.",
+        "magexperts/module-lazyload": "Install Lazy Load to defer offscreen images loading."
+    },
+    "type": "magento2-module",
+    "version": "2.1.9",
+    "authors": [
+        {
+            "name": "Magexperts",
+            "email": "support@magexperts.com"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Magexperts\\RocketJavaScript\\": ""
+        }
+    }
+}

@@ -1,0 +1,22 @@
+<?php
+/**
+ * Copyright © Magexperts (support@magexperts.com). All rights reserved.
+ * Please visit Magexperts.com for license details (https://magexperts.com/end-user-license-agreement).
+ */
+?>
+
+<script type="text/javascript">
+    var checkbox = document.querySelector('[data-index="use_the_same_label_for_product_page"] input[type="checkbox"]');
+
+    function toggleClassForUseTheSameLabelForProductPage() {
+
+        if (checkbox.checked) {
+            document.body.classList.add('use_the_same_label_for_product_page')
+        } else {
+            document.body.classList.remove('use_the_same_label_for_product_page')
+        }
+    }
+
+    checkbox.addEventListener('click', toggleClassForUseTheSameLabelForProductPage);
+    toggleClassForUseTheSameLabelForProductPage();
+</script>

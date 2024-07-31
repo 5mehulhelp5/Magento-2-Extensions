@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magexperts (support@magexperts.com). All rights reserved.
+ * Please visit Magexperts.com for license details (https://magexperts.com/end-user-license-agreement).
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\GraphQl\Query\Resolver\Argument\FieldEntityAttributesPool">
+        <arguments>
+            <argument name="attributesInstances" xsi:type="array">
+                <item name="di_build_magexperts_blog_post" xsi:type="object">Magexperts\BlogGraphQl\Model\Posts\FilterArgument</item>
+                <item name="magexperts_blog_comments" xsi:type="object">Magexperts\BlogGraphQl\Model\Comments\FilterArgument</item>
+                <item name="magexperts_blog_tags" xsi:type="object">Magexperts\BlogGraphQl\Model\Tags\FilterArgument</item>
+                <item name="magexperts_blog_categories" xsi:type="object">Magexperts\BlogGraphQl\Model\Categories\FilterArgument</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\UrlRewriteGraphQl\Model\Resolver\EntityUrl">
+        <plugin
+                name="Magexperts_BlogGraphQl_Plugin_Magento_UrlRewriteGraphQl_Model_Resolver_EntityUrl"
+                type="Magexperts\BlogGraphQl\Plugin\Magento\UrlRewriteGraphQl\Model\Resolver\EntityUrl"
+                sortOrder="10"
+                disabled="false"
+        />
+    </type>
+    <type name="Magento\UrlRewriteGraphQl\Model\Resolver\Route">
+        <plugin
+                name="Magexperts_BlogGraphQl_Plugin_Magento_UrlRewriteGraphQl_Model_Resolver_EntityUrl"
+                type="Magexperts\BlogGraphQl\Plugin\Magento\UrlRewriteGraphQl\Model\Resolver\EntityUrl"
+                sortOrder="10"
+                disabled="false"
+        />
+    </type>
+</config>

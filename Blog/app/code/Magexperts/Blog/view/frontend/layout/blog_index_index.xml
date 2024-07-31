@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magexperts (support@magexperts.com). All rights reserved.
+ * Please visit Magexperts.com for license details (https://magexperts.com/end-user-license-agreement).
+ *
+ * Glory to Ukraine! Glory to the heroes!
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="blog_default"/>
+    <update handle="blog_post_list"/>
+    <body>
+        <referenceContainer name="content">
+            <block class="Magexperts\Blog\Block\Index\Description" name="blog.posts.description" template="Magexperts_Blog::index/description.phtml" before="blog.posts.list" />
+            <block class="Magexperts\Blog\Block\Index" name="blog.posts.list" template="post/list.phtml" />
+        </referenceContainer>
+    </body>
+</page>

@@ -1,0 +1,15 @@
+{
+    "name": "magexperts/module-cli",
+    "description": "CLI in Magento 2 admin panel",
+    "require": {
+        "magexperts/module-community" : ">=2.1.19"
+    },
+    "type": "magento2-module",
+    "version": "2.1.2",
+    "autoload": {
+        "files": [ "registration.php" ],
+        "psr-4": {
+            "Magexperts\\Cli\\": ""
+        }
+    }
+}

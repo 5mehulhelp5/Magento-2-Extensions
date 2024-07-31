@@ -1,0 +1,26 @@
+<?php
+/**
+ * Copyright © Magexperts (support@magexperts.com). All rights reserved.
+ * Please visit Magexperts.com for license details (https://magexperts.com/end-user-license-agreement).
+ *
+ * Glory to Ukraine! Glory to the heroes!
+ */
+?>
+<?php
+/**
+ * Blog post list toolbar template
+ *
+ * @var $block \Magexperts\Blog\Block\Post\PostList\Toolbar
+ */
+?>
+<?php if ($block->getCollection()->getSize()) { ?>
+    <?php $pagerHtml = trim( $block->getPagerHtml()) ?>
+    <?php if ($pagerHtml) { ?>
+        <?php $woj = $block->getWidgetOptionsJson() ?>
+        <div class="toolbar toolbar-blog-posts"
+        <?= /*@noEscape*/ ($woj) ? 'data-mage-init="'.$woj.'"' : ''; ?>
+        >
+        <?= /*@noEscape*/ $pagerHtml ?>
+        </div>
+    <?php } ?>
+<?php } ?>

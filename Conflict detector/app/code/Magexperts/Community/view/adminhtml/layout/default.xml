@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magexperts (support@magexperts.com). All rights reserved.
+ * Please visit Magexperts.com for license details (https://magexperts.com/end-user-license-agreement).
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="page.wrapper">
+            <block class="Magexperts\Community\Block\Adminhtml\Linv" name="magexperts_community_linv" template="Magexperts_Community::linv.phtml" after="header" />
+            <block class="Magexperts\Community\Block\Adminhtml\HyvaThemeChecker" name="magexperts.hyva.theme.checker" template="Magexperts_Community::hyvathemechecker.phtml" after="header"/>
+        </referenceContainer>
+    </body>
+</page>

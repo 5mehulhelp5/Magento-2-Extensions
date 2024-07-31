@@ -1,0 +1,22 @@
+<?php
+/**
+ * Copyright © Magexperts (support@magexperts.com). All rights reserved.
+ * Please visit Magexperts.com for license details (https://magexperts.com/end-user-license-agreement).
+ */
+?>
+<?php
+/** @var $block \Magexperts\ProductLabel\Block\LabelCss */
+?>
+
+<style>
+    .fotorama .mf-label-position-custom {display: none;}
+    .product.media > .mf-label-container {display: none;}
+</style>
+
+<script type="text/javascript">
+    require(['jquery'], function ($) {
+        $('[data-gallery-role=gallery-placeholder]').on('gallery:loaded', function () {
+            $(this).parent().find('.mf-label-container').prependTo('<?= $escaper->escapeHtml($block->getConfig()->getProductPageContainerSelector()) ?>')
+        });
+    });
+</script>

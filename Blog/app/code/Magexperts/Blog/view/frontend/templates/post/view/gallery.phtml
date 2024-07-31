@@ -1,0 +1,44 @@
+<?php
+/**
+ * Copyright © Magexperts (support@magexperts.com). All rights reserved.
+ * Please visit Magexperts.com for license details (https://magexperts.com/end-user-license-agreement).
+ *
+ * Glory to Ukraine! Glory to the heroes!
+ */
+?>
+<?php
+/**
+ * Blog post media gallery images template
+ *
+ * @var $block \Magexperts\Blog\Block\Post\View\Gallery
+ * @var $mfSecureRenderer \Magexperts\Community\Api\SecureHtmlRendererInterface
+ */
+?>
+<?php
+    $post = $block->getPost();
+    $galleryImages = $post->getGalleryImages();
+    $viewFileUrl = $block->getViewFileUrl("Magexperts_Blog::css/jquery.fancybox.min.css");
+?>
+<?php if (count($galleryImages)) { ?>
+    <div class="post-gallery clearfix">
+        <?php foreach ($galleryImages as $image) { ?>
+            <a class="gallery-image-hld"
+               data-fancybox="gallery"
+               href="<?= $block->escapeUrl($image) ?>"
+               rel="nofollow">
+                <img class="gallery-image" src="<?= $block->escapeUrl($image->resize(200, 133)) ?>" alt="" />
+            </a>
+        <?php } ?>
+    </div>
+    <?php $script = "
+    require(['jquery', 'domReady!'], function($){
+        /* Deferer fancybox css loading */
+        $('head').append(
+            $(\"<link rel='stylesheet' href='" . $block->escapeUrl($viewFileUrl) . "' type='text/css' media='screen' />\")
+        );
+        /* Deferer fancybox js loading */
+        require(['Magexperts_Blog/js/jquery.fancybox.min'], function(){});
+    });
+    "; ?>
+    <?= /* @noEscape */ $mfSecureRenderer->renderTag('script', [], $script, false) ?>
+<?php } ?>

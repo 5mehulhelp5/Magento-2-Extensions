@@ -1,0 +1,38 @@
+<?php
+/**
+ * Copyright © Magexperts (support@magexperts.com). All rights reserved.
+ * Please visit Magexperts.com for license details (https://magexperts.com/end-user-license-agreement).
+ *
+ * Glory to Ukraine! Glory to the heroes!
+ */
+?>
+<?php
+/**
+ * @var $block \Magexperts\Blog\Block\Social\AddThi
+ * @var $mfSecureRenderer \Magexperts\Community\Api\SecureHtmlRendererInterface
+ */
+?>
+<?php $script = "
+    function mfShareWindowOpen(url, type) {
+        function reverse(s){
+            return s.split('').reverse().join('');
+        }
+
+        var u;
+        switch (type) {
+            case 'facebook':
+                u = reverse('" . strrev('https://www.facebook.com/sharer/sharer.php?u=') . "') + url;
+                break;
+            case 'pinterest':
+                u = reverse('" . strrev('https://pinterest.com/pin/create/button/?url=') . "') + url;
+                break;
+            case 'twitter':
+                u =reverse('" . strrev('http://twitter.com/share?url=') . "') + url;
+                break;
+        }
+        if (u) {
+            window.open (u, null, 'width=600,height=400');
+        }
+    }
+"; ?>
+<?= /* @noEscape */ $mfSecureRenderer->renderTag('script', [], $script, false) ?>

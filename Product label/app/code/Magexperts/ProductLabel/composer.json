@@ -1,0 +1,23 @@
+{
+    "name": "magexperts/module-product-label",
+    "description": "Product Label extension for Magento 2",
+    "type": "magento2-module",
+    "authors": [
+        {
+            "name": "Magexperts",
+            "email": "support@magexperts.com"
+        }
+    ],
+    "version": "2.0.1",
+    "require": {
+        "magexperts/module-community" : ">=2.1.21"
+    },
+    "autoload": {
+        "files": [
+          "registration.php"
+        ],
+        "psr-4": {
+            "Magexperts\\ProductLabel\\": ""
+        }
+    }
+}

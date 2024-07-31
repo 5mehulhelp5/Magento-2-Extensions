@@ -1,0 +1,29 @@
+<?php
+/**
+ * Copyright © Magexperts (support@magexperts.com). All rights reserved.
+ * Please visit Magexperts.com for license details (https://magexperts.com/end-user-license-agreement).
+ *
+ * Glory to Ukraine! Glory to the heroes!
+ */
+?>
+<?php
+/**
+ * Blog post comments template
+ *
+ * @var $block \Magexperts\Blog\Block\Post\View\Comments
+ * @var $mfSecureRenderer \Magexperts\Community\Api\SecureHtmlRendererInterface
+ */
+?>
+<div id="disqus_thread"></div>
+<?php $script = "
+    var disqus_config = function () {
+        this.page.url = '" . $block->escapeUrl($block->getPost()->getPostUrl()) . "';
+    };
+    (function() {
+        var d = document, s = d.createElement('script');
+        s.src = '" . $block->escapeHtml('/' . '/' .  $block->getDisqusShortname()) . ".disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+"; ?>
+<?= /* @noEscape */ $mfSecureRenderer->renderTag('script', [], $script, false) ?>

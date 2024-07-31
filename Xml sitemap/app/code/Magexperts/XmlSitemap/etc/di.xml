@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * Copyright © Magexperts (support@magexperts.com). All rights reserved.
+ * Please visit Magexperts.com for license details (https://magexperts.com/end-user-license-agreement).
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Sitemap\Model\ResourceModel\Catalog\Product">
+        <plugin name="Magexperts_XmlSitemap_Plugin_Magento_Sitemap_Model_ResourceModel_Catalog_Product" type="Magexperts\XmlSitemap\Plugin\Magento\Sitemap\Model\ResourceModel\Catalog\Product" sortOrder="10" disabled="false"/>
+    </type>
+    <type name="Magento\Sitemap\Model\ResourceModel\Catalog\Category">
+        <plugin name="Magexperts_XmlSitemap_Plugin_Magento_Sitemap_Model_ResourceModel_Catalog_Category" type="Magexperts\XmlSitemap\Plugin\Magento\Sitemap\Model\ResourceModel\Catalog\Category" sortOrder="10" disabled="false"/>
+    </type>
+    <type name="Magento\Sitemap\Model\ResourceModel\Cms\Page">
+        <plugin name="Magexperts_XmlSitemap_Plugin_Magento_Sitemap_Model_ResourceModel_Cms_Page" type="Magexperts\XmlSitemap\Plugin\Magento\Sitemap\Model\ResourceModel\Cms\Page" sortOrder="10" disabled="false"/>
+    </type>
+    <type name="Magexperts\Blog\Model\ResourceModel\Post\Collection">
+        <plugin name="Magexperts_XmlSitemap_Plugin_Magexperts_Blog_Model_ResourceModel_Post_Collection" type="Magexperts\XmlSitemap\Plugin\Magexperts\Blog\Model\ResourceModel\Post\Collection" sortOrder="10" disabled="false"/>
+    </type>
+    <type name="Magexperts\Blog\Model\ResourceModel\Category\Collection">
+        <plugin name="Magexperts_XmlSitemap_Plugin_Magexperts_Blog_Model_ResourceModel_Category_Collection" type="Magexperts\XmlSitemap\Plugin\Magexperts\Blog\Model\ResourceModel\Category\Collection" sortOrder="10" disabled="false"/>
+    </type>
+</config>

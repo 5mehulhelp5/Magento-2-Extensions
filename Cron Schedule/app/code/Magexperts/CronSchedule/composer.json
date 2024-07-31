@@ -1,0 +1,24 @@
+{
+    "name": "magexperts/module-cron-schedule",
+    "description": "Magento 2 Cron Schedule",
+    "type": "magento2-module",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Magexperts",
+            "email": "support@magexperts.com"
+        }
+    ],
+    "version": "2.0.4",
+    "require": {
+        "magexperts/module-community" : ">=2.1.18"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Magexperts\\CronSchedule\\": ""
+        }
+    }
+}

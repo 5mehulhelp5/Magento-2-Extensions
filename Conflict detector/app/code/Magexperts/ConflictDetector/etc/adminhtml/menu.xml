@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magexperts (support@magexperts.com). All rights reserved.
+ * Please visit Magexperts.com for license details (https://magexperts.com/end-user-license-agreement).
+ *
+ * Glory to Ukraine! Glory to the heroes!
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Magexperts_ConflictDetector::elements" title="Conflict Detector" module="Magexperts_ConflictDetector" parent="Magento_Backend::system_tools" action="conflictdetector/index" sortOrder="50" resource="Magexperts_ConflictDetector::elements"/>
+    </menu>
+</config>

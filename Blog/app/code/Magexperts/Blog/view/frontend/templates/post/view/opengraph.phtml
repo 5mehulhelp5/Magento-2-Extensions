@@ -1,0 +1,23 @@
+<?php
+/**
+ * Copyright © Magexperts (support@magexperts.com). All rights reserved.
+ * Please visit Magexperts.com for license details (https://magexperts.com/end-user-license-agreement).
+ *
+ * Glory to Ukraine! Glory to the heroes!
+ */
+?>
+<?php
+/**
+ * Blog post og:tags
+ *
+ * @var $block \Magexperts\Blog\Block\Post\View\Opengraph
+ */
+?>
+
+<meta property="og:type" content="<?= $block->escapeHtml($block->getType()); ?>" />
+<meta property="og:title" content="<?= $block->escapeHtml($block->getTitle()); ?>" />
+<meta property="og:description" content="<?= $block->escapeHtml($block->getDescription()); ?>" />
+<meta property="og:url" content="<?= $block->escapeHtml($block->getPageUrl()); ?>" />
+<?php if ($image = $block->getImage()) { ?>
+<meta property="og:image" content="<?= $block->escapeHtml($image); ?>" />
+<?php } ?>

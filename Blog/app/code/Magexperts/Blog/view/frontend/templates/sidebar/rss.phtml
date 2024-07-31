@@ -1,0 +1,28 @@
+<?php
+/**
+ * Copyright © Magexperts (support@magexperts.com). All rights reserved.
+ * Please visit Magexperts.com for license details (https://magexperts.com/end-user-license-agreement).
+ *
+ * Glory to Ukraine! Glory to the heroes!
+ */
+?>
+<?php
+/**
+ * Blog sidebar archive template
+ *
+ * @var $block \Magexperts\Blog\Block\Sidebar\Rss
+ */
+?>
+<div class="widget block block-rss" data-bind="scope: 'blog-rss'">
+    <div class="block-title">
+        <strong>
+            <a target="_blank"
+               href="<?= $block->escapeUrl($block->getUrl('blog/rss/feed')) ?>">
+                <?= $block->escapeHtml(__('RSS Feed')) ?>
+            </a>
+        </strong>
+        <img width="17" height="17" class="rss-icon"
+             src="<?= $block->escapeUrl($block->getViewFileUrl('Magexperts_Blog::images/rss-icon.png')) ?>"
+             alt="<?= $block->escapeHtml(__('RSS Feed')) ?>" >
+    </div>
+</div>

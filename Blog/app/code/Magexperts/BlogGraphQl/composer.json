@@ -1,0 +1,12 @@
+{
+    "name": "magexperts/module-blog-graph-ql",
+    "description": "GrapQl for Magento 2 Blog extension by Magexperts",
+    "type": "magento2-module",
+    "version": "2.1.9",
+    "autoload": {
+        "files": [ "registration.php" ],
+        "psr-4": {
+            "Magexperts\\BlogGraphQl\\": ""
+        }
+    }
+}

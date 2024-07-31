@@ -1,0 +1,61 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * Copyright © Magexperts (support@magexperts.com). All rights reserved.
+ * Please visit Magexperts.com for license details (https://magexperts.com/end-user-license-agreement).
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="magexperts" sortOrder="110" translate="label" class="magexperts-tab">
+            <label>Magexperts Extensions</label>
+        </tab>
+        <section id="mfextension" translate="label" sortOrder="99999999999" showInDefault="1" showInWebsite="0" showInStore="0">
+            <class>separator-top</class>
+            <label>Extensions &amp; Notifications</label>
+            <tab>magexperts</tab>
+            <resource>Magexperts_Community::config_section</resource>
+            <group id="magexperts_extensions" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Magexperts Extensions</label>
+                <attribute type="expanded">1</attribute>
+                <field id="extensions_info" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Extensions Info</label>
+                    <frontend_model>Magexperts\Community\Block\Adminhtml\System\Config\Form\ExtensionsInfo</frontend_model>
+                </field>
+            </group>
+            <group id="notification" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Magexperts Notifications</label>
+                <attribute type="expanded">1</attribute>
+                <field id="update" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
+                    <label>Product Updates</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="offer" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
+                    <label>Special Offers</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="news" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
+                    <label>News</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="tip_trick" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
+                    <label>Tips &amp; Tricks</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="general" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
+                    <label>General Information</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="menu" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Magexperts Menu</label>
+                <attribute type="expanded">1</attribute>
+                <field id="display" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
+                    <label>Display Magexperts Menu Item</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Note that, after you save the config you have to flush the Magento cache for this option to be applied.</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

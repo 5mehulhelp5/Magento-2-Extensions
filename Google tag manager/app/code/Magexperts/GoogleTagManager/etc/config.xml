@@ -1,0 +1,87 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * Copyright © Magexperts (support@magexperts.com). All rights reserved.
+ * Please visit Magexperts.com for license details (https://magexperts.com/end-user-license-agreement).
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <mfgoogletagmanager>
+            <general>
+                <enabled>0</enabled>
+                <mfmodule>GoogleTagManager</mfmodule>
+                <mftype>1</mftype>
+            </general>
+            <web_container>
+                <install_gtm>use_public_id</install_gtm>
+                <script_content/>
+                <noscript_content/>
+                <enable>1</enable>
+                <account_id/>
+                <container_id/>
+                <public_id/>
+            </web_container>
+            <server_container>
+                <enabled>0</enabled>
+                <public_id/>
+                <account_id/>
+                <container_id/>
+                <tag_server_url/>
+                <headless_storefront>0</headless_storefront>
+                <track_missing_purchase_events_only>0</track_missing_purchase_events_only>
+                <preview>
+                    <enabled>0</enabled>
+                    <secret/>
+                    <allow_ips/>
+                </preview>
+            </server_container>
+            <analytics>
+                <enable>1</enable>
+                <measurement_id/>
+                <measurement_protocol>
+                    <measurement_enabled/>
+                    <api_secret backend_model="Magento\Config\Model\Config\Backend\Encrypted"/>
+
+                </measurement_protocol>
+            </analytics>
+            <ads>
+                <tag_id/>
+                <conversion>
+                    <enable>0</enable>
+                    <purchase>
+                        <conversion_id/>
+                        <conversion_label/>
+                    </purchase>
+                </conversion>
+                <remarketing>
+                    <enable>0</enable>
+                    <conversion_id/>
+                    <conversion_label/>
+                </remarketing>
+            </ads>
+            <attributes>
+                <product>sku</product>
+                <brand/>
+                <categories/>
+            </attributes>
+            <events>
+                <purchase>
+                    <shipping_enabled>1</shipping_enabled>
+                    <tax_enabled>1</tax_enabled>
+                    <track_admin_orders>1</track_admin_orders>
+                </purchase>
+            </events>
+            <page_speed_optimization>
+                <enabled>0</enabled>
+            </page_speed_optimization>
+            <third_party_ga>
+                <enabled>0</enabled>
+            </third_party_ga>
+            <customer_data>
+                <protect>0</protect>
+                <load_before_consent>0</load_before_consent>
+            </customer_data>
+        </mfgoogletagmanager>
+    </default>
+</config>

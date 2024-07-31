@@ -1,0 +1,17 @@
+{
+    "name": "magexperts/module-community",
+    "description": "Magexperts core module, required for other Magexperts extensions",
+    "require": {
+        "magexperts/module-admin-user-guide" : ">=2.0.3"
+    },
+    "version": "2.1.28",
+    "type": "magento2-module",
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Magexperts\\Community\\": ""
+        }
+    }
+}

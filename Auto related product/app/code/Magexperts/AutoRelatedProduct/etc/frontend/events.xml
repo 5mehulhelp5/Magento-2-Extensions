@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * Copyright © Magexperts (support@magexperts.com). All rights reserved.
+ * Please visit Magexperts.com for license details (https://magexperts.com/end-user-license-agreement).
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="layout_generate_blocks_after">
+        <observer name="magexperts_autorelatedproduct_observer_frontend_layout_generateblocksafter_layout_generate_blocks_after" instance="Magexperts\AutoRelatedProduct\Observer\Frontend\Layout\GenerateBlocksAfter"/>
+    </event>
+</config>

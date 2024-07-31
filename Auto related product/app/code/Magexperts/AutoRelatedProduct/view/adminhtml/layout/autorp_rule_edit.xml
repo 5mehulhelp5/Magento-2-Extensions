@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magexperts (support@magexperts.com). All rights reserved.
+ * Please visit Magexperts.com for license details (https://magexperts.com/end-user-license-agreement).
+ */
+ -->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="autorp_info"/>
+    <body>
+        <referenceContainer name="after.body.start">
+            <block name="mf_versions" template="Magexperts_AutoRelatedProduct::form/versionsManager.phtml"/>
+        </referenceContainer>
+        <referenceContainer name="content">
+            <uiComponent name="autorp_rule_form"/>
+        </referenceContainer>
+    </body>
+</page>

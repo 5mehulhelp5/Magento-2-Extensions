@@ -1,0 +1,34 @@
+<?php
+/**
+ * Copyright © Magexperts (support@magexperts.com). All rights reserved.
+ * Please visit Magexperts.com for license details (https://magexperts.com/end-user-license-agreement).
+ *
+ * Glory to Ukraine! Glory to the heroes!
+ */
+?>
+<?php
+/**
+ * Blog post comments template
+ *
+ * @var $block \Magexperts\Blog\Block\Post\View\Comments
+ * @var $mfSecureRenderer \Magexperts\Community\Api\SecureHtmlRendererInterface
+ */
+?>
+
+<div id="fb-root"></div>
+<?php $script = "(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = '" . $block->escapeJs($block->getFbSdkJsUrl()) . "';
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+"; ?>
+<?= /* @noEscape */ $mfSecureRenderer->renderTag('script', [], $script, false) ?>
+<div class="post-comments clear">
+    <div class="fb-comments"
+         data-href="<?= $block->escapeUrl($block->getPost()->getPostUrl()) ?>"
+         data-width="100%"
+         data-numposts="<?= $block->escapeHtml($block->getNumberOfComments()) ?>">
+    </div>
+</div>
