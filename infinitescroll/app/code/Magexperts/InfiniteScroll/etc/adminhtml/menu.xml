@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+/**
+*
+* Do not edit or add to this file if you wish to upgrade the module to newer
+* versions in the future. If you wish to customize the module for your
+* needs please contact us to https://www.magexperts.com/contact-us.html
+*
+* @category    Ecommerce
+* @package     Magexperts_InfiniteScroll
+* @copyright   Copyright (c) 2019 Magexperts Technologies Pvt. Ltd. All Rights Reserved.
+* @url         https://www.magexperts.com/magento2-extensions/partial-payment-m2.html
+*
+**/
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Magexperts_InfiniteScroll::infinitescroll" title="Infinite Scroll" translate="title" module="Magexperts_InfiniteScroll" sortOrder="60" resource="Magexperts_InfiniteScroll::infinitescroll" parent="Magexperts_All::all"/>
+        <add id="Magexperts_InfiniteScroll::configuration" title="Configurations" translate="title" module="Magexperts_InfiniteScroll" sortOrder="20" parent="Magexperts_InfiniteScroll::infinitescroll"
+             action="adminhtml/system_config/edit/section/infinitescroll" resource="Magexperts_InfiniteScroll::configuration"/>
+    </menu>
+</config>
+
+
+

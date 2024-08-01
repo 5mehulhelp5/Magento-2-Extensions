@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+<acl>
+   <resources>
+        <resource id="Magento_Backend::admin">
+             <!-- Menu of Extension -->
+            <resource id="Magexperts_All::all" title="Magexperts Extensions" sortOrder="10" >
+                <resource id="Magexperts_WhatsappShareM2::whatsappsharem2" title="Magexperts Recurring and Subscription" sortOrder="40">
+                <resource id="Magexperts_WhatsappShareM2::configuration" title="WhatsAppShare Configuration" sortOrder="40">
+                </resource>
+                </resource>
+         </resource>
+             <!-- System Config Section of Extension -->
+            <resource id="Magento_Backend::stores">
+                <resource id="Magento_Backend::stores_settings">
+                    <resource id="Magento_Config::config">
+                     <resource id="Magexperts_WhatsappShareM2::configuration_whatsappshare" title="Magexperts Whatsapp System Config Section" />
+                    </resource>
+                </resource>
+            </resource>
+        </resource>
+    </resources>
+</acl>
+</config>
+

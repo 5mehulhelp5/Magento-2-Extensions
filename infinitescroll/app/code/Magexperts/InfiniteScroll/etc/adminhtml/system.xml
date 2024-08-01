@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="Magexperts" translate="label" sortOrder="200">
+            <label>Magexperts Extensions</label>
+        </tab>
+        <section id="infinitescroll" translate="label" type="text" sortOrder="140" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Infinite Scroll</label>
+            <tab>Magexperts</tab>
+            <resource>Magexperts_InfiniteScroll::infinitescroll_config</resource>
+            <group id="license" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>License And Status</label>
+                <field id="infinitescroll_serialkey" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Serial Key</label>
+                    <backend_model>Magexperts\InfiniteScroll\Model\Config\Backend\Validate</backend_model>
+                    <validate>required-entry</validate>
+                </field>
+                <field id="infinitescroll_status" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Status</label>
+                    <validate>required-entry</validate>
+                    <source_model>Magexperts\InfiniteScroll\Model\Config\Source\Status</source_model>
+                </field>
+            </group>
+            <group id="general" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Settings</label>
+                <field id="loading_type" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Loading Type</label>
+                    <source_model>Magexperts\InfiniteScroll\Model\Config\Source\LoadingType</source_model>
+                </field>
+                <field id="display_page_number" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Display Page Numbers</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="page_number_style" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Page Numbers Style</label>
+                    <source_model>Magexperts\InfiniteScroll\Model\Config\Source\PageNumbersStyle</source_model>
+                    <depends>
+                        <field id="display_page_number">1</field>
+                    </depends>
+                </field>
+                <field id="image_upload" translate="label" type="image" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>AJAX Progress Image</label>
+                    <backend_model>Magexperts\InfiniteScroll\Model\Config\Backend\Image</backend_model>
+                    <base_url type="media" scope_info="1">helloworld</base_url><!-- Add Your Image Directory Name. It will be display pub/media/helloworld -->
+                    <comment><![CDATA[Allowed file types: jpg, jpeg, gif, png, svg]]></comment>
+                </field>
+            </group>
+            <group id="load_prev_next" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Prev-Next Button</label>
+                <field id="label_prev" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Label for the Prev Button</label>
+                </field>
+                <field id="label_next" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Label for the Next Button</label>
+                </field>
+                <field id="button_color" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Button Color</label>
+                    <frontend_model>Magexperts\InfiniteScroll\Block\Color</frontend_model>
+                </field>
+            </group>
+            <group id="back_to_top" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Back to Top Button</label>
+                <field id="back_to_top_status" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="button_style" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Button Style</label>
+                    <source_model>Magexperts\InfiniteScroll\Model\Config\Source\ButtonStyle</source_model>
+                </field>
+            </group>
+            <!--<group id="back_to_top" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Back to Top Button</label>
+                <field id="back_o_top_status" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="button_style" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Button Style</label>
+                    <source_model>Magexperts\InfiniteScroll\Model\Config\Source\ButtonStyle</source_model>
+                </field>
+            </group>-->
+        </section>
+    </system>
+</config>

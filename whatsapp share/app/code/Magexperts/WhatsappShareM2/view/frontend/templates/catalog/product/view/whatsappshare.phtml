@@ -1,0 +1,110 @@
+<?php
+ 
+$helper = $this->helper('Magexperts\WhatsappShareM2\Helper\Data');
+$pageenable= $helper ->isEnable();
+$currentUrl= $helper -> getCurrentUrl();
+$size = $helper->whatsappshare_size();
+$text = $helper->whatsappshare_text();?>
+
+
+<?php
+
+if($size == 1) {
+  if($pageenable == 1) : ?>
+  <div class="whatsapp_share" alt="Share on Whatsapp" title="Share on Whatsapp">  
+  <a class="wpbtn1" href="whatsapp://send?text=<?php echo $text; ?>%0A%0A<?php echo $currentUrl; ?>" data-action="share/whatsapp/share" role="button" target="_blank"><i class="fab fa-whatsapp fa-2x"></i></a>	
+	</div>
+  
+<?php endif; 
+} 
+else if($size == 2) {
+  if($pageenable == 1) : ?>
+	<div class="whatsapp_share" alt="Share on Whatsapp" title="Share on Whatsapp">  
+  <a class="wpbtn2" href="whatsapp://send?text=<?php echo $text; ?>%0A%0A<?php echo $currentUrl; ?>" data-action="share/whatsapp/share" role="button" target="_blank"> Share<i class="fab fa-whatsapp fa-2x"></i></a>	
+	</div>
+  <?php endif; 
+} 
+else if($size == 3) {
+  if($pageenable == 1) : ?>  <div class="whatsapp_share" alt="Share on Whatsapp" title="Share on Whatsapp">  
+  <a class="wpbtn3" href="whatsapp://send?text=<?php echo $text; ?>%0A%0A<?php echo $currentUrl; ?>" data-action="share/whatsapp/share" role="button" target="_blank"> Share to WhatsApp <i class="fab fa-whatsapp fa-2x"></i></a>	
+	</div>
+  <?php endif; 
+}
+// echo $currentUrl;
+?>
+<script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+<style>
+.fa-whatsapp  {
+  color:#fff;
+  background:
+  linear-gradient(#25d366,#25d366) 14% 84%/16% 16% no-repeat,
+  radial-gradient(#25d366 60%,transparent 0);
+  margin-top: 0.5rem;
+}
+.fa-2x {
+  font-size: 2.5rem;
+  margin-bottom: -4px;
+  padding-left: 0.5rem;
+}
+.wpbtn1{
+border-radius: 3px;
+margin-top: 10px;
+margin-bottom: 10px;
+background: #25d366;
+color: white;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+cursor: pointer;
+height: 35px;
+width: 30px;
+font-weight: 600;
+padding-right: 4px;
+}
+.wpbtn2{
+  border-radius: 3px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background: #25d366;
+  color: white;  
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.4rem;
+  cursor: pointer;
+  height: 35px;
+  width: 85px;;
+  font-weight: 600;
+}
+.wpbtn3{
+  border-radius: 3px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background: #25d366;
+  color: white;  
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.4rem;
+  cursor: pointer;
+  height: 35px;
+  width: 175px;;
+  font-weight: 600;
+}
+.wpbtn1:hover{
+  background: #25d366;
+  color: white;
+  text-decoration: none;
+}
+.wpbtn2:hover{
+  background: #25d366;
+  color: white;
+  text-decoration: none;
+}
+.wpbtn3:hover{
+  background: #25d366;
+  color: white;
+  text-decoration: none;
+}
+</style>

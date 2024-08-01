@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Backend/etc/menu.xsd">
+    <menu>
+        <add id="Magexperts_WhatsappShareM2::whatsappsharem2"
+            title="WhatsappShareM2"
+            module="Magexperts_WhatsappShareM2" sortOrder="60"
+            resource="Magexperts_WhatsappShareM2::whatsappsharem2"
+            parent="Magexperts_All::all"/>
+
+        
+        <add id="Magexperts_WhatsappShareM2::configuration"
+            title="Configuration" module="Magexperts_WhatsappShareM2"
+            sortOrder="20"
+            parent="Magexperts_WhatsappShareM2::whatsappsharem2"
+            action="adminhtml/system_config/edit/section/whatsappsharem2"
+            resource="Magexperts_WhatsappShareM2::configuration"/>
+    </menu>
+</config>
+

@@ -1,0 +1,592 @@
+<?php
+
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+use Magento\Framework\App\Action\Action;
+?>
+<?php
+/**
+ * Product list template
+ *
+ * @var $block \Magento\Catalog\Block\Product\ListProduct
+ * @var \Magento\Framework\Escaper $escaper
+ * @var \Magento\Framework\View\Helper\SecureHtmlRenderer $secureRenderer
+ */
+?>
+<?php
+$helper = $this->helper('Magexperts\InfiniteScroll\Helper\InfiniteScroll');
+$enable = $helper->isEnable();
+$loadingType = $helper->loadingType();
+$displayPageNUmbers = $helper->displayPageNUmbers();    
+$pageNumbersStyle = $helper->pageNumbersStyle();
+$prevButtonText = $helper->prevButtonText();
+$nextButtonText = $helper->nextButtonText();
+$buttonColor = $helper->buttonColor();
+$backToTopEnable = $helper->backToTopEnable();
+$topButtonStyle = $helper->topButtonStyle();
+
+$imgSystem = $helper->getConfigModule();
+$urlMedia = $helper->getBaseUrlMedia() . 'magexperts/infinitescroll/' . $imgSystem;
+
+?>
+<?php
+$blockToolbar = $this->getLayout()->createBlock('\Magento\Catalog\Block\Product\ProductList\Toolbar');
+$pageLimit = $blockToolbar->getLimit();
+
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$category = $objectManager->get('Magento\Framework\Registry')->registry('current_category');//get current category
+$categoryFactory = $objectManager->get('Magento\Catalog\Model\CategoryFactory');
+$catId = $category->getId();
+$catName = $category->getName();
+$categoryFactory = $categoryFactory->create()->load($catId);
+$productCollection = $categoryFactory->getProductCollection()->addAttributeToSelect('*');
+$_productCollection = $block->getLoadedProductCollection();
+/** @var \Magento\Catalog\Helper\Output $_helper */
+$_helper = $block->getData('outputHelper');
+?>
+<?php if (!$_productCollection->count()): ?>
+    <div class="message info empty">
+        <div><?= $escaper->escapeHtml(__('We can\'t find products matching the selection.')) ?></div>
+    </div>
+<?php else: ?>
+    <?= $block->getToolbarHtml() ?>
+    <?= $block->getAdditionalHtml() ?>
+    <?php
+    if ($block->getMode() === 'grid') {
+        $viewMode = 'grid';
+        $imageDisplayArea = 'category_page_grid';
+        $showDescription = false;
+        $templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::SHORT_VIEW;
+    } else {
+        $viewMode = 'list';
+        $imageDisplayArea = 'category_page_list';
+        $showDescription = true;
+        $templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::FULL_VIEW;
+    }
+    /**
+     * Position for actions regarding image size changing in vde if needed
+     */
+    $pos = $block->getPositioned();
+    $iterator = 0;
+    ?>
+    <?php if($displayPageNUmbers == '1'){ ?>
+        <?php if ($pageNumbersStyle == '1') { ?>
+            <button class="magexpertsscroll-page-num magexpertsscroll-button" id="magexpertsscroll-page-num1"><?php echo __('Page 1'); ?></button>
+        <?php }?>
+        <?php if ($pageNumbersStyle == '2') { ?>
+            <div class="magexpertsscroll-page-num magexpertsscroll-divider" id="magexpertsscroll-page-num1"><?php echo __('Page 1'); ?></div>
+        <?php }?>
+        <?php if ($pageNumbersStyle == '3') { ?>
+            <div class="magexpertsscroll-page-num magexpertsscroll-background" id="magexpertsscroll-page-num1"><?php echo __('Page 1'); ?></div>
+        <?php }?>
+    <?php }?>
+
+    <div class="products wrapper <?= /* @noEscape */ $viewMode ?> products-<?= /* @noEscape */ $viewMode ?>">
+        <ol class="products list items product-items">
+            <?php /** @var $_product \Magento\Catalog\Model\Product */ ?>
+            <?php foreach ($_productCollection as $_product): ?>
+                <!--<li class="item product product-item">-->
+                <?php /* @escapeNotVerified */ echo($iterator++ == 1) ? '<li class="item product product-item" id="pmpid_'.$_product->getId().'">' : '</li><li class="item product product-item" id="pmpid_'.$_product->getId().'">' ?>
+                    <div class="product-item-info"
+                         id="product-item-info_<?= /* @noEscape */ $_product->getId() ?>"
+                         data-container="product-<?= /* @noEscape */ $viewMode ?>">
+                        <?php
+                        $productImage = $block->getImage($_product, $imageDisplayArea);
+                        if ($pos != null) {
+                            $position = 'left:' . $productImage->getWidth() . 'px;'
+                                . 'top:' . $productImage->getHeight() . 'px;';
+                        }
+                        ?>
+                        <?php // Product Image ?>
+                        <a href="<?= $escaper->escapeUrl($_product->getProductUrl()) ?>"
+                           class="product photo product-item-photo"
+                           tabindex="-1">
+                            <?= $productImage->toHtml() ?>
+                        </a>
+                        <div class="product details product-item-details">
+                            <?php $_productNameStripped = $block->stripTags($_product->getName(), null, true); ?>
+                            <strong class="product name product-item-name">
+                                <a class="product-item-link"
+                                   href="<?= $escaper->escapeUrl($_product->getProductUrl()) ?>">
+                                    <?=/* @noEscape */ $_helper->productAttribute($_product, $_product->getName(), 'name')?>
+                                </a>
+                            </strong>
+                            <?= $block->getReviewsSummaryHtml($_product, $templateType) ?>
+                            <?= /* @noEscape */ $block->getProductPrice($_product) ?>
+
+                            <?= $block->getProductDetailsHtml($_product) ?>
+
+                            <div class="product-item-inner">
+                                <div class="product actions product-item-actions">
+                                    <div class="actions-primary">
+                                        <?php if ($_product->isSaleable()):?>
+                                            <?php $postParams = $block->getAddToCartPostParams($_product); ?>
+                                            <form data-role="tocart-form"
+                                                  data-product-sku="<?= $escaper->escapeHtml($_product->getSku()) ?>"
+                                                  action="<?= $escaper->escapeUrl($postParams['action']) ?>"
+                                                  data-mage-init='{"catalogAddToCart": {}}'
+                                                  method="post">
+                                                <?php $options = $block->getData('viewModel')->getOptionsData($_product); ?>
+                                                <?php foreach ($options as $optionItem): ?>
+                                                    <input type="hidden"
+                                                           name="<?= $escaper->escapeHtml($optionItem['name']) ?>"
+                                                           value="<?= $escaper->escapeHtml($optionItem['value']) ?>">
+                                                <?php endforeach; ?>
+                                                <input type="hidden"
+                                                       name="product"
+                                                       value="<?= /* @noEscape */ $postParams['data']['product'] ?>">
+                                                <input type="hidden"
+                                                       name="<?= /* @noEscape */ Action::PARAM_NAME_URL_ENCODED ?>"
+                                                       value="<?=
+                                                       /* @noEscape */ $postParams['data'][Action::PARAM_NAME_URL_ENCODED]
+                                                       ?>">
+                                                <?= $block->getBlockHtml('formkey') ?>
+                                                <button type="submit"
+                                                        title="<?= $escaper->escapeHtmlAttr(__('Add to Cart')) ?>"
+                                                        class="action tocart primary"
+                                                        disabled>
+                                                    <span><?= $escaper->escapeHtml(__('Add to Cart')) ?></span>
+                                                </button>
+                                            </form>
+                                        <?php else:?>
+                                            <?php if ($_product->isAvailable()):?>
+                                                <div class="stock available">
+                                                    <span><?= $escaper->escapeHtml(__('In stock')) ?></span></div>
+                                            <?php else:?>
+                                                <div class="stock unavailable">
+                                                    <span><?= $escaper->escapeHtml(__('Out of stock')) ?></span></div>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
+                                    </div>
+                                    <?= ($pos && strpos($pos, $viewMode . '-primary')) ?
+                                        /* @noEscape */ $secureRenderer->renderStyleAsTag(
+                                            $position,
+                                            'product-item-info_' . $_product->getId() . ' div.actions-primary'
+                                        ) : '' ?>
+                                    <div data-role="add-to-links" class="actions-secondary">
+                                        <?php if ($addToBlock = $block->getChildBlock('addto')): ?>
+                                            <?= $addToBlock->setProduct($_product)->getChildHtml() ?>
+                                        <?php endif; ?>
+                                    </div>
+                                    <?= ($pos && strpos($pos, $viewMode . '-secondary')) ?
+                                        /* @noEscape */ $secureRenderer->renderStyleAsTag(
+                                            $position,
+                                            'product-item-info_' . $_product->getId() . ' div.actions-secondary'
+                                        ) : '' ?>
+                                </div>
+                                <?php if ($showDescription): ?>
+                                    <div class="product description product-item-description">
+                                        <?= /* @noEscape */ $_helper->productAttribute(
+                                            $_product,
+                                            $_product->getShortDescription(),
+                                            'short_description'
+                                        ) ?>
+                                        <a href="<?= $escaper->escapeUrl($_product->getProductUrl()) ?>"
+                                           title="<?= /* @noEscape */ $_productNameStripped ?>"
+                                           class="action more"><?= $escaper->escapeHtml(__('Learn More')) ?></a>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                    </div>
+                    <?= ($pos && strpos($pos, $viewMode . '-actions')) ?
+                        /* @noEscape */ $secureRenderer->renderStyleAsTag(
+                            $position,
+                            'product-item-info_' . $_product->getId() . ' div.product-item-actions'
+                        ) : '' ?>
+                </li>
+            <?php endforeach; ?>
+        </ol>
+    </div>
+    <?= $block->getChildBlock('toolbar')->setIsBottom(true)->toHtml() ?>
+    <?php if ($backToTopEnable == '1') { ?>
+        <?php if ($topButtonStyle == '1') { ?>
+            <div id="back-to-top" class="back-to-top">
+            </div>
+
+            <style type="text/css">
+                .back-to-top {
+                    position: fixed;
+                    bottom: 20px;
+                    right: 20px;
+                    cursor: pointer;
+                    display: none;
+                    background-image: url("<?php echo $block->getViewFileUrl('Magexperts_InfiniteScroll::images/up-arrow.png'); ?>");
+                    background-repeat: no-repeat;
+                    width: 50px;
+                    height: 50px;
+                    background-size: contain;
+                    z-index: 999999;    
+                }
+
+                .back-to-top.show {
+                    display: block;
+                }
+            </style>
+        <?php } ?>
+        <?php if ($topButtonStyle == '2') { ?>
+            <div id="back-to-top" class="back-to-top">
+                <span><?php echo __('Back to Top'); ?></span>
+            </div>
+            <style type="text/css">
+                #back-to-top::after {
+                    content: '\e608';
+                    font-family: 'luma-icons';
+                }
+                .back-to-top {
+                    width: auto;
+                    height: auto;
+                    transform: rotate(-90deg) translate(30px, 50px);
+                    color: #fff;
+                    padding: 4px 10px;
+                    border-radius: 40px;
+                    right: 20px;
+                    bottom: 20px;
+                    position: fixed;
+                    background: rgb(71, 118, 240);
+                    cursor: pointer;
+                    display: none;
+                    font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+                    font-weight: 600;
+                    font-size: 1.8rem;
+                    z-index: 999999999;
+                }
+
+                .back-to-top.show {
+                    display: block;
+                }
+            </style>
+        <?php } ?>
+        <script type="text/javascript">
+            require(['jquery'], function($) {
+                $(document).ready(function() {
+                    var btn = $('#back-to-top');
+
+                    $(window).scroll(function() {
+                        if ($(window).scrollTop() > 300) {
+                            btn.addClass('show');
+                        } else {
+                            btn.removeClass('show');
+                        }
+                    });
+
+                    btn.on('click', function(e) {
+                        e.preventDefault();
+                        $('html, body').animate({scrollTop: 0}, '300');
+                    });
+                });
+            });
+        </script>
+    <?php } ?>
+    <?php // phpcs:ignore Magento2.Legacy.PhtmlTemplate ?>
+<?php endif; ?>
+<?php
+
+if ($enable == '1' && $loadingType != '1'){ ?>
+    <style type="text/css">
+        #toolbar-amount{
+            display: none;
+        }
+        .field.limiter, .pages{
+            display: none !important;
+        }
+        /*.next-load.pm-ajax-button > span,.previous-load.pm-ajax-button > span {
+            cursor: pointer;
+            !*border: 1px black double;*!
+            !*padding: 10px;*!
+            display: block;
+            !*text-align: center;*!
+            width: 12%;
+            margin: 0 auto;
+            font-size: 1.6rem;
+        }*/
+        .next-load.pm-ajax-button > span, .previous-load.pm-ajax-button > span {
+            border-color: transparent !important;
+            display: flex;
+            align-items: center;
+            margin: 5px auto;
+            padding: 5px 20px;
+            max-width: 100%;
+            width: max-content;
+            border: 1px solid;
+            border-top-color: currentcolor;
+            border-right-color: currentcolor;
+            border-bottom-color: currentcolor;
+            border-left-color: currentcolor;
+            border-radius: 2px;
+            background-color: transparent;
+            text-align: center;
+            text-transform: capitalize;
+            letter-spacing: .03em;
+            font-weight: 700;
+            font-size: 1.6rem;
+            line-height: 2rem;
+            cursor: pointer;
+            transition: color .2s;
+        }
+        .magexpertsscroll-page-num.magexpertsscroll-button {
+            display: inline-block;
+            padding: 5px 14px;
+            border: 1px solid #c2c2c2;
+            border-radius: 2px;
+            background: #fbfbfb;
+        }
+        .magexpertsscroll-page-num.magexpertsscroll-divider{
+            clear: both;
+            padding: 6px 10px;
+            color: #252525;
+            letter-spacing: .03em;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 1.4rem;
+            line-height: 2rem;
+            border-bottom: 1px solid #c2c2c2;
+        }
+        .magexpertsscroll-page-num.magexpertsscroll-background{
+            clear: both;
+            padding: 6px 10px;
+            color: #252525;
+            letter-spacing: .03em;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 1.4rem;
+            line-height: 2rem;
+            background: #fbfbfb;
+        }
+    </style>
+
+    <script type="text/javascript">
+
+        require(['jquery'],function($){
+            var buttonColor = '<?php echo $buttonColor; ?>';
+            var cnt = 1;
+            var url = '<?php echo $urlMedia; ?>';
+            $jq = jQuery.noConflict();
+// Setup
+            pagination = false;
+            previouslink = false;
+            nextlink = false;
+
+// Force go to product
+
+            $jq(document).ready(function() {
+                var hash = window.location.hash.substr(1);
+
+                if(typeof hash != 'undefined' && hash.length) {
+                    $jq('html, body').animate({ scrollTop: $('#'+hash).offset().top}, 50);
+                }
+            });
+
+// Load next button if applicable
+            var pagination = $jq(".pages").html();
+
+            if(typeof pagination != 'undefined' && pagination.length) {
+                var nextlink = $jq(".pages-item-next a").attr("href");
+
+                if(typeof nextlink != 'undefined' && nextlink.length) {
+                    var pnum = getParameterByName("p", nextlink)
+                    var nextHtml = '<div class="pagenum_'+pnum+' ajaxstaging"></div><div class="next-load pm-ajax-button" data-next="'+nextlink+'" data-pagenumber="'+pnum+'"><span style="display:none"><?php echo __($nextButtonText)?></span></div>';
+                    $jq(".products-grid").append(nextHtml);
+                    <?php if ($loadingType == '3') { ?>
+                        jQuery(".next-load span").show();
+                    <?php } ?>
+                }
+            }
+
+            // Load previous button if applicable
+
+            if(typeof pagination != 'undefined' && pagination.length) {
+                var previouslink = $jq(".pages-item-previous a").attr("href");
+                if(typeof previouslink != 'undefined' && previouslink.length) {
+                    var pnum = getParameterByName("p", previouslink)
+                    var previousHtml = '<div class="pagenum_'+pnum+' ajaxstaging"></div><div class="previous-load pm-ajax-button" data-next="'+previouslink+'" data-pagenumber="'+pnum+'"><span><?php echo __($prevButtonText); ?></span></div>';
+                    $jq(".products-grid").prepend(previousHtml);
+                }
+            }
+
+// Load next function
+
+            function loadNext() {
+                cnt++;
+                var nextLink = $jq("body .next-load").data("next");
+                var pnum = $jq("body .next-load").data("pagenumber");
+
+                if(nextLink.length) {
+                    $jq.ajax({
+                        url: nextLink,
+                        cache: false,
+                        showLoader: true,
+                        success: function(response) {
+                            <?php if($displayPageNUmbers == '1'){ ?>
+                            var html = '<br>';
+                            <?php if ($pageNumbersStyle == '1') { ?>
+                            html = html + '<button class="magexpertsscroll-page-num magexpertsscroll-button">Page '+cnt+'</button><br>';
+                            <?php }?>
+                            <?php if ($pageNumbersStyle == '2') { ?>
+                            html = html + '<div class="magexpertsscroll-page-num magexpertsscroll-divider" id="magexpertsscroll-page-num1">Page '+cnt+'</div>><br>'
+                            <?php }?>
+                            <?php if ($pageNumbersStyle == '3') { ?>
+                            html = html + '<div class="magexpertsscroll-page-num magexpertsscroll-background" id="magexpertsscroll-page-num1">Page '+cnt+'</div>><br>';
+                            <?php }?>
+                            jQuery(".products.list.items.product-items").last().append(html);
+                            <?php } ?>
+                            nextlinknext = false;
+                            pnumnext = false;
+                            items = $jq(response).find(".product-items");
+
+                            $jq(response).find(".pages-item-next a").each(function() {
+
+                                if($jq(this).attr("href").length) {
+                                    nextlinknext = $jq(this).attr("href");
+                                    pnumnext = getParameterByName("p", nextlinknext);
+                                }
+                            });
+                            addItems(".pagenum_"+pnum,items,nextLink,"append");
+                            $jq(".next-load").remove();
+                            jQuery(".action.tocart.primary").each(function(){
+                                if(jQuery(this).is(':disabled')){
+                                    jQuery(this).prop('disabled', false);
+                                }
+                            });
+                            if(nextlinknext.length) {
+                                var nextHtml = '<div class="pagenum_'+pnumnext+' ajaxstaging"></div><div class="next-load pm-ajax-button" data-next="'+nextlinknext+'" data-pagenumber="'+pnumnext+'"><span style="display:none"><?php echo __($nextButtonText); ?></span></div>';
+                                $jq(".products-grid").append(nextHtml);
+                                <?php if ($loadingType == '3') { ?>
+                                    jQuery(".next-load span").show();
+                                <?php } ?>
+                                // Apply Previou-Next button color
+                                jQuery(".next-load > span").css('color',buttonColor);
+                            }
+                        }
+                    });
+                    return true;
+                }
+            }
+
+            function loadPrevious() {
+                cnt--
+                jQuery(".magexpertsscroll-page-num").last().remove();
+                var nextLink = $jq("body .previous-load").data("next");
+                var pnum = $jq("body .previous-load").data("pagenumber");
+                if(nextLink.length) {
+                    $jq.ajax({
+                        url: nextLink,
+                        cache: false,
+                        showLoader:true,
+                        success: function(response) {
+                            nextlinknext = false;
+                            pnumnext = false;
+
+                            items = $jq(response).find(".product-items");
+
+                            $jq(response).find(".pages-item-previous a").each(function() {
+                                if($jq(this).attr("href").length) {
+                                    nextlinknext = $jq(this).attr("href");
+                                    pnumnext = getParameterByName("p", nextlinknext);
+                                }
+                            });
+                            addItems(".pagenum_"+pnum,items,nextLink,'prepend');
+                            $jq(".previous-load").remove();
+                            if(nextlinknext.length) {
+                                var nextHtml = '<div class="pagenum_'+pnumnext+' ajaxstaging"></div><div class="previous-load pm-ajax-button" data-next="'+nextlinknext+'" data-pagenumber="'+pnumnext+'"><span><?php echo __($prevButtonText); ?></span></div>';
+                                $jq(".products-grid").prepend(nextHtml);
+                            }
+                            // Apply Previou-Next button color
+                            jQuery('.previous-load > span').css('color',buttonColor);
+                        }
+                    });
+                    return true;
+                }
+            }
+
+            $jq("body").on("click",".next-load span",function() {
+                $jq(this).parent().addClass("pm-ajax-running");
+                loadNext();
+
+
+            });
+
+            $jq("body").on("click",".previous-load span",function() {
+                $jq(this).parent().addClass("pm-ajax-running");
+                loadPrevious();
+            });
+
+            $jq("body").on("click",".product-item a",function(e) {
+                e.preventDefault();
+
+                returnUrl = false;
+
+                var returnUrl = $jq(this).data("returnurl");
+                var pid = $jq(this).closest("li").attr("id");
+                var productUrl = $jq(this).attr("href");
+
+                if(returnUrl) {
+                    returnUrl = returnUrl.replace("html/?","html?");
+                } else {
+                    var href = window.location.href;
+
+                    if(href.indexOf("#") > 0){
+                        href = href.split("#")[0];
+                        returnUrl = href.replace("html/?","html?");;
+
+                    } else {
+                        returnUrl = href.replace("html/?","html?");
+                    }
+                }
+
+                history.pushState('data', '', returnUrl+"#"+pid);
+                window.location.href = productUrl;
+            });
+
+            function addItems(target,html,returnUrl,dest) {
+
+                $jq(target).html(html);
+                $jq(target+" a").each(function() {
+                    $jq(this).attr("data-returnurl",returnUrl);
+                });
+
+                newHtml = $jq(target+" ol").html();
+
+                if(dest == 'prepend') {
+                    $jq(".product-items").prepend(newHtml);
+                } else {
+                    $jq(".product-items").append(newHtml);
+                }
+
+                $jq(target).remove();
+            }
+
+            function getParameterByName(name, url) {
+                if (!url) {
+                    url = window.location.href;
+                }
+
+                name = name.replace(/[\[\]]/g, "\\$&");
+
+                var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"), results = regex.exec(url);
+                if (!results) return null;
+                if (!results[2]) return '';
+                return decodeURIComponent(results[2].replace(/\+/g, " "));
+            }
+            <?php if ($loadingType == '2') { ?>
+            jQuery(window).scroll(function() {
+                if(jQuery(window).scrollTop() == jQuery(document).height() - jQuery(window).height()) {
+                    jQuery('.next-load span').trigger('click');
+                }
+            });
+            <?php } ?>
+
+            // Apply Previou-Next button color
+            jQuery('.next-load.pm-ajax-button > span, .previous-load.pm-ajax-button > span').css('color',buttonColor);
+            var myInterval = setInterval(function () {
+                if (jQuery('.loader').length) {
+                    jQuery('.loader > img').attr('src',url);
+                    clearInterval(myInterval);
+                }
+            }, 100);
+        });
+    </script>
+
+<?php } ?>

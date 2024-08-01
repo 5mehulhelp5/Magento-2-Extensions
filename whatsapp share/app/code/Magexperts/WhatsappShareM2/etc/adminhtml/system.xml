@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+     <system>
+         <tab id="Magexperts" translate="label" sortOrder="110">
+             <label>Magexperts Extension</label>
+         </tab>
+         <section id="whatsappsharem2" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+            
+             <label>WhatsappShareM2</label>
+             <tab>Magexperts</tab>
+             <resource>Magexperts_WhatsappShareM2::configuration_whatsappshare</resource>
+             <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                 <label>License and Status</label>
+                 <field id="status" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                     <label>Status</label>
+                     <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                 </field>
+                 <field id="serial_key" translate="label" type="text" sortOrder="2" showInDefault="2" showInWebsite="0" showInStore="0">
+                                <label>Serial Key</label>
+                                <validate>required-entry</validate>
+                                <backend_model>Magexperts\WhatsappShareM2\Model\Config\Backend\Lookup</backend_model>
+                 </field>
+             </group>
+             <group id="options" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                 <label>Sharing Options</label>
+                 <field id="btnsize" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                     <label>Button-size</label>
+                     <source_model>Magexperts\WhatsappShareM2\Model\Config\Source\Custom::toOptionsArrayFunction2</source_model>
+                 </field>
+                 <field id="msg" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                     <label>Message</label>
+                 </field>
+             </group>
+        </section>
+     </system>
+</config>
