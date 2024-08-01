@@ -2,10 +2,10 @@ Magento 2 Rocket JavaScript is a solution that allows you to defer JavaScript lo
 
 Optimize the JS bundle, minimize its size and reduce loading and execution time. Deliver your pages faster for the utmost customer experience.
 
-1>Define JavaScripts that need to be deferred
-2>Exclude certain JS from deffering
-3>Specify pages where JS shouldn’t deferred
-4>Enable JavaScript bundling optimization
+1>Define JavaScripts that need to be deferred<br/>
+2>Exclude certain JS from deffering<br/>
+3>Specify pages where JS shouldn’t deferred<br/>
+4>Enable JavaScript bundling optimization<br/>
 
 
 Don’t Let JS Slow Down Your Store
