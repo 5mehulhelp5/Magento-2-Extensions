@@ -10,7 +10,7 @@ You don’t need to rely on WordPress or any other third-party platform when you
 4>Improve blog navigation with 8 different sidebar widgets<br/>
 5>Optimize your blog for better position in search with multiple SEO features<br/>
 6>Cross-promote your products in the blog and posts in the catalogue<br/>
-7>Insert featured and recent posts anywhere in your store using widgets<br/>
+7>Insert featured and recent posts anywhere in your store using widgets<br/> 
 
 
 Make the Most of the Blog SEO
@@ -75,7 +75,7 @@ If you have multiple authors working on posts, simply add co-authors to boost au
 
 
 Edit, Approve, Disapprove and Reply to Comments
-If you want to learn how people react to your content the first place to check is comments. Depending on your audience you can enable Facebook, Disqus or Magefan comments.
+If you want to learn how people react to your content the first place to check is comments. Depending on your audience you can enable Facebook, Disqus or Magexperts comments.
 
 The latter gives you more control over content in comments. You can edit, approve, disapprove or reply to comments and receive email notifications about new comments (and replies to comments).
 
@@ -100,7 +100,7 @@ Preview draft posts on the frontend and make necessary changes before publicatio
 
 Configure the end date to disable blog posts automatically.
 
-Hassle-free blog management is what Magefan Blog stands for.
+Hassle-free blog management is what Magexperts Blog stands for.
 
 
 Add Featured and Recent Posts to Homepage
