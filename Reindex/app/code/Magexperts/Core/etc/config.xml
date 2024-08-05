@@ -19,11 +19,11 @@
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
     <default>
-        <bss_core>
+        <magexperts_core>
             <setting>
                 <enable_popup>1</enable_popup>
                 <enable_preprocessed_css>0</enable_preprocessed_css>
             </setting>
-        </bss_core>
+        </magexperts_core>
     </default>
 </config>

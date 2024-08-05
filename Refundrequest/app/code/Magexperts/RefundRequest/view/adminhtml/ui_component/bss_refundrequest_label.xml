@@ -21,10 +21,10 @@
          xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
-            <item name="provider" xsi:type="string">bss_refundrequest_label.bss_refundrequest_label_data_source</item>
-            <item name="deps" xsi:type="string">bss_refundrequest_label.bss_refundrequest_label_data_source</item>
+            <item name="provider" xsi:type="string">magexperts_refundrequest_label.magexperts_refundrequest_label_data_source</item>
+            <item name="deps" xsi:type="string">magexperts_refundrequest_label.magexperts_refundrequest_label_data_source</item>
         </item>
-        <item name="spinner" xsi:type="string">bss_request_label_columns</item>
+        <item name="spinner" xsi:type="string">magexperts_request_label_columns</item>
         <item name="buttons" xsi:type="array">
             <item name="add" xsi:type="array">
                 <item name="name" xsi:type="string">add</item>
@@ -34,10 +34,10 @@
             </item>
         </item>
     </argument>
-    <dataSource name="bss_refundrequest_label_data_source">
+    <dataSource name="magexperts_refundrequest_label_data_source">
         <argument name="dataProvider" xsi:type="configurableObject">
             <argument name="class" xsi:type="string">Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider</argument>
-            <argument name="name" xsi:type="string">bss_refundrequest_label_data_source</argument>
+            <argument name="name" xsi:type="string">magexperts_refundrequest_label_data_source</argument>
             <argument name="primaryFieldName" xsi:type="string">id</argument>
             <argument name="requestFieldName" xsi:type="string">id</argument>
             <argument name="data" xsi:type="array">
@@ -66,7 +66,7 @@
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="storageConfig" xsi:type="array">
-                        <item name="namespace" xsi:type="string">bss_refundrequest_label</item>
+                        <item name="namespace" xsi:type="string">magexperts_refundrequest_label</item>
                     </item>
                 </item>
             </argument>
@@ -75,7 +75,7 @@
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="columnsData" xsi:type="array">
-                        <item name="provider" xsi:type="string">bss_refundrequest_label.bss_refundrequest_label.bss_request_label_columns</item>
+                        <item name="provider" xsi:type="string">magexperts_refundrequest_label.magexperts_refundrequest_label.magexperts_request_label_columns</item>
                     </item>
                     <item name="component" xsi:type="string">Magento_Ui/js/grid/controls/columns</item>
                     <item name="displayArea" xsi:type="string">dataGridActions</item>
@@ -86,10 +86,10 @@
         <filterSearch name="fulltext">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="provider" xsi:type="string">bss_refundrequest_label.bss_refundrequest_label_data_source</item>
-                    <item name="chipsProvider" xsi:type="string">bss_refundrequest_label.bss_refundrequest_label.listing_top.listing_filters_chips</item>
+                    <item name="provider" xsi:type="string">magexperts_refundrequest_label.magexperts_refundrequest_label_data_source</item>
+                    <item name="chipsProvider" xsi:type="string">magexperts_refundrequest_label.magexperts_refundrequest_label.listing_top.listing_filters_chips</item>
                     <item name="storageConfig" xsi:type="array">
-                        <item name="provider" xsi:type="string">bss_refundrequest_label.bss_refundrequest_label.listing_top.bookmarks</item>
+                        <item name="provider" xsi:type="string">magexperts_refundrequest_label.magexperts_refundrequest_label.listing_top.bookmarks</item>
                         <item name="namespace" xsi:type="string">current.search</item>
                     </item>
                 </item>
@@ -98,9 +98,9 @@
         <filters name="listing_filters">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="columnsProvider" xsi:type="string">bss_refundrequest_label.bss_refundrequest_label.bss_refundrequest_columns</item>
+                    <item name="columnsProvider" xsi:type="string">magexperts_refundrequest_label.magexperts_refundrequest_label.magexperts_refundrequest_columns</item>
                     <item name="storageConfig" xsi:type="array">
-                        <item name="provider" xsi:type="string">bss_refundrequest_label.bss_refundrequest_label.listing_top.bookmarks</item>
+                        <item name="provider" xsi:type="string">magexperts_refundrequest_label.magexperts_refundrequest_label.listing_top.bookmarks</item>
                         <item name="namespace" xsi:type="string">current.filters</item>
                     </item>
                     <item name="templates" xsi:type="array">
@@ -112,9 +112,9 @@
                         </item>
                     </item>
                     <item name="childDefaults" xsi:type="array">
-                        <item name="provider" xsi:type="string">bss_refundrequest_label.bss_refundrequest_label.listing_top.listing_filters</item>
+                        <item name="provider" xsi:type="string">magexperts_refundrequest_label.magexperts_refundrequest_label.listing_top.listing_filters</item>
                         <item name="imports" xsi:type="array">
-                            <item name="visible" xsi:type="string">bss_refundrequest_label.bss_refundrequest_label.bss_refundrequest_columns.${ $.index }:visible</item>
+                            <item name="visible" xsi:type="string">magexperts_refundrequest_label.magexperts_refundrequest_label.magexperts_refundrequest_columns.${ $.index }:visible</item>
                         </item>
                     </item>
                 </item>
@@ -126,7 +126,7 @@
         <massaction name="listing_massaction">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="selectProvider" xsi:type="string">bss_refundrequest_label.bss_refundrequest_label.bss_request_label_columns.ids</item>
+                    <item name="selectProvider" xsi:type="string">magexperts_refundrequest_label.magexperts_refundrequest_label.magexperts_request_label_columns.ids</item>
                     <item name="indexField" xsi:type="string">id</item>
                 </item>
             </argument>
@@ -135,7 +135,7 @@
                     <item name="config" xsi:type="array">
                         <item name="type" xsi:type="string">delete</item>
                         <item name="label" xsi:type="string" translate="true">Delete</item>
-                        <item name="url" xsi:type="url" path="bss_refundrequest/label/massDelete"/>
+                        <item name="url" xsi:type="url" path="magexperts_refundrequest/label/massDelete"/>
                         <item name="confirm" xsi:type="array">
                             <item name="title" xsi:type="string" translate="true">Delete items</item>
                             <item name="message" xsi:type="string" translate="true">Are you sure you want to delete selected items?</item>
@@ -148,7 +148,7 @@
                     <item name="config" xsi:type="array">
                         <item name="type" xsi:type="string">enable</item>
                         <item name="label" xsi:type="string" translate="true">Enable</item>
-                        <item name="url" xsi:type="url" path="bss_refundrequest/label/massEnable"/>
+                        <item name="url" xsi:type="url" path="magexperts_refundrequest/label/massEnable"/>
                     </item>
                 </argument>
             </action>
@@ -157,7 +157,7 @@
                     <item name="config" xsi:type="array">
                         <item name="type" xsi:type="string">disable</item>
                         <item name="label" xsi:type="string" translate="true">Disable</item>
-                        <item name="url" xsi:type="url" path="bss_refundrequest/label/massDisable"/>
+                        <item name="url" xsi:type="url" path="magexperts_refundrequest/label/massDisable"/>
                     </item>
                 </argument>
             </action>
@@ -166,24 +166,24 @@
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="storageConfig" xsi:type="array">
-                        <item name="provider" xsi:type="string">bss_refundrequest_label.bss_refundrequest_label.listing_top.bookmarks</item>
+                        <item name="provider" xsi:type="string">magexperts_refundrequest_label.magexperts_refundrequest_label.listing_top.bookmarks</item>
                         <item name="namespace" xsi:type="string">current.paging</item>
                     </item>
-                    <item name="selectProvider" xsi:type="string">bss_refundrequest_label.bss_refundrequest_label.bss_refundrequest_columns.ids</item>
+                    <item name="selectProvider" xsi:type="string">magexperts_refundrequest_label.magexperts_refundrequest_label.magexperts_refundrequest_columns.ids</item>
                 </item>
             </argument>
         </paging>
     </container>
-    <columns name="bss_request_label_columns">
+    <columns name="magexperts_request_label_columns">
         <argument name="data" xsi:type="array">
             <item name="config" xsi:type="array">
                 <item name="storageConfig" xsi:type="array">
-                    <item name="provider" xsi:type="string">bss_refundrequest_label.bss_refundrequest_label.listing_top.bookmarks</item>
+                    <item name="provider" xsi:type="string">magexperts_refundrequest_label.magexperts_refundrequest_label.listing_top.bookmarks</item>
                     <item name="namespace" xsi:type="string">current</item>
                 </item>
                 <item name="childDefaults" xsi:type="array">
                     <item name="fieldAction" xsi:type="array">
-                        <item name="provider" xsi:type="string">bss_refundrequest_label.bss_refundrequest_label.bss_refundrequest.actions</item>
+                        <item name="provider" xsi:type="string">magexperts_refundrequest_label.magexperts_refundrequest_label.magexperts_refundrequest.actions</item>
                         <item name="target" xsi:type="string">applyAction</item>
                         <item name="params" xsi:type="array">
                             <item name="0" xsi:type="string">edit</item>
@@ -192,7 +192,7 @@
                     </item>
                     <item name="controlVisibility" xsi:type="boolean">true</item>
                     <item name="storageConfig" xsi:type="array">
-                        <item name="provider" xsi:type="string">bss_refundrequest_label.bss_refundrequest_label.listing_top.bookmarks</item>
+                        <item name="provider" xsi:type="string">magexperts_refundrequest_label.magexperts_refundrequest_label.listing_top.bookmarks</item>
                         <item name="root" xsi:type="string">columns.${ $.index }</item>
                         <item name="namespace" xsi:type="string">current.${ $.storageConfig.root}</item>
                     </item>

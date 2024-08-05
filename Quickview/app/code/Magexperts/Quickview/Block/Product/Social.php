@@ -15,7 +15,7 @@ namespace Magexperts\Quickview\Block\Product;
  */
 class Social extends \Magento\Catalog\Block\Product\View
 {
-    const XML_PATH_QUICKVIEW_REMOVE_PRODUCT_INFOR_MAILTO = 'bss_quickview/general/remove_product_info_mailto';
+    const XML_PATH_QUICKVIEW_REMOVE_PRODUCT_INFOR_MAILTO = 'magexperts_quickview/general/remove_product_info_mailto';
 
     public function getConfigShowEmail()
     {

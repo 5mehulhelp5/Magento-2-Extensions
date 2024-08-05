@@ -25,14 +25,14 @@ define([
         initialize: function () {
             var self = this;
             self._super();
-            customerData.get('bss-fbpixel-subscribe').subscribe(function (loadedData) {
+            customerData.get('magexperts-fbpixel-subscribe').subscribe(function (loadedData) {
                 if (loadedData && "undefined" !== typeof loadedData.events) {
                     for (var eventCounter = 0; eventCounter < loadedData.events.length; eventCounter++) {
                         var eventData = loadedData.events[eventCounter];
                         if ("undefined" !== typeof eventData.eventAdditional && eventData.eventAdditional) {
-                            jQuery('.bss-subscribe-email').text(eventData.eventAdditional.email);
-                            jQuery('.bss-subscribe-id').text(eventData.eventAdditional.id);
-                            customerData.set('bss-fbpixel-subscribe', {});
+                            jQuery('.magexperts-subscribe-email').text(eventData.eventAdditional.email);
+                            jQuery('.magexperts-subscribe-id').text(eventData.eventAdditional.id);
+                            customerData.set('magexperts-fbpixel-subscribe', {});
                             return window.fb();
                         }
                     }

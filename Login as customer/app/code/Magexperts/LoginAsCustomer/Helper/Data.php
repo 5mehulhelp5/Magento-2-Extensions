@@ -30,9 +30,9 @@ use Magento\Framework\Math\Random;
 class Data extends \Magento\Framework\App\Helper\AbstractHelper
 {
     const TIME_FRAME = 60;
-    const XML_PATH_ENABLED = 'bss_loginAscustomer/general/enable';
-    const XML_PATH_CUSTOMER_GRID_LOGIN_COLUMN = 'bss_loginAscustomer/general/customer_grid_login_column';
-    const XML_PATH_DSIABLE_PAGE_CACHE = 'bss_loginAscustomer/general/disable_page_cache';
+    const XML_PATH_ENABLED = 'magexperts_loginAscustomer/general/enable';
+    const XML_PATH_CUSTOMER_GRID_LOGIN_COLUMN = 'magexperts_loginAscustomer/general/customer_grid_login_column';
+    const XML_PATH_DSIABLE_PAGE_CACHE = 'magexperts_loginAscustomer/general/disable_page_cache';
 
     /**
      * @var DateTime

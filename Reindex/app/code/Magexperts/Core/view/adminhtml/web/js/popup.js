@@ -23,7 +23,7 @@ define([
 ], function ($, modal) {
     "use strict";
 
-    $.widget('bss.popup', {
+    $.widget('magexperts.popup', {
 
         /**
          * @private
@@ -37,7 +37,7 @@ define([
                     type: 'popup',
                     innerScroll: true,
                     title: $.mage.__(this.options.title),
-                    modalClass: "bss-popup",
+                    modalClass: "magexperts-popup",
                     autoOpen: false,
                     responsive: true,
                     clickableOverlay: true,
@@ -96,5 +96,5 @@ define([
 
     });
 
-    return $.bss.popup;
+    return $.magexperts.popup;
 });

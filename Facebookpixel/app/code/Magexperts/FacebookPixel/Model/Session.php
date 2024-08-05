@@ -254,7 +254,7 @@ class Session extends \Magento\Framework\Session\SessionManager
      */
     public function setActionPage($data)
     {
-        $this->storage->setData('bss_action_page', $data);
+        $this->storage->setData('magexperts_action_page', $data);
         return $this;
     }
 
@@ -266,8 +266,8 @@ class Session extends \Magento\Framework\Session\SessionManager
     public function getActionPage()
     {
         if ($this->hasActionPage()) {
-            $data = $this->getData('bss_action_page');
-            $this->storage->unsetData('bss_action_page');
+            $data = $this->getData('magexperts_action_page');
+            $this->storage->unsetData('magexperts_action_page');
             return $data;
         }
         return null;
@@ -280,6 +280,6 @@ class Session extends \Magento\Framework\Session\SessionManager
      */
     public function hasActionPage()
     {
-        return $this->storage->hasData('bss_action_page');
+        return $this->storage->hasData('magexperts_action_page');
     }
 }

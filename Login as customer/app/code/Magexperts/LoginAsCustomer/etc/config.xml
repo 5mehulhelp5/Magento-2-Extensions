@@ -19,12 +19,12 @@
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
     <default>
-        <bss_loginAscustomer>
+        <magexperts_loginAscustomer>
             <general>
                 <enable>1</enable>
                 <customer_grid_login_column>actions</customer_grid_login_column>
                 <disable_page_cache>0</disable_page_cache>
             </general>
-        </bss_loginAscustomer>
+        </magexperts_loginAscustomer>
     </default>
 </config>

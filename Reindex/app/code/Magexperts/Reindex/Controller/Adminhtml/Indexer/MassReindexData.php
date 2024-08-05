@@ -81,7 +81,7 @@ class MassReindexData extends \Magento\Backend\App\Action
                     $indexer->reindexAll();
                     $resultTime = (int)(microtime(true) - $startTime);
                     $this->messageManager->addSuccess(
-                        '<div class="bss-reindex-info">' . $indexer->getTitle() . ' index has been rebuilt successfully in ' . gmdate('H:i:s', (int)$resultTime) . '</div>'
+                        '<div class="magexperts-reindex-info">' . $indexer->getTitle() . ' index has been rebuilt successfully in ' . gmdate('H:i:s', (int)$resultTime) . '</div>'
                     );
                 } catch (\Magento\Framework\Exception\LocalizedException $e) {
                     $this->messageManager->addError(
@@ -96,7 +96,7 @@ class MassReindexData extends \Magento\Backend\App\Action
                 }
             }
             $this->messageManager->addSuccess(
-                __('%1 indexer(s) have been rebuilt successfully <a href="javascript:void(0)" class="bss-reindex-show">Show detail</a>', count($indexerIds))
+                __('%1 indexer(s) have been rebuilt successfully <a href="javascript:void(0)" class="magexperts-reindex-show">Show detail</a>', count($indexerIds))
             );
         }
         $this->_redirect('indexer/indexer/list');

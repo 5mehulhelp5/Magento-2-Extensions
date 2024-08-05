@@ -21,8 +21,8 @@
     <type name="Magento\Customer\CustomerData\SectionPoolInterface">
         <arguments>
             <argument name="sectionSourceMap" xsi:type="array">
-                <item name="bss-fbpixel-atc" xsi:type="string">Magexperts\FacebookPixel\Block\AddToCart</item>
-                <item name="bss-fbpixel-subscribe" xsi:type="string">Magexperts\FacebookPixel\Block\Subscribe</item>
+                <item name="magexperts-fbpixel-atc" xsi:type="string">Magexperts\FacebookPixel\Block\AddToCart</item>
+                <item name="magexperts-fbpixel-subscribe" xsi:type="string">Magexperts\FacebookPixel\Block\Subscribe</item>
             </argument>
         </arguments>
     </type>

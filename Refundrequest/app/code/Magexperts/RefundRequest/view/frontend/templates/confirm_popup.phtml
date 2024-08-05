@@ -29,8 +29,8 @@
 ?>
 
 <?php if ($block->getConfigEnableModule()) { ?>
-    <div id="bss-refund-modal" style="display: none;">
-        <form action="http://localhost/m222/refundrequest/order/index" class="form refund" id="bss-refund-form" method="post"
+    <div id="magexperts-refund-modal" style="display: none;">
+        <form action="http://localhost/m222/refundrequest/order/index" class="form refund" id="magexperts-refund-form" method="post"
               data-hasrequired="<?= $block->escapeHtml(__('* Required Fields')) ?>"
               data-mage-init='{"validation":{}}'>
             <fieldset class="fieldset">
@@ -39,7 +39,7 @@
                     <p><?php echo $title ? __($title) : __("We are sorry to know that you want a refund. Please let us know what's wrong"); ?></p>
                 </div>
                 <div class="control">
-                    <input type="hidden" name="bss-refund-order-id" value="" class="bss-refund-oder-id">
+                    <input type="hidden" name="magexperts-refund-order-id" value="" class="magexperts-refund-oder-id">
                     <?php $formKey = $block->getFormKey()?>
                     <input type="hidden" name="form_key" value="<?= $block->escapeHtml($formKey) ?>" class="form_key">
                 </div>
@@ -49,7 +49,7 @@
                         <label class="label" for="label"><span><?php echo $dropdownTitle ? __($dropdownTitle) : __('Reason for refund'); ?></span></label>
                         <div class="control">
                             <label>
-                                <select name="bss-option">
+                                <select name="magexperts-option">
                                     <?php $a = $block->getLabel(); ?>
                                         <?php foreach ($a as $value) { ?>
                                             <option><?php echo $value->getData('request_label'); ?></option>
@@ -65,10 +65,10 @@
                         <label class="label" for="label"><span><?php echo $optionTitle ? __($optionTitle) : __('Product is opened'); ?></span></label>
                         <div class="control">
                             <label>
-                                <input type="radio" name="bss-radio" value="1" required="required">
+                                <input type="radio" name="magexperts-radio" value="1" required="required">
                             </label><span><?= $block->escapeHtml(__('Yes')) ?></span>
                             <label>
-                                <input type="radio" name="bss-radio" value="0">
+                                <input type="radio" name="magexperts-radio" value="0">
                             </label><span><?= $block->escapeHtml(__('No')) ?></span>
                         </div>
                     </div>
@@ -78,7 +78,7 @@
                     <label class="label" for="label"><span><?php echo $detailTitle ? __($detailTitle) : __('Faulty or other detail'); ?></span></label>
                     <div class="control">
                         <label>
-                            <textarea class="bss-refund-reason input-text" name="bss-refund-reason" data-validate="{required:true}"></textarea>
+                            <textarea class="magexperts-refund-reason input-text" name="magexperts-refund-reason" data-validate="{required:true}"></textarea>
                         </label>
                     </div>
                 </div>
@@ -93,8 +93,8 @@
                 {
                     "Magexperts_RefundRequest/js/get-oder": {
                         "orderRefund" : <?php echo $orderRefund; ?>,
-                        "bssUrl" : "<?php echo $block->getBaseUrl(); ?>",
-                        "bssPopupTitle" : "<?php echo $poptupTitle ? __($poptupTitle) : __('Refund Request');?>",
+                        "magexpertsUrl" : "<?php echo $block->getBaseUrl(); ?>",
+                        "magexpertsPopupTitle" : "<?php echo $poptupTitle ? __($poptupTitle) : __('Refund Request');?>",
                         "dataOrder" : <?php echo $refundStatus; ?>,
                         "orders": <?php echo $orders ?>
                     }

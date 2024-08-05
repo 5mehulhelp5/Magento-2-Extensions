@@ -65,10 +65,10 @@ class Validate extends \Magento\Config\Controller\Adminhtml\System\Config\Save
     public function aroundExecute($subject, $proceed)
     {
         $parameters = $this->getRequest()->getParam("groups");
-        if (isset($parameters["bss_refundrequest_email_config"])) {
+        if (isset($parameters["magexperts_refundrequest_email_config"])) {
             $emails = '';
-            if (isset($parameters["bss_refundrequest_email_config"]["fields"]["admin_email"]["value"])) {
-                $emails = $parameters["bss_refundrequest_email_config"]["fields"]["admin_email"]["value"];
+            if (isset($parameters["magexperts_refundrequest_email_config"]["fields"]["admin_email"]["value"])) {
+                $emails = $parameters["magexperts_refundrequest_email_config"]["fields"]["admin_email"]["value"];
             }
             if ($emails != '') {
                 $emailList = explode(",", $emails);

@@ -249,7 +249,7 @@
                 </item>
             </argument>
         </column>
-        <column name="bss_sales_representative">
+        <column name="magexperts_sales_representative">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="controlVisibility" xsi:type="boolean">false</item>
@@ -268,7 +268,7 @@
                 </item>
             </argument>
         </column>
-        <column name="bss_is_company_account">
+        <column name="magexperts_is_company_account">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="controlVisibility" xsi:type="boolean">false</item>

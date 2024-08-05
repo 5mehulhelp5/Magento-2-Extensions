@@ -29,13 +29,13 @@
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
 	<system>
-		<tab id="bss" translate="label" sortOrder="300">
+		<tab id="magexperts" translate="label" sortOrder="300">
             <label><![CDATA[Magexperts Commerce]]></label>
         </tab>
 		<section id="customproductattributeexport" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
 			<label>Custom Product Attribute Export</label>
-			<tab>bss</tab>
-			<resource>Magexperts_CustomProductAttributeExport::config_bss_customproductattributeexport</resource>
+			<tab>magexperts</tab>
+			<resource>Magexperts_CustomProductAttributeExport::config_magexperts_customproductattributeexport</resource>
 			<group id="configuration" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
 				<label>Configuration</label>
 				<field id="enable" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="select">

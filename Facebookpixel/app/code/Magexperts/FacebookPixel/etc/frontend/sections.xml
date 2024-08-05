@@ -20,9 +20,9 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Customer:etc/sections.xsd">
     <action name="checkout/cart/add">
-        <section name="bss-fbpixel-atc"/>
+        <section name="magexperts-fbpixel-atc"/>
     </action>
     <action name="newsletter/subscriber/new">
-        <section name="bss-fbpixel-subscribe"/>
+        <section name="magexperts-fbpixel-subscribe"/>
     </action>
 </config>

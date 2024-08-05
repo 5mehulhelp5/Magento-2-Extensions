@@ -30,13 +30,13 @@ use Magento\Framework\View\Layout;
  */
 class AddUpdateHandlesObserver implements ObserverInterface
 {
-    const XML_PATH_QUICKVIEW_REMOVE_TAB = 'bss_quickview/general/remove_product_tab';
-    const XML_PATH_QUICKVIEW_REMOVE_ADDTO_COMPARE = 'bss_quickview/general/remove_addto_compare';
-    const XML_PATH_QUICKVIEW_REMOVE_ADDTO_WISHLIST = 'bss_quickview/general/remove_addto_wishlist';
-    const XML_PATH_QUICKVIEW_REMOVE_REVIEWS = 'bss_quickview/general/remove_reviews';
-    const XML_PATH_QUICKVIEW_REMOVE_PRODUCT_RELATED = 'bss_quickview/general/remove_product_related';
-    const XML_PATH_QUICKVIEW_REMOVE_PRODUCT_UPSELL = 'bss_quickview/general/remove_product_upsell';
-    const XML_PATH_QUICKVIEW_REMOVE_PRODUCT_INFOR_MAILTO = 'bss_quickview/general/remove_product_info_mailto';
+    const XML_PATH_QUICKVIEW_REMOVE_TAB = 'magexperts_quickview/general/remove_product_tab';
+    const XML_PATH_QUICKVIEW_REMOVE_ADDTO_COMPARE = 'magexperts_quickview/general/remove_addto_compare';
+    const XML_PATH_QUICKVIEW_REMOVE_ADDTO_WISHLIST = 'magexperts_quickview/general/remove_addto_wishlist';
+    const XML_PATH_QUICKVIEW_REMOVE_REVIEWS = 'magexperts_quickview/general/remove_reviews';
+    const XML_PATH_QUICKVIEW_REMOVE_PRODUCT_RELATED = 'magexperts_quickview/general/remove_product_related';
+    const XML_PATH_QUICKVIEW_REMOVE_PRODUCT_UPSELL = 'magexperts_quickview/general/remove_product_upsell';
+    const XML_PATH_QUICKVIEW_REMOVE_PRODUCT_INFOR_MAILTO = 'magexperts_quickview/general/remove_product_info_mailto';
     /**
      * @var \Magento\Framework\App\Config\ScopeConfigInterface
      */
@@ -87,7 +87,7 @@ class AddUpdateHandlesObserver implements ObserverInterface
         $layout = $observer->getData('layout');
         $fullActionName = $observer->getData('full_action_name');
 
-        if ($fullActionName != 'bss_quickview_catalog_product_view') {
+        if ($fullActionName != 'magexperts_quickview_catalog_product_view') {
             return $this;
         }
 
@@ -105,7 +105,7 @@ class AddUpdateHandlesObserver implements ObserverInterface
 
             $productType = $product->getTypeId();
 
-            $layout->getUpdate()->addHandle('bss_quickview_catalog_product_view_type_' . $productType);
+            $layout->getUpdate()->addHandle('magexperts_quickview_catalog_product_view_type_' . $productType);
         }
         $this->quickViewRemove($layout);
         return $this;
@@ -123,43 +123,43 @@ class AddUpdateHandlesObserver implements ObserverInterface
             \Magento\Store\Model\ScopeInterface::SCOPE_STORE
         );
         if ($removeTab == 0) {
-            $layout->getUpdate()->addHandle('bss_quickview_removeproduct_tab');
+            $layout->getUpdate()->addHandle('magexperts_quickview_removeproduct_tab');
         }
         $removeAddToCompare = $this->scopeConfig->getValue(
             self::XML_PATH_QUICKVIEW_REMOVE_ADDTO_COMPARE,
             \Magento\Store\Model\ScopeInterface::SCOPE_STORE
         );
         if ($removeAddToCompare == 0) {
-            $layout->getUpdate()->addHandle('bss_quickview_remove_addtocompare');
+            $layout->getUpdate()->addHandle('magexperts_quickview_remove_addtocompare');
         }
         $removeAddToWishList = $this->scopeConfig->getValue(
             self::XML_PATH_QUICKVIEW_REMOVE_ADDTO_WISHLIST,
             \Magento\Store\Model\ScopeInterface::SCOPE_STORE
         );
         if ($removeAddToWishList == 0) {
-            $layout->getUpdate()->addHandle('bss_quickview_remove_addtowishlist');
+            $layout->getUpdate()->addHandle('magexperts_quickview_remove_addtowishlist');
         }
         $removeReviews = $this->scopeConfig->getValue(
             self::XML_PATH_QUICKVIEW_REMOVE_REVIEWS,
             \Magento\Store\Model\ScopeInterface::SCOPE_STORE
         );
         if ($removeReviews == 0) {
-            $layout->getUpdate()->addHandle('bss_quickview_remove_reviews');
+            $layout->getUpdate()->addHandle('magexperts_quickview_remove_reviews');
         }
         $removeProductRelated = $this->scopeConfig->getValue(
             self::XML_PATH_QUICKVIEW_REMOVE_PRODUCT_RELATED,
             \Magento\Store\Model\ScopeInterface::SCOPE_STORE
         );
         if ($removeProductRelated == 0) {
-            $layout->getUpdate()->addHandle('bss_quickview_remove_product_related');
+            $layout->getUpdate()->addHandle('magexperts_quickview_remove_product_related');
         }
         $removeProductUpsell = $this->scopeConfig->getValue(
             self::XML_PATH_QUICKVIEW_REMOVE_PRODUCT_UPSELL,
             \Magento\Store\Model\ScopeInterface::SCOPE_STORE
         );
         if ($removeProductUpsell == 0) {
-            $layout->getUpdate()->addHandle('bss_quickview_remove_product_upsell');
+            $layout->getUpdate()->addHandle('magexperts_quickview_remove_product_upsell');
         }
-        $layout->getUpdate()->addHandle('bss_quickview_product_info_mailto');
+        $layout->getUpdate()->addHandle('magexperts_quickview_product_info_mailto');
     }
 }

@@ -23,7 +23,7 @@
         <referenceBlock name="product.info.mailto" remove="true" />
         <referenceContainer name="product.info.social" label="Product social links container" htmlTag="div"
                             htmlClass="product-social-links">
-            <block class="Magexperts\Quickview\Block\Product\Social" name="bss_product.info.mailto"
+            <block class="Magexperts\Quickview\Block\Product\Social" name="magexperts_product.info.mailto"
                    template="Magexperts_Quickview::product/view/mailto.phtml"/>
         </referenceContainer>
     </body>

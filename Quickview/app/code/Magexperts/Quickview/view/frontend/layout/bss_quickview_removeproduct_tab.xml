@@ -20,7 +20,7 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
     	<referenceBlock name="content">
-			<block class="Magento\Framework\View\Element\Template" name="bss.quickview.new_div" template="Magexperts_Quickview::product_info.phtml" />
+			<block class="Magento\Framework\View\Element\Template" name="magexperts.quickview.new_div" template="Magexperts_Quickview::product_info.phtml" />
 		</referenceBlock>
         <referenceBlock name="product.info.details" remove="true"/>
     </body>

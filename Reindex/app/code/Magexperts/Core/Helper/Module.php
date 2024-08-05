@@ -23,7 +23,7 @@ class Module
     /**
      * @var \Magexperts\Core\Helper\Data
      */
-    private $bssHelper;
+    private $magexpertsHelper;
 
     /**
      * @var \Magexperts\Core\Helper\Api
@@ -62,7 +62,7 @@ class Module
 
     /**
      * Module constructor.
-     * @param Data $bssHelper
+     * @param Data $magexpertsHelper
      * @param Api $apiHelper
      * @param \Magento\Framework\Module\ModuleListInterface $moduleList
      * @param \Magento\Framework\DataObjectFactory $dataObjectFactory
@@ -71,7 +71,7 @@ class Module
      * @param \Magento\Framework\Serialize\Serializer\Json $json
      */
     public function __construct(
-        Data $bssHelper,
+        Data $magexpertsHelper,
         Api $apiHelper,
         \Magento\Framework\Module\ModuleListInterface $moduleList,
         \Magento\Framework\DataObjectFactory $dataObjectFactory,
@@ -80,7 +80,7 @@ class Module
         \Magento\Framework\Serialize\Serializer\Json $json
     )
     {
-        $this->bssHelper = $bssHelper;
+        $this->magexpertsHelper = $magexpertsHelper;
         $this->apiHelper = $apiHelper;
         $this->moduleList = $moduleList;
         $this->dataObjectFactory = $dataObjectFactory;
@@ -194,8 +194,8 @@ class Module
      */
     protected function getLatestByExactVersionEdition($modulesInfo)
     {
-        $magentoVer = $this->bssHelper->getMagentoVersion();
-        $curEdition = $this->bssHelper->getMagentoEdition() == 'Community' ? 'CE' : 'EE';
+        $magentoVer = $this->magexpertsHelper->getMagentoVersion();
+        $curEdition = $this->magexpertsHelper->getMagentoEdition() == 'Community' ? 'CE' : 'EE';
 
         $latestVer = [];
         foreach ($modulesInfo as $moduleInfo) {
@@ -218,8 +218,8 @@ class Module
      */
     protected function getLatestByExactEdition($modulesInfo)
     {
-        $magentoRelativeVer = $this->bssHelper->getMagentoRelativeVersion();
-        $curEdition = $this->bssHelper->getMagentoEdition() == 'Community' ? 'CE' : 'EE';
+        $magentoRelativeVer = $this->magexpertsHelper->getMagentoRelativeVersion();
+        $curEdition = $this->magexpertsHelper->getMagentoEdition() == 'Community' ? 'CE' : 'EE';
 
         $latestVer = [];
         foreach ($modulesInfo as $moduleInfo) {
@@ -243,7 +243,7 @@ class Module
      */
     protected function getLatestByExactVersion($modulesInfo)
     {
-        $magentoVer = $this->bssHelper->getMagentoVersion();
+        $magentoVer = $this->magexpertsHelper->getMagentoVersion();
 
         $latestVer = [];
         foreach ($modulesInfo as $moduleInfo) {
@@ -266,7 +266,7 @@ class Module
      */
     protected function getLatestByRelativeVersion($modulesInfo)
     {
-        $magentoRelativeVer = $this->bssHelper->getMagentoRelativeVersion();
+        $magentoRelativeVer = $this->magexpertsHelper->getMagentoRelativeVersion();
         $latestVer = [];
         foreach ($modulesInfo as $moduleInfo) {
             $linkTitle = explode(" ", $moduleInfo['title']);

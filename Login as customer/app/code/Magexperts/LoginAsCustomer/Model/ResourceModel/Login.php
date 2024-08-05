@@ -29,6 +29,6 @@ class Login extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
      */
     protected function _construct()
     {
-        $this->_init('bss_login_as_customer', 'login_id');
+        $this->_init('magexperts_login_as_customer', 'login_id');
     }
 }

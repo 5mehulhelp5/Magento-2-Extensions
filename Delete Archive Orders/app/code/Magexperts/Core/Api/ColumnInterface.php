@@ -7,5 +7,5 @@ namespace Magexperts\Core\Api;
 
 interface ColumnInterface
 {
-    const AITOC_NOTIFICATION_FIELD = 'magexperts_notification';
+    const MAGEXPERTS_NOTIFICATION_FIELD = 'magexperts_notification';
 }

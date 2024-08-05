@@ -1,13 +1,13 @@
 & when (@media-common = true) {
-  .bss-modals-wrapper {
-    .bss-modal {
+  .magexperts-modals-wrapper {
+    .magexperts-modal {
       z-index: 101 !important;
       background-color: rgba(0,0,0,0.4);
     }
     .modal-inner-wrap {
       border-radius: 5px;
       color: #757575;
-      #bss-refund-modal {
+      #magexperts-refund-modal {
         .control {
           margin: 15px 0;
           p {
@@ -51,30 +51,30 @@
 }
 // (for all mobile styles.)
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
-  bss-modals-wrapper {
+  magexperts-modals-wrapper {
     .modal-inner-wrap {
       width: 90%;
     }
   }
-  .bss-popup-button {
+  .magexperts-popup-button {
     margin-bottom: 10px;
   }
 }
 // Tablet
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
-  bss-modals-wrapper {
+  magexperts-modals-wrapper {
     .modal-inner-wrap {
       max-width: 70%;
     }
   }
-  .bss-popup-button {
+  .magexperts-popup-button {
     margin-bottom: 10px;
   }
 }
 
 // Desktop
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
-  .bss-modals-wrapper {
+  .magexperts-modals-wrapper {
     .modal-inner-wrap {
       max-width: 500px;
       max-height: 580px;

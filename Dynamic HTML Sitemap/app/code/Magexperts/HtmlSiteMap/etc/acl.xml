@@ -24,7 +24,7 @@
                 <resource id="Magento_Backend::stores">
                     <resource id="Magento_Backend::stores_settings">
                         <resource id="Magento_Config::config">
-                            <resource id="Magexperts_HtmlSiteMap::bss_htmlsitemap" title="HTML Sitemap" sortOrder="60" />
+                            <resource id="Magexperts_HtmlSiteMap::magexperts_htmlsitemap" title="HTML Sitemap" sortOrder="60" />
                         </resource>
                     </resource>
                 </resource>

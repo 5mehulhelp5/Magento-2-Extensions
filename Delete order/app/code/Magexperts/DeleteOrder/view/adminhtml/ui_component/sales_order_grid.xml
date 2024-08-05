@@ -23,7 +23,7 @@
             <action name="export">
                 <argument name="data" xsi:type="array">
                     <item name="config" xsi:type="array">
-                        <item name="type" xsi:type="string">bss_deleteOrder</item>
+                        <item name="type" xsi:type="string">magexperts_deleteOrder</item>
                         <item name="label" xsi:type="string" translate="true">Delete Orders</item>
                         <item name="url" xsi:type="url" path="deleteorder/delete/massOrder"/>
                         <item name="confirm" xsi:type="array">

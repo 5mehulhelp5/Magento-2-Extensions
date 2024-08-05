@@ -34,7 +34,7 @@
 				<resource id="Magento_Backend::stores">
 					<resource id="Magento_Backend::stores_settings">
 						<resource id="Magento_Config::config">
-							<resource id="Magexperts_CustomProductAttributeExport::config_bss_customproductattributeexport" title="Magexperts Custom Product Attribute Export Modules"/>
+							<resource id="Magexperts_CustomProductAttributeExport::config_magexperts_customproductattributeexport" title="Magexperts Custom Product Attribute Export Modules"/>
 						</resource>
 					</resource>
 				</resource>

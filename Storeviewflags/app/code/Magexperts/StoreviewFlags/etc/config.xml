@@ -19,7 +19,7 @@
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
     <default>
-        <bss_store_flag>
+        <magexperts_store_flag>
             <general>
                 <enable_module>0</enable_module>
             </general>
@@ -30,6 +30,6 @@
                 <imgwidth>24</imgwidth>
                 <imgheight>16</imgheight>
             </image>
-        </bss_store_flag>
+        </magexperts_store_flag>
     </default>
 </config>

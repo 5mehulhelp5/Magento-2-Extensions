@@ -67,7 +67,7 @@ class ShowFlagGrid
 
         $urlImage = $this->helper->getUrlImageFlag($row->getStoreId());
         if ($urlImage) {
-            $urlImage = '<img class="bss_flag" src="' . $urlImage . '">';
+            $urlImage = '<img class="magexperts_flag" src="' . $urlImage . '">';
         }
 
         return

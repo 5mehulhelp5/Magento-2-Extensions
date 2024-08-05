@@ -1,5 +1,5 @@
 {
-    "name": "bss/admin-payment-method",
+    "name": "magexperts/admin-payment-method",
     "description": "Magexperts Admin Payment Method Module",
     "type": "magento2-module",
     "version": "1.0.4",

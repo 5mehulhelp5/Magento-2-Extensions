@@ -19,14 +19,14 @@
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
-        <tab id="bss" translate="label" sortOrder="300">
+        <tab id="magexperts" translate="label" sortOrder="300">
             <label> <![CDATA[Magexperts Commerce]]></label>
         </tab>
 
-        <section id="bss_quickview" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+        <section id="magexperts_quickview" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
             <label>AJAX Quick View</label>
-            <tab>bss</tab>
-            <resource>Magexperts_Quickview::bss_quickview</resource>
+            <tab>magexperts</tab>
+            <resource>Magexperts_Quickview::magexperts_quickview</resource>
             <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>General</label>
                 <field id="enable_product_listing" translate="label" type="select" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">

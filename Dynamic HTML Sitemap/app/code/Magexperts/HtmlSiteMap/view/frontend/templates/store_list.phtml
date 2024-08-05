@@ -34,11 +34,11 @@ $titleStore = $helper->titleStore();
 ?>
 <?php
 if ($enableStoreView) : ?>
-    <h2 class="bss_h2"><?php echo $titleStore; ?></h2>
-    <div class="bss_site_map_grid">
+    <h2 class="magexperts_h2"><?php echo $titleStore; ?></h2>
+    <div class="magexperts_site_map_grid">
     <?php
     foreach ($block->getGroups() as $group) : ?>
-        <div class="bss_h3">
+        <div class="magexperts_h3">
             <a href="<?php echo $baseUrl; ?>"
                data-post='<?php echo $block->getTargetStorePostData($group->getDefaultStore()); ?>'>
                 <?php echo $block->escapeHtml($group->getName()) ?>
@@ -49,8 +49,8 @@ if ($enableStoreView) : ?>
             <?php if (!$lang->isActive()): ?>
                 <?php continue; ?>
             <?php endif; ?>
-            <div class="col-bss-3">
-                <h3 class="bss_product_list view-<?= $block->escapeHtml($lang->getCode()) ?>">
+            <div class="col-magexperts-3">
+                <h3 class="magexperts_product_list view-<?= $block->escapeHtml($lang->getCode()) ?>">
                     <a href="<?= $block->escapeUrl($block->getTargetStoreRedirectUrl($lang)) ?>">
                         <?= $block->escapeHtml($lang->getName()) ?>
                     </a>

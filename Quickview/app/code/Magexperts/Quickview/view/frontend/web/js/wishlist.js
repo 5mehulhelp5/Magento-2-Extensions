@@ -23,10 +23,10 @@ define(
             function (e) {
                var dataPost=$(this).attr("data-post");
                 var urlWishList="wishlist\\/index\\/add";
-                var urlMagexpertsWistList="bss_quickview\\/wishlist\\/add";
+                var urlMagexpertsWistList="magexperts_quickview\\/wishlist\\/add";
                 dataPost=dataPost.replace(urlWishList,urlMagexpertsWistList);
                 urlWishList="wishlist/index/add";
-                urlMagexpertsWistList="bss_quickview/wishlist/add";
+                urlMagexpertsWistList="magexperts_quickview/wishlist/add";
                 dataPost=dataPost.replace(urlWishList,urlMagexpertsWistList);
                 $(this).attr("data-post",dataPost);
             }

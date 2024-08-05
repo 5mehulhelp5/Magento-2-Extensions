@@ -57,7 +57,7 @@ class Data extends AbstractHelper
     public function getEndableModule()
     {
         return $this->scopeConfig->getValue(
-            'bss_store_flag/general/enable_module',
+            'magexperts_store_flag/general/enable_module',
             ScopeInterface::SCOPE_STORE,
             $this->getStoreId()
         );
@@ -73,10 +73,10 @@ class Data extends AbstractHelper
     public function getUrlImageFlag($storeId = null)
     {
         $imgUrl = $this->scopeConfig
-            ->getValue('bss_store_flag/image/uploadflag', ScopeInterface::SCOPE_STORE, $storeId);
+            ->getValue('magexperts_store_flag/image/uploadflag', ScopeInterface::SCOPE_STORE, $storeId);
         if ($imgUrl != '') {
             return $this->storeManager->getStore($storeId)
-                   ->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA) . 'bssstoresflags/' . $imgUrl;
+                   ->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA) . 'magexpertsstoresflags/' . $imgUrl;
         }
         return false;
     }
@@ -101,7 +101,7 @@ class Data extends AbstractHelper
     public function getHeight($storeId = null)
     {
         return $this->scopeConfig->getValue(
-            'bss_store_flag/image/imgheight',
+            'magexperts_store_flag/image/imgheight',
             ScopeInterface::SCOPE_STORE,
             $storeId
         );
@@ -116,7 +116,7 @@ class Data extends AbstractHelper
     public function getWidth($storeId = null)
     {
         return $this->scopeConfig->getValue(
-            'bss_store_flag/image/imgwidth',
+            'magexperts_store_flag/image/imgwidth',
             ScopeInterface::SCOPE_STORE,
             $storeId
         );
@@ -131,7 +131,7 @@ class Data extends AbstractHelper
     public function getShowStoreviewName($storeId = null)
     {
         return $this->scopeConfig->getValue(
-            'bss_store_flag/store_name/enable_name',
+            'magexperts_store_flag/store_name/enable_name',
             ScopeInterface::SCOPE_STORE,
             $storeId
         );

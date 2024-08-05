@@ -16,7 +16,7 @@ use Magento\Framework\Notification\MessageInterface;
  */
 class Feed extends \Magento\AdminNotification\Model\Feed
 {
-    const AITOC_CACHE_NAME = 'magexperts_notifications_lastcheck';
+    const MAGEXPERTS_CACHE_NAME = 'magexperts_notifications_lastcheck';
     const XML_USE_HTTPS_PATH = 'system/adminnotification/use_https';
 
     const XML_FEED_URL_PATH = 'www.magexperts.com/feedrss';
@@ -301,7 +301,7 @@ class Feed extends \Magento\AdminNotification\Model\Feed
      */
     public function getLastUpdate()
     {
-        return $this->_cacheManager->load(self::AITOC_CACHE_NAME);
+        return $this->_cacheManager->load(self::MAGEXPERTS_CACHE_NAME);
     }
 
     /**
@@ -311,7 +311,7 @@ class Feed extends \Magento\AdminNotification\Model\Feed
      */
     public function setLastUpdate()
     {
-        $this->_cacheManager->save(time(), self::AITOC_CACHE_NAME);
+        $this->_cacheManager->save(time(), self::MAGEXPERTS_CACHE_NAME);
         return $this;
     }
 

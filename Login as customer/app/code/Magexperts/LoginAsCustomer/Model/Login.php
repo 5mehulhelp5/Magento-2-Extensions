@@ -29,7 +29,7 @@ class Login extends \Magento\Framework\Model\AbstractModel
      *
      * @var string
      */
-    protected $_eventPrefix = 'bss_login_as_customer';
+    protected $_eventPrefix = 'magexperts_login_as_customer';
 
     /**
      * Parameter name in event
@@ -123,7 +123,7 @@ class Login extends \Magento\Framework\Model\AbstractModel
     {
         $resource = $this->getResource();
         $resource->getConnection()->delete(
-            $resource->getTable('bss_login_as_customer'),
+            $resource->getTable('magexperts_login_as_customer'),
             [
                 'created_at < ?' => $this->helperData->getDateTimePoint(),
                 'used = ?' => 0,

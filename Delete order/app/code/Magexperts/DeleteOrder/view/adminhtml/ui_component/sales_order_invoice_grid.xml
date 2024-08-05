@@ -23,7 +23,7 @@
             <action name="delete_invoices">
                 <argument name="data" xsi:type="array">
                     <item name="config" xsi:type="array">
-                        <item name="type" xsi:type="string">bss_deleteInvoice</item>
+                        <item name="type" xsi:type="string">magexperts_deleteInvoice</item>
                         <item name="label" xsi:type="string" translate="true">Delete Invoices</item>
                         <item name="url" xsi:type="url" path="deleteorder/delete/massInvoice"/>
                         <item name="confirm" xsi:type="array">

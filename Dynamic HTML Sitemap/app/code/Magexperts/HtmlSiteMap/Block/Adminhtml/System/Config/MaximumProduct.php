@@ -45,7 +45,7 @@ class MaximumProduct extends \Magento\Config\Block\System\Config\Form\Field
         <script type="text/javascript">
             require(["jquery", "jquery/ui","Magento_Ui/js/modal/modal"], function($,modal){
                 var checkMaxProduct = 2;
-                $("#bss_htmlsitemap_product_max_products").keyup(function (e) {
+                $("#magexperts_htmlsitemap_product_max_products").keyup(function (e) {
                     var maxProduct = $(this).val();
                     if(maxProduct >= 0) {
                         checkMaxProduct = 1;

@@ -29,9 +29,9 @@ use Magento\Store\Model\Store;
  */
 class ItemsCollection extends \Magento\Framework\View\Element\Template
 {
-    const MAX_PRODUCTS = 'bss_htmlsitemap/product/max_products';
-    const SORT_PRODUCT = 'bss_htmlsitemap/product/sort_product';
-    const ORDER_PRODUCT = 'bss_htmlsitemap/product/order_product';
+    const MAX_PRODUCTS = 'magexperts_htmlsitemap/product/max_products';
+    const SORT_PRODUCT = 'magexperts_htmlsitemap/product/sort_product';
+    const ORDER_PRODUCT = 'magexperts_htmlsitemap/product/order_product';
     const PRODUCT_LIST_NUMBER = '1';
     const STORE_VIEW_LIST_NUMBER = '2';
     const ADDITIONAL_LIST_NUMBER = '3';

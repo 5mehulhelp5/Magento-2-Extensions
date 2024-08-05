@@ -22,7 +22,7 @@ class MagexpertsNotificationLogoAdd
     ) {
         $result = $proceed($row);
 
-        if ($row->getData(\Magexperts\Core\Api\ColumnInterface::AITOC_NOTIFICATION_FIELD)) {
+        if ($row->getData(\Magexperts\Core\Api\ColumnInterface::MAGEXPERTS_NOTIFICATION_FIELD)) {
             return '<div class="magexperts-grid-message"><div class="magexperts-notif-logo"></div>' . $result . '</div>';
         } else {
             return $result;

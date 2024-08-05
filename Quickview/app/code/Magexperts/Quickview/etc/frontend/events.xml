@@ -19,6 +19,6 @@
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
 	<event name="layout_load_before">
-		<observer name="bss_quickview" instance="Magexperts\Quickview\Observer\AddUpdateHandlesObserver" />
+		<observer name="magexperts_quickview" instance="Magexperts\Quickview\Observer\AddUpdateHandlesObserver" />
 	</event>
 </config>

@@ -21,7 +21,7 @@
   <table name="sales_order_grid" resource="default">
     <column xsi:type="int" name="refund_status" padding="11" unsigned="false" nullable="true" identity="false" comment="Refund Status"/>
   </table>
-  <table name="bss_refundrequest" resource="default" engine="innodb" comment="Refund Request">
+  <table name="magexperts_refundrequest" resource="default" engine="innodb" comment="Refund Request">
     <column xsi:type="int" name="id" padding="10" unsigned="true" nullable="false" identity="true" comment="Id"/>
     <column xsi:type="int" name="refund_status" padding="11" unsigned="false" nullable="false" identity="false" default="0" comment="Refund Status"/>
     <column xsi:type="varchar" name="increment_id" nullable="true" length="32" comment="Increment Id"/>
@@ -39,7 +39,7 @@
       <column name="id"/>
     </index>
   </table>
-  <table name="bss_requestlabel" resource="default" engine="innodb" comment="Refund Request Dropdown Options">
+  <table name="magexperts_requestlabel" resource="default" engine="innodb" comment="Refund Request Dropdown Options">
     <column xsi:type="int" name="id" padding="10" unsigned="true" nullable="false" identity="true" comment="Id"/>
     <column xsi:type="mediumtext" name="request_label" nullable="true" comment="Request Label"/>
     <column xsi:type="int" name="status" padding="11" unsigned="false" nullable="false" identity="false" default="0" comment="Status"/>

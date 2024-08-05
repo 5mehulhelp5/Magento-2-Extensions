@@ -24,7 +24,7 @@
     </head>
     <body>
         <referenceContainer name="before.body.end">
-            <block class="Magexperts\Quickview\Block\Initialize" name="bss.quickview.initialize" template="Magexperts_Quickview::config.phtml"/>
+            <block class="Magexperts\Quickview\Block\Initialize" name="magexperts.quickview.initialize" template="Magexperts_Quickview::config.phtml"/>
         </referenceContainer>
     </body>
 </page>

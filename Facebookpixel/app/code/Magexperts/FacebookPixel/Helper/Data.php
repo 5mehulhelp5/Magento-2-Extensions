@@ -160,7 +160,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     public function returnPixelId($scope = null)
     {
         return $this->scopeConfig->getValue(
-            'bss_facebook_pixel/general/pixel_id',
+            'magexperts_facebook_pixel/general/pixel_id',
             \Magento\Store\Model\ScopeInterface::SCOPE_STORE,
             $scope
         );
@@ -173,7 +173,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     public function returnDisablePage($scope = null)
     {
         return $this->scopeConfig->getValue(
-            'bss_facebook_pixel/event_tracking/disable_code',
+            'magexperts_facebook_pixel/event_tracking/disable_code',
             \Magento\Store\Model\ScopeInterface::SCOPE_STORE,
             $scope
         );
@@ -186,7 +186,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     public function isProductView($scope = null)
     {
         return $this->scopeConfig->getValue(
-            'bss_facebook_pixel/event_tracking/product_view',
+            'magexperts_facebook_pixel/event_tracking/product_view',
             \Magento\Store\Model\ScopeInterface::SCOPE_STORE,
             $scope
         );
@@ -199,7 +199,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     public function isCategoryView($scope = null)
     {
         return $this->scopeConfig->getValue(
-            'bss_facebook_pixel/event_tracking/category_view',
+            'magexperts_facebook_pixel/event_tracking/category_view',
             \Magento\Store\Model\ScopeInterface::SCOPE_STORE,
             $scope
         );
@@ -212,7 +212,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     public function isInitiateCheckout($scope = null)
     {
         return $this->scopeConfig->getValue(
-            'bss_facebook_pixel/event_tracking/initiate_checkout',
+            'magexperts_facebook_pixel/event_tracking/initiate_checkout',
             \Magento\Store\Model\ScopeInterface::SCOPE_STORE,
             $scope
         );
@@ -225,7 +225,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     public function isPurchase($scope = null)
     {
         return $this->scopeConfig->getValue(
-            'bss_facebook_pixel/event_tracking/purchase',
+            'magexperts_facebook_pixel/event_tracking/purchase',
             \Magento\Store\Model\ScopeInterface::SCOPE_STORE,
             $scope
         );
@@ -238,7 +238,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     public function isAddToWishList($scope = null)
     {
         return $this->scopeConfig->getValue(
-            'bss_facebook_pixel/event_tracking/add_to_wishlist',
+            'magexperts_facebook_pixel/event_tracking/add_to_wishlist',
             \Magento\Store\Model\ScopeInterface::SCOPE_STORE,
             $scope
         );
@@ -251,7 +251,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     public function isAddToCart($scope = null)
     {
         return $this->scopeConfig->getValue(
-            'bss_facebook_pixel/event_tracking/add_to_cart',
+            'magexperts_facebook_pixel/event_tracking/add_to_cart',
             \Magento\Store\Model\ScopeInterface::SCOPE_STORE,
             $scope
         );
@@ -264,7 +264,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     public function isRegistration($scope = null)
     {
         return $this->scopeConfig->getValue(
-            'bss_facebook_pixel/event_tracking/registration',
+            'magexperts_facebook_pixel/event_tracking/registration',
             \Magento\Store\Model\ScopeInterface::SCOPE_STORE,
             $scope
         );
@@ -277,7 +277,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     public function isSubscribe($scope = null)
     {
         return $this->scopeConfig->getValue(
-            'bss_facebook_pixel/event_tracking/subscribe',
+            'magexperts_facebook_pixel/event_tracking/subscribe',
             \Magento\Store\Model\ScopeInterface::SCOPE_STORE,
             $scope
         );
@@ -290,7 +290,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     public function isSearch($scope = null)
     {
         return $this->scopeConfig->getValue(
-            'bss_facebook_pixel/event_tracking/search',
+            'magexperts_facebook_pixel/event_tracking/search',
             \Magento\Store\Model\ScopeInterface::SCOPE_STORE,
             $scope
         );

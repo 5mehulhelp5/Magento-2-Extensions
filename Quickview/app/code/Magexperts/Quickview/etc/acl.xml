@@ -24,7 +24,7 @@
                 <resource id="Magento_Backend::stores">
                     <resource id="Magento_Backend::stores_settings">
                         <resource id="Magento_Config::config">
-                            <resource id="Magexperts_Quickview::bss_quickview" title="Magexperts Ajax Quick View" sortOrder="60" />
+                            <resource id="Magexperts_Quickview::magexperts_quickview" title="Magexperts Ajax Quick View" sortOrder="60" />
                         </resource>
                     </resource>
                 </resource>

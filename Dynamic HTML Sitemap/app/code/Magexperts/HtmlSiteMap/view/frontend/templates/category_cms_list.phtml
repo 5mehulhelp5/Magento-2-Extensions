@@ -39,11 +39,11 @@ $cmsLink = ",," . $cmsLink . ",";
 $categoryDisable = ",," . $categoryDisable . ",";
 
 ?>
-<div class="col-bss-1">
+<div class="col-magexperts-1">
     <?php
     if ($enableCategory) : ?>
-        <div class="col-bss-2">
-            <h2 class="bss_h2"><?php echo $titleCategory; ?></h2>
+        <div class="col-magexperts-2">
+            <h2 class="magexperts_h2"><?php echo $titleCategory; ?></h2>
             <?php foreach ($categories as $category) :
                 if (!$category->getIsActive() || (int)$category->getData('excluded_html_sitemap') === 1) {
                     continue;
@@ -53,7 +53,7 @@ $categoryDisable = ",," . $categoryDisable . ",";
                 $categoryString = "," . $categoryString . ",";
                 $categoryStringValidate = strpos($categoryDisable, $categoryString);
                 if ($categoryStringValidate == false) : ?>
-                <div class="bss_h3">
+                <div class="magexperts_h3">
                     <?php echo $category->getName()?>
                 </div>
                     <?php
@@ -67,8 +67,8 @@ $categoryDisable = ",," . $categoryDisable . ",";
     endif; ?>
     <?php
     if ($enableCms) : ?>
-        <div class="col-bss-2">
-            <h2 class="bss_h2"><?php echo $titleCms; ?></h2>
+        <div class="col-magexperts-2">
+            <h2 class="magexperts_h2"><?php echo $titleCms; ?></h2>
         <?php
         $getCMS = $block->getCmsPages();
         foreach ($getCMS as $item => $value) {
@@ -80,7 +80,7 @@ $categoryDisable = ",," . $categoryDisable . ",";
             $stringItemValidate = strpos($cmsLink, $stringItem);
             if ($stringItemValidate == false) {
                 echo '
-                    <h3 class="bss_product_list">
+                    <h3 class="magexperts_product_list">
                         <a href="' . $block->getBaseUrl() . $value->getIdentifier() . '/" title = "' . $value->getTitle() . '"">' . $value->getTitle() . '</a>
                     </h3>';
             }

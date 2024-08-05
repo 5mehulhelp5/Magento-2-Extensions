@@ -26,6 +26,6 @@ class Label extends AbstractDb
      */
     protected function _construct()
     {
-        $this->_init('bss_requestlabel', 'id');
+        $this->_init('magexperts_requestlabel', 'id');
     }
 }

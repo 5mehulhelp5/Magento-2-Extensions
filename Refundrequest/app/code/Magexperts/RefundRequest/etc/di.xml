@@ -38,8 +38,8 @@
     </virtualType>
     <type name="Magexperts\RefundRequest\Model\ResourceModel\Request\Grid\Collection">
         <arguments>
-            <argument name="mainTable" xsi:type="string">bss_refundrequest</argument>
-            <argument name="eventPrefix" xsi:type="string">bss_refundrequest_grid_collection</argument>
+            <argument name="mainTable" xsi:type="string">magexperts_refundrequest</argument>
+            <argument name="eventPrefix" xsi:type="string">magexperts_refundrequest_grid_collection</argument>
             <argument name="eventObject" xsi:type="string">refundrequest_grid_collection</argument>
             <argument name="resourceModel" xsi:type="string">Magexperts\Refundrequest\Model\ResourceModel\Request</argument>
         </arguments>
@@ -47,8 +47,8 @@
     <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
         <arguments>
             <argument name="collections" xsi:type="array">
-                <item name="bss_refundrequest_list_data_source" xsi:type="string">Magexperts\RefundRequest\Model\ResourceModel\Request\Grid\Collection</item>
-                <item name="bss_refundrequest_label_data_source" xsi:type="string">Magexperts\RefundRequest\Model\ResourceModel\Label\Grid\Collection</item>
+                <item name="magexperts_refundrequest_list_data_source" xsi:type="string">Magexperts\RefundRequest\Model\ResourceModel\Request\Grid\Collection</item>
+                <item name="magexperts_refundrequest_label_data_source" xsi:type="string">Magexperts\RefundRequest\Model\ResourceModel\Label\Grid\Collection</item>
             </argument>
         </arguments>
     </type>
@@ -68,8 +68,8 @@
     </virtualType>
     <type name="Magexperts\RefundRequest\Model\ResourceModel\Label\Grid\Collection">
         <arguments>
-            <argument name="mainTable" xsi:type="string">bss_requestlabel</argument>
-            <argument name="eventPrefix" xsi:type="string">bss_requestlabel_grid_collection</argument>
+            <argument name="mainTable" xsi:type="string">magexperts_requestlabel</argument>
+            <argument name="eventPrefix" xsi:type="string">magexperts_requestlabel_grid_collection</argument>
             <argument name="eventObject" xsi:type="string">requestlabel_grid_collection</argument>
             <argument name="resourceModel" xsi:type="string">Magexperts\Refundrequest\Model\ResourceModel\Label</argument>
         </arguments>

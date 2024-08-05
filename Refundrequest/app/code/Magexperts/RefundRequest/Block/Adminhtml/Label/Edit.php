@@ -64,11 +64,11 @@ class Edit extends Container
      */
     public function getHeaderText()
     {
-        if ($this->coreRegistry->registry('bss_refundrequest')->getId()) {
+        if ($this->coreRegistry->registry('magexperts_refundrequest')->getId()) {
             return __(
                 "Edit '%1'",
                 $this->escapeHtml(
-                    $this->coreRegistry->registry('bss_refundrequest')->getTitle()
+                    $this->coreRegistry->registry('magexperts_refundrequest')->getTitle()
                 )
             );
         } else {

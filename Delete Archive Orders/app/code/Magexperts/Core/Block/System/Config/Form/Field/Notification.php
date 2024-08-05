@@ -35,7 +35,7 @@ class Notification extends \Magento\Config\Block\System\Config\Form\Field
      */
     protected function _getElementHtml(AbstractElement $element)
     {
-        $element->setValue($this->_cache->load(\Magexperts\Core\Model\Feed::AITOC_CACHE_NAME));
+        $element->setValue($this->_cache->load(\Magexperts\Core\Model\Feed::MAGEXPERTS_CACHE_NAME));
         $format = $this->_localeDate->getDateTimeFormat(
             \IntlDateFormatter::MEDIUM
         );

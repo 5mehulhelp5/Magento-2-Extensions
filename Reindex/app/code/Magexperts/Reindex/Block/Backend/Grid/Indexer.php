@@ -59,14 +59,14 @@ class Indexer extends \Magento\Framework\View\Element\Text
                     $('#gridIndexer_massaction-select option[value=\"change_mode_reindex\"]').remove();
                 }
                 
-                $('.bss-reindex-info').closest('.message-success.success').addClass('bss-hidden');
-                $('.bss-reindex-show').click(function () {
-                    if ($('.bss-reindex-info').length > 0) {
-                        $('.bss-reindex-info').each(function () {
-                            if ($(this).closest('.message-success.success').hasClass('bss-hidden')) {
-                                $(this).closest('.message-success.success').removeClass('bss-hidden');
+                $('.magexperts-reindex-info').closest('.message-success.success').addClass('magexperts-hidden');
+                $('.magexperts-reindex-show').click(function () {
+                    if ($('.magexperts-reindex-info').length > 0) {
+                        $('.magexperts-reindex-info').each(function () {
+                            if ($(this).closest('.message-success.success').hasClass('magexperts-hidden')) {
+                                $(this).closest('.message-success.success').removeClass('magexperts-hidden');
                             } else {
-                                $(this).closest('.message-success.success').addClass('bss-hidden');
+                                $(this).closest('.message-success.success').addClass('magexperts-hidden');
                             }
                         });
                     }
@@ -74,7 +74,7 @@ class Indexer extends \Magento\Framework\View\Element\Text
             });
         </script>
         <style>
-            .bss-hidden{
+            .magexperts-hidden{
                 display: none;
             }
         </style>";

@@ -30,7 +30,7 @@ $popupBlockHtml = isset($popupConfigs['theme_popup_block']) ? $popupConfigs['the
 ?>
 
 <?php if ($newVersions): ?>
-    <div id="bss-popup-new-version" class="popup-content" style="display: none">
+    <div id="magexperts-popup-new-version" class="popup-content" style="display: none">
         <?= $popupBlockHtml ?>
 
         <div class="messages">
@@ -49,7 +49,7 @@ $popupBlockHtml = isset($popupConfigs['theme_popup_block']) ? $popupConfigs['the
     </div>
     <script type="text/x-magento-init">
     {
-        "#bss-popup-new-version": {
+        "#magexperts-popup-new-version": {
             "Magexperts_Core/js/popup": {
                 "expire": <?= $popupExpireTime ?>,
                 "delay": <?= $popupDelayOpenTime ?>,

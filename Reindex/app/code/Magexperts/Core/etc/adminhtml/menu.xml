@@ -19,11 +19,11 @@
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
     <menu>
-        <add id="Magexperts_Core::bss_core_menu"
+        <add id="Magexperts_Core::magexperts_core_menu"
              title="Magexperts"
              module="Magexperts_Core"
              sortOrder="90"
-             action="adminhtml/system_config/edit/section/bss_core"
+             action="adminhtml/system_config/edit/section/magexperts_core"
              resource="Magexperts_Core::config" />
     </menu>
 </config>

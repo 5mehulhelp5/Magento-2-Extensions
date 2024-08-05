@@ -23,7 +23,7 @@ define(
     function ($) {
         "use strict";
         $.widget(
-            'bss.bss_config',
+            'magexperts.magexperts_config',
             {
                 options: {
                     productUrl: '',
@@ -55,7 +55,7 @@ define(
                                     id_product = $(this).parents(productItemInfo).find('.price-box').data('product-id');
                                 }
                                 if (id_product) {
-                                    $(this).append('<div id="quickview-' + id_product + '" class="bss-bt-quickview"><a class="bss-quickview" data-quickview-url="' + $widget.options.productUrl + 'id/' + id_product + '" href="javascript:void(0);" ><span>' + $widget.options.buttonText + '</span></a></div>');
+                                    $(this).append('<div id="quickview-' + id_product + '" class="magexperts-bt-quickview"><a class="magexperts-quickview" data-quickview-url="' + $widget.options.productUrl + 'id/' + id_product + '" href="javascript:void(0);" ><span>' + $widget.options.buttonText + '</span></a></div>');
                                 }
                             }
                         )
@@ -77,14 +77,14 @@ define(
                         $('body, #layer-product-list').on(
                             'contentUpdated',
                             function () {
-                                $('.bss-bt-quickview').remove();
+                                $('.magexperts-bt-quickview').remove();
                                 $widget.renderButton();
                             }
                         );
 
                         $(document).on(
                             'click',
-                            '.bss-quickview',
+                            '.magexperts-quickview',
                             function () {
                                 var prodUrl = $(this).attr('data-quickview-url');
                                 if (prodUrl.length) {
@@ -97,7 +97,7 @@ define(
 
                 openPopup: function (prodUrl) {
                     var $widget = this,
-                        url = $widget.options.baseUrl + 'bss_quickview/index/updatecart';
+                        url = $widget.options.baseUrl + 'magexperts_quickview/index/updatecart';
 
                     if (!prodUrl.length) {
                         return false;
@@ -116,7 +116,7 @@ define(
                             callbacks: {
                                 open: function () {
                                     $('.mfp-preloader').css('display', 'block');
-                                    $("iframe.mfp-iframe").contents().find("html").addClass("bss_loader");
+                                    $("iframe.mfp-iframe").contents().find("html").addClass("magexperts_loader");
                                 },
                                 beforeClose: function () {
                                     $('[data-block="minicart"]').trigger('contentLoading');
@@ -136,6 +136,6 @@ define(
                 }
             }
         );
-        return $.bss.bss_config;
+        return $.magexperts.magexperts_config;
     }
 );

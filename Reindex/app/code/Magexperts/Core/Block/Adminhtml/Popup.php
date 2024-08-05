@@ -34,7 +34,7 @@ class Popup extends Template
     /**
      * @var \Magexperts\Core\Helper\Data
      */
-    private $bssHelper;
+    private $magexpertsHelper;
 
     /**
      * @var \Magexperts\Core\Helper\Api
@@ -49,7 +49,7 @@ class Popup extends Template
     /**
      * Popup constructor.
      * @param Template\Context $context
-     * @param \Magexperts\Core\Helper\Data $bssHelper
+     * @param \Magexperts\Core\Helper\Data $magexpertsHelper
      * @param \Magexperts\Core\Helper\Module $moduleHelper
      * @param \Magexperts\Core\Helper\Api $apiHelper
      * @param Header $headerBlock
@@ -57,7 +57,7 @@ class Popup extends Template
      */
     public function __construct(
         Template\Context $context,
-        \Magexperts\Core\Helper\Data $bssHelper,
+        \Magexperts\Core\Helper\Data $magexpertsHelper,
         \Magexperts\Core\Helper\Module $moduleHelper,
         \Magexperts\Core\Helper\Api $apiHelper,
         Header $headerBlock,
@@ -66,7 +66,7 @@ class Popup extends Template
     {
         parent::__construct($context, $data);
         $this->moduleHelper = $moduleHelper;
-        $this->bssHelper = $bssHelper;
+        $this->magexpertsHelper = $magexpertsHelper;
         $this->apiHelper = $apiHelper;
         $this->headerBlock = $headerBlock;
     }
@@ -76,7 +76,7 @@ class Popup extends Template
      */
     public function getModuleHasNewVersion()
     {
-        if ($this->bssHelper->isEnablePopup()) {
+        if ($this->magexpertsHelper->isEnablePopup()) {
             return $this->moduleHelper->getListNewModuleVersion();
         }
         return null;

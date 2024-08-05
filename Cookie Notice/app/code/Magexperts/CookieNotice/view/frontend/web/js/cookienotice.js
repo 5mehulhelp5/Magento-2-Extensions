@@ -20,7 +20,7 @@ define([
 ], function ($) {
 
     'use strict';
-    $.widget('bss.cookieNotice', {
+    $.widget('magexperts.cookieNotice', {
         _init: function () {
             var self = this;
             window.onpaint = self.checkCookie();
@@ -30,15 +30,15 @@ define([
             }
 
             jQuery('.btn-cookie-accept').click(function () {
-                jQuery('#bss-cookie-notice').css("display", "none");
-                self.setCookie('cookienotice', 'bss', 180);
+                jQuery('#magexperts-cookie-notice').css("display", "none");
+                self.setCookie('cookienotice', 'magexperts', 180);
             });
         },
 
         autoHideMsg: function (seconds) {
             if (seconds != 0) {
                 setTimeout(function () {
-                    jQuery('#bss-cookie-notice').fadeOut('fast');
+                    jQuery('#magexperts-cookie-notice').fadeOut('fast');
                 }, seconds);
             }
         },
@@ -70,21 +70,21 @@ define([
             var cookienotice = self.getCookie("cookienotice");
             if (cookienotice == "") {
                 jQuery.each(self.options.position, function ($key, $value) {
-                    jQuery('#bss-cookie-notice').css($key, $value);
+                    jQuery('#magexperts-cookie-notice').css($key, $value);
                 });
-                jQuery('#bss-cookie-notice').css("background-color", self.options.bgColor);
-                jQuery('#bss-cookie-notice .cookie-title').css("color", self.options.colorTitle);
-                jQuery('#bss-cookie-notice .cookie-content').css("color", self.options.colorContent);
-                jQuery('#bss-cookie-notice .btn-cookie-accept').css({
+                jQuery('#magexperts-cookie-notice').css("background-color", self.options.bgColor);
+                jQuery('#magexperts-cookie-notice .cookie-title').css("color", self.options.colorTitle);
+                jQuery('#magexperts-cookie-notice .cookie-content').css("color", self.options.colorContent);
+                jQuery('#magexperts-cookie-notice .btn-cookie-accept').css({
                     "color":self.options.colorAccept, "background-color": self.options.bgColorAccept
                 });
-                jQuery('#bss-cookie-notice .btn-cookie-more-infor').css({
+                jQuery('#magexperts-cookie-notice .btn-cookie-more-infor').css({
                     "color":self.options.colorMoreInfo, "background-color": self.options.bgColorMoreInfo
                 });
-                jQuery('#bss-cookie-notice').css("display", "block");
+                jQuery('#magexperts-cookie-notice').css("display", "block");
             }
         }
 
     });
-    return $.bss.cookieNotice;
+    return $.magexperts.cookieNotice;
 });

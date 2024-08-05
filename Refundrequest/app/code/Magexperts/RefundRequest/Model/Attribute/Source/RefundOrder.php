@@ -30,19 +30,19 @@ class RefundOrder implements \Magento\Framework\Data\OptionSourceInterface
     /**
      * @var Status
      */
-    protected $bssRefundStatus;
+    protected $magexpertsRefundStatus;
 
     /**
      * RefundOrder constructor.
      * @param CollectionFactory $orderStatusCollection
-     * @param Status $bssRefundStatus
+     * @param Status $magexpertsRefundStatus
      */
     public function __construct(
         CollectionFactory $orderStatusCollection,
-        Status $bssRefundStatus
+        Status $magexpertsRefundStatus
     ) {
         $this->orderStatusCollection = $orderStatusCollection;
-        $this->bssRefundStatus = $bssRefundStatus;
+        $this->magexpertsRefundStatus = $magexpertsRefundStatus;
     }
 
     /**

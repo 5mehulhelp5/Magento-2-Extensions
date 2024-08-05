@@ -31,7 +31,7 @@
 	    <referenceBlock name="upsell.product.addto.compare" remove="true"/>
 	    <referenceBlock name="crosssell.product.addto.compare" remove="true" />
 	    <referenceBlock name="head.additional">
-            <block class="Magento\Framework\View\Element\Template" name="bss.remove.compare" template="Magexperts_DisableCompare::remove_compare.phtml" before="-"/>
+            <block class="Magento\Framework\View\Element\Template" name="magexperts.remove.compare" template="Magexperts_DisableCompare::remove_compare.phtml" before="-"/>
         </referenceBlock>
     </body>
 </page>

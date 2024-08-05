@@ -23,7 +23,7 @@ namespace Magexperts\Reindex\Model\System\Message;
  */
 class CoreModuleRequired implements \Magento\Framework\Notification\MessageInterface
 {
-    const MESSAGE_IDENTITY = 'bss_core_module_required';
+    const MESSAGE_IDENTITY = 'magexperts_core_module_required';
 
     /**
      * @var \Magexperts\Reindex\Helper\Data

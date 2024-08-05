@@ -27,7 +27,7 @@ class Index extends \Magento\Framework\App\Action\Action
     /**
      * @var \Magexperts\LoginAsCustomer\Model\LoginFactory
      */
-    protected $bssLoginFactory;
+    protected $magexpertsLoginFactory;
 
     /**
      * @var \Magento\Customer\Model\Session
@@ -37,16 +37,16 @@ class Index extends \Magento\Framework\App\Action\Action
     /**
      * Index constructor.
      * @param Context $context
-     * @param \Magexperts\LoginAsCustomer\Model\LoginFactory $bssLoginFactory
+     * @param \Magexperts\LoginAsCustomer\Model\LoginFactory $magexpertsLoginFactory
      * @param \Magento\Customer\Model\Session $customerSession
      */
     public function __construct(
         Context $context,
-        \Magexperts\LoginAsCustomer\Model\LoginFactory $bssLoginFactory,
+        \Magexperts\LoginAsCustomer\Model\LoginFactory $magexpertsLoginFactory,
         \Magento\Customer\Model\Session $customerSession
     ) {
         parent::__construct($context);
-        $this->bssLoginFactory = $bssLoginFactory;
+        $this->magexpertsLoginFactory = $magexpertsLoginFactory;
         $this->customerSession = $customerSession;
     }
 
@@ -96,7 +96,7 @@ class Index extends \Magento\Framework\App\Action\Action
         }
 
         $oldStoreId = $this->getRequest()->getParam('oldStoreId');
-        $login = $this->bssLoginFactory->create()->loadNotUsed($secret);
+        $login = $this->magexpertsLoginFactory->create()->loadNotUsed($secret);
         if ($login->getId()) {
             if ($oldStoreId === null) {
                 $this->messageManager->addNoticeMessage('The store view where this account has been created was deleted');

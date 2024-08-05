@@ -19,12 +19,12 @@
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
-        <tab id="bss" translate="label" sortOrder="300">
+        <tab id="magexperts" translate="label" sortOrder="300">
             <label><![CDATA[Magexperts Commerce]]></label>
         </tab>
         <section id="preselectshippingpayment" translate="label" type="text" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
             <label>Pre-Select Shipping/Payment</label>
-            <tab>bss</tab>
+            <tab>magexperts</tab>
             <resource>Magexperts_PreSelectShippingPayment::config_preselectshippingpayment</resource>
             <group id="shipping" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>Auto Shipping Config</label>

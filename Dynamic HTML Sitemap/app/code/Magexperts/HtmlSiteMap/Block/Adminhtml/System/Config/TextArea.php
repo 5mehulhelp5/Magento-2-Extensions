@@ -45,7 +45,7 @@ class TextArea extends \Magento\Config\Block\System\Config\Form\Field
         <script type="text/javascript">
             require(["jquery", "jquery/ui","Magento_Ui/js/modal/modal"], function($,modal){
                 var check = 2;
-                $("#bss_htmlsitemap_addition_addition_link").keyup(function (e) {
+                $("#magexperts_htmlsitemap_addition_addition_link").keyup(function (e) {
                     var additionUrl = $(this).val();
                     var additionArray = [];
                     for(var i = 0; i<=additionUrl.length; i++){

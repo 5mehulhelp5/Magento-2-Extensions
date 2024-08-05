@@ -19,6 +19,6 @@
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <type name="Magento\Config\Model\Config">
-        <plugin name="bss-validate-min-max-qty" type="Magexperts\Limitcartqty\Plugin\ValidateMinMaxQty"/>
+        <plugin name="magexperts-validate-min-max-qty" type="Magexperts\Limitcartqty\Plugin\ValidateMinMaxQty"/>
     </type>
 </config>

@@ -34,7 +34,7 @@ class Modules extends \Magento\Config\Block\System\Config\Form\Fieldset
     /**
      * @var \Magexperts\Core\Helper\Data
      */
-    private $bssHelper;
+    private $magexpertsHelper;
 
     /**
      * @var \Magexperts\Core\Helper\Module
@@ -52,7 +52,7 @@ class Modules extends \Magento\Config\Block\System\Config\Form\Fieldset
      * @param \Magento\Backend\Model\Auth\Session $authSession
      * @param \Magento\Framework\View\Helper\Js $jsHelper
      * @param \Magento\Framework\View\LayoutFactory $layoutFactory
-     * @param \Magexperts\Core\Helper\Data $bssHelper
+     * @param \Magexperts\Core\Helper\Data $magexpertsHelper
      * @param \Magexperts\Core\Helper\Module $moduleHelper
      * @param array $data
      */
@@ -61,14 +61,14 @@ class Modules extends \Magento\Config\Block\System\Config\Form\Fieldset
         \Magento\Backend\Model\Auth\Session $authSession,
         \Magento\Framework\View\Helper\Js $jsHelper,
         \Magento\Framework\View\LayoutFactory $layoutFactory,
-        \Magexperts\Core\Helper\Data $bssHelper,
+        \Magexperts\Core\Helper\Data $magexpertsHelper,
         \Magexperts\Core\Helper\Module $moduleHelper,
         array $data = []
     )
     {
         parent::__construct($context, $authSession, $jsHelper, $data);
         $this->layoutFactory = $layoutFactory;
-        $this->bssHelper = $bssHelper;
+        $this->magexpertsHelper = $magexpertsHelper;
         $this->moduleHelper = $moduleHelper;
     }
 
@@ -152,7 +152,7 @@ class Modules extends \Magento\Config\Block\System\Config\Form\Fieldset
             $suite = $localModule['extra']['suite'];
         }
 
-        if ($this->bssHelper->isModuleEnable('Magexperts_Breadcrumbs') && $suite == 'seo-suite') {
+        if ($this->magexpertsHelper->isModuleEnable('Magexperts_Breadcrumbs') && $suite == 'seo-suite') {
             return '';
         }
 
@@ -230,7 +230,7 @@ class Modules extends \Magento\Config\Block\System\Config\Form\Fieldset
         $html .= $this->_getHeaderCommentHtml($element);
 
         // field label column
-        $html .= '<table cellspacing="0" class="form-list"><colgroup class="bss-label"/><colgroup class="bss-value"/>';
+        $html .= '<table cellspacing="0" class="form-list"><colgroup class="magexperts-label"/><colgroup class="magexperts-value"/>';
         if ($this->getRequest()->getParam('website') || $this->getRequest()->getParam('store')) {
             $html .= '<colgroup class="use-default" />';
         }

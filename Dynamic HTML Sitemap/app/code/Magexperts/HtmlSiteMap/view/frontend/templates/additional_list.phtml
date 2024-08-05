@@ -33,13 +33,13 @@
 
     $additionLink = $block->getAdditionLink();
     if ($additionUrlCount != null) : ?>
-        <h2 class="bss_h2"><?php echo $titleAddition; ?></h2>
-        <div class="bss_site_map_grid">
+        <h2 class="magexperts_h2"><?php echo $titleAddition; ?></h2>
+        <div class="magexperts_site_map_grid">
         <?php
         foreach ($additionLink as $value => $link) : ?>
             <?php
             if ($value % 2 == 1) : ?>
-                    <div class="col-bss-3"><h3 class="bss_product_list">
+                    <div class="col-magexperts-3"><h3 class="magexperts_product_list">
                     <a href="<?php echo $link; ?>"
                 <?php
             else :

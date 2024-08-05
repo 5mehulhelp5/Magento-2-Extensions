@@ -42,7 +42,7 @@
             </arguments>
         </referenceBlock>
         <referenceContainer name="content">
-            <block class="Magexperts\Reindex\Block\Backend\Grid\Indexer" name="content.bsscontent"/>
+            <block class="Magexperts\Reindex\Block\Backend\Grid\Indexer" name="content.magexpertscontent"/>
         </referenceContainer>
     </body>
 </page>

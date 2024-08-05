@@ -26,6 +26,6 @@ class Request extends AbstractDb
      */
     protected function _construct()
     {
-        $this->_init('bss_refundrequest', 'id');
+        $this->_init('magexperts_refundrequest', 'id');
     }
 }

@@ -104,17 +104,17 @@ class Index extends \Magento\Framework\App\Action\Action
         $data           = $this->getRequest()->getPostValue();
         if ($data) {
             if ($this->helper->getConfigEnableDropdown()) {
-                $option = $data['bss-option'];
+                $option = $data['magexperts-option'];
             } else {
                 $option = '';
             }
             if ($this->helper->getConfigEnableOption()) {
-                $radio = $data['bss-radio'];
+                $radio = $data['magexperts-radio'];
             } else {
                 $radio = '';
             }
-            $reasonComment = $data['bss-refund-reason'];
-            $incrementId   = $data['bss-refund-order-id'];
+            $reasonComment = $data['magexperts-refund-reason'];
+            $incrementId   = $data['magexperts-refund-order-id'];
             $orderData     = $this->orderInterface->loadByIncrementId($incrementId);
             try {
                 $model->setOption($option);

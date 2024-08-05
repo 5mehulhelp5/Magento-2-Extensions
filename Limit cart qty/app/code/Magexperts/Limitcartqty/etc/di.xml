@@ -26,9 +26,9 @@
         <plugin name="mintotal-redirect_multiship" type="Magexperts\Limitcartqty\Plugin\MintotalRedirect" sortOrder="2"/>
     </type>
     <type name="Magento\Checkout\CustomerData\Cart">
-        <plugin name="bss-section-cart-data" type="Magexperts\Limitcartqty\Plugin\CustomerData\Cart" sortOrder="1000"/>
+        <plugin name="magexperts-section-cart-data" type="Magexperts\Limitcartqty\Plugin\CustomerData\Cart" sortOrder="1000"/>
     </type>
     <type name="Magento\Paypal\Controller\Express\Start">
-        <plugin name="bss-validate-paypal" type="Magexperts\Limitcartqty\Plugin\ValidateCheckoutPaypal"/>
+        <plugin name="magexperts-validate-paypal" type="Magexperts\Limitcartqty\Plugin\ValidateCheckoutPaypal"/>
     </type>
 </config>

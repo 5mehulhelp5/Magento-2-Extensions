@@ -19,7 +19,7 @@
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
     <default>
-        <bss_htmlsitemap>
+        <magexperts_htmlsitemap>
             <general>
                 <enable>1</enable>
                 <title>HTML Sitemap</title>
@@ -54,6 +54,6 @@
                 <open_new_tab>0</open_new_tab>
                 <addition_link>[http://yourlink1.com][Anchor Text 1]</addition_link>
             </addition>
-        </bss_htmlsitemap>
+        </magexperts_htmlsitemap>
     </default>
 </config>

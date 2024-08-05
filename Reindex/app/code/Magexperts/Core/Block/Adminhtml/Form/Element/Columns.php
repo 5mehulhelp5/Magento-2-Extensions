@@ -53,7 +53,7 @@ class Columns extends \Magento\Framework\Data\Form\Element\AbstractElement
         $html = $this->getData('default_html');
         if ($html === null) {
             $html = '<tr id="row_' . $this->getId() . '">';
-            $html .= '<td class="bss-label" style="width: 35%; padding: 2.2rem 1.5rem 0 0; text-align: right;">';
+            $html .= '<td class="magexperts-label" style="width: 35%; padding: 2.2rem 1.5rem 0 0; text-align: right;">';
             $html .= $this->getLabelHtml();
             $html .= '</td>';
             $html .= $this->getElementHtml();
@@ -86,8 +86,8 @@ class Columns extends \Magento\Framework\Data\Form\Element\AbstractElement
     protected function getVersionHtml($value)
     {
         $width = '20%';
-        $html = '<td class="bss-value ' . '" style="width: ' . $width . '; padding: 2.2rem 1.5rem 0 0;">';
-        $html .= "<div class='bss-version' style='text-align: center; " . "'>$value</div>";
+        $html = '<td class="magexperts-value ' . '" style="width: ' . $width . '; padding: 2.2rem 1.5rem 0 0;">';
+        $html .= "<div class='magexperts-version' style='text-align: center; " . "'>$value</div>";
         $html .= '</td>';
 
         return $html;

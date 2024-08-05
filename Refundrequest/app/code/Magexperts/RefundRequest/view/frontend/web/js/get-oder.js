@@ -4,26 +4,26 @@ define([
     'mage/mage'
 ], function($, modal) {
     return function(config) {
-        var url = config.bssUrl + 'refundrequest/order/index',
-            title = config.bssPopupTitle,
+        var url = config.magexpertsUrl + 'refundrequest/order/index',
+            title = config.magexpertsPopupTitle,
             data = config.dataOrder,
             orderRefund = config.orderRefund
         orders = config.orders;
         var options = {
-            wrapperClass: 'bss-modals-wrapper',
-            modalClass: 'bss-modal',
-            overlayClass: 'bss-modals-overlay',
-            responsiveClass: 'bss-modal-slide',
+            wrapperClass: 'magexperts-modals-wrapper',
+            modalClass: 'magexperts-modal',
+            overlayClass: 'magexperts-modals-overlay',
+            responsiveClass: 'magexperts-modal-slide',
             type: 'popup',
             responsive: true,
             innerScroll: true,
             title: title,
             buttons: [{
                 text: $.mage.__('Send Request'),
-                class: 'bss-popup-button',
+                class: 'magexperts-popup-button',
                 click: function (data) {
-                    var form_data = $("#bss-refund-form").serialize();
-                    if ($('#bss-refund-form').valid()) {
+                    var form_data = $("#magexperts-refund-form").serialize();
+                    if ($('#magexperts-refund-form').valid()) {
 
                         $.ajax({
                             showLoader: true,
@@ -32,23 +32,23 @@ define([
                             data: form_data
                         })
                             .done(function () {
-                                $("#bss-refund-modal").modal('closeModal');
-                                $("#bss-refund-form")[0].reset();
+                                $("#magexperts-refund-modal").modal('closeModal');
+                                $("#magexperts-refund-form")[0].reset();
                                 location.reload(true);
 
                             })
                             .fail(function () {
-                                $("#bss-refund-modal").modal('closeModal');
+                                $("#magexperts-refund-modal").modal('closeModal');
                             });
                     }
                 }
             },
                 {
                     text: $.mage.__('Cancel Request'),
-                    class: 'bss-popup-button',
+                    class: 'magexperts-popup-button',
                     click: function (data) {
-                        $("#bss-refund-form")[0].reset();
-                        $("#bss-refund-modal").modal('closeModal');
+                        $("#magexperts-refund-form")[0].reset();
+                        $("#magexperts-refund-modal").modal('closeModal');
 
                     }
                 }
@@ -97,9 +97,9 @@ define([
         });
         $(document).on('click', '.refund-order', function () {
             var order_id = $(this).attr('data-oder-id');
-            modal(options, $("#bss-refund-modal"));
-            $("#bss-refund-modal").modal('openModal');
-            $(".bss-refund-oder-id").attr('value', order_id);
+            modal(options, $("#magexperts-refund-modal"));
+            $("#magexperts-refund-modal").modal('openModal');
+            $(".magexperts-refund-oder-id").attr('value', order_id);
         });
     }
 });

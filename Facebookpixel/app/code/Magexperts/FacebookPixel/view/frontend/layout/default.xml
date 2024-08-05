@@ -21,30 +21,30 @@
     <body>
         <referenceContainer name="after.body.start">
             <block class="Magexperts\FacebookPixel\Block\Code"
-                   name="bss.facebook.pixel."
+                   name="magexperts.facebook.pixel."
                    template="Magexperts_FacebookPixel::code.phtml"
                    before="-"
-                   ifconfig="bss_facebook_pixel/general/active" />
-            <block class="Magento\Framework\View\Element\Template" name="bss.fbpixel.atc" after="bss.facebook.pixel."
-                   ifconfig="bss_facebook_pixel/general/active"
+                   ifconfig="magexperts_facebook_pixel/general/active" />
+            <block class="Magento\Framework\View\Element\Template" name="magexperts.fbpixel.atc" after="magexperts.facebook.pixel."
+                   ifconfig="magexperts_facebook_pixel/general/active"
                    template="Magexperts_FacebookPixel::atc.phtml">
                 <arguments>
                     <argument name="jsLayout" xsi:type="array">
                         <item name="components" xsi:type="array">
-                            <item name="bssFbpixelsAtc" xsi:type="array">
+                            <item name="magexpertsFbpixelsAtc" xsi:type="array">
                                 <item name="component" xsi:type="string">Magexperts_FacebookPixel/js/atc</item>
                             </item>
                         </item>
                     </argument>
                 </arguments>
             </block>
-            <block class="Magento\Framework\View\Element\Template" name="bss.fbpixel.subscribe" after="bss.facebook.pixel."
-                   ifconfig="bss_facebook_pixel/general/active"
+            <block class="Magento\Framework\View\Element\Template" name="magexperts.fbpixel.subscribe" after="magexperts.facebook.pixel."
+                   ifconfig="magexperts_facebook_pixel/general/active"
                    template="Magexperts_FacebookPixel::subscribe.phtml">
                 <arguments>
                     <argument name="jsLayout" xsi:type="array">
                         <item name="components" xsi:type="array">
-                            <item name="bssFbpixelsSubscribe" xsi:type="array">
+                            <item name="magexpertsFbpixelsSubscribe" xsi:type="array">
                                 <item name="component" xsi:type="string">Magexperts_FacebookPixel/js/subscribe</item>
                             </item>
                         </item>

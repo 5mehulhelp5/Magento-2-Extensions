@@ -7,9 +7,9 @@ use Magento\Store\Model\ScopeInterface;
 
 class Config extends AbstractHelper
 {
-    const AITOC_CORE_XML_PATH_NOTIFICATIONS = 'magexperts_core/notifications/';
-    const AITOC_CORE_XML_PATH_EXTENSIONS = 'magexperts_core/extensions/';
-    const AITOC_CORE_XML_PATH_MENU = 'magexperts_core/menu/';
+    const MAGEXPERTS_CORE_XML_PATH_NOTIFICATIONS = 'magexperts_core/notifications/';
+    const MAGEXPERTS_CORE_XML_PATH_EXTENSIONS = 'magexperts_core/extensions/';
+    const MAGEXPERTS_CORE_XML_PATH_MENU = 'magexperts_core/menu/';
 
     /**
      * @var \Magento\Framework\HTTP\PhpEnvironment\RemoteAddress
@@ -50,7 +50,7 @@ class Config extends AbstractHelper
      */
     public function getNotificationsEnable()
     {
-        return (bool)$this->getModuleConfig(self::AITOC_CORE_XML_PATH_NOTIFICATIONS . 'notice_enable');
+        return (bool)$this->getModuleConfig(self::MAGEXPERTS_CORE_XML_PATH_NOTIFICATIONS . 'notice_enable');
     }
 
     /**
@@ -58,7 +58,7 @@ class Config extends AbstractHelper
      */
     public function getNotificationsType()
     {
-        $data = $this->getModuleConfig(self::AITOC_CORE_XML_PATH_NOTIFICATIONS . 'notice_type');
+        $data = $this->getModuleConfig(self::MAGEXPERTS_CORE_XML_PATH_NOTIFICATIONS . 'notice_type');
 
         return $data ? explode(',', $data) : [];
     }
@@ -68,7 +68,7 @@ class Config extends AbstractHelper
      */
     public function getNotificationsFrequency()
     {
-        return $this->getModuleConfig(self::AITOC_CORE_XML_PATH_NOTIFICATIONS . 'frequency');
+        return $this->getModuleConfig(self::MAGEXPERTS_CORE_XML_PATH_NOTIFICATIONS . 'frequency');
     }
 
     /**
@@ -76,6 +76,6 @@ class Config extends AbstractHelper
      */
     public function getMenuEnable()
     {
-        return $this->getModuleConfig(self::AITOC_CORE_XML_PATH_MENU . 'menu_enable');
+        return $this->getModuleConfig(self::MAGEXPERTS_CORE_XML_PATH_MENU . 'menu_enable');
     }
 }

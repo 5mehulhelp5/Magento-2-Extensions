@@ -20,12 +20,12 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceBlock name="store_language">
-            <action method="setTemplate" ifconfig="bss_store_flag/general/enable_module">
+            <action method="setTemplate" ifconfig="magexperts_store_flag/general/enable_module">
                 <argument name="template" xsi:type="string">Magexperts_StoreviewFlags::switch/languages.phtml</argument>
             </action>
         </referenceBlock>
         <referenceBlock name="store.settings.language">
-            <action method="setTemplate" ifconfig="bss_store_flag/general/enable_module">
+            <action method="setTemplate" ifconfig="magexperts_store_flag/general/enable_module">
                 <argument name="template" xsi:type="string">Magexperts_StoreviewFlags::switch/languages.phtml</argument>
             </action>
         </referenceBlock>

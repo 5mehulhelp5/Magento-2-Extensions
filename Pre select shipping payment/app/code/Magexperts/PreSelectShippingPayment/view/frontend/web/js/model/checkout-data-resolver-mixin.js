@@ -35,14 +35,14 @@ define([
              */
             resolveShippingRates: function (ratesData) {
                 var selectedShippingRate = checkoutData.getSelectedShippingRate();
-                if (!_.isUndefined(checkoutConfig.bssAspConfig) &&
-                    !_.isUndefined(checkoutConfig.bssAspConfig.shipping) &&
+                if (!_.isUndefined(checkoutConfig.magexpertsAspConfig) &&
+                    !_.isUndefined(checkoutConfig.magexpertsAspConfig.shipping) &&
                     !selectedShippingRate &&
                     ratesData &&
                     ratesData.length > 1
                 ) {
-                    var defaultShipping = checkoutConfig.bssAspConfig.shipping.default,
-                        positionShipping = checkoutConfig.bssAspConfig.shipping.position;
+                    var defaultShipping = checkoutConfig.magexpertsAspConfig.shipping.default,
+                        positionShipping = checkoutConfig.magexpertsAspConfig.shipping.position;
                     this._autoSelect(defaultShipping, positionShipping, ratesData, 'shipping');
                 }
                 return checkoutDataResolverShipping.apply(this, arguments);
@@ -54,14 +54,14 @@ define([
             resolvePaymentMethod: function () {
                 var availablePaymentMethods = paymentService.getAvailablePaymentMethods(),
                     selectedPaymentMethod = checkoutData.getSelectedPaymentMethod();
-                if (!_.isUndefined(checkoutConfig.bssAspConfig) &&
-                    !_.isUndefined(checkoutConfig.bssAspConfig.payment) &&
+                if (!_.isUndefined(checkoutConfig.magexpertsAspConfig) &&
+                    !_.isUndefined(checkoutConfig.magexpertsAspConfig.payment) &&
                     !selectedPaymentMethod &&
                     availablePaymentMethods &&
                     availablePaymentMethods.length > 1
                 ) {
-                    var defaultPayment = checkoutConfig.bssAspConfig.payment.default,
-                        positionPayment = checkoutConfig.bssAspConfig.payment.position;
+                    var defaultPayment = checkoutConfig.magexpertsAspConfig.payment.default,
+                        positionPayment = checkoutConfig.magexpertsAspConfig.payment.position;
                     this._autoSelect(defaultPayment, positionPayment, availablePaymentMethods, 'payment');
                 }
                 return checkoutDataResolverPayment.apply(this);

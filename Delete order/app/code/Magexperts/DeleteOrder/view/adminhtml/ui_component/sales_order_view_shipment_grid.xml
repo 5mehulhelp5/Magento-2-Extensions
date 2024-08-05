@@ -23,7 +23,7 @@
             <action name="delete_shipments"  class="Magexperts\DeleteOrder\Ui\Component\Control\DeleteAction">
                 <argument name="data" xsi:type="array">
                     <item name="config" xsi:type="array">
-                        <item name="type" xsi:type="string">bss_deleteShipment</item>
+                        <item name="type" xsi:type="string">magexperts_deleteShipment</item>
                         <item name="label" xsi:type="string" translate="true">Delete Shipments</item>
                         <item name="deleteAction" xsi:type="string">deleteorder/delete/massShipment</item>
                         <item name="confirm" xsi:type="array">

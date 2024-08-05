@@ -58,13 +58,13 @@ class CompositeConfigProvider implements ConfigProviderInterface
         );
         $output = [];
         if ($isEnabledShipping) {
-            $output['bssAspConfig']['shipping'] = [
+            $output['magexpertsAspConfig']['shipping'] = [
                 'default' => $this->getShipingConfig('default'),
                 'position' => $this->getShipingConfig('position')
             ];
         }
         if ($isEnabledPayment) {
-            $output['bssAspConfig']['payment'] = [
+            $output['magexpertsAspConfig']['payment'] = [
                 'default' => $this->getPaymentConfig('default'),
                 'position' => $this->getPaymentConfig('position')
             ];

@@ -28,20 +28,20 @@ class Index extends Action
     /**
      * @var \Magexperts\LoginAsCustomer\Model\LoginFactory
      */
-    protected $bssLoginFactory;
+    protected $magexpertsLoginFactory;
 
     /**
      * Index constructor.
      *
      * @param Action\Context $context
-     * @param \Magexperts\LoginAsCustomer\Model\LoginFactory $bssLoginFactory
+     * @param \Magexperts\LoginAsCustomer\Model\LoginFactory $magexpertsLoginFactory
      */
     public function __construct(
         Action\Context $context,
-        \Magexperts\LoginAsCustomer\Model\LoginFactory $bssLoginFactory
+        \Magexperts\LoginAsCustomer\Model\LoginFactory $magexpertsLoginFactory
     ) {
         parent::__construct($context);
-        $this->bssLoginFactory = $bssLoginFactory;
+        $this->magexpertsLoginFactory = $magexpertsLoginFactory;
     }
 
     /**
@@ -56,7 +56,7 @@ class Index extends Action
             return;
         }
 
-        $this->bssLoginFactory->create()->deleteNotUsed();
+        $this->magexpertsLoginFactory->create()->deleteNotUsed();
 
         $this->_view->loadLayout();
         $this->_setActiveMenu('Magexperts_LoginAsCustomer::login_log');

@@ -16,10 +16,10 @@
  */
 define([
     'jquery',
-    'bss/unveil'
+    'magexperts/unveil'
 ], function ($) {
     'use strict';
-    $.widget('bss.bss_config', {
+    $.widget('magexperts.magexperts_config', {
         _create: function () {
             var options = this.options;
             var threshold = parseInt(options.threshold);
@@ -30,5 +30,5 @@ define([
 
         }
     });
-    return $.bss.bss_config;
+    return $.magexperts.magexperts_config;
 });

@@ -22,7 +22,7 @@ define(
 ],
     function ($) {
     $.widget(
-        'bss.bss_beforebodyend',
+        'magexperts.magexperts_beforebodyend',
         {
             _create: function () {
                 var options = this.options;
@@ -87,7 +87,7 @@ define(
                                     if ($(this).parents('#maincontent').find('input[name="qty"]').val() > 0) {
                                         qty = $(this).parents('#maincontent').find('input[name="qty"]').val();
                                     }
-                                    url = data_url.action + 'product/' + data_url.data.product + '/qty/' + qty + '/form_key/' + from_key + '/uenc/' + data_url.data.uenc + '/bssquickview/1';
+                                    url = data_url.action + 'product/' + data_url.data.product + '/qty/' + qty + '/form_key/' + from_key + '/uenc/' + data_url.data.uenc + '/magexpertsquickview/1';
                                 } else {
                                     url = $(this).attr('href');
                                     var myClass = $(this).attr('class');
@@ -136,5 +136,5 @@ define(
             }
         }
     );
-    return $.bss.bss_beforebodyend;
+    return $.magexperts.magexperts_beforebodyend;
 });

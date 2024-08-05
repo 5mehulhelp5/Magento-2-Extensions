@@ -31,7 +31,7 @@ class Login extends Action
     /**
      * @var \Magexperts\LoginAsCustomer\Model\LoginFactory
      */
-    protected $bssLoginFactory;
+    protected $magexpertsLoginFactory;
 
     /**
      * @var \Magento\Backend\Model\Auth\Session
@@ -71,7 +71,7 @@ class Login extends Action
     /**
      * Login constructor.
      * @param Action\Context $context
-     * @param \Magexperts\LoginAsCustomer\Model\LoginFactory $bssLoginFactory
+     * @param \Magexperts\LoginAsCustomer\Model\LoginFactory $magexpertsLoginFactory
      * @param \Magento\Backend\Model\Auth\Session $session
      * @param \Magento\Store\Model\StoreManagerInterface $storeManager
      * @param FrontendUrl $frontendUrl
@@ -82,7 +82,7 @@ class Login extends Action
      */
     public function __construct(
         Action\Context $context,
-        \Magexperts\LoginAsCustomer\Model\LoginFactory $bssLoginFactory,
+        \Magexperts\LoginAsCustomer\Model\LoginFactory $magexpertsLoginFactory,
         \Magento\Backend\Model\Auth\Session $session,
         \Magento\Store\Model\StoreManagerInterface $storeManager,
         FrontendUrl $frontendUrl,
@@ -92,7 +92,7 @@ class Login extends Action
         CustomerRepositoryInterface $customerRepository
     ) {
         parent::__construct($context);
-        $this->bssLoginFactory = $bssLoginFactory;
+        $this->magexpertsLoginFactory = $magexpertsLoginFactory;
         $this->session = $session;
         $this->storeManager = $storeManager;
         $this->frontendUrl = $frontendUrl;
@@ -121,7 +121,7 @@ class Login extends Action
                 $customers->getStoreId()
             )->getId();
         }
-        $login = $this->bssLoginFactory->create()->setCustomerId($customerId);
+        $login = $this->magexpertsLoginFactory->create()->setCustomerId($customerId);
         $login->deleteNotUsed();
         $customer = $login->getCustomer();
         if (!$customer->getId()) {

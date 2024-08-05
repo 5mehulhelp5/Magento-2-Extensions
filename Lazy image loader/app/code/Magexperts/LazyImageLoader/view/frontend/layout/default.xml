@@ -20,7 +20,7 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="after.body.start">
-            <block class="Magexperts\LazyImageLoader\Block\LazyLoad" name="bss_lazyimageload" template="Magexperts_LazyImageLoader::js.phtml"/>
+            <block class="Magexperts\LazyImageLoader\Block\LazyLoad" name="magexperts_lazyimageload" template="Magexperts_LazyImageLoader::js.phtml"/>
         </referenceContainer>
     </body>
 </page>

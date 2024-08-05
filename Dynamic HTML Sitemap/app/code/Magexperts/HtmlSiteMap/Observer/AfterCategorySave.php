@@ -98,7 +98,7 @@ class AfterCategorySave implements ObserverInterface
             $scopeToAdd = 'default';
         }
         $this->saveNewConfig(
-            'bss_htmlsitemap/category/id_category',
+            'magexperts_htmlsitemap/category/id_category',
             $finalCategoriesDisable,
             $scopeToAdd,
             $storeId
@@ -112,7 +112,7 @@ class AfterCategorySave implements ObserverInterface
      */
     public function getCategoryDisableArray($storeId)
     {
-        $categoryDisable = $this->dataHelper->getConfigWithoutCache($storeId, 'bss_htmlsitemap/category/id_category');
+        $categoryDisable = $this->dataHelper->getConfigWithoutCache($storeId, 'magexperts_htmlsitemap/category/id_category');
         if ($categoryDisable) {
             $categoryDisableArray = explode(',', $categoryDisable);
         } else {

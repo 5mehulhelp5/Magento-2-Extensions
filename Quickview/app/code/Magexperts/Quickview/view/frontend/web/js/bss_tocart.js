@@ -17,7 +17,7 @@
 define(
     [
         'jquery',
-        'Magexperts_Quickview/js/bss_tocart',
+        'Magexperts_Quickview/js/magexperts_tocart',
         'mage/mage',
         'Magento_Catalog/product/view/validation',
         'Magento_Catalog/js/catalog-add-to-cart'
@@ -26,7 +26,7 @@ define(
         'use strict';
 
         $.widget(
-            'bss.bss_tocart',
+            'magexperts.magexperts_tocart',
             {
                 _create: function () {
                     'use strict';
@@ -56,6 +56,6 @@ define(
                 }
             }
         );
-        return $.bss.bss_tocart;
+        return $.magexperts.magexperts_tocart;
     }
 );

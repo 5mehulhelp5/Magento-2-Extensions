@@ -19,15 +19,15 @@
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
-        <tab id="bss" translate="label" sortOrder="300">
+        <tab id="magexperts" translate="label" sortOrder="300">
             <label><![CDATA[Magexperts Commerce]]></label>
         </tab>
-        <section id="bss_refundrequest" translate="label" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+        <section id="magexperts_refundrequest" translate="label" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
             <class>separator-top</class>
             <label>Refund Request by Customer</label>
-            <tab>bss</tab>
+            <tab>magexperts</tab>
             <resource>Magexperts_RefundRequest::refundrequest_config</resource>
-            <group id="bss_refundrequest_general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+            <group id="magexperts_refundrequest_general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>General Configuration</label>
                 <field id="enable" translate="label" type="select" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Enabled</label>
@@ -39,7 +39,7 @@
                     <source_model>\Magexperts\RefundRequest\Model\Attribute\Source\RefundOrder</source_model>
                 </field>
             </group>
-            <group id="bss_refundrequest_config" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+            <group id="magexperts_refundrequest_config" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>Refund Request Popup</label>
                 <field id="popup_title" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Popup Title</label>
@@ -75,7 +75,7 @@
                     <comment><![CDATA[This is field for customers to state the detailed reason of requesting a refund.]]></comment>
                 </field>
             </group>
-            <group id="bss_refundrequest_email_config" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+            <group id="magexperts_refundrequest_email_config" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>Email Configuration</label>
                 <field id="admin_email" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Admin Email</label>

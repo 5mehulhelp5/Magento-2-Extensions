@@ -50,8 +50,8 @@
                 </resource>
                 <resource id="Magento_Sales::sales" title="Sales" translate="title" sortOrder="20">
                     <resource id="Magento_Sales::sales_operation" title="Operations" translate="title" sortOrder="10">
-                        <resource id="Magento_Sales::sales_bss_refund_request" title="Magexperts Refund Request List" translate="title" sortOrder="100" />
-                        <resource id="Magento_Sales::sales_bss_refund_request_label" title="Magexperts Refund Request Dropdown Options" translate="title" sortOrder="110" />
+                        <resource id="Magento_Sales::sales_magexperts_refund_request" title="Magexperts Refund Request List" translate="title" sortOrder="100" />
+                        <resource id="Magento_Sales::sales_magexperts_refund_request_label" title="Magexperts Refund Request Dropdown Options" translate="title" sortOrder="110" />
                     </resource>
                 </resource>
             </resource>

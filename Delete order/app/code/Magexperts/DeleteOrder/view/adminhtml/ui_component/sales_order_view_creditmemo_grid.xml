@@ -23,7 +23,7 @@
             <action name="delete_creditmemos" class="Magexperts\DeleteOrder\Ui\Component\Control\DeleteAction">
                 <argument name="data" xsi:type="array">
                     <item name="config" xsi:type="array">
-                        <item name="type" xsi:type="string">bss_deleteCreditmemo</item>
+                        <item name="type" xsi:type="string">magexperts_deleteCreditmemo</item>
                         <item name="label" xsi:type="string" translate="true">Delete Credit Memos</item>
                         <item name="deleteAction" xsi:type="string">deleteorder/delete/massCreditmemo</item>
                         <item name="confirm" xsi:type="array">

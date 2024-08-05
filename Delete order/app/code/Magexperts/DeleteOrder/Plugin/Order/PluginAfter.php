@@ -51,8 +51,8 @@ class PluginAfter extends \Magexperts\DeleteOrder\Plugin\PluginAbstract
             $message = __('Are you sure you want to do this?');
             if ($subject->getRequest()->getFullActionName() == 'sales_order_view') {
                 $subject->addButton(
-                    'bss-delete',
-                    ['label' => __('Delete'), 'onclick' => 'confirmSetLocation(\'' . $message . '\',\'' . $this->getDeleteUrl($params['order_id']) . '\')', 'class' => 'bss-delete'],
+                    'magexperts-delete',
+                    ['label' => __('Delete'), 'onclick' => 'confirmSetLocation(\'' . $message . '\',\'' . $this->getDeleteUrl($params['order_id']) . '\')', 'class' => 'magexperts-delete'],
                     -1
                 );
             }

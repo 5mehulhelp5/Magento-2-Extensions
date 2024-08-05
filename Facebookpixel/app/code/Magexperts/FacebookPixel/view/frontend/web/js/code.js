@@ -57,21 +57,21 @@ define([
                     country : orderData.country,
                     zp : orderData.zipcode
                 });
-            } else if ($('.bss-subscribe-email').text()) {
+            } else if ($('.magexperts-subscribe-email').text()) {
                 fbq('init', id, {
-                    em : $('.bss-subscribe-email').text()
+                    em : $('.magexperts-subscribe-email').text()
                 });
             } else {
                 fbq('init', id);
             }
 
-            if ($('.bss-subscribe-email').text()) {
+            if ($('.magexperts-subscribe-email').text()) {
                 fbq('track', 'Subscribe', {
-                    id : $('.bss-subscribe-id').text()
+                    id : $('.magexperts-subscribe-id').text()
                 });
 
-                $('.bss-subscribe-id').text('');
-                $('.bss-subscribe-email').text('');
+                $('.magexperts-subscribe-id').text('');
+                $('.magexperts-subscribe-email').text('');
             }
 
             if (action == 'checkout_index_index' && pageView != 'pass') {

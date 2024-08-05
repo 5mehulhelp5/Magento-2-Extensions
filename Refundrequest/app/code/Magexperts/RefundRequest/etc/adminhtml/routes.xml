@@ -21,7 +21,7 @@
     <!--Use router 'admin' for admin route -->
     <router id="admin">
         <!--Define a custom route with id and frontName -->
-        <route id="bss_refundrequest" frontName="bss_refundrequest">
+        <route id="magexperts_refundrequest" frontName="magexperts_refundrequest">
             <!--The module which this route match to-->
             <module name="Magexperts_RefundRequest"/>
         </route>

@@ -16,10 +16,10 @@
  */
 var config = {
     paths: {
-        'bss/unveil': 'Magexperts_LazyImageLoader/js/jquery.unveil'
+        'magexperts/unveil': 'Magexperts_LazyImageLoader/js/jquery.unveil'
     },
 	shim: {
-		'bss/unveil': {
+		'magexperts/unveil': {
 			deps: ['jquery']
 		},
 	}

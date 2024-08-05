@@ -20,7 +20,7 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceBlock name="page.main.actions">
-            <block class="Magexperts\Core\Block\Adminhtml\Popup" template="Magexperts_Core::popup.phtml" name="bsscore_popup" />
+            <block class="Magexperts\Core\Block\Adminhtml\Popup" template="Magexperts_Core::popup.phtml" name="magexpertscore_popup" />
         </referenceBlock>
     </body>
 </page>

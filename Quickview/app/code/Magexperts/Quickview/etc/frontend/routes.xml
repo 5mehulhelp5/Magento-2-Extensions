@@ -19,7 +19,7 @@
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
     <router id="standard">
-        <route id="bss_quickview" frontName="bss_quickview">
+        <route id="magexperts_quickview" frontName="magexperts_quickview">
             <module name="Magexperts_Quickview" />
         </route>
     </router>

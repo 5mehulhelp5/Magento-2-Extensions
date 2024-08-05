@@ -19,6 +19,6 @@
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
     <event name="checkout_submit_all_after">
-        <observer name="bss_auto_invoice_sales_order_save_after" instance="Magexperts\AdminPaymentMethod\Observer\AutoCreateInvoiceandShipment"/>
+        <observer name="magexperts_auto_invoice_sales_order_save_after" instance="Magexperts\AdminPaymentMethod\Observer\AutoCreateInvoiceandShipment"/>
     </event>
 </config>

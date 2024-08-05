@@ -17,9 +17,9 @@
 var config = {
     map: {
         '*': {
-            bss_config: 'Magexperts_Quickview/js/bss_config',
+            magexperts_config: 'Magexperts_Quickview/js/magexperts_config',
             magnificPopup: 'Magexperts_Quickview/js/jquery.magnific-popup.min',
-            bss_tocart: 'Magexperts_Quickview/js/bss_tocart'
+            magexperts_tocart: 'Magexperts_Quickview/js/magexperts_tocart'
         }
     },
     shim: {

@@ -19,11 +19,11 @@
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Customer:etc/sections.xsd">
-    <action name="bss_quickview/index/updatecart">
+    <action name="magexperts_quickview/index/updatecart">
         <section name="cart"/>
         <section name="compare-products"/>
     </action>
-    <action name="bss_quickview/product/add">
+    <action name="magexperts_quickview/product/add">
         <section name="cart"/>
         <section name="compare-products"/>
     </action>

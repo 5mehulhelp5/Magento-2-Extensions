@@ -18,7 +18,7 @@
 namespace Magexperts\RefundRequest\Model\Attribute\Source;
 
 use Magento\Sales\Model\ResourceModel\Order\CollectionFactory;
-use Magexperts\RefundRequest\Model\ResourceModel\Status as bssRefundStatus;
+use Magexperts\RefundRequest\Model\ResourceModel\Status as magexpertsRefundStatus;
 
 class Status implements \Magento\Framework\Data\OptionSourceInterface
 {

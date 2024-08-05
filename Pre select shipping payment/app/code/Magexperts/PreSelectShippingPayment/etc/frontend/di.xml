@@ -21,7 +21,7 @@
     <type name="Magento\Checkout\Model\CompositeConfigProvider">
         <arguments>
             <argument name="configProviders" xsi:type="array">
-                <item name="bss_pre_select_shipping_payment" xsi:type="object">Magexperts\PreSelectShippingPayment\Model\CompositeConfigProvider</item>
+                <item name="magexperts_pre_select_shipping_payment" xsi:type="object">Magexperts\PreSelectShippingPayment\Model\CompositeConfigProvider</item>
             </argument>
         </arguments>
     </type>

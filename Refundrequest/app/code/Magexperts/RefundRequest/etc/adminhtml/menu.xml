@@ -20,7 +20,7 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
     <menu>
-        <add id="Magexperts_RefundRequest::request" title="Refund Request by Customer" action="bss_refundrequest/request/index" module="Magexperts_RefundRequest" sortOrder="90" parent="Magento_Sales::sales_operation" resource="Magento_Sales::sales_bss_refund_request"/>
-        <add id="Magexperts_RefundRequest::label" title="Refund Request Dropdown Options" action="bss_refundrequest/label/index" module="Magexperts_RefundRequest" sortOrder="100" parent="Magento_Sales::sales_operation" resource="Magento_Sales::sales_bss_refund_request_label"/>
+        <add id="Magexperts_RefundRequest::request" title="Refund Request by Customer" action="magexperts_refundrequest/request/index" module="Magexperts_RefundRequest" sortOrder="90" parent="Magento_Sales::sales_operation" resource="Magento_Sales::sales_magexperts_refund_request"/>
+        <add id="Magexperts_RefundRequest::label" title="Refund Request Dropdown Options" action="magexperts_refundrequest/label/index" module="Magexperts_RefundRequest" sortOrder="100" parent="Magento_Sales::sales_operation" resource="Magento_Sales::sales_magexperts_refund_request_label"/>
     </menu>
 </config>

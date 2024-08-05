@@ -37,11 +37,11 @@ $productImageWrapper = $helper->getProductImageWrapper();
 ?>
 
 <style>
-    a.bss-quickview{
+    a.magexperts-quickview{
         color: #<?php echo $btnTextColor; ?>;
         background-color: rgba(<?php echo "$r , $g , $b"; ?>,0.6);
     }
-    a.bss-quickview {
+    a.magexperts-quickview {
         position: absolute;
         display: block;
         bottom: 0px;
@@ -51,7 +51,7 @@ $productImageWrapper = $helper->getProductImageWrapper();
         left: 0;
         right: 0;
         }
-    .product-item .product-item-info:hover .bss-quickview{
+    .product-item .product-item-info:hover .magexperts-quickview{
         display: block !important;
         position: absolute !important;
         bottom: 0px !important;
@@ -65,7 +65,7 @@ $productImageWrapper = $helper->getProductImageWrapper();
         text-decoration: none !important;
     }
 
-    .product-item .product-item-info:hover .bss-quickview{
+    .product-item .product-item-info:hover .magexperts-quickview{
         display: block !important;
         position: absolute !important;
         bottom: 0px !important;
@@ -78,14 +78,14 @@ $productImageWrapper = $helper->getProductImageWrapper();
         font-size: 14px !important;
         text-decoration: none !important;
     }
-    .product-item .bss-quickview {display: none !important}
-    #shopping-cart-table .bss-quickview {display: none !important}
-    .products-related .product-item-info:hover .bss-quickview, .products-upsell .product-item-info:hover .bss-quickview {display: none !important}
+    .product-item .magexperts-quickview {display: none !important}
+    #shopping-cart-table .magexperts-quickview {display: none !important}
+    .products-related .product-item-info:hover .magexperts-quickview, .products-upsell .product-item-info:hover .magexperts-quickview {display: none !important}
 </style>
 <script type="text/x-magento-init">
     {
         "*": {
-            "Magexperts_Quickview/js/bss_config": {
+            "Magexperts_Quickview/js/magexperts_config": {
                 "productUrl": "<?php echo $productUrl; ?>",
                 "buttonText": "<?php echo $buttonText; ?>",
                 "isEnabled": "<?php echo $isEnabled; ?>",

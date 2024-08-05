@@ -82,7 +82,7 @@ class Data extends AbstractHelper
      */
     public function isEnablePopup()
     {
-        return $this->getStoreConfig('bss_core/setting/enable_popup');
+        return $this->getStoreConfig('magexperts_core/setting/enable_popup');
     }
 
     /**
@@ -90,7 +90,7 @@ class Data extends AbstractHelper
      */
     public function getCustomCss()
     {
-        return $this->getStoreConfig('bss_core/setting/additional_css');
+        return $this->getStoreConfig('magexperts_core/setting/additional_css');
     }
 
     /**
@@ -98,7 +98,7 @@ class Data extends AbstractHelper
      */
     public function isEnablePreprocessedCss()
     {
-        return $this->getStoreConfig('bss_core/setting/enable_preprocessed_css');
+        return $this->getStoreConfig('magexperts_core/setting/enable_preprocessed_css');
     }
 
     /**

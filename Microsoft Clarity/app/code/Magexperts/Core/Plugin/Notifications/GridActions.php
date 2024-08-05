@@ -10,7 +10,7 @@ namespace Magexperts\Core\Plugin\Notifications;
 
 class GridActions
 {
-    const CONFIG_AITOC_CORE_SECTION_NAME = 'magexperts_core';
+    const CONFIG_MAGEXPERTS_CORE_SECTION_NAME = 'magexperts_core';
 
     /**
      * @var \Magento\Framework\UrlInterface
@@ -39,7 +39,7 @@ class GridActions
         \Magento\Framework\DataObject $row
     ) {
         $result = $proceed($row);
-        if ($row->getData(\Magexperts\Core\Api\ColumnInterface::AITOC_NOTIFICATION_FIELD)) {
+        if ($row->getData(\Magexperts\Core\Api\ColumnInterface::MAGEXPERTS_NOTIFICATION_FIELD)) {
             $result .= sprintf(
                 '<a class="action" href="%s" title="%s">%s</a>',
                 $this->getDisableUrl(),
@@ -57,6 +57,6 @@ class GridActions
     private function getDisableUrl()
     {
         return $this->urlBuilder->getUrl('adminhtml/system_config/edit/'). 'section/'
-            . self::CONFIG_AITOC_CORE_SECTION_NAME;
+            . self::CONFIG_MAGEXPERTS_CORE_SECTION_NAME;
     }
 }

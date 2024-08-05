@@ -19,13 +19,13 @@
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
-        <tab id="bss_seo_suite" translate="label" sortOrder="300">
+        <tab id="magexperts_seo_suite" translate="label" sortOrder="300">
             <label> <![CDATA[Magexperts Commerce SEO]]></label>
         </tab>
-        <section id="bss_htmlsitemap" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+        <section id="magexperts_htmlsitemap" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
             <label>HTML Sitemap</label>
-            <tab>bss_seo_suite</tab>
-            <resource>Magexperts_HtmlSiteMap::bss_htmlsitemap</resource>
+            <tab>magexperts_seo_suite</tab>
+            <resource>Magexperts_HtmlSiteMap::magexperts_htmlsitemap</resource>
             <group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>General</label>
                 <field id="enable" translate="label" type="select" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
@@ -144,7 +144,7 @@
                     <p style="font-size: 14px;">Want a complete SEO solution? We also offer a <font color="blue">SEO Suite</font>,
                     including all necessary modules to make your site SEO-friendly, boost ranking and increase traffic!</p></a>]]>
                 </label>
-                <fieldset_css>paypal-recommended-header bss_footer_seo</fieldset_css>
+                <fieldset_css>paypal-recommended-header magexperts_footer_seo</fieldset_css>
                 <frontend_model>Magento\Paypal\Block\Adminhtml\System\Config\Fieldset\Expanded</frontend_model>
             </group>
         </section>

@@ -6,9 +6,9 @@ use Magento\Framework\Data\Form\Element\AbstractElement;
 
 class InstalledExtensions extends \Magento\Config\Block\System\Config\Form\Fieldset
 {
-    const AITOC_UPDATE_EXTENSION_VERSION_LINK = 'https://www.magexperts.com/customer/account/login/';
-    const AITOC_PRODUCT_LINK_DEFAULT = 'https://www.magexperts.com/magento-2-extensions.html';
-    const AITOC_SUPPROT_LINK = 'https://www.magexperts.com/get-support.html';
+    const MAGEXPERTS_UPDATE_EXTENSION_VERSION_LINK = 'https://www.magexperts.com/customer/account/login/';
+    const MAGEXPERTS_PRODUCT_LINK_DEFAULT = 'https://www.magexperts.com/magento-2-extensions.html';
+    const MAGEXPERTS_SUPPROT_LINK = 'https://www.magexperts.com/get-support.html';
 
     /**
      * @var \Magento\Framework\Module\ModuleListInterface
@@ -109,7 +109,7 @@ class InstalledExtensions extends \Magento\Config\Block\System\Config\Form\Field
         $extInfo = $this->extensionsHelper->getExtInfo($extName);
         $packageData = [];
         $versionOld = false;
-        $productUrl = self::AITOC_UPDATE_EXTENSION_VERSION_LINK;
+        $productUrl = self::MAGEXPERTS_UPDATE_EXTENSION_VERSION_LINK;
 
         if (!is_array($extInfo) ||
             !array_key_exists('version', $extInfo) ||
@@ -143,7 +143,7 @@ class InstalledExtensions extends \Magento\Config\Block\System\Config\Form\Field
             ($versionOld ?
                 __("(New version %1 is available in your account: ", $packageData['version'])
                 . '<a class="magexperts-button-get-new-version" href="'
-                . self::AITOC_UPDATE_EXTENSION_VERSION_LINK .
+                . self::MAGEXPERTS_UPDATE_EXTENSION_VERSION_LINK .
                 '" target="_blank">' . __('Get Update') . '</a> )' : '' )
             . '</b></td>';
 
@@ -158,7 +158,7 @@ class InstalledExtensions extends \Magento\Config\Block\System\Config\Form\Field
     {
         $html = '<div class="comment magexperts-support">';
         $html .= 'Have any issues with <b>Magexperts extensions</b>?' .
-            ' Please <a href="' . self::AITOC_SUPPROT_LINK
+            ' Please <a href="' . self::MAGEXPERTS_SUPPROT_LINK
             . '" class="magexperts-get-support-button" target="_blank">Contact Support</a>';
 
         return $html . '</div>';

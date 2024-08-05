@@ -23,7 +23,7 @@
             <action name="delete_shipments">
                 <argument name="data" xsi:type="array">
                     <item name="config" xsi:type="array">
-                        <item name="type" xsi:type="string">bss_deleteShipment</item>
+                        <item name="type" xsi:type="string">magexperts_deleteShipment</item>
                         <item name="label" xsi:type="string" translate="true">Delete Shipments</item>
                         <item name="url" xsi:type="url" path="deleteorder/delete/massShipment"/>
                         <item name="confirm" xsi:type="array">

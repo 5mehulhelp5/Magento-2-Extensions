@@ -19,7 +19,7 @@ define([
     'jquery'
 ], function ($) {
     'use strict';
-    $.widget('bss.bss_checkout_process', {
+    $.widget('magexperts.magexperts_checkout_process', {
         _create: function () {
 
 
@@ -102,5 +102,5 @@ define([
         }
     });
 
-    return $.bss.bss_checkout_process;
+    return $.magexperts.magexperts_checkout_process;
 });

@@ -17,10 +17,10 @@
 var config = {
     map: {
         '*': {
-            bssFancybox: 'Magexperts_Core/js/fancybox/core',
-            bssJsColor: 'Magexperts_Core/js/jscolor/jscolor',
-            bssOwlCarousel: 'Magexperts_Core/js/owlcarousel/owl-carousel',
-            bssTooltipster: 'Magexperts_Core/js/tooltipster/tooltipster.main'
+            magexpertsFancybox: 'Magexperts_Core/js/fancybox/core',
+            magexpertsJsColor: 'Magexperts_Core/js/jscolor/jscolor',
+            magexpertsOwlCarousel: 'Magexperts_Core/js/owlcarousel/owl-carousel',
+            magexpertsTooltipster: 'Magexperts_Core/js/tooltipster/tooltipster.main'
         }
     }
 };

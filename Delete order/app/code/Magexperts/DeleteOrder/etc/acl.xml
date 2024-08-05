@@ -21,7 +21,7 @@
     <acl>
         <resources>
             <resource id="Magento_Backend::admin">
-                <resource id="Magexperts_DeleteOrder::bss_delete_order" title="Magexperts Commerce" sortOrder="100">
+                <resource id="Magexperts_DeleteOrder::magexperts_delete_order" title="Magexperts Commerce" sortOrder="100">
                     <resource id="Magexperts_DeleteOrder::delete_order" title="Delete Order" sortOrder="80"/>
                 </resource>
             </resource>

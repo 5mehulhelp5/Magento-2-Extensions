@@ -73,8 +73,8 @@ class Help extends \Magento\Backend\Block\Template implements RendererInterface
             <p>- Add attribute <span style="font-weight:bold;color:red">notlazy</span> after 
             <span style="font-weight:bold;color:red">src</span> attribute to &lt;img&gt; for prevent lazy load.</p>
             <p>- Example:</p>
-            <i>From: &lt;img src="bss.png" alt="Magexperts"&gt;</i><br />
-            <i>To: &lt;img src="bss.png" notlazy alt="Magexperts"&gt;</i><br />
+            <i>From: &lt;img src="magexperts.png" alt="Magexperts"&gt;</i><br />
+            <i>To: &lt;img src="magexperts.png" notlazy alt="Magexperts"&gt;</i><br />
             <i>'.$element->getScopeLabel().'</i>';
         }
         if ($element->getComment()) {

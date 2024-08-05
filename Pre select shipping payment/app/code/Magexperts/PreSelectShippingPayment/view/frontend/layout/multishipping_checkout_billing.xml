@@ -20,7 +20,7 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="content">
-            <block class="Magexperts\PreSelectShippingPayment\Block\ConfigMenthod" name="bss.additional.payment.info" template="Magexperts_PreSelectShippingPayment::checkout_shipping.phtml"/>
+            <block class="Magexperts\PreSelectShippingPayment\Block\ConfigMenthod" name="magexperts.additional.payment.info" template="Magexperts_PreSelectShippingPayment::checkout_shipping.phtml"/>
         </referenceContainer>
     </body>
 </page>

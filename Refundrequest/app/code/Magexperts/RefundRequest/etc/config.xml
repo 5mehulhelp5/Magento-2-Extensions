@@ -19,17 +19,17 @@
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
     <default>
-        <bss_refundrequest>
-            <bss_refundrequest_general>
+        <magexperts_refundrequest>
+            <magexperts_refundrequest_general>
                 <enable>0</enable>
-            </bss_refundrequest_general>
-            <bss_refundrequest_config>
+            </magexperts_refundrequest_general>
+            <magexperts_refundrequest_config>
                 <popup_title>refund request</popup_title>
                 <title>We are sorry to know that you want a refund, Plase let us know what's wrong?</title>
                 <dropdown_title>Reason for refund</dropdown_title>
                 <option_title>Product is opened</option_title>
                 <detail_title>Faulty or other detail</detail_title>
-            </bss_refundrequest_config>
-        </bss_refundrequest>
+            </magexperts_refundrequest_config>
+        </magexperts_refundrequest>
     </default>
 </config>

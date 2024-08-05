@@ -35,7 +35,7 @@
     <body>
         <referenceContainer name="content">
             <container name="order.success.additional.info" label="Order Success Additional Info"/>
-            <block class="Magexperts\OrderDetails\Block\Details" name="bss.get.order.details" template="Magexperts_OrderDetails::order/success.phtml" after="-">
+            <block class="Magexperts\OrderDetails\Block\Details" name="magexperts.get.order.details" template="Magexperts_OrderDetails::order/success.phtml" after="-">
                 <block class="Magexperts\OrderDetails\Block\Details" name="order.totals" template="Magexperts_OrderDetails::order/success/totals.phtml">
                     <arguments>
                         <argument name="label_properties" xsi:type="string">class="table-method"</argument>

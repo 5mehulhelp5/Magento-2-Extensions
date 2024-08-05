@@ -19,7 +19,7 @@
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
     <default>
-        <bss_quickview>
+        <magexperts_quickview>
             <general>
                 <close_quickview></close_quickview>
                 <custom_css></custom_css>
@@ -43,6 +43,6 @@
                 <product_item_info>product-item-info</product_item_info>
                 <product_image_wrapper>product-image-wrapper</product_image_wrapper>
             </seting_theme>                  
-        </bss_quickview>      
+        </magexperts_quickview>      
     </default>
 </config>

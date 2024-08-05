@@ -42,10 +42,10 @@ class InstallSchema implements InstallSchemaInterface
         $installer->startSetup();
 
         /**
-         * Create table 'bss_login_as_customer'
+         * Create table 'magexperts_login_as_customer'
          */
         $table = $installer->getConnection()->newTable(
-            $installer->getTable('bss_login_as_customer')
+            $installer->getTable('magexperts_login_as_customer')
         )->addColumn(
             'login_id',
             \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
@@ -83,10 +83,10 @@ class InstallSchema implements InstallSchemaInterface
             [],
             'Creation Time'
         )->addIndex(
-            $installer->getIdxName('bss_login_as_customer', ['customer_id']),
+            $installer->getIdxName('magexperts_login_as_customer', ['customer_id']),
             ['customer_id']
         )->addIndex(
-            $installer->getIdxName('bss_login_as_customer', ['admin_id']),
+            $installer->getIdxName('magexperts_login_as_customer', ['admin_id']),
             ['admin_id']
         )->setComment(
             'Magexperts Login As Customer Table'

@@ -49,11 +49,11 @@ class Status extends AbstractDb
      */
     protected function _construct()
     {
-        $this->_init('bss_refundrequest', 'increment_id');
+        $this->_init('magexperts_refundrequest', 'increment_id');
     }
 
     /**
-     * Update status and time in bss_refundrequest table
+     * Update status and time in magexperts_refundrequest table
      * @param array $incrementIds
      * @param int $refundStatus
      */

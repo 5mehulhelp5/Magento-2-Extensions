@@ -26,7 +26,7 @@ class MagexpertsNotificationLogoAddInToolbar
     {
         return $subject->getLatestUnreadNotifications()
             ->clear()
-            ->addFieldToFilter(\Magexperts\Core\Api\ColumnInterface::AITOC_NOTIFICATION_FIELD, 1);
+            ->addFieldToFilter(\Magexperts\Core\Api\ColumnInterface::MAGEXPERTS_NOTIFICATION_FIELD, 1);
     }
 
     /**

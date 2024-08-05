@@ -21,9 +21,9 @@ use Magento\Framework\App\Helper\Context;
 
 class Data extends \Magento\Framework\App\Helper\AbstractHelper
 {
-    const MAX_PRODUCTS = 'bss_htmlsitemap/product/max_products';
-    const SORT_PRODUCT = 'bss_htmlsitemap/product/sort_product';
-    const ORDER_PRODUCT = 'bss_htmlsitemap/product/order_product';
+    const MAX_PRODUCTS = 'magexperts_htmlsitemap/product/max_products';
+    const SORT_PRODUCT = 'magexperts_htmlsitemap/product/sort_product';
+    const ORDER_PRODUCT = 'magexperts_htmlsitemap/product/order_product';
     const DEFAULT_URL_KEY = 'sitemap';
 
     public $scopeStore = \Magento\Store\Model\ScopeInterface::SCOPE_STORE;
@@ -50,7 +50,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
      */
     public function getAdditionUrl()
     {
-        $additionUrl = $this->scopeConfig->getValue('bss_htmlsitemap/addition/addition_link', $this->scopeStore);
+        $additionUrl = $this->scopeConfig->getValue('magexperts_htmlsitemap/addition/addition_link', $this->scopeStore);
 
         $additionUrl = ($additionUrl == '') ? '' : $additionUrl;
         return $additionUrl;
@@ -61,7 +61,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
      */
     public function getCmsLink()
     {
-        $cmsLink = $this->scopeConfig->getValue('bss_htmlsitemap/cms/do_something', $this->scopeStore);
+        $cmsLink = $this->scopeConfig->getValue('magexperts_htmlsitemap/cms/do_something', $this->scopeStore);
 
         $cmsLink = ($cmsLink == '') ? '' : $cmsLink;
         return $cmsLink;
@@ -72,7 +72,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
      */
     public function isEnable()
     {
-        $isEnable = $this->scopeConfig->isSetFlag('bss_htmlsitemap/general/enable', $this->scopeStore);
+        $isEnable = $this->scopeConfig->isSetFlag('magexperts_htmlsitemap/general/enable', $this->scopeStore);
         return $isEnable;
     }
 
@@ -83,9 +83,9 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     public function getModuleRoute($storeId = null)
     {
         if ($storeId) {
-            $value = $this->scopeConfig->getValue('bss_htmlsitemap/general/router', $this->scopeStore, $storeId);
+            $value = $this->scopeConfig->getValue('magexperts_htmlsitemap/general/router', $this->scopeStore, $storeId);
         } else {
-            $value = $this->scopeConfig->getValue('bss_htmlsitemap/general/router', $this->scopeStore);
+            $value = $this->scopeConfig->getValue('magexperts_htmlsitemap/general/router', $this->scopeStore);
         }
         if (!$value) {
             $value = self::DEFAULT_URL_KEY;
@@ -132,7 +132,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     public function getTitleSiteMap()
     {
         return $this->scopeConfig->getValue(
-            "bss_htmlsitemap/general/title",
+            "magexperts_htmlsitemap/general/title",
             \Magento\Store\Model\ScopeInterface::SCOPE_STORE
         );
     }
@@ -143,7 +143,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     public function getDescriptionSitemap()
     {
         return $this->scopeConfig->getValue(
-            "bss_htmlsitemap/for_search/description",
+            "magexperts_htmlsitemap/for_search/description",
             \Magento\Store\Model\ScopeInterface::SCOPE_STORE
         );
     }
@@ -154,7 +154,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     public function getKeywordsSitemap()
     {
         return $this->scopeConfig->getValue(
-            "bss_htmlsitemap/for_search/keywords",
+            "magexperts_htmlsitemap/for_search/keywords",
             \Magento\Store\Model\ScopeInterface::SCOPE_STORE
         );
     }
@@ -165,7 +165,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     public function getMetaTitleSitemap()
     {
         return $this->scopeConfig->getValue(
-            "bss_htmlsitemap/for_search/meta_title",
+            "magexperts_htmlsitemap/for_search/meta_title",
             \Magento\Store\Model\ScopeInterface::SCOPE_STORE
         );
     }
@@ -229,9 +229,9 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     public function getCategoryDisable($storeId = null)
     {
         if ($storeId !== null) {
-            $categoryDisable = $this->scopeConfig->getValue('bss_htmlsitemap/category/id_category', $this->scopeStore, $storeId);
+            $categoryDisable = $this->scopeConfig->getValue('magexperts_htmlsitemap/category/id_category', $this->scopeStore, $storeId);
         } else {
-            $categoryDisable = $this->scopeConfig->getValue('bss_htmlsitemap/category/id_category', $this->scopeStore);
+            $categoryDisable = $this->scopeConfig->getValue('magexperts_htmlsitemap/category/id_category', $this->scopeStore);
         }
 
         $categoryDisable = ($categoryDisable == '') ? '' : $categoryDisable;
@@ -243,7 +243,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
      */
     public function isEnableCategory()
     {
-        $enableCategory = $this->scopeConfig->isSetFlag('bss_htmlsitemap/category/enable_category', $this->scopeStore);
+        $enableCategory = $this->scopeConfig->isSetFlag('magexperts_htmlsitemap/category/enable_category', $this->scopeStore);
         return $enableCategory;
     }
 
@@ -252,7 +252,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
      */
     public function isEnableProduct()
     {
-        $enableProduct = $this->scopeConfig->isSetFlag('bss_htmlsitemap/product/enable_product', $this->scopeStore);
+        $enableProduct = $this->scopeConfig->isSetFlag('magexperts_htmlsitemap/product/enable_product', $this->scopeStore);
         return $enableProduct;
     }
 
@@ -261,7 +261,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
      */
     public function isEnableCms()
     {
-        $enableCms = $this->scopeConfig->isSetFlag('bss_htmlsitemap/cms/enable_cms', $this->scopeStore);
+        $enableCms = $this->scopeConfig->isSetFlag('magexperts_htmlsitemap/cms/enable_cms', $this->scopeStore);
         return $enableCms;
     }
 
@@ -270,7 +270,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
      */
     public function isEnableStoreView()
     {
-        $enableStoreView = $this->scopeConfig->isSetFlag('bss_htmlsitemap/store/enable_store', $this->scopeStore);
+        $enableStoreView = $this->scopeConfig->isSetFlag('magexperts_htmlsitemap/store/enable_store', $this->scopeStore);
         return $enableStoreView;
     }
 
@@ -279,7 +279,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
      */
     public function orderTemplates()
     {
-        $orderTemplates = $this->scopeConfig->getValue('bss_htmlsitemap/general/order_templates', $this->scopeStore);
+        $orderTemplates = $this->scopeConfig->getValue('magexperts_htmlsitemap/general/order_templates', $this->scopeStore);
 
         $orderTemplates = ($orderTemplates == '') ? '' : $orderTemplates;
         return $orderTemplates;
@@ -299,7 +299,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
      */
     public function titleCategory()
     {
-        $titleCategory = $this->scopeConfig->getValue('bss_htmlsitemap/category/title_category', $this->scopeStore);
+        $titleCategory = $this->scopeConfig->getValue('magexperts_htmlsitemap/category/title_category', $this->scopeStore);
 
         $titleCategory = ($titleCategory == '') ? '' : $titleCategory;
         return $titleCategory;
@@ -310,7 +310,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
      */
     public function getShowLinkAt()
     {
-        $showLinkAt = $this->scopeConfig->getValue('bss_htmlsitemap/general/show_link', $this->scopeStore);
+        $showLinkAt = $this->scopeConfig->getValue('magexperts_htmlsitemap/general/show_link', $this->scopeStore);
 
         $showLinkAt = ($showLinkAt === '' || $showLinkAt === null) ? 'footer' : $showLinkAt;
         return $showLinkAt;
@@ -321,7 +321,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
      */
     public function titleCms()
     {
-        $titleCms = $this->scopeConfig->getValue('bss_htmlsitemap/cms/title_cms', $this->scopeStore);
+        $titleCms = $this->scopeConfig->getValue('magexperts_htmlsitemap/cms/title_cms', $this->scopeStore);
 
         $titleCms = ($titleCms == '') ? '' : $titleCms;
         return $titleCms;
@@ -332,7 +332,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
      */
     public function titleProduct()
     {
-        $titleProduct = $this->scopeConfig->getValue('bss_htmlsitemap/product/title_product', $this->scopeStore);
+        $titleProduct = $this->scopeConfig->getValue('magexperts_htmlsitemap/product/title_product', $this->scopeStore);
 
         $titleProduct = ($titleProduct == '') ? '' : $titleProduct;
         return $titleProduct;
@@ -343,7 +343,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
      */
     public function titleStore()
     {
-        $titleStore = $this->scopeConfig->getValue('bss_htmlsitemap/store/title_store', $this->scopeStore);
+        $titleStore = $this->scopeConfig->getValue('magexperts_htmlsitemap/store/title_store', $this->scopeStore);
 
         $titleStore = ($titleStore == '') ? '' : $titleStore;
         return $titleStore;
@@ -354,7 +354,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
      */
     public function titleAddition()
     {
-        $titleAddition = $this->scopeConfig->getValue('bss_htmlsitemap/addition/title_addition', $this->scopeStore);
+        $titleAddition = $this->scopeConfig->getValue('magexperts_htmlsitemap/addition/title_addition', $this->scopeStore);
 
         $titleAddition = ($titleAddition == '') ? '' : $titleAddition;
         return $titleAddition;
@@ -406,7 +406,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
      */
     public function openNewTab()
     {
-        $openNewTab = $this->scopeConfig->getValue('bss_htmlsitemap/addition/open_new_tab', $this->scopeStore);
+        $openNewTab = $this->scopeConfig->getValue('magexperts_htmlsitemap/addition/open_new_tab', $this->scopeStore);
 
         $openNewTab = ($openNewTab == '') ? '' : $openNewTab;
         return $openNewTab;

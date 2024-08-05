@@ -68,7 +68,7 @@ We only need the tracking code to configure and enable Microsoft Clarity on your
 
 ## Configuration
 
-Path: **Stores → Configuration → AITOC EXTENSION → Microsoft Clarity** Or **Admin → AITOC → Microsoft Clarity → Configuration**
+Path: **Stores → Configuration → MAGEXPERTS EXTENSION → Microsoft Clarity** Or **Admin → MAGEXPERTS → Microsoft Clarity → Configuration**
 
 [![](docs/config.png)](docs/config.png)
  
@@ -104,4 +104,4 @@ Log in to Your Microsoft Clarity Account, → Select your Project → Dashboard 
 
 See more [**Magento 2 extensions**](https://www.magexperts.com/magento-2-extensions.html)
 
-THANKS FOR CHOOSING AITOC 
+THANKS FOR CHOOSING MAGEXPERTS 
