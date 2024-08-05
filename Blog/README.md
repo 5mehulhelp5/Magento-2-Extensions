@@ -2,7 +2,7 @@ Magento 2 Blog is a robust marketing tool that helps you boost your store SEO, a
 
 Best SEO practices, an extensive set of features, 22+ templates and plenty of other options will make your blog stand out.
 
-You don’t need to rely on WordPress or any other third-party platform when you have a Magefan Blog that attracts, engages and converts!
+You don’t need to rely on WordPress or any other third-party platform when you have a Magexperts Blog that attracts, engages and converts!
 
 1>Choose from 22+ blog templates for post lists and homepage<br/>
 2>Create an unlimited number of blog posts, categories, tags and authors<br/>
