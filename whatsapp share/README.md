@@ -1,6 +1,6 @@
 Magento 2 WhatsApp Share Extension allow to share easily products with your contacts via WhatsApp. Boost your online presence and skyrocket your sales with this powerful extension.
 
-<b>What Exactly is Magento 2 WhatsApp Share Extension?<b/><br/>
+<b>What Exactly is Magento 2 WhatsApp Share Extension?</b><br/>
 1>There’s no surprise as the usage of WhatsApp is increasing rapidly. WhatsApp has nearly 2 billion active users across the globe. Using such a popular social media platform can assist in promoting products effectively and grow your business to the next level! Thus, it can be done effectively using Magexperts’s Magento 2 WhatsApp Share extension and boost products using WhatsApp easily just with a single click.<br/>
 2>It is one of the most widely used platforms to market your products. The module facilitates easy product sharing and staying connected with WhatsApp contacts. Easily advertise your products among the prospects by using WhatsApp Share for Magento 2.<br/>
 3>Sharing product information, offers and URL can increase customer-base and lure them to visit your website. The module even allows sending customized messages along with the product description.<br/>
