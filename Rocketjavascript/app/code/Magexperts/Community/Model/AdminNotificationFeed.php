@@ -17,7 +17,7 @@ class AdminNotificationFeed extends \Magento\AdminNotification\Model\Feed
     /**
      * @var string
      */
-    const MAGEFAN_CACHE_KEY = 'magexperts_admin_notifications_lastcheck' ;
+    const MAGEXPERTS_CACHE_KEY = 'magexperts_admin_notifications_lastcheck' ;
 
     /**
      * @var \Magento\Backend\Model\Auth\Session
@@ -181,7 +181,7 @@ class AdminNotificationFeed extends \Magento\AdminNotification\Model\Feed
      */
     public function getLastUpdate()
     {
-        return $this->_cacheManager->load(self::MAGEFAN_CACHE_KEY);
+        return $this->_cacheManager->load(self::MAGEXPERTS_CACHE_KEY);
     }
 
     /**
@@ -191,7 +191,7 @@ class AdminNotificationFeed extends \Magento\AdminNotification\Model\Feed
      */
     public function setLastUpdate()
     {
-        $this->_cacheManager->save(time(), self::MAGEFAN_CACHE_KEY);
+        $this->_cacheManager->save(time(), self::MAGEXPERTS_CACHE_KEY);
         return $this;
     }
 

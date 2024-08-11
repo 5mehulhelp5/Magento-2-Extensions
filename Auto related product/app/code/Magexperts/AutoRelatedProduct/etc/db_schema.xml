@@ -25,10 +25,10 @@
     <constraint xsi:type="primary" referenceId="PRIMARY">
       <column name="id"/>
     </constraint>
-    <index referenceId="MAGEFAN_AUTORP_RULE_STATUS" indexType="btree">
+    <index referenceId="MAGEXPERTS_AUTORP_RULE_STATUS" indexType="btree">
       <column name="status"/>
     </index>
-    <index referenceId="MAGEFAN_AUTORP_RULE_BLOCK_POSITION" indexType="btree">
+    <index referenceId="MAGEXPERTS_AUTORP_RULE_BLOCK_POSITION" indexType="btree">
       <column name="block_position"/>
     </index>
   </table>
@@ -39,9 +39,9 @@
       <column name="rule_id"/>
       <column name="store_id"/>
     </constraint>
-    <constraint xsi:type="foreign" referenceId="MAGEFAN_AUTORP_RULE_STORE_RULE_ID_MAGEFAN_AUTORP_RULE_ID" table="magexperts_autorp_rule_store" column="rule_id" referenceTable="magexperts_autorp_rule" referenceColumn="id" onDelete="CASCADE"/>
-    <constraint xsi:type="foreign" referenceId="MAGEFAN_AUTORP_RULE_STORE_STORE_ID_STORE_STORE_ID" table="magexperts_autorp_rule_store" column="store_id" referenceTable="store" referenceColumn="store_id" onDelete="CASCADE"/>
-    <index referenceId="MAGEFAN_AUTORP_RULE_STORE_STORE_ID" indexType="btree">
+    <constraint xsi:type="foreign" referenceId="MAGEXPERTS_AUTORP_RULE_STORE_RULE_ID_MAGEXPERTS_AUTORP_RULE_ID" table="magexperts_autorp_rule_store" column="rule_id" referenceTable="magexperts_autorp_rule" referenceColumn="id" onDelete="CASCADE"/>
+    <constraint xsi:type="foreign" referenceId="MAGEXPERTS_AUTORP_RULE_STORE_STORE_ID_STORE_STORE_ID" table="magexperts_autorp_rule_store" column="store_id" referenceTable="store" referenceColumn="store_id" onDelete="CASCADE"/>
+    <index referenceId="MAGEXPERTS_AUTORP_RULE_STORE_STORE_ID" indexType="btree">
       <column name="store_id"/>
     </index>
   </table>
@@ -54,8 +54,8 @@
       <column name="id"/>
       <column name="rule_id"/>
     </constraint>
-    <constraint xsi:type="foreign" referenceId="MAGEFAN_AUTORP_INDEX_RULE_ID_MAGEFAN_AUTORP_RULE_ID" table="magexperts_autorp_index" column="rule_id" referenceTable="magexperts_autorp_rule" referenceColumn="id" onDelete="CASCADE"/>
-    <constraint xsi:type="unique" referenceId="MAGEFAN_AUTORP_INDEX_RULE_ID">
+    <constraint xsi:type="foreign" referenceId="MAGEXPERTS_AUTORP_INDEX_RULE_ID_MAGEXPERTS_AUTORP_RULE_ID" table="magexperts_autorp_index" column="rule_id" referenceTable="magexperts_autorp_rule" referenceColumn="id" onDelete="CASCADE"/>
+    <constraint xsi:type="unique" referenceId="MAGEXPERTS_AUTORP_INDEX_RULE_ID">
       <column name="rule_id"/>
     </constraint>
   </table>

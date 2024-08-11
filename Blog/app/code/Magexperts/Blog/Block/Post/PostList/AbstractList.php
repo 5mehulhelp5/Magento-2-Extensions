@@ -229,7 +229,7 @@ abstract class AbstractList extends Template implements IdentityInterface
         return $this->_scopeConfig->getValue(
             'mfblog/post_view/comments/type',
             \Magento\Store\Model\ScopeInterface::SCOPE_STORE
-        ) == \Magexperts\Blog\Model\Config\Source\CommetType::MAGEFAN;
+        ) == \Magexperts\Blog\Model\Config\Source\CommetType::MAGEXPERTS;
     }
 
     /**

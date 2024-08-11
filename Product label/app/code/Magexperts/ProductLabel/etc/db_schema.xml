@@ -43,12 +43,12 @@
         <column xsi:type="int" name="rule_id" identity="false" unsigned="false" nullable="false" padding="10" comment="Rule ID"/>
         <column xsi:type="int" name="product_id" padding="10" unsigned="true" nullable="false" identity="false" comment="Product ID"/>
 
-        <constraint xsi:type="foreign" referenceId="MAGEFAN_PRODUCT_LABEL_RULE_PRODUCT__RULE_ID__MAGEFAN_PRODUCT_LABEL_RULE__ID"
+        <constraint xsi:type="foreign" referenceId="MAGEXPERTS_PRODUCT_LABEL_RULE_PRODUCT__RULE_ID__MAGEXPERTS_PRODUCT_LABEL_RULE__ID"
                     table="magexperts_product_label_rule_product" column="rule_id"
                     referenceTable="magexperts_product_label_rule" referenceColumn="id"
                     onDelete="CASCADE"/>
 
-        <constraint xsi:type="foreign" referenceId="MAGEFAN_PRODUCT_LABEL_RULE_PRODUCT__PRODUCT_ID__CATALOG_PRODUCT_ENTITY__ENTITY_ID"
+        <constraint xsi:type="foreign" referenceId="MAGEXPERTS_PRODUCT_LABEL_RULE_PRODUCT__PRODUCT_ID__CATALOG_PRODUCT_ENTITY__ENTITY_ID"
                     table="magexperts_product_label_rule_product" column="product_id"
                     referenceTable="catalog_product_entity" referenceColumn="entity_id"
                     onDelete="CASCADE"/>

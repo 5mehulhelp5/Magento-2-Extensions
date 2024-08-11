@@ -20,7 +20,7 @@ class CheckEnableInfo extends \Magento\Backend\Block\Template
      * Magexperts Blog Plus Module
      * @deprecated
      */
-    const MAGEFAN_BLOG_PLUS = 'Magexperts_BlogPlus';
+    const MAGEXPERTS_BLOG_PLUS = 'Magexperts_BlogPlus';
 
     /**
      * Extension key config path

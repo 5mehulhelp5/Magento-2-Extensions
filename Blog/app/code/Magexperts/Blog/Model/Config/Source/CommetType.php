@@ -21,7 +21,7 @@ class CommetType implements \Magento\Framework\Option\ArrayInterface
     /**
      * @const string
      */
-    const MAGEFAN = 'magexperts';
+    const MAGEXPERTS = 'magexperts';
 
     /**
      * @const string
@@ -47,7 +47,7 @@ class CommetType implements \Magento\Framework\Option\ArrayInterface
     {
         return [
             ['value' => self::DISABLED, 'label' => __('Disabled')],
-            ['value' => self::MAGEFAN, 'label' => __('Use Magexperts Blog Comments')],
+            ['value' => self::MAGEXPERTS, 'label' => __('Use Magexperts Blog Comments')],
             ['value' => self::FACEBOOK, 'label' => __('Use Facebook Comments')],
             ['value' => self::DISQUS, 'label' => __('Use Disqus Comments')],
             /*['value' => self::GOOGLE, 'label' => __('Use Google Comments')],*/

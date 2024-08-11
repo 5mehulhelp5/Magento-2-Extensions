@@ -19,7 +19,7 @@ class Magexperts extends \Magexperts\Blog\Block\Post\View\Comments implements \M
     /**
      * @var string
      */
-    protected $commetType = CommetType::MAGEFAN;
+    protected $commetType = CommetType::MAGEXPERTS;
 
     /**
      * @var \Magexperts\Blog\Model\ResourceModel\Comment\Collection
